@@ -1,5 +1,4 @@
 {
-  "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name":"angular2-multiselect-dropdown",
   "version":"5.0.4",
   "license": "MIT",
@@ -25,16 +24,21 @@
     ],
     "dest": "../../dist"
   },
-  "peerDependencies": {
-  },
-  "dependencies": {
-    "@tweenjs/tween.js": "^17.4.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/CuppaLabs/angular2-multiselect-dropdown"
   },
   "bugs": {
     "url": "https://github.com/CuppaLabs/angular2-multiselect-dropdown/issues"
-  }
+  },
+
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@tweenjs/tween.js": "^17.4.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
 }

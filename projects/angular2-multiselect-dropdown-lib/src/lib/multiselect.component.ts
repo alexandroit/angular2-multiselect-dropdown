@@ -1,15 +1,28 @@
-import { Component, OnInit, HostListener, ChangeDetectionStrategy, OnDestroy, NgModule, SimpleChanges, OnChanges, ChangeDetectorRef, AfterViewChecked, ViewEncapsulation, ContentChild, ViewChild, forwardRef, Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform } from '@angular/core';
-import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, Validator, FormControl } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { MyException } from './multiselect.model';
-import { DropdownSettings } from './multiselect.interface';
-import { ClickOutsideDirective, ScrollDirective, styleDirective, setPosition } from './clickOutside';
-import { ListFilterPipe } from './list-filter';
-import { Item, Badge, Search, TemplateRenderer, CIcon } from './menu-item';
-import { DataService } from './multiselect.service';
-import { Subscription, Subject } from 'rxjs';
-import { VirtualScrollerModule, VirtualScrollerComponent } from './virtual-scroll/virtual-scroll';
-import { map, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
+import { CommonModule } from "@angular/common";
+import { forwardRef, Component, ViewEncapsulation, OnInit, OnChanges, AfterViewChecked, OnDestroy, Input, Output, EventEmitter, ContentChild, ViewChild, ElementRef, HostListener, ChangeDetectorRef, SimpleChanges, NgModule } from "@angular/core";
+import { NG_VALUE_ACCESSOR, NG_VALIDATORS, ControlValueAccessor, Validator, UntypedFormControl, FormsModule } from "@angular/forms";
+import { Subject, Subscription, debounceTime, distinctUntilChanged, tap } from "rxjs";
+import { ClickOutsideDirective, ScrollDirective, styleDirective, setPosition } from "./clickOutside";
+import { ListFilterPipe } from "./list-filter";
+import { Item, Badge, Search, TemplateRenderer, CIcon } from "./menu-item";
+import { DropdownSettings } from "./multiselect.interface";
+import { MyException } from "./multiselect.model";
+import { DataService } from "./multiselect.service";
+import { VirtualScrollerComponent, VirtualScrollerModule } from "./virtual-scroll/virtual-scroll";
+
+
+// import { Component, OnInit, HostListener, ChangeDetectionStrategy, OnDestroy, NgModule, SimpleChanges, OnChanges, ChangeDetectorRef, AfterViewChecked, ViewEncapsulation, ContentChild, ViewChild, forwardRef, Input, Output, EventEmitter, ElementRef, AfterViewInit, Pipe, PipeTransform } from '@angular/core';
+// import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, Validator, UntypedFormControl } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
+// import { MyException } from './multiselect.model';
+// import { DropdownSettings } from './multiselect.interface';
+// import { ClickOutsideDirective, ScrollDirective, styleDirective, setPosition } from './clickOutside';
+// import { ListFilterPipe } from './list-filter';
+// import { Item, Badge, Search, TemplateRenderer, CIcon } from './menu-item';
+// import { DataService } from './multiselect.service';
+// import { Subscription, Subject } from 'rxjs';
+// import { VirtualScrollerModule, VirtualScrollerComponent } from './virtual-scroll/virtual-scroll';
+// import { map, debounceTime, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
 
 export const DROPDOWN_CONTROL_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -292,7 +305,7 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
 
 
     }
-    public validate(c: FormControl): any {
+    public validate(c: UntypedFormControl): any {
         return null;
     }
     private onTouchedCallback: (_: any) => void = noop;
