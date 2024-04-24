@@ -37,6 +37,11 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input":  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true,
+                "bundleName": "bootstrap-module"
+              },
               "src/styles.scss"
             ],
             "scripts": []
