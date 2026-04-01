@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name":"angular2-multiselect-dropdown",
-  "version":"10.0.0",
+  "version":"11.0.0",
   "license": "MIT",
   "author": "Pradeep Terli",
-  "description": "Angular Multiselct dropdown component library for Angular version 11, 10, 9,8,6,4 ",
+  "description": "Angular Multiselect dropdown component library for Angular version 19, 18, 17, 16, 15 ",
   "keywords": [
-    "angular 15 multiselect dropdown"
+    "angular 19 multiselect dropdown"
   ],
   "peerDependencies": {
   },
