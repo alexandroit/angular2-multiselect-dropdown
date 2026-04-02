@@ -1,89 +1,103 @@
-# Angular 19/18/17 Multiselect Dropdown - @revivejs/angular2-multiselect-dropdown
-[![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
-[![downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
-[![license](https://img.shields.io/github/license/alexandroit/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+# @revivejs/angular2-multiselect-dropdown
 
-> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown) - Enhanced and maintained by [ReviveJS](https://github.com/alexandroit/angular2-multiselect-dropdown)
+> Angular 20 multiselect dropdown component — search, grouping, templating, lazy loading, reactive forms and template-driven forms support. Compatible with Angular 14–20.
 
-> **Note:** This project focuses on updating libraries that are no longer maintained and may contain security vulnerabilities.
+[![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![npm monthly downloads](https://img.shields.io/npm/dm/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![license](https://img.shields.io/npm/l/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/revivejs/angular2-multiselect-dropdown/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/revivejs/angular2-multiselect-dropdown/stargazers)
 
-Angular multiselect dropdown component for web applications. Easy to integrate and use.
-
-![](https://alexandroit.github.io/angular2-multiselect-dropdown/assets/img/multiselect.jpeg)
-
-> **Important:** From v3.0.0 onwards, you need to include `default.theme.css` to get the basic styling of the dropdown. Refer to the *Themes and Theming* section below.
-
-# [Documentation](http://alexandroit.github.io/components/multiselectDropdown) | [Demos / Examples](https://alexandroit.github.io/angular2-multiselect-dropdown)
-
-## Table of Contents
-1. Getting Started
-2. Installation
-3. Usage
-4. Theming
-5. Templates
-6. Template Driven Forms support
-7. Reactive Forms support
-8. Settings configuration
-9. Callbacks and events
-10. Lazy loading - handle large data lists
-11. Group By feature
-12. Search filter for both plain list and grouped list
-13. Custom Search / Search API
-14. Angular 19 Upgrade Notes
+**[📖 Documentation](https://revivejs.github.io/angular2-multiselect-dropdown)** | **[🚀 Live Demos](https://revivejs.github.io/angular2-multiselect-dropdown)** | **[📦 npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)**
 
 ---
 
-## Getting Started
+> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown). Enhanced and maintained by [ReviveJS](https://github.com/revivejs/angular2-multiselect-dropdown) — keeping unmaintained Angular libraries alive and secure.
 
-### Installation
+---
 
-Install the package:
+## Features
+
+- ✅ Angular 14 · 15 · 16 · 17 · 18 · 19 · **20** supported
+- ✅ Single and multi selection
+- ✅ Search / filter with custom search API
+- ✅ Group by field
+- ✅ Custom item and badge templates (`<c-item>`, `<c-badge>`)
+- ✅ Template-driven forms (`ngModel`)
+- ✅ Reactive forms (`formControlName`)
+- ✅ Lazy loading / virtual scroll for large datasets
+- ✅ `onScrollToEnd` event for remote data pagination
+- ✅ Add new item on filter
+- ✅ Custom theming (SCSS)
+- ✅ Auto-position (top / bottom)
+- ✅ Append to body (`tagToBody`)
+- ✅ Keyboard navigation + Escape to close
+
+---
+
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Angular Version Compatibility](#angular-version-compatibility)
+3. [Usage](#usage)
+4. [Theming](#theming)
+5. [Custom Templates](#custom-templates)
+6. [Template-Driven Forms](#template-driven-forms)
+7. [Reactive Forms](#reactive-forms)
+8. [Settings](#settings)
+9. [Events](#events)
+10. [Lazy Loading](#lazy-loading)
+11. [Angular 20 Upgrade Notes](#angular-20-upgrade-notes)
+12. [Run Locally](#run-locally)
+13. [License](#license)
+
+---
+
+## Installation
+
 ```bash
 npm install @revivejs/angular2-multiselect-dropdown
 ```
 
-Once installed, import `AngularMultiSelectModule` from the installed package into your module.
+---
+
+## Angular Version Compatibility
+
+| @revivejs/angular2-multiselect-dropdown | Angular |
+|:---:|:---:|
+| **12.x** | **20.x** |
+| 11.x | 19.x |
+| 10.x | 18.x |
+| 9.x  | 17.x |
+| 8.x  | 16.x |
+| 7.x  | 15.x |
+| 6.x  | 14.x |
 
 ---
 
-## Dependencies
+## Usage
 
-Latest version available for each version of Angular:
+Import `AngularMultiSelectModule` into your `NgModule`. Angular's `FormsModule` is also required.
 
-| angular2-multiselect-dropdown | Angular     |
-| ----------------------------- | ----------- |
-| 11.0.0      | 19.X.X |
-| 10.0.0      | 18.X.X |
-| 9.0.0       | 17.X.X |
-| 8.0.0       | 16.X.X |
-| 7.0.0       | 15.X.X |
-| 6.0.0       | 14.X.X |
-
----
-
-### Usage
-
-Import `AngularMultiSelectModule` into `NgModule` in `app.module.ts`. Angular's `FormsModule` is also required.
-
-```js
+```ts
 import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  // ...
   imports: [
     AngularMultiSelectModule,
     FormsModule
   ]
-  // ...
 })
+export class AppModule {}
 ```
 
-Declare the component data variables and options in your component:
+Declare the data variables in your component:
 
-```js
+```ts
 import { Component, OnInit } from '@angular/core';
 
+@Component({ standalone: false, ... })
 export class AppComponent implements OnInit {
     dropdownList = [];
     selectedItems = [];
@@ -91,30 +105,23 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.dropdownList = [
-            { "id": 1, "itemName": "India" },
-            { "id": 2, "itemName": "Singapore" },
-            { "id": 3, "itemName": "Australia" },
-            { "id": 4, "itemName": "Canada" },
-            { "id": 5, "itemName": "South Korea" },
-            { "id": 6, "itemName": "Germany" },
-            { "id": 7, "itemName": "France" },
-            { "id": 8, "itemName": "Russia" },
-            { "id": 9, "itemName": "Italy" },
-            { "id": 10, "itemName": "Sweden" }
+            { id: 1, itemName: 'India' },
+            { id: 2, itemName: 'Singapore' },
+            { id: 3, itemName: 'Australia' },
+            { id: 4, itemName: 'Canada' },
+            { id: 5, itemName: 'South Korea' }
         ];
         this.selectedItems = [
-            { "id": 2, "itemName": "Singapore" },
-            { "id": 3, "itemName": "Australia" },
-            { "id": 4, "itemName": "Canada" },
-            { "id": 5, "itemName": "South Korea" }
+            { id: 2, itemName: 'Singapore' },
+            { id: 3, itemName: 'Australia' }
         ];
         this.dropdownSettings = {
             singleSelection: false,
-            text: "Select Countries",
+            text: 'Select Countries',
             selectAllText: 'Select All',
-            unSelectAllText: 'UnSelect All',
+            unSelectAllText: 'Unselect All',
             enableSearchFilter: true,
-            classes: "myclass custom-class"
+            classes: 'myclass custom-class'
         };
     }
 
@@ -125,10 +132,12 @@ export class AppComponent implements OnInit {
 }
 ```
 
-Add the component tag in your template:
+Add the component to your template:
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems"
+<angular2-multiselect
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
     [settings]="dropdownSettings"
     (onSelect)="onItemSelect($event)"
     (onDeSelect)="OnItemDeSelect($event)"
@@ -139,11 +148,11 @@ Add the component tag in your template:
 
 ---
 
-### Themes and Theming
+## Theming
 
-- From v3.0.0 onwards, you need to include `default.theme.css` to get the basic styling of the dropdown.
-- The component package has a themes folder in node_modules at `@revivejs/angular2-multiselect-dropdown\themes\default.theme.css`.
-- Include the `default.theme.css` in `angular.json` under the `styles` array:
+From v3.0.0 onwards you must include the default theme CSS.
+
+Add to `angular.json` under `styles`:
 
 ```json
 "styles": [
@@ -151,31 +160,33 @@ Add the component tag in your template:
 ]
 ```
 
-You can create your own theme. See the example SCSS file at [Default theme](https://github.com/CuppaLabs/angular2-multiselect-dropdown/blob/master/src/themes/default.theme.scss).
+You can create your own theme by copying and editing the [default SCSS theme](https://github.com/revivejs/angular2-multiselect-dropdown/blob/master/projects/%40revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.scss).
 
 ---
 
-### Template - Custom HTML for menu item
+## Custom Templates
+
+### Custom item template
 
 ```html
 <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
   <c-item>
     <ng-template let-item="item">
-      <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
-      <img [src]="item.image" style="width: 30px; border: 1px solid #efefef;margin-right: 20px;" />
-      <label>Capital - {{item.capital}}</label>
+      <label style="color: #333; min-width: 150px;">{{ item.itemName }}</label>
+      <img [src]="item.image" style="width: 30px; border: 1px solid #efefef; margin-right: 20px;" />
+      <label>Capital — {{ item.capital }}</label>
     </ng-template>
   </c-item>
 </angular2-multiselect>
 ```
 
-### Template - Custom HTML for selected item badge
+### Custom badge template
 
 ```html
 <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
   <c-badge>
     <ng-template let-item="item">
-      <label style="margin: 0px;">{{item.itemName}}</label>
+      <label style="margin: 0;">{{ item.itemName }}</label>
       <img [src]="item.image" style="width: 16px; margin-right: 5px;" />
     </ng-template>
   </c-badge>
@@ -184,54 +195,44 @@ You can create your own theme. See the example SCSS file at [Default theme](http
 
 ---
 
-### Template Driven Forms support
+## Template-Driven Forms
 
 ```html
-<form (ngSubmit)="onSubmit()" #loginForm="ngForm" style="border: 1px solid #ccc; padding: 10px;">
-    <div class="form-group">
-        <label for="name">Skills</label>
-        <angular2-multiselect [data]="itemList" [(ngModel)]="formModel.skills"
-                              [settings]="settings"
-                              (onSelect)="onItemSelect($event)"
-                              (onDeSelect)="OnItemDeSelect($event)"
-                              (onSelectAll)="onSelectAll($event)"
-                              (onDeSelectAll)="onDeSelectAll($event)"
-                              name="skills">
-        </angular2-multiselect>
-    </div>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <angular2-multiselect
+      [data]="itemList"
+      [(ngModel)]="formModel.skills"
+      [settings]="settings"
+      name="skills"
+      required>
+  </angular2-multiselect>
 </form>
 ```
 
-```js
+```ts
 formModel = {
     name: '',
-    email: 'example@email.com',
-    skills: [{ "id": 1, "itemName": "Angular" }]
+    email: 'user@example.com',
+    skills: [{ id: 1, itemName: 'Angular' }]
 };
 ```
 
 ---
 
-### Reactive Forms support
+## Reactive Forms
 
 ```html
-<form [formGroup]="userForm" novalidate style="border: 1px solid #ccc; padding: 10px;">
-    <div class="form-group">
-        <label for="name">Skills</label>
-        <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems"
-                              [settings]="settings"
-                              (onSelect)="onItemSelect($event)"
-                              (onDeSelect)="OnItemDeSelect($event)"
-                              (onSelectAll)="onSelectAll($event)"
-                              (onDeSelectAll)="onDeSelectAll($event)"
-                              formControlName="skills">
-        </angular2-multiselect>
-    </div>
+<form [formGroup]="userForm" novalidate>
+  <angular2-multiselect
+      [data]="itemList"
+      [(ngModel)]="selectedItems"
+      [settings]="settings"
+      formControlName="skills">
+  </angular2-multiselect>
 </form>
 ```
 
-```js
-userForm: FormGroup;
+```ts
 this.userForm = this.fb.group({
     name: '',
     email: ['', Validators.required],
@@ -241,123 +242,136 @@ this.userForm = this.fb.group({
 
 ---
 
-### Settings
+## Settings
 
-| Setting | Type | Description | Default Value |
-|:--- |:--- |:--- |:--- |
-| singleSelection | Boolean | Set the dropdown for single item selection only. | false |
-| text | String | Text shown in the dropdown when no items are selected. | 'Select' |
-| enableCheckAll | Boolean | Enable the option to select all items in the list. | false |
-| selectAllText | String | Label for the select all option. | 'Select All' |
-| unSelectAllText | String | Label for the unselect all option. | 'UnSelect All' |
-| enableSearchFilter | Boolean | Enable filter option for the list. | false |
-| enableFilterSelectAll | Boolean | A 'select all' checkbox to select all filtered results. | true |
-| filterSelectAllText | String | Label for select all filtered results option. | 'Select all filtered results' |
-| filterUnSelectAllText | String | Label for unselect all filtered results option. | 'UnSelect all filtered results' |
-| maxHeight | Number | Maximum height of the dropdown list in px. | 300 |
-| badgeShowLimit | Number | Limit the number of badges shown in the input field. | All |
-| classes | String | Custom CSS classes added to the dropdown selector tag. | '' |
-| limitSelection | Number | Limit the number of selectable items. Unselected items are disabled after limit is reached. | none |
-| disabled | Boolean | Disable the dropdown. | false |
-| searchPlaceholderText | String | Custom text for the search input placeholder. | 'Search' |
-| groupBy | String | Field name to group the list by. | none |
-| selectGroup | Boolean | Select an entire group at once. Requires `groupBy`. | false |
-| searchAutofocus | Boolean | Autofocus the search input field. | true |
-| labelKey | String | Property name to render as label in the dropdown. | 'itemName' |
-| primaryKey | String | Property used to identify objects. | 'id' |
-| position | String | Position of the dropdown list: `'top'` or `'bottom'`. | 'bottom' |
-| noDataLabel | String | Label text when no data is available. | 'No Data Available' |
-| searchBy | Array | Search the list by specific properties. Default searches all properties. | [] |
-| lazyLoading | Boolean | Enable lazy loading for large datasets. | false |
-| showCheckbox | Boolean | Show or hide checkboxes in the list. | true |
-| addNewItemOnFilter | Boolean | Allow adding the search text as a new item when not found. | false |
-| addNewButtonText | String | Button text when `addNewItemOnFilter` is enabled. | 'Add' |
-| escapeToClose | Boolean | Press Escape key to close the dropdown. | true |
-| autoPosition | Boolean | Auto-detect whether to open on top or bottom. | true |
-| tagToBody | Boolean | Append the dropdown to the body element. | true |
+| Setting | Type | Description | Default |
+|:---|:---|:---|:---|
+| `singleSelection` | Boolean | Enable single item selection only. | `false` |
+| `text` | String | Placeholder text when no items are selected. | `'Select'` |
+| `enableCheckAll` | Boolean | Show select-all option. | `false` |
+| `selectAllText` | String | Label for the select-all option. | `'Select All'` |
+| `unSelectAllText` | String | Label for the unselect-all option. | `'UnSelect All'` |
+| `enableSearchFilter` | Boolean | Enable search/filter input. | `false` |
+| `enableFilterSelectAll` | Boolean | Show select-all checkbox for filtered results. | `true` |
+| `filterSelectAllText` | String | Label for filter select-all. | `'Select all filtered results'` |
+| `filterUnSelectAllText` | String | Label for filter unselect-all. | `'UnSelect all filtered results'` |
+| `maxHeight` | Number | Max height of the dropdown list (px). | `300` |
+| `badgeShowLimit` | Number | Max badges shown in the input. | All |
+| `classes` | String | Additional CSS classes on the host element. | `''` |
+| `limitSelection` | Number | Max number of selectable items. | none |
+| `disabled` | Boolean | Disable the dropdown. | `false` |
+| `searchPlaceholderText` | String | Search input placeholder. | `'Search'` |
+| `groupBy` | String | Field name to group items by. | none |
+| `selectGroup` | Boolean | Allow selecting an entire group. Requires `groupBy`. | `false` |
+| `searchAutofocus` | Boolean | Autofocus search input on open. | `true` |
+| `labelKey` | String | Property name used as item label. | `'itemName'` |
+| `primaryKey` | String | Property used to identify items. | `'id'` |
+| `position` | String | Dropdown position: `'top'` or `'bottom'`. | `'bottom'` |
+| `noDataLabel` | String | Text when list is empty. | `'No Data Available'` |
+| `searchBy` | Array | Properties to search by. Defaults to all. | `[]` |
+| `lazyLoading` | Boolean | Enable virtual scroll for large datasets. | `false` |
+| `showCheckbox` | Boolean | Show checkboxes in the list. | `true` |
+| `addNewItemOnFilter` | Boolean | Allow adding the search term as a new item. | `false` |
+| `addNewButtonText` | String | Button label when `addNewItemOnFilter` is enabled. | `'Add'` |
+| `escapeToClose` | Boolean | Close dropdown on Escape key. | `true` |
+| `autoPosition` | Boolean | Auto-detect open direction (top/bottom). | `true` |
+| `tagToBody` | Boolean | Append dropdown to `<body>`. | `true` |
 
 ---
 
-### Events
+## Events
 
 | Event | Description |
-|:--- |:--- |
+|:---|:---|
 | `(onSelect)` | Fired when an item is selected. Returns the selected item. |
-| `(onDeSelect)` | Fired when an item is unselected. Returns the unselected item. |
+| `(onDeSelect)` | Fired when an item is deselected. Returns the deselected item. |
 | `(onSelectAll)` | Fired when all items are selected. Returns the full list. |
-| `(onDeSelectAll)` | Fired when all items are unselected. Returns an empty array. |
-| `(onGroupSelect)` | Fired when a group is selected. Returns the group's items as an array. |
-| `(onGroupDeSelect)` | Fired when a group is unselected. Returns the group's items as an array. |
-| `(onOpen)` | Fired after the dropdown opens. |
+| `(onDeSelectAll)` | Fired when all items are deselected. Returns `[]`. |
+| `(onGroupSelect)` | Fired when a group is selected. Returns the group items. |
+| `(onGroupDeSelect)` | Fired when a group is deselected. Returns the group items. |
+| `(onOpen)` | Fired when the dropdown opens. |
 | `(onClose)` | Fired when the dropdown closes. |
-| `(onScrollToEnd)` | Fired when the dropdown list is scrolled to the end. Useful for virtual scrolling / remote data pagination. |
-| `(onAddFilterNewItem)` | Fired when the `Add` button is clicked (requires `addNewItemOnFilter`). |
-| `(onFilterSelectAll)` | Fired when all filtered items are selected via the filter select-all checkbox. |
-| `(onFilterDeSelectAll)` | Fired when all filtered items are deselected via the filter deselect-all checkbox. |
+| `(onScrollToEnd)` | Fired when the list is scrolled to the end. Use for remote data pagination. |
+| `(onAddFilterNewItem)` | Fired when the Add button is clicked (`addNewItemOnFilter`). |
+| `(onFilterSelectAll)` | Fired when all filtered items are selected. |
+| `(onFilterDeSelectAll)` | Fired when all filtered items are deselected. |
 
 ---
 
-## Angular 19 Upgrade Notes
+## Lazy Loading
 
-This fork has been updated to fully support **Angular 19**. The following changes were made:
+For large datasets, enable `lazyLoading` and listen to `(onScrollToEnd)` to fetch more data:
 
-### Package versions updated
-- All `@angular/*` packages bumped to `^19.0.0`
-- `@angular-devkit/build-angular`, `@angular/cli`, `@angular/compiler-cli` bumped to `^19.0.0`
-- `ng-packagr` bumped to `^19.0.0`
-- `typescript` updated to `~5.6.0` (Angular 19 requires TypeScript 5.5 or 5.6)
-- `zone.js` updated to `~0.15.0`
-- `rxjs` updated to `~7.8.0`
-- `@types/node` updated to `^20.0.0`
-- `jasmine-core` and `@types/jasmine` updated to `~5.1.0`
+```ts
+dropdownSettings = {
+    lazyLoading: true,
+    text: 'Select Items'
+};
+
+fetchMore(event: any) {
+    // load next page and append to this.dropdownList
+}
+```
+
+```html
+<angular2-multiselect
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    [settings]="dropdownSettings"
+    (onScrollToEnd)="fetchMore($event)">
+</angular2-multiselect>
+```
+
+---
+
+## Angular 20 Upgrade Notes
+
+Version 12.0.0 adds full **Angular 20** support.
 
 ### Breaking changes addressed
-- **`BrowserModule.withServerTransition()`** — removed in Angular 19. Replaced with plain `BrowserModule`.
-- **`enableIvy: false`** — removed from `tsconfig.lib.prod.json`. Ivy is the only compiler engine in Angular 19.
-- **`moduleResolution: "node"`** — updated to `"bundler"` in `tsconfig.json` for proper ESM resolution.
-- **Deprecated builders removed** from `angular.json`:
-  - `@angular-devkit/build-angular:tslint` (tslint is no longer supported)
-  - `@angular-devkit/build-angular:protractor` (Protractor is no longer supported)
-- **Removed deprecated dev dependencies**: `codelyzer`, `tslint`, `protractor`, `ts-node`
 
-### Third-party libraries updated
-| Package | Previous | Updated |
-|:--- |:--- |:--- |
-| `@ng-bootstrap/ng-bootstrap` | ^11.0.1 | ^17.0.0 |
-| `ngx-highlightjs` | ^9.0.0 | ^12.0.0 |
+- **`standalone: false`** — Required explicitly on all NgModule-declared components in Angular 20 (standalone is the new default).
+- **Node.js ≥ 20.19** — Angular 20 drops Node 18. Use Node 20 or 22.
+- **TypeScript `~5.8.0`** — Updated from 5.6.
+- **`document.scrollingElement` cast** — Fixed TypeScript strict type error in virtual scroll.
+
+### Package versions updated
+
+| Package | Previous | Current |
+|:---|:---|:---|
+| `@angular/*` | `~19.2.x` | `~20.3.18` |
+| `@angular/cli` | `~19.2.x` | `~20.3.22` |
+| `ng-packagr` | `~19.2.x` | `~20.3.2` |
+| `typescript` | `~5.6.0` | `~5.8.0` |
+| `zone.js` | `~0.15.0` | `~0.15.0` |
 
 ---
 
 ## Run Locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/alexandroit/angular2-multiselect-dropdown.git
+# Requires Node.js >= 20.19
+git clone https://github.com/revivejs/angular2-multiselect-dropdown.git
 cd angular2-multiselect-dropdown
 
-# Install dependencies
 npm install
-
-# Start the dev server
-ng serve
+npm start
+# Navigate to http://localhost:4200/
 ```
-
-Navigate to `http://localhost:4200/`. The app will automatically reload on file changes.
 
 ---
 
 ## License
 
-MIT License.
+MIT © [ReviveJS](https://github.com/revivejs)
 
 ---
 
 ## Credits
 
-This project is a fork maintained with Angular 19 support.
+**Original library** created by [Pradeep Terli](https://github.com/PradeepTerli) / [CuppaLabs](https://github.com/CuppaLabs).
 
-**Forked repository:** [https://github.com/alexandroit/angular2-multiselect-dropdown](https://github.com/alexandroit/angular2-multiselect-dropdown)
+**Maintained by** [ReviveJS](https://github.com/revivejs) — updating Angular libraries that are no longer maintained.
 
-**Original library** created and maintained by [Pradeep Terli](https://github.com/PradeepTerli) / [CuppaLabs](https://github.com/CuppaLabs):
-- Original repository: [https://github.com/CuppaLabs/angular2-multiselect-dropdown](https://github.com/CuppaLabs/angular2-multiselect-dropdown)
-- npm package: [https://www.npmjs.com/package/angular2-multiselect-dropdown](https://www.npmjs.com/package/angular2-multiselect-dropdown)
+- npm: [https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- GitHub: [https://github.com/revivejs/angular2-multiselect-dropdown](https://github.com/revivejs/angular2-multiselect-dropdown)
