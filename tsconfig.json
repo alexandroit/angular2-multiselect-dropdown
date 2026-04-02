@@ -21,8 +21,8 @@
     ],
     "paths": {
       "angular2-multiselect-dropdown-lib": [
-        "dist/angular2-multiselect-dropdown-lib/angular2-multiselect-dropdown-lib",
-        "dist/angular2-multiselect-dropdown-lib"
+        "dist/@revivejs/angular2-multiselect-dropdown-lib/angular2-multiselect-dropdown-lib",
+        "dist/@revivejs/angular2-multiselect-dropdown-lib"
       ]
     },
     "useDefineForClassFields": false

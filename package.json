@@ -1,15 +1,16 @@
 {
-  "name": "angular2-multiselect-dropdown",
-  "version": "11.0.0",
+  "name": "@revivejs/angular2-multiselect-dropdown",
+  "version": "11.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-sass": "node-sass --include-path scss projects/angular2-multiselect-dropdown-lib/themes/default.theme.scss projects/angular2-multiselect-dropdown-lib/themes/default.theme.css",
-    "build-package": "npm run build-sass && ng-packagr -p projects/angular2-multiselect-dropdown-lib/ng-package.json",
-    "github-pages": "ng build --base-href /angular2-multiselect-dropdown/"
+    "build-sass": "npx sass --load-path=scss projects/@revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.scss projects/@revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.css",
+    "build-package": "npm run build-sass && npx ng-packagr -p projects/@revivejs/angular2-multiselect-dropdown-lib/ng-package.json",
+    "github-pages": "ng build --base-href /@revivejs/angular2-multiselect-dropdown/",
+    "publish-npm": "npm run build-package && cd dist/@revivejs/angular2-multiselect-dropdown && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -23,15 +24,10 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@angular/service-worker": "^19.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^17.0.0",
-    "@tweenjs/tween.js": "^18.6.4",
-    "angular2-multiselect-dropdown": "^11.0.0",
-    "bootstrap": "^5.2.3",
-    "highlight.js": "^10.7.2",
-    "i": "^0.3.6",
-    "ng2-adsense": "^16.0.0",
-    "ngx-highlightjs": "^12.0.0",
-    "npm": "^7.9.0",
+    "@ng-bootstrap/ng-bootstrap": "^18.0.0",
+    "@tweenjs/tween.js": "^25.0.0",
+    "bootstrap": "^5.3.8",
+    "highlight.js": "^11.11.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.15.0"
@@ -42,15 +38,16 @@
     "@angular/compiler-cli": "^19.0.0",
     "@types/highlight.js": "^10.1.0",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^20.0.0",
+    "@types/node": "^22.0.0",
     "jasmine-core": "~5.1.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.1",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
-    "karma-jasmine-html-reporter": "^2.0.0",
+    "karma-jasmine-html-reporter": "^2.1.0",
     "ng-packagr": "^19.0.0",
+    "sass": "^1.83.0",
     "typescript": "~5.6.0"
   }
 }

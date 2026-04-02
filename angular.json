@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular2-multiselect-dropdown": {
+    "@revivejs/angular2-multiselect-dropdown": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -37,7 +37,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "projects/angular2-multiselect-dropdown-lib/themes/default.theme.scss"
+              "projects/@revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js"
@@ -81,18 +81,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "angular2-multiselect-dropdown:build"
+            "buildTarget": "@revivejs/angular2-multiselect-dropdown:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "angular2-multiselect-dropdown:build:production"
+              "buildTarget": "@revivejs/angular2-multiselect-dropdown:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular2-multiselect-dropdown:build"
+            "buildTarget": "@revivejs/angular2-multiselect-dropdown:build"
           }
         },
         "test": {
@@ -115,30 +115,30 @@
         },
       }
     },
-    "angular2-multiselect-dropdown-lib": {
+    "@revivejs/angular2-multiselect-dropdown-lib": {
       "projectType": "library",
-      "root": "projects/angular2-multiselect-dropdown-lib",
-      "sourceRoot": "projects/angular2-multiselect-dropdown-lib/src",
+      "root": "projects/@revivejs/angular2-multiselect-dropdown-lib",
+      "sourceRoot": "projects/@revivejs/angular2-multiselect-dropdown-lib/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/angular2-multiselect-dropdown-lib/tsconfig.lib.json",
-            "project": "projects/angular2-multiselect-dropdown-lib/ng-package.json"
+            "tsConfig": "projects/@revivejs/angular2-multiselect-dropdown-lib/tsconfig.lib.json",
+            "project": "projects/@revivejs/angular2-multiselect-dropdown-lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/angular2-multiselect-dropdown-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/@revivejs/angular2-multiselect-dropdown-lib/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular2-multiselect-dropdown-lib/src/test.ts",
-            "tsConfig": "projects/angular2-multiselect-dropdown-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/angular2-multiselect-dropdown-lib/karma.conf.js"
+            "main": "projects/@revivejs/angular2-multiselect-dropdown-lib/src/test.ts",
+            "tsConfig": "projects/@revivejs/angular2-multiselect-dropdown-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/@revivejs/angular2-multiselect-dropdown-lib/karma.conf.js"
           }
         },
       }

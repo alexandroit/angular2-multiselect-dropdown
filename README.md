@@ -1,15 +1,19 @@
-# Angular Multiselect Dropdown - Angular version support 2, 4, 6, 8, 13, 14, 15, 16, 17, 18, 19
-[![npm version](https://img.shields.io/npm/v/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![downloads](https://img.shields.io/npm/dt/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![license](https://img.shields.io/github/license/cuppalabs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
+# Angular 19/18/17 Multiselect Dropdown - @revivejs/angular2-multiselect-dropdown
+[![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![license](https://img.shields.io/github/license/alexandroit/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+
+> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown) - Enhanced and maintained by [ReviveJS](https://github.com/alexandroit/angular2-multiselect-dropdown)
+
+> **Note:** This project focuses on updating libraries that are no longer maintained and may contain security vulnerabilities.
 
 Angular multiselect dropdown component for web applications. Easy to integrate and use.
 
-![](https://cuppalabs.github.io/angular2-multiselect-dropdown/assets/img/multiselect.jpeg)
+![](https://alexandroit.github.io/angular2-multiselect-dropdown/assets/img/multiselect.jpeg)
 
 > **Important:** From v3.0.0 onwards, you need to include `default.theme.css` to get the basic styling of the dropdown. Refer to the *Themes and Theming* section below.
 
-# [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular2-multiselect-dropdown)
+# [Documentation](http://alexandroit.github.io/components/multiselectDropdown) | [Demos / Examples](https://alexandroit.github.io/angular2-multiselect-dropdown)
 
 ## Table of Contents
 1. Getting Started
@@ -33,11 +37,9 @@ Angular multiselect dropdown component for web applications. Easy to integrate a
 
 ### Installation
 
-The Multiselect Dropdown package is published on the [npm](https://www.npmjs.com/package/angular2-multiselect-dropdown) Registry.
-
 Install the package:
 ```bash
-npm install angular2-multiselect-dropdown
+npm install @revivejs/angular2-multiselect-dropdown
 ```
 
 Once installed, import `AngularMultiSelectModule` from the installed package into your module.
@@ -64,7 +66,7 @@ Latest version available for each version of Angular:
 Import `AngularMultiSelectModule` into `NgModule` in `app.module.ts`. Angular's `FormsModule` is also required.
 
 ```js
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -140,12 +142,12 @@ Add the component tag in your template:
 ### Themes and Theming
 
 - From v3.0.0 onwards, you need to include `default.theme.css` to get the basic styling of the dropdown.
-- The component package has a themes folder in node_modules at `angular2-multiselect-dropdown\themes\default.theme.css`.
+- The component package has a themes folder in node_modules at `@revivejs/angular2-multiselect-dropdown\themes\default.theme.css`.
 - Include the `default.theme.css` in `angular.json` under the `styles` array:
 
 ```json
 "styles": [
-  "node_modules/angular2-multiselect-dropdown/themes/default.theme.css"
+  "node_modules/@revivejs/angular2-multiselect-dropdown/themes/default.theme.css"
 ]
 ```
 
@@ -323,7 +325,6 @@ This fork has been updated to fully support **Angular 19**. The following change
 |:--- |:--- |:--- |
 | `@ng-bootstrap/ng-bootstrap` | ^11.0.1 | ^17.0.0 |
 | `ngx-highlightjs` | ^9.0.0 | ^12.0.0 |
-| `ng2-adsense` | ^13.0.0 | ^16.0.0 |
 
 ---
 

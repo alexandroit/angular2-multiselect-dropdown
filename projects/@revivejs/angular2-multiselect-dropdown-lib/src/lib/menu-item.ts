@@ -4,10 +4,11 @@ import { CommonModule }       from '@angular/common';
 
 @Component({
   selector: 'c-item',
-  template: ``
+  template: ``,
+  standalone: false
 })
 
-export class Item { 
+export class Item {
 
     @ContentChild(TemplateRef, {static: true}) template: TemplateRef<any>
     constructor() {   
@@ -17,10 +18,11 @@ export class Item {
 
 @Component({
   selector: 'c-badge',
-  template: ``
+  template: ``,
+  standalone: false
 })
 
-export class Badge { 
+export class Badge {
 
     @ContentChild(TemplateRef, {static: true}) template: TemplateRef<any>
     constructor() {   
@@ -30,10 +32,11 @@ export class Badge {
 
 @Component({
   selector: 'c-search',
-  template: ``
+  template: ``,
+  standalone: false
 })
 
-export class Search { 
+export class Search {
 
     @ContentChild(TemplateRef, {static: true}) template: TemplateRef<any>
     constructor() {   
@@ -42,10 +45,11 @@ export class Search {
 }
 @Component({
   selector: 'c-templateRenderer',
-  template: ``
+  template: ``,
+  standalone: false
 })
 
-export class TemplateRenderer implements OnInit, OnDestroy { 
+export class TemplateRenderer implements OnInit, OnDestroy {
 
     @Input() data: any
     @Input() item: any
@@ -68,6 +72,7 @@ export class TemplateRenderer implements OnInit, OnDestroy {
 
 @Component({
   selector: 'c-icon',
+  standalone: false,
   template: `<svg *ngIf="name == 'remove'" width="100%" height="100%" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 47.971 47.971" style="enable-background:new 0 0 47.971 47.971;" xml:space="preserve">
                         <g>

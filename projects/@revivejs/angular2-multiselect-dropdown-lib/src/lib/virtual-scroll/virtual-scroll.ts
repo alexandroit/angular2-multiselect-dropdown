@@ -62,6 +62,7 @@ export function VIRTUAL_SCROLLER_DEFAULT_OPTIONS_FACTORY(): VirtualScrollerDefau
 @Component({
 	selector: 'virtual-scroller,[virtualScroller]',
 	exportAs: 'virtualScroller',
+	standalone: false,
 	template: `
     <div class="total-padding" #invisiblePadding></div>
     <div class="scrollable-content" #content>

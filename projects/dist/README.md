@@ -1,17 +1,21 @@
-# Angular 2/4/6/8 Multiselect Dropdown
-[![npm version](https://img.shields.io/npm/v/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![downloads](https://img.shields.io/npm/dt/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![license](https://img.shields.io/github/license/cuppalabs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
+# Angular 19/18/17 Multiselect Dropdown - @revivejs/angular2-multiselect-dropdown
+[![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+[![license](https://img.shields.io/github/license/alexandroit/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+
+> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown) - Enhanced and maintained by [ReviveJS](https://github.com/alexandroit/angular2-multiselect-dropdown)
+
+> **Note:** This project focuses on updating libraries that are no longer maintained and may contain security vulnerabilities.
 
 Angular 2 multiselect dropdown component for web applications. Easy to integrate and use.
 
-![](https://cuppalabs.github.io/angular2-multiselect-dropdown/assets/img/multiselect.jpeg)
+![](https://alexandroit.github.io/angular2-multiselect-dropdown/assets/img/multiselect.jpeg)
 
 # Important Notice !! 
 #####  From v3.0.0 onwards, you need to include `default.theme.css` file to get the basic styling of the dropdown. Refer to `themes and theming` section below
 
 
-# [Documentation](http://cuppalabs.github.io/components/multiselectDropdown) | [Demos / Examples](https://cuppalabs.github.io/angular2-multiselect-dropdown).
+# [Documentation](http://alexandroit.github.io/components/multiselectDropdown) | [Demos / Examples](https://alexandroit.github.io/angular2-multiselect-dropdown).
 
 ## Table of Contents
 ##### 1. Getting Started
@@ -34,9 +38,9 @@ Angular 2 multiselect dropdown component for web applications. Easy to integrate
 
 ## Getting Started
 ### Installation
-- The Mutiselect Dropdown package is published on the [npm](https://www.npmjs.com/package/angular2-multiselect-dropdown) Registry. 
+- The Mutiselect Dropdown package is published on the [npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown) Registry. 
 - Install the package :
-    `npm install angular2-multiselect-dropdown`
+    `npm install @revivejs/angular2-multiselect-dropdown`
 
 - Once installed import `AngularMultiSelectModule` from the installed package into your module as follows:
 
@@ -44,8 +48,9 @@ Angular 2 multiselect dropdown component for web applications. Easy to integrate
 
 Latest version available for each version of Angular
 
-| angular2-multiselect-dropdown | Angular     |
+| @revivejs/angular2-multiselect-dropdown | Angular     |
 | ----------------------------- | ----------- |
+| 11.0.0      | 19.X.X |
 | 10.0.0      | 18.X.X |
 | 9.0.0       | 17.X.X |
 | 8.0.0       | 16.X.X |
@@ -56,7 +61,7 @@ Latest version available for each version of Angular
 ### Usage
 Import `AngularMultiSelectModule` into `NgModule` in `app.module.ts`. Angular's `FormsModule` is also required.
 ```js
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -139,7 +144,7 @@ Add the following component tag in you template
 ### Themes and Theming
 
 - From v3.0.0 onwards, you need to include `default.theme.css` file to get the basic styling of the dropdown. 
-- The component package has a themes folder in node_modules at `angular2-multiselect-dropdown\themes\default.theme.css`
+- The component package has a themes folder in node_modules at `@revivejs/angular2-multiselect-dropdown\themes\default.theme.css`
 - Include the `default.theme.css` in `angular-cli.json` (for versions below angular 6) and `angular.json` (for version 6 or more).
 - [Refer this file](https://github.com/CuppaLabs/angular2-multiselect-dropdown/blob/master/angular.json) on how to add the css file to your angular project.
 
