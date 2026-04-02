@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
+  standalone: false,
     templateUrl: './views/remoteData.html'
 })
 export class RemoteDataExample implements OnInit {

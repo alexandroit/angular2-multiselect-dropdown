@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   templateUrl: './views/searchFilter.html'
 })
 export class SearchFilterAddItemExample implements OnInit {

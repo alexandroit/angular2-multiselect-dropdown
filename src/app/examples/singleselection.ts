@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   templateUrl: './views/singleSelection.html'
 })
 export class SingleSelectionExample implements OnInit {

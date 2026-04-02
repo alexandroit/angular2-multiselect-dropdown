@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
+  standalone: false,
     templateUrl: './views/customSearch.html'
 })
 export class CustomSearchExample implements OnInit {

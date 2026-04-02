@@ -20,6 +20,7 @@
       "dom"
     ],
     "paths": {
+      "@revivejs/angular2-multiselect-dropdown-lib": ["projects/@revivejs/angular2-multiselect-dropdown-lib/src/public_api"],
       "angular2-multiselect-dropdown-lib": [
         "dist/@revivejs/angular2-multiselect-dropdown-lib/angular2-multiselect-dropdown-lib",
         "dist/@revivejs/angular2-multiselect-dropdown-lib"

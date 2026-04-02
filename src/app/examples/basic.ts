@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { DropdownSettings } from 'projects/angular2-multiselect-dropdown-lib/src/lib/multiselect.interface';
+import { DropdownSettings } from '@revivejs/angular2-multiselect-dropdown-lib';
 @Component({
+  standalone: false,
     templateUrl: './views/view.html'
 })
 export class BasicExample implements OnInit {

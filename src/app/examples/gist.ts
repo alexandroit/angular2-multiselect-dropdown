@@ -1,6 +1,7 @@
 import {Component, Input, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'ng2-gist',
   template:`
     <iframe #iframe type="text/javascript" width="100%" frameborder="0"></iframe>

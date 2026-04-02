@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { MockService } from './examples/mock-data';
 import { AppComponent } from './app.component';
-import { AngularMultiSelectModule } from '../../projects/angular2-multiselect-dropdown-lib/src/lib/multiselect.component';
+import { AngularMultiSelectModule } from '../../projects/@revivejs/angular2-multiselect-dropdown-lib/src/lib/multiselect.component';
 import { AppRouterModule } from './app.router';
 import { BasicExample } from './examples/basic';
 import { SingleSelectionExample } from './examples/singleselection';
@@ -72,11 +73,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         UsingWithinDialog
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
+        CommonModule,
+        AngularMultiSelectModule,
         ReactiveFormsModule,
         FormsModule,
-        AppRouterModule,
-        AngularMultiSelectModule,
         NgbModule,
+        AppRouterModule,
         HighlightModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         BrowserAnimationsModule], providers: [MockService, CheckForUpdateService, provideHttpClient(withInterceptorsFromDi())] })

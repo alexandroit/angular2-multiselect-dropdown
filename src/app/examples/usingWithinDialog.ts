@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
+  standalone: false,
     templateUrl: './views/usingWithinDialog.html'
 })
 export class UsingWithinDialog implements OnInit {
@@ -68,6 +69,7 @@ export class UsingWithinDialog implements OnInit {
 }
 
 @Component({
+  standalone: false,
     selector: 'dialog-content-example-dialog',
     templateUrl: './views/dialog-content-example-dialog.html',
   })

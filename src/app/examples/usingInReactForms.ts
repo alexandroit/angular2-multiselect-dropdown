@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
+  standalone: false,
     templateUrl: './views/using-in-react-form.html'
 })
 export class UsingWithReactiveFormExample implements OnInit {

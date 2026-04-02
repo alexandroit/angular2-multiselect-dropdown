@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
     templateUrl: './views/usingInList.html'
 })
 export class UsingInListExample implements OnInit {

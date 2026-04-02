@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core'
 
 
 @Component({
+  standalone: false,
     selector: 'cuppa-source',
     templateUrl: './sourcetab.component.html',
     styleUrls: ['./sourcetab.component.css']

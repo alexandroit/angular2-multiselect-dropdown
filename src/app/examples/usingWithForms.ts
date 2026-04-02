@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
     templateUrl: './views/using-in-form.html'
 })
 export class UsingWithFormExample implements OnInit {
