@@ -9,16 +9,16 @@ export class ClickOutsideDirective {
     }
 
     @Output()
-    public clickOutside = new EventEmitter<MouseEvent>();
+    public clickOutside = new EventEmitter<Event>();
 
     @HostListener('document:pointerdown', ['$event', '$event.target'])
     @HostListener('document:touchstart', ['$event', '$event.target'])
-    public onClick(event: MouseEvent, targetElement: HTMLElement): void {
+    public onClick(event: Event, targetElement: EventTarget | null): void {
         if (!targetElement) {
             return;
         }
 
-        const clickedInside = this._elementRef.nativeElement.contains(targetElement);
+        const clickedInside = this._elementRef.nativeElement.contains(targetElement as Node);
         if (!clickedInside) {
             this.clickOutside.emit(event);
         }
@@ -34,10 +34,10 @@ export class ScrollDirective {
     }
 
     @Output()
-    public scroll = new EventEmitter<MouseEvent>();
+    public scroll = new EventEmitter<Event>();
 
     @HostListener('scroll', ['$event'])
-    public onClick(event: MouseEvent, targetElement: HTMLElement): void {
+    public onClick(event: Event): void {
         this.scroll.emit(event);
     }
 }

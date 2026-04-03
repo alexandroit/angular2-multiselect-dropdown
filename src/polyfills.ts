@@ -57,11 +57,5 @@ import '@angular/localize/init';
  */
 
 /***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js';  // Included with Angular CLI.
-
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
+ * Angular 21 runs zoneless by default, so no ZoneJS runtime import is required here.
  */

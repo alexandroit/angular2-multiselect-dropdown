@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.0.3] - 2026-04-03
+
+### Added
+- Full support for **Angular 21**
+- New English README and npm presentation for the Angular 21 release line
+- New badges for npm version, total downloads, monthly downloads, license, Angular 21, TypeScript, and GitHub stars
+
+### Changed
+- Updated Angular packages to `21.2.7`
+- Updated `@angular/cli` and `@angular-devkit/build-angular` to `21.2.6`
+- Updated `ng-packagr` to `21.2.2`
+- Updated `@angular/cdk` to `21.2.5`
+- Updated `@ng-bootstrap/ng-bootstrap` to `20.0.0`
+- Updated TypeScript to `~5.9.3`
+- Updated `zone.js` to `~0.16.1` for test compatibility
+- Corrected the GitHub Pages base href to `/angular2-multiselect-dropdown/`
+- Tightened library peer dependencies to Angular 21
+
+### Fixed
+- Updated pointer, touch, scroll, and Escape event typings for Angular 21 builds
+- Removed the ZoneJS runtime import from the demo app polyfills because Angular 21 is zoneless by default
+- Updated test imports to use the current `zone.js` entry points
+- Replaced outdated or broken README links with working GitHub and demo URLs
+
+### How to Upgrade
+```bash
+npm install @revivejs/angular2-multiselect-dropdown@^13.0.3
+```
+
+### See Also
+- [Angular Version Compatibility](https://angular.dev/reference/versions)
+- [Angular Zoneless Guide](https://angular.dev/guide/zoneless)
+- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+
 ## [12.0.1] - 2026-04-03
 
 ### Added

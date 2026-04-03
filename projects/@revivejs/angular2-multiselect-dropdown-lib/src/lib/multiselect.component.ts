@@ -92,7 +92,7 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
     @ViewChild('cuppaDropdown', { static: false }) cuppaDropdown: ElementRef;
 
     @HostListener('document:keyup.escape', ['$event'])
-    onEscapeDown(event: KeyboardEvent) {
+    onEscapeDown(event: Event) {
         if (this.settings.escapeToClose) {
             this.closeDropdown();
         }
