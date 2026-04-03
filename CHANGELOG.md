@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [12.0.1] - 2026-04-03
+
+### Added
+- New English README content tailored for the Angular 20 release line
+- Stronger npm keywords and package metadata for easier discovery
+- Clean publishing links for documentation, demo, repository, and issue tracking
+
+### Changed
+- Refined the Angular 20 package presentation for npm and GitHub
+- Updated package links to the active repository at `alexandroit/angular2-multiselect-dropdown`
+- Standardized the release messaging around the `12.0.1` Angular 20 line
+
+### Fixed
+- Removed broken or outdated README links before publishing
+
+### See Also
+- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+
 ## [12.0.0] - 2026-04-03
 
 ### Added

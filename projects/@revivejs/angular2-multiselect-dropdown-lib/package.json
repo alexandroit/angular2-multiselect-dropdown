@@ -1,48 +1,49 @@
 {
   "$schema": "../../../node_modules/ng-packagr/package.schema.json",
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "license": "MIT",
   "author": "Pradeep Terli (Original), Alexander Roth (Maintainer)",
-  "description": "Angular 20 multiselect dropdown component with search, grouping, templating, lazy loading, reactive forms and template-driven forms support. Compatible with Angular 14–20.",
+  "description": "Angular 20 multiselect dropdown component with search, grouping, custom templates, lazy loading, checkbox selection, and support for both reactive and template-driven forms.",
   "keywords": [
     "angular",
     "angular 20",
-    "angular 19",
-    "angular 18",
-    "angular 17",
-    "angular 16",
-    "angular 15",
-    "angular 14",
+    "angular ui",
+    "angular forms",
+    "angular reactive forms",
+    "angular template driven forms",
     "multiselect",
     "multiselect dropdown",
     "angular multiselect",
     "angular multiselect dropdown",
+    "dropdown component",
     "angular dropdown",
     "angular select",
+    "checkbox dropdown",
     "multi select",
     "multi-select",
     "dropdown",
     "select",
     "angular component",
-    "angular form",
+    "form control",
     "reactive forms",
     "template driven forms",
     "ngModel",
     "search filter",
+    "searchable dropdown",
     "group by",
+    "grouped dropdown",
     "lazy loading",
     "virtual scroll",
     "checkbox",
     "badge",
-    "angular ui",
     "angular library",
     "ng",
     "ngx",
     "ngx-multiselect",
     "angular2-multiselect"
   ],
-  "homepage": "https://github.com/revivejs/angular2-multiselect-dropdown",
+  "homepage": "https://github.com/alexandroit/angular2-multiselect-dropdown",
   "peerDependencies": {
     "@angular/core": ">=14.0.0",
     "@angular/forms": ">=14.0.0",
@@ -53,10 +54,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/revivejs/angular2-multiselect-dropdown"
+    "url": "https://github.com/alexandroit/angular2-multiselect-dropdown.git"
   },
   "bugs": {
-    "url": "https://github.com/revivejs/angular2-multiselect-dropdown/issues"
+    "url": "https://github.com/alexandroit/angular2-multiselect-dropdown/issues"
   },
   "engines": {
     "node": ">=18.0.0"
