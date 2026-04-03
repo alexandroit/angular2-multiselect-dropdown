@@ -40,6 +40,7 @@ import { CheckForUpdateService } from './check-for-update.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogContentExampleDialog, UsingWithinDialog } from './examples/usingWithinDialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -78,6 +79,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         ReactiveFormsModule,
         FormsModule,
         NgbModule,
+        AdsenseModule.forRoot({
+            adClient: 'ca-pub-6353624842390947',
+            pageLevelAds: true
+        }),
         AppRouterModule,
         HighlightModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

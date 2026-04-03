@@ -64,6 +64,15 @@
     </nav>
     <main class="col center-content pt-4">
       <h4 class="mb-4">{{ currentComponent.label }}</h4>
+      <section class="adsense-panel mb-4">
+        <div class="adsense-label">Advertisement</div>
+        <ng-adsense
+          [adClient]="'ca-pub-6353624842390947'"
+          [pageLevelAds]="true"
+          [display]="'block'"
+          [className]="'app-adsense'">
+        </ng-adsense>
+      </section>
       <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
         <li [ngbNavItem]="1">
           <a ngbNavLink>Demo</a>
