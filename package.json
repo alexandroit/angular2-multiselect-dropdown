@@ -1,6 +1,6 @@
 {
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "13.0.3",
+  "version": "13.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

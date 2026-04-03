@@ -10,11 +10,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/stargazers)
 
-**[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown)** | **[npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)** | **[Changelog](https://github.com/alexandroit/angular2-multiselect-dropdown/blob/master/CHANGELOG.md)**
+**[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown)** | **[Test Live on StackBlitz](https://stackblitz.com/~/github.com/alexandroit/angular2-multiselect-dropdown)** | **[npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)** | **[Changelog](https://github.com/alexandroit/angular2-multiselect-dropdown/blob/master/CHANGELOG.md)**
 
 ---
 
-> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown). Current maintenance, Angular upgrades, and package publishing by **Alexandro Paixao Marques**.
+> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown). Current maintenance, Angular upgrades, and package publishing by [Alexandro Paixao Marques](https://github.com/alexandroit/angular2-multiselect-dropdown).
 
 ---
 
@@ -367,4 +367,4 @@ MIT
 ## Credits
 
 **Original library** created by [Pradeep Terli](https://github.com/PradeepTerli) / [CuppaLabs](https://github.com/CuppaLabs).  
-**Maintained by** **Alexandro Paixao Marques** with ongoing upgrades for modern Angular releases.
+**Maintained by** [Alexandro Paixao Marques](https://github.com/alexandroit) with ongoing upgrades for modern Angular releases.

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.0.4] - 2026-04-03
+
+### Added
+- Added a direct "Test Live on StackBlitz" link to the project READMEs
+
+### Changed
+- Updated maintainer credits in the documentation to point to Alexandro Paixao Marques
+- Removed deprecated Sass `@import` usage from the demo styles
+- Moved Bootstrap CSS loading to the Angular styles pipeline
+
+### Fixed
+- Removed Angular Sass deprecation warnings from the demo build
+
+### See Also
+- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+
 ## [13.0.3] - 2026-04-03
 
 ### Added

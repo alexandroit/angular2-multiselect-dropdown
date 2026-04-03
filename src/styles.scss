@@ -6,15 +6,13 @@ $nav-tabs-link-active-color: #0d6efd !default;
 $nav-tabs-link-active-border-color:  #0d6efd !default;
 $nav-tabs-border-width: .0625rem;
 
-@import "node_modules/bootstrap/scss/bootstrap";
-
 body {
     min-height: 75rem;
     padding-top: 60px;
   }
   
 .cuppa-navbar {
-    background: $white;
+    background: #fff;
     box-shadow: 0 0 0px rgb(0 0 0 / 14%), 0 1px 5px rgb(0 0 0 / 28%);
     padding: 0 !important;
 }
@@ -28,31 +26,31 @@ body {
 }
 .cuppa-brand span:nth-child(2){
     font-size: 1.4rem;
-    color: $gray-900
+    color: #212529
 }
 .cuppa-brand span:nth-child(3){
-    color: $gray-800
+    color: #343a40
 }
 .sidebar .nav-link {
-    color: $gray-800;
+    color: #343a40;
     font-weight: 400;
 }
 .sidebar .nav-link.active {
-    background-color: $gray-100;
+    background-color: #f8f9fa;
 }
 .navbar .nav-item {
     padding: 0px 10px;
 }
 .navbar .nav-item.active {
-    border-bottom: 2px solid $primary;
+    border-bottom: 2px solid #0d6efd;
 }
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
     border-color: transparent;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: $primary;
+    color: #0d6efd;
     background-color: transparent;
-    border-color: transparent transparent $primary;
+    border-color: transparent transparent #0d6efd;
     border-bottom-width: .2rem;
 }
 .example-button-row .btn {
