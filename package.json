@@ -4,12 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "build-sass": "npx sass --load-path=scss projects/@revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.scss projects/@revivejs/angular2-multiselect-dropdown-lib/themes/default.theme.css",
     "build-package": "npm run build-sass && npx ng-packagr -p projects/@revivejs/angular2-multiselect-dropdown-lib/ng-package.json",
-    "github-pages": "ng build --base-href /angular2-multiselect-dropdown/",
+    "github-pages": "npm run build",
     "publish-npm": "npm run build-package && cd dist/@revivejs/angular2-multiselect-dropdown && npm publish --access public"
   },
   "private": true,

@@ -52,6 +52,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/angular2-multiselect-dropdown/",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
