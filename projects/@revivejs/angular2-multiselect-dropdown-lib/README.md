@@ -12,7 +12,7 @@
 
 **[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular2-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)**
 
-**Latest version:** `13.0.5`
+**Latest version:** `13.0.6`
 
 ---
 
@@ -57,7 +57,7 @@ The original `angular2-multiselect-dropdown` package became difficult to use on 
 
 | Package version | Angular version | TypeScript version | Demo link |
 | :---: | :---: | :---: | :--- |
-| **13.0.5** | **21.2.x** | **5.9.x** | [Angular 21 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
+| **13.0.6** | **21.2.x** | **5.9.x** | [Angular 21 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
 | **12.0.1** | **20.3.x** | **5.8.x** | [Angular 20 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-20/) |
 | **11.0.3** | **19.2.x** | **5.6.x** | [Angular 19 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-19/) |
 
