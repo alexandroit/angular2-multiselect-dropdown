@@ -266,7 +266,7 @@ this.userForm = this.fb.group({
 | `addNewButtonText` | `string` | Button label when adding a new item. | `'Add'` |
 | `escapeToClose` | `boolean` | Close the dropdown with Escape. | `true` |
 | `autoPosition` | `boolean` | Automatically choose top or bottom position. | `true` |
-| `tagToBody` | `boolean` | Append the dropdown panel to `<body>`. | `true` |
+| `tagToBody` | `boolean` | Append the dropdown panel to `<body>`. Prefer `false` inside cards, sticky layouts, and versioned docs shells so the panel stays visually anchored to the field. | `false` |
 
 ## Events
 
@@ -287,9 +287,9 @@ this.userForm = this.fb.group({
 
 ## Angular 20 Notes
 
-Version `12.0.1` is the Angular 20 release line for this package.
+Version `12.0.2` is the Angular 20 release line for this package.
 
-- Updated to the latest Angular 20 dependencies
+- Backported the anchored dropdown positioning fix for card and sticky layouts
 - Updated the build toolchain for Angular CLI 20 and `ng-packagr` 20
 - Refreshed npm metadata, keywords, and documentation in English
 - Preserved the familiar API from the earlier release lines

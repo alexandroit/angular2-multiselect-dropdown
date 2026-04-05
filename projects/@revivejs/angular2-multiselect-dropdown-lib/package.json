@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/ng-packagr/package.schema.json",
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "12.0.1",
+  "version": "12.0.2",
   "license": "MIT",
   "author": "Pradeep Terli (Original), Alexander Roth (Maintainer)",
   "description": "Angular 20 multiselect dropdown component with search, grouping, custom templates, lazy loading, checkbox selection, and support for both reactive and template-driven forms.",
