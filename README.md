@@ -52,7 +52,7 @@ Latest version available for each version of Angular:
 
 | angular2-multiselect-dropdown | Angular     |
 | ----------------------------- | ----------- |
-| 11.0.0      | 19.X.X |
+| 11.0.4      | 19.X.X |
 | 10.0.0      | 18.X.X |
 | 9.0.0       | 17.X.X |
 | 8.0.0       | 16.X.X |
@@ -274,7 +274,7 @@ this.userForm = this.fb.group({
 | addNewButtonText | String | Button text when `addNewItemOnFilter` is enabled. | 'Add' |
 | escapeToClose | Boolean | Press Escape key to close the dropdown. | true |
 | autoPosition | Boolean | Auto-detect whether to open on top or bottom. | true |
-| tagToBody | Boolean | Append the dropdown to the body element. | true |
+| tagToBody | Boolean | Append the dropdown to the body element. Use `false` in card or sticky layouts to keep the panel anchored to the field. | false |
 
 ---
 

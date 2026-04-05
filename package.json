@@ -1,6 +1,6 @@
 {
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "11.0.3",
+  "version": "11.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,7 +28,7 @@
     "@popperjs/core": "^2.11.8",
     "@angular/cdk": "~19.2.0",
     "ngx-highlightjs": "^14.0.0",
-    "@revivejs/angular2-multiselect-dropdown": "^11.0.2",
+    "@revivejs/angular2-multiselect-dropdown": "^11.0.4",
     "@tweenjs/tween.js": "^25.0.0",
     "bootstrap": "^5.3.8",
     "highlight.js": "^11.11.1",

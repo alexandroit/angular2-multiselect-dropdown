@@ -175,7 +175,7 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
         addNewButtonText: "Add",
         escapeToClose: true,
         clearAll: true,
-        tagToBody: true
+        tagToBody: false
     }
     randomSize: boolean = true;
     public parseError: boolean;
@@ -862,7 +862,7 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
         const elem = this.cuppaDropdown.nativeElement;
         const dropdownWidth = elem.clientWidth;
         this.dropDownWidth = dropdownWidth;
-        this.dropDownLeft = this.settings.tagToBody ? elem.getBoundingClientRect().x : 'unset';
+        this.dropDownLeft = this.settings.tagToBody ? elem.getBoundingClientRect().x : 0;
         if (this.settings.position == 'top' && !this.settings.autoPosition) {
             this.openTowardsTop(true);
         }
@@ -899,9 +899,10 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
             this.dropdownListYOffset = 15 - this.selectedListElem.nativeElement.clientHeight;
             if(this.settings.tagToBody){
                 this.dropDownTop = (elem.getBoundingClientRect().y - this.selectedListElem.nativeElement.clientHeight*2 - 15 - this.defaultSettings.maxHeight)+'px';
-
+                this.dropDownBottom = null;
             }
             else {
+                this.dropDownTop = null;
                 this.dropDownBottom = (this.selectedListElem.nativeElement.clientHeight + 15 )+'px';
             }
             this.settings.position = 'top'
@@ -909,10 +910,11 @@ export class AngularMultiSelect implements OnInit, ControlValueAccessor, OnChang
         } else {
             if(this.settings.tagToBody){
                 this.dropDownTop = (elem.getBoundingClientRect().y + elem.clientHeight + 1)+'px';
+                this.dropDownBottom = null;
             }
             else {
-                this.dropDownTop = 'unset';
-                this.dropDownBottom = 'unset';
+                this.dropDownTop = null;
+                this.dropDownBottom = null;
             }
             this.dropdownListYOffset = 0;
             this.settings.position = 'bottom'

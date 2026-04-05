@@ -50,7 +50,7 @@ Latest version available for each version of Angular
 
 | @revivejs/angular2-multiselect-dropdown | Angular     |
 | ----------------------------- | ----------- |
-| 11.0.0      | 19.X.X |
+| 11.0.4      | 19.X.X |
 | 10.0.0      | 18.X.X |
 | 9.0.0       | 17.X.X |
 | 8.0.0       | 16.X.X |
@@ -272,7 +272,7 @@ The following list of settings are supported by the component. Configure the set
 | addNewButtonText | String | The text in the button when `addNewItemOnFilter` is enabled | 'Add' |
 | escapeToClose | boolean | Press excape key to close the dropdown | true |
 | autoPosition | boolean | Enable dropdown to open either on 'top' or 'bottom' Ex: settings = { position: 'bottom', autoPosition: false }; open the dropdown always at bottom |  true |
-| tagToBody | boolean | If the dropdown to be appended to body or not ? | true |
+| tagToBody | boolean | Append the dropdown to the body when needed. Use `false` in card or sticky layouts to keep it anchored to the trigger. | false |
 
 ### Events
 - `onSelect` - Return the selected item on selection.
