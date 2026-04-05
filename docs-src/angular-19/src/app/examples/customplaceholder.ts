@@ -37,7 +37,7 @@ export class CustomPlaceholderExample implements OnInit {
       enableSearchFilter: true,
       classes: "myclass custom-class",
       searchPlaceholderText: "Custom Placeholder text",
-      tagToBody: true,
+      tagToBody: false,
     };
   }
   onItemSelect(item: any) {

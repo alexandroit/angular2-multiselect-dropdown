@@ -32,12 +32,12 @@ export class MultipleDropdownsExample implements OnInit {
             text: "Select",
             enableSearchFilter: true,
             labelKey: "name",
-            tagToBody: true
+            tagToBody: false
         };
         this.dropdownSettings2 = {
             text: "Select",
             enableSearchFilter: true,
-            tagToBody: true
+            tagToBody: false
         };
 
 

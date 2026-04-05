@@ -32,7 +32,7 @@ export class UsingWithFormExample implements OnInit {
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
             classes: "myclass custom-class",
-            tagToBody: true
+            tagToBody: false
         };
     }
     onItemSelect(item: any) {

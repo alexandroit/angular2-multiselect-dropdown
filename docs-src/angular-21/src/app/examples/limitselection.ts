@@ -37,7 +37,7 @@ export class LimitSelectionExample implements OnInit {
       enableSearchFilter: true,
       classes: "myclass custom-class",
       limitSelection: 2,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {

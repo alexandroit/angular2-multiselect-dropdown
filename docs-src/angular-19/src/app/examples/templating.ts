@@ -38,7 +38,7 @@ export class TemplatingExample implements OnInit {
                               classes:"myclass custom-class",
                               showCheckbox: true,
                               groupBy: "category",
-                              tagToBody: true,
+                              tagToBody: false,
                             };
 
   }

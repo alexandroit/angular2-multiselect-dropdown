@@ -51,7 +51,7 @@ export class UsingInListExample implements OnInit {
             enableSearchFilter: true,
             classes: "myclass custom-class",
             showCheckbox: true,
-            tagToBody: true
+            tagToBody: false
         };
 
     }

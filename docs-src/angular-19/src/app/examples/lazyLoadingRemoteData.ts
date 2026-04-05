@@ -28,7 +28,7 @@ export class LazyLoadingRemoteDataExample implements OnInit {
             lazyLoading: true,
             labelKey: 'name',
             limitSelection: 3,
-            tagToBody: true
+            tagToBody: false
 
         };
     }

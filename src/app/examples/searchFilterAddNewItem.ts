@@ -38,7 +38,7 @@ export class SearchFilterAddItemExample implements OnInit {
       enableSearchFilter: true,
       addNewItemOnFilter: true,
       enableFilterSelectAll: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onAddItem(data:string){

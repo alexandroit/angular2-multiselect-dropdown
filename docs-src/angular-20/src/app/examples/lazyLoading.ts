@@ -33,7 +33,7 @@ export class LazyLoadingExample implements OnInit {
             enableSearchFilter: true,
             lazyLoading: true,
             badgeShowLimit: 4,
-            tagToBody: true
+            tagToBody: false
 
         };
     }

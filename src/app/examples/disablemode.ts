@@ -37,7 +37,7 @@ export class DisableModeExample implements OnInit {
       enableSearchFilter: false,
       classes: "myclass custom-class",
       disabled: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {

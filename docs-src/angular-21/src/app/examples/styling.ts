@@ -35,7 +35,7 @@ export class StylingExample implements OnInit {
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       classes: "myclass custom-class-example",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {

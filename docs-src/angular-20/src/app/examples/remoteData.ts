@@ -30,7 +30,7 @@ export class RemoteDataExample implements OnInit {
             groupBy:'region',
             enableSearchFilter: true,
             searchBy: ['name','capital'],
-            tagToBody: true
+            tagToBody: false
         };
     }
     onItemSelect(item: any) {

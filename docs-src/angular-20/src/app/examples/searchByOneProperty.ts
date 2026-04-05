@@ -39,7 +39,7 @@ export class SearchFilterByOnePropertyExample implements OnInit {
       badgeShowLimit: 3,
       searchBy: ['itemName'],
       searchPlaceholderText: 'Search by name',
-      tagToBody: true 
+      tagToBody: false 
     };
   }
   onItemSelect(item: any) {

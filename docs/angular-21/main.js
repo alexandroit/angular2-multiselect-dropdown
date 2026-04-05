@@ -40225,8 +40225,8 @@ var AngularMultiSelect = class _AngularMultiSelect {
   dropdownListYOffset = 0;
   subscription;
   dropDownWidth = 0;
-  dropDownTop = "";
-  dropDownBottom = "unset";
+  dropDownTop = null;
+  dropDownBottom = null;
   dropDownLeft = 0;
   id = Math.random().toString(36).substring(2);
   defaultSettings = {
@@ -40258,7 +40258,7 @@ var AngularMultiSelect = class _AngularMultiSelect {
     addNewButtonText: "Add",
     escapeToClose: true,
     clearAll: true,
-    tagToBody: true
+    tagToBody: false
   };
   randomSize = true;
   parseError;
@@ -40873,7 +40873,7 @@ var AngularMultiSelect = class _AngularMultiSelect {
     const elem = this.cuppaDropdown.nativeElement;
     const dropdownWidth = elem.clientWidth;
     this.dropDownWidth = dropdownWidth;
-    this.dropDownLeft = this.settings.tagToBody ? elem.getBoundingClientRect().x : "unset";
+    this.dropDownLeft = this.settings.tagToBody ? elem.getBoundingClientRect().x : 0;
     if (this.settings.position == "top" && !this.settings.autoPosition) {
       this.openTowardsTop(true);
     } else if (this.settings.position == "bottom" && !this.settings.autoPosition) {
@@ -40898,16 +40898,19 @@ var AngularMultiSelect = class _AngularMultiSelect {
       this.dropdownListYOffset = 15 - this.selectedListElem.nativeElement.clientHeight;
       if (this.settings.tagToBody) {
         this.dropDownTop = elem.getBoundingClientRect().y - this.selectedListElem.nativeElement.clientHeight * 2 - 15 - this.defaultSettings.maxHeight + "px";
+        this.dropDownBottom = null;
       } else {
+        this.dropDownTop = null;
         this.dropDownBottom = this.selectedListElem.nativeElement.clientHeight + 15 + "px";
       }
       this.settings.position = "top";
     } else {
       if (this.settings.tagToBody) {
         this.dropDownTop = elem.getBoundingClientRect().y + elem.clientHeight + 1 + "px";
+        this.dropDownBottom = null;
       } else {
-        this.dropDownTop = "unset";
-        this.dropDownBottom = "unset";
+        this.dropDownTop = null;
+        this.dropDownBottom = null;
       }
       this.dropdownListYOffset = 0;
       this.settings.position = "bottom";
@@ -47243,8 +47246,8 @@ function provideRouterInitializer() {
 var DOCS_META = {
   badge: "ANGULAR 21.2 \xB7 MULTISELECT",
   angularVersion: "21.2.x",
-  packageVersion: "13.0.4",
-  packageRange: "^13.0.4",
+  packageVersion: "13.0.5",
+  packageRange: "^13.0.5",
   docsPath: "angular-21"
 };
 
@@ -47308,7 +47311,7 @@ var AppComponent = class _AppComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], standalone: false, decls: 202, vars: 12, consts: [[1, "shell"], [1, "hero"], [1, "hero-card", "hero-main"], [1, "badge"], [1, "feature-grid"], [1, "feature"], [1, "cta-row"], ["href", "#demos", 1, "btn"], ["href", "https://github.com/alexandroit/angular2-multiselect-dropdown#readme", "target", "_blank", "rel", "noreferrer", 1, "btn", "secondary"], [1, "hero-card", "hero-setup"], [1, "step"], [1, "step-num"], ["id", "demos", 1, "layout"], [1, "panels"], [1, "panel"], [1, "panel-header"], [1, "example-shell"], ["aria-label", "Multiselect examples", 1, "example-nav"], ["class", "example-link", "routerLinkActive", "active", 3, "routerLink", "routerLinkActiveOptions", 4, "ngFor", "ngForOf"], [1, "example-stage"], [1, "example-stage-header"], [1, "stage-pill"], [1, "example-preview"], [1, "panel", "ref-panel"], [1, "ref-grid"], [1, "ref-card"], [1, "api-table"], [1, "log-panel"], [1, "log-list"], [1, "log-entry"], [1, "footer"], ["routerLinkActive", "active", 1, "example-link", 3, "routerLink", "routerLinkActiveOptions"]], template: function AppComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], standalone: false, decls: 205, vars: 12, consts: [[1, "shell"], [1, "hero"], [1, "hero-card", "hero-main"], [1, "badge"], [1, "feature-grid"], [1, "feature"], [1, "cta-row"], ["href", "#demos", 1, "btn"], ["href", "https://github.com/alexandroit/angular2-multiselect-dropdown#readme", "target", "_blank", "rel", "noreferrer", 1, "btn", "secondary"], [1, "hero-card", "hero-setup"], [1, "step"], [1, "step-num"], ["id", "demos", 1, "layout"], [1, "panels"], [1, "panel"], [1, "panel-header"], [1, "example-shell"], ["aria-label", "Multiselect examples", 1, "example-nav"], ["class", "example-link", "routerLinkActive", "active", 3, "routerLink", "routerLinkActiveOptions", 4, "ngFor", "ngForOf"], [1, "example-stage"], [1, "example-stage-header"], [1, "stage-pill"], [1, "example-preview"], [1, "panel", "ref-panel"], [1, "ref-grid"], [1, "ref-card"], [1, "api-table"], [1, "log-panel"], [1, "log-list"], [1, "log-entry"], [1, "footer"], ["routerLinkActive", "active", 1, "example-link", 3, "routerLink", "routerLinkActiveOptions"]], template: function AppComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "section", 1)(2, "div", 2)(3, "span", 3);
         \u0275\u0275text(4);
@@ -47472,58 +47475,62 @@ var AppComponent = class _AppComponent {
         \u0275\u0275text(152, "tagToBody");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(153, "td");
-        \u0275\u0275text(154, "Render the menu outside clipping containers when needed.");
-        \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(155, "div", 25)(156, "h4");
-        \u0275\u0275text(157, "Outputs");
+        \u0275\u0275text(154, "Keep it ");
+        \u0275\u0275elementStart(155, "code");
+        \u0275\u0275text(156, "false");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(158, "table", 26)(159, "tr")(160, "td")(161, "code");
-        \u0275\u0275text(162, "(onSelect)");
+        \u0275\u0275text(157, " in card or sticky layouts so the menu stays anchored to the field.");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(158, "div", 25)(159, "h4");
+        \u0275\u0275text(160, "Outputs");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(161, "table", 26)(162, "tr")(163, "td")(164, "code");
+        \u0275\u0275text(165, "(onSelect)");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(163, "td");
-        \u0275\u0275text(164, "Emits the selected item.");
+        \u0275\u0275elementStart(166, "td");
+        \u0275\u0275text(167, "Emits the selected item.");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(165, "tr")(166, "td")(167, "code");
-        \u0275\u0275text(168, "(onDeSelect)");
+        \u0275\u0275elementStart(168, "tr")(169, "td")(170, "code");
+        \u0275\u0275text(171, "(onDeSelect)");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(169, "td");
-        \u0275\u0275text(170, "Emits when a selected item is removed.");
+        \u0275\u0275elementStart(172, "td");
+        \u0275\u0275text(173, "Emits when a selected item is removed.");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(171, "tr")(172, "td")(173, "code");
-        \u0275\u0275text(174, "(onSelectAll)");
+        \u0275\u0275elementStart(174, "tr")(175, "td")(176, "code");
+        \u0275\u0275text(177, "(onSelectAll)");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(175, "td");
-        \u0275\u0275text(176, "Emits when all visible items are selected.");
+        \u0275\u0275elementStart(178, "td");
+        \u0275\u0275text(179, "Emits when all visible items are selected.");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(177, "tr")(178, "td")(179, "code");
-        \u0275\u0275text(180, "(onDeSelectAll)");
+        \u0275\u0275elementStart(180, "tr")(181, "td")(182, "code");
+        \u0275\u0275text(183, "(onDeSelectAll)");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(181, "td");
-        \u0275\u0275text(182, "Emits when all selections are cleared.");
+        \u0275\u0275elementStart(184, "td");
+        \u0275\u0275text(185, "Emits when all selections are cleared.");
         \u0275\u0275elementEnd()()()()()()();
-        \u0275\u0275elementStart(183, "aside", 27)(184, "h2");
-        \u0275\u0275text(185, "Release line");
+        \u0275\u0275elementStart(186, "aside", 27)(187, "h2");
+        \u0275\u0275text(188, "Release line");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(186, "p");
-        \u0275\u0275text(187, " This demo line is aligned with the published package and keeps the classic dropdown API available for maintained Angular applications. ");
+        \u0275\u0275elementStart(189, "p");
+        \u0275\u0275text(190, " This demo line is aligned with the published package and keeps the classic dropdown API available for maintained Angular applications. ");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(188, "div", 28)(189, "div", 29);
-        \u0275\u0275text(190);
+        \u0275\u0275elementStart(191, "div", 28)(192, "div", 29);
+        \u0275\u0275text(193);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(191, "div", 29);
-        \u0275\u0275text(192);
+        \u0275\u0275elementStart(194, "div", 29);
+        \u0275\u0275text(195);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(193, "div", 29);
-        \u0275\u0275text(194);
+        \u0275\u0275elementStart(196, "div", 29);
+        \u0275\u0275text(197);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(195, "div", 29);
-        \u0275\u0275text(196, "Pattern: versioned docs-src + compiled docs history");
+        \u0275\u0275elementStart(198, "div", 29);
+        \u0275\u0275text(199, "Pattern: versioned docs-src + compiled docs history");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(197, "div", 29);
-        \u0275\u0275text(198, "Key workflows: ngModel, reactive forms, templates, grouping, lazy loading");
+        \u0275\u0275elementStart(200, "div", 29);
+        \u0275\u0275text(201, "Key workflows: ngModel, reactive forms, templates, grouping, lazy loading");
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(199, "footer", 30)(200, "p");
-        \u0275\u0275text(201, " Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation, and release stewardship by ReviveJS. ");
+        \u0275\u0275elementStart(202, "footer", 30)(203, "p");
+        \u0275\u0275text(204, " Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation, and release stewardship by ReviveJS. ");
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
@@ -47545,20 +47552,20 @@ var AppComponent = class _AppComponent {
         \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
         \u0275\u0275advance(3);
         \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
-        \u0275\u0275advance(95);
+        \u0275\u0275advance(98);
         \u0275\u0275textInterpolate1("Package line: ", ctx.docsMeta.packageVersion);
         \u0275\u0275advance(2);
         \u0275\u0275textInterpolate1("Angular compatibility: ", ctx.docsMeta.angularVersion);
         \u0275\u0275advance(2);
         \u0275\u0275textInterpolate1("Docs path: /", ctx.docsMeta.docsPath, "/");
       }
-    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ['\n[_nghost-%COMP%] {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell[_ngcontent-%COMP%] {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1[_ngcontent-%COMP%], \nh2[_ngcontent-%COMP%], \nh3[_ngcontent-%COMP%], \nh4[_ngcontent-%COMP%] {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np[_ngcontent-%COMP%], \ntd[_ngcontent-%COMP%], \nth[_ngcontent-%COMP%], \nbutton[_ngcontent-%COMP%], \ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%], \nlabel[_ngcontent-%COMP%] {\n  font: inherit;\n}\ncode[_ngcontent-%COMP%], \npre[_ngcontent-%COMP%] {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card[_ngcontent-%COMP%], \n.panel[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%] {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.panel-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.feature[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary[_ngcontent-%COMP%] {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.step[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num[_ngcontent-%COMP%] {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout[_ngcontent-%COMP%] {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header[_ngcontent-%COMP%] {\n  margin-bottom: 1rem;\n}\n.panel-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0 0 0.4rem;\n}\n.example-shell[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: hidden;\n}\n.example-stage-header[_ngcontent-%COMP%] {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill[_ngcontent-%COMP%] {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview[_ngcontent-%COMP%] {\n  min-width: 0;\n  overflow-x: auto;\n  padding: 1rem;\n}\n.example-preview[_ngcontent-%COMP%]   angular2-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n}\n.example-preview[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n}\n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 0.75rem;\n}\n.api-table[_ngcontent-%COMP%] {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer[_ngcontent-%COMP%] {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%], \n   .example-shell[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .layout[_ngcontent-%COMP%] {\n    gap: 1rem;\n  }\n  .panels[_ngcontent-%COMP%], \n   .example-stage[_ngcontent-%COMP%], \n   .example-preview[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%], \n   .ref-card[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .log-panel[_ngcontent-%COMP%] {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid[_ngcontent-%COMP%], \n   .feature-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .hero-card[_ngcontent-%COMP%], \n   .panel[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%] {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .cta-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */'] });
+    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ['\n[_nghost-%COMP%] {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell[_ngcontent-%COMP%] {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1[_ngcontent-%COMP%], \nh2[_ngcontent-%COMP%], \nh3[_ngcontent-%COMP%], \nh4[_ngcontent-%COMP%] {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np[_ngcontent-%COMP%], \ntd[_ngcontent-%COMP%], \nth[_ngcontent-%COMP%], \nbutton[_ngcontent-%COMP%], \ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%], \nlabel[_ngcontent-%COMP%] {\n  font: inherit;\n}\ncode[_ngcontent-%COMP%], \npre[_ngcontent-%COMP%] {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card[_ngcontent-%COMP%], \n.panel[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%] {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.panel-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.feature[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary[_ngcontent-%COMP%] {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.step[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num[_ngcontent-%COMP%] {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout[_ngcontent-%COMP%] {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header[_ngcontent-%COMP%] {\n  margin-bottom: 1rem;\n}\n.panel-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0 0 0.4rem;\n}\n.example-shell[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: visible;\n  position: relative;\n  z-index: 1;\n}\n.example-stage-header[_ngcontent-%COMP%] {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill[_ngcontent-%COMP%] {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview[_ngcontent-%COMP%] {\n  min-width: 0;\n  overflow: visible;\n  padding: 1rem;\n  position: relative;\n  z-index: 2;\n}\n.example-preview[_ngcontent-%COMP%]   angular2-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n  position: relative;\n  z-index: 3;\n}\n.example-preview[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n}\n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 0.75rem;\n}\n.api-table[_ngcontent-%COMP%] {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer[_ngcontent-%COMP%] {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%], \n   .example-shell[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .layout[_ngcontent-%COMP%] {\n    gap: 1rem;\n  }\n  .panels[_ngcontent-%COMP%], \n   .example-stage[_ngcontent-%COMP%], \n   .example-preview[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%], \n   .ref-card[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .log-panel[_ngcontent-%COMP%] {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid[_ngcontent-%COMP%], \n   .feature-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .hero-card[_ngcontent-%COMP%], \n   .panel[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%] {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .cta-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */'] });
   }
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AppComponent, [{
     type: Component,
-    args: [{ standalone: false, selector: "app-root", template: '<div class="shell">\n  <section class="hero">\n    <div class="hero-card hero-main">\n      <span class="badge">{{ docsMeta.badge }}</span>\n      <h1>&#64;revivejs/angular2-multiselect-dropdown</h1>\n      <p>\n        A maintained Angular multiselect dropdown with classic template support, search,\n        grouping, custom templates, lazy loading, and both template-driven and reactive\n        forms workflows.\n      </p>\n\n      <div class="feature-grid">\n        <div class="feature">\n          <strong>Classic API preserved</strong>\n          Keep using <code>&lt;angular2-multiselect&gt;</code>, <code>ngModel</code>, and the\n          familiar callback outputs across the maintained release line.\n        </div>\n        <div class="feature">\n          <strong>Built for forms</strong>\n          Works with standalone templates, <code>ngModel</code>, and\n          <code>formControlName</code> without adapters.\n        </div>\n        <div class="feature">\n          <strong>Rich dropdown behavior</strong>\n          Search, grouping, custom placeholders, badge limits, lazy loading, and remote data\n          hooks are available out of the box.\n        </div>\n        <div class="feature">\n          <strong>Versioned docs</strong>\n          Each Angular release line gets its own docs build so the published package and demo stay\n          aligned.\n        </div>\n      </div>\n\n      <div class="cta-row">\n        <a class="btn" href="#demos">See demos</a>\n        <a\n          class="btn secondary"\n          href="https://github.com/alexandroit/angular2-multiselect-dropdown#readme"\n          target="_blank"\n          rel="noreferrer">\n          README\n        </a>\n      </div>\n    </div>\n\n    <div class="hero-card hero-setup">\n      <h2>Setup in 3 steps</h2>\n\n      <div class="step">\n        <span class="step-num">1</span>\n        <div>\n          <strong>Install</strong>\n          <pre>{{ installCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">2</span>\n        <div>\n          <strong>Register the module</strong>\n          <pre>{{ setupCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">3</span>\n        <div>\n          <strong>Render the dropdown</strong>\n          <pre>{{ templateCode }}</pre>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section class="layout" id="demos">\n    <div class="panels">\n      <article class="panel">\n        <div class="panel-header">\n          <h2>Example gallery</h2>\n          <p>\n            Browse the maintained examples to validate how the dropdown behaves with forms,\n            templating, grouping, lazy loading, and remote data.\n          </p>\n        </div>\n\n        <div class="example-shell">\n          <nav class="example-nav" aria-label="Multiselect examples">\n            <a\n              *ngFor="let link of links"\n              class="example-link"\n              [routerLink]="[link.path]"\n              routerLinkActive="active"\n              [routerLinkActiveOptions]="{ exact: true }">\n              {{ link.data?.label }}\n            </a>\n          </nav>\n\n          <div class="example-stage">\n            <div class="example-stage-header">\n              <div>\n                <h3>{{ currentLabel }}</h3>\n                <p>\n                  Live demo rendered against package <code>{{ docsMeta.packageVersion }}</code>\n                  for Angular <code>{{ docsMeta.angularVersion }}</code>.\n                </p>\n              </div>\n              <span class="stage-pill">{{ docsMeta.angularVersion }}</span>\n            </div>\n\n            <div class="example-preview">\n              <router-outlet></router-outlet>\n            </div>\n          </div>\n        </div>\n      </article>\n\n      <article class="panel ref-panel">\n        <div class="panel-header">\n          <h2>Quick API reference</h2>\n          <p>\n            The maintained line keeps the familiar API while documenting the most commonly used\n            inputs and outputs in one place.\n          </p>\n        </div>\n\n        <div class="ref-grid">\n          <div class="ref-card">\n            <h4>Core inputs</h4>\n            <table class="api-table">\n              <tr><td><code>[data]</code></td><td>Array of available dropdown items.</td></tr>\n              <tr><td><code>[(ngModel)]</code></td><td>Two-way bind the selected items list.</td></tr>\n              <tr><td><code>[settings]</code></td><td>Pass text, search, grouping, and lazy loading configuration.</td></tr>\n              <tr><td><code>disabled</code></td><td>Disable interaction when the parent form requires it.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Templates</h4>\n            <table class="api-table">\n              <tr><td><code>&lt;c-item&gt;</code></td><td>Provide a custom item template for the dropdown list.</td></tr>\n              <tr><td><code>&lt;c-badge&gt;</code></td><td>Customize the selected badge rendering.</td></tr>\n              <tr><td><code>tagToBody</code></td><td>Render the menu outside clipping containers when needed.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Outputs</h4>\n            <table class="api-table">\n              <tr><td><code>(onSelect)</code></td><td>Emits the selected item.</td></tr>\n              <tr><td><code>(onDeSelect)</code></td><td>Emits when a selected item is removed.</td></tr>\n              <tr><td><code>(onSelectAll)</code></td><td>Emits when all visible items are selected.</td></tr>\n              <tr><td><code>(onDeSelectAll)</code></td><td>Emits when all selections are cleared.</td></tr>\n            </table>\n          </div>\n        </div>\n      </article>\n    </div>\n\n    <aside class="log-panel">\n      <h2>Release line</h2>\n      <p>\n        This demo line is aligned with the published package and keeps the classic dropdown API\n        available for maintained Angular applications.\n      </p>\n\n      <div class="log-list">\n        <div class="log-entry">Package line: {{ docsMeta.packageVersion }}</div>\n        <div class="log-entry">Angular compatibility: {{ docsMeta.angularVersion }}</div>\n        <div class="log-entry">Docs path: /{{ docsMeta.docsPath }}/</div>\n        <div class="log-entry">Pattern: versioned docs-src + compiled docs history</div>\n        <div class="log-entry">Key workflows: ngModel, reactive forms, templates, grouping, lazy loading</div>\n      </div>\n    </aside>\n  </section>\n\n  <footer class="footer">\n    <p>\n      Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation,\n      and release stewardship by ReviveJS.\n    </p>\n  </footer>\n</div>\n', styles: ['/* src/app/app.component.scss */\n:host {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1,\nh2,\nh3,\nh4 {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np,\ntd,\nth,\nbutton,\ninput,\nselect,\nlabel {\n  font: inherit;\n}\ncode,\npre {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card,\n.panel,\n.log-panel {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main h1 {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main p,\n.panel-header p,\n.log-panel p,\n.feature {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature strong {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup h2 {\n  margin: 0;\n}\n.step {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup pre {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header {\n  margin-bottom: 1rem;\n}\n.panel-header h2,\n.log-panel h2 {\n  margin: 0 0 0.4rem;\n}\n.example-shell {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: hidden;\n}\n.example-stage-header {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header h3 {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header p {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview {\n  min-width: 0;\n  overflow-x: auto;\n  padding: 1rem;\n}\n.example-preview angular2-multiselect {\n  display: block;\n  max-width: 100%;\n}\n.example-preview .alert,\n.example-preview .table,\n.example-preview form,\n.example-preview .modal-content {\n  margin-top: 1rem;\n}\n.example-preview .table {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card h4 {\n  margin: 0 0 0.75rem;\n}\n.api-table {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table td {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table td:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer p {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout,\n  .hero,\n  .example-shell {\n    grid-template-columns: 1fr;\n  }\n  .layout {\n    gap: 1rem;\n  }\n  .panels,\n  .example-stage,\n  .example-preview,\n  .log-panel,\n  .ref-card {\n    min-width: 0;\n  }\n  .log-panel {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid,\n  .feature-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell {\n    padding: 1rem;\n  }\n  .hero-card,\n  .panel,\n  .log-panel {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header {\n    flex-direction: column;\n  }\n  .cta-row {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n'] }]
+    args: [{ standalone: false, selector: "app-root", template: '<div class="shell">\n  <section class="hero">\n    <div class="hero-card hero-main">\n      <span class="badge">{{ docsMeta.badge }}</span>\n      <h1>&#64;revivejs/angular2-multiselect-dropdown</h1>\n      <p>\n        A maintained Angular multiselect dropdown with classic template support, search,\n        grouping, custom templates, lazy loading, and both template-driven and reactive\n        forms workflows.\n      </p>\n\n      <div class="feature-grid">\n        <div class="feature">\n          <strong>Classic API preserved</strong>\n          Keep using <code>&lt;angular2-multiselect&gt;</code>, <code>ngModel</code>, and the\n          familiar callback outputs across the maintained release line.\n        </div>\n        <div class="feature">\n          <strong>Built for forms</strong>\n          Works with standalone templates, <code>ngModel</code>, and\n          <code>formControlName</code> without adapters.\n        </div>\n        <div class="feature">\n          <strong>Rich dropdown behavior</strong>\n          Search, grouping, custom placeholders, badge limits, lazy loading, and remote data\n          hooks are available out of the box.\n        </div>\n        <div class="feature">\n          <strong>Versioned docs</strong>\n          Each Angular release line gets its own docs build so the published package and demo stay\n          aligned.\n        </div>\n      </div>\n\n      <div class="cta-row">\n        <a class="btn" href="#demos">See demos</a>\n        <a\n          class="btn secondary"\n          href="https://github.com/alexandroit/angular2-multiselect-dropdown#readme"\n          target="_blank"\n          rel="noreferrer">\n          README\n        </a>\n      </div>\n    </div>\n\n    <div class="hero-card hero-setup">\n      <h2>Setup in 3 steps</h2>\n\n      <div class="step">\n        <span class="step-num">1</span>\n        <div>\n          <strong>Install</strong>\n          <pre>{{ installCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">2</span>\n        <div>\n          <strong>Register the module</strong>\n          <pre>{{ setupCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">3</span>\n        <div>\n          <strong>Render the dropdown</strong>\n          <pre>{{ templateCode }}</pre>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section class="layout" id="demos">\n    <div class="panels">\n      <article class="panel">\n        <div class="panel-header">\n          <h2>Example gallery</h2>\n          <p>\n            Browse the maintained examples to validate how the dropdown behaves with forms,\n            templating, grouping, lazy loading, and remote data.\n          </p>\n        </div>\n\n        <div class="example-shell">\n          <nav class="example-nav" aria-label="Multiselect examples">\n            <a\n              *ngFor="let link of links"\n              class="example-link"\n              [routerLink]="[link.path]"\n              routerLinkActive="active"\n              [routerLinkActiveOptions]="{ exact: true }">\n              {{ link.data?.label }}\n            </a>\n          </nav>\n\n          <div class="example-stage">\n            <div class="example-stage-header">\n              <div>\n                <h3>{{ currentLabel }}</h3>\n                <p>\n                  Live demo rendered against package <code>{{ docsMeta.packageVersion }}</code>\n                  for Angular <code>{{ docsMeta.angularVersion }}</code>.\n                </p>\n              </div>\n              <span class="stage-pill">{{ docsMeta.angularVersion }}</span>\n            </div>\n\n            <div class="example-preview">\n              <router-outlet></router-outlet>\n            </div>\n          </div>\n        </div>\n      </article>\n\n      <article class="panel ref-panel">\n        <div class="panel-header">\n          <h2>Quick API reference</h2>\n          <p>\n            The maintained line keeps the familiar API while documenting the most commonly used\n            inputs and outputs in one place.\n          </p>\n        </div>\n\n        <div class="ref-grid">\n          <div class="ref-card">\n            <h4>Core inputs</h4>\n            <table class="api-table">\n              <tr><td><code>[data]</code></td><td>Array of available dropdown items.</td></tr>\n              <tr><td><code>[(ngModel)]</code></td><td>Two-way bind the selected items list.</td></tr>\n              <tr><td><code>[settings]</code></td><td>Pass text, search, grouping, and lazy loading configuration.</td></tr>\n              <tr><td><code>disabled</code></td><td>Disable interaction when the parent form requires it.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Templates</h4>\n            <table class="api-table">\n              <tr><td><code>&lt;c-item&gt;</code></td><td>Provide a custom item template for the dropdown list.</td></tr>\n              <tr><td><code>&lt;c-badge&gt;</code></td><td>Customize the selected badge rendering.</td></tr>\n              <tr><td><code>tagToBody</code></td><td>Keep it <code>false</code> in card or sticky layouts so the menu stays anchored to the field.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Outputs</h4>\n            <table class="api-table">\n              <tr><td><code>(onSelect)</code></td><td>Emits the selected item.</td></tr>\n              <tr><td><code>(onDeSelect)</code></td><td>Emits when a selected item is removed.</td></tr>\n              <tr><td><code>(onSelectAll)</code></td><td>Emits when all visible items are selected.</td></tr>\n              <tr><td><code>(onDeSelectAll)</code></td><td>Emits when all selections are cleared.</td></tr>\n            </table>\n          </div>\n        </div>\n      </article>\n    </div>\n\n    <aside class="log-panel">\n      <h2>Release line</h2>\n      <p>\n        This demo line is aligned with the published package and keeps the classic dropdown API\n        available for maintained Angular applications.\n      </p>\n\n      <div class="log-list">\n        <div class="log-entry">Package line: {{ docsMeta.packageVersion }}</div>\n        <div class="log-entry">Angular compatibility: {{ docsMeta.angularVersion }}</div>\n        <div class="log-entry">Docs path: /{{ docsMeta.docsPath }}/</div>\n        <div class="log-entry">Pattern: versioned docs-src + compiled docs history</div>\n        <div class="log-entry">Key workflows: ngModel, reactive forms, templates, grouping, lazy loading</div>\n      </div>\n    </aside>\n  </section>\n\n  <footer class="footer">\n    <p>\n      Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation,\n      and release stewardship by ReviveJS.\n    </p>\n  </footer>\n</div>\n', styles: ['/* src/app/app.component.scss */\n:host {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1,\nh2,\nh3,\nh4 {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np,\ntd,\nth,\nbutton,\ninput,\nselect,\nlabel {\n  font: inherit;\n}\ncode,\npre {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card,\n.panel,\n.log-panel {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main h1 {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main p,\n.panel-header p,\n.log-panel p,\n.feature {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature strong {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup h2 {\n  margin: 0;\n}\n.step {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup pre {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header {\n  margin-bottom: 1rem;\n}\n.panel-header h2,\n.log-panel h2 {\n  margin: 0 0 0.4rem;\n}\n.example-shell {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: visible;\n  position: relative;\n  z-index: 1;\n}\n.example-stage-header {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header h3 {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header p {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview {\n  min-width: 0;\n  overflow: visible;\n  padding: 1rem;\n  position: relative;\n  z-index: 2;\n}\n.example-preview angular2-multiselect {\n  display: block;\n  max-width: 100%;\n  position: relative;\n  z-index: 3;\n}\n.example-preview .alert,\n.example-preview .table,\n.example-preview form,\n.example-preview .modal-content {\n  margin-top: 1rem;\n}\n.example-preview .table {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card h4 {\n  margin: 0 0 0.75rem;\n}\n.api-table {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table td {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table td:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer p {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout,\n  .hero,\n  .example-shell {\n    grid-template-columns: 1fr;\n  }\n  .layout {\n    gap: 1rem;\n  }\n  .panels,\n  .example-stage,\n  .example-preview,\n  .log-panel,\n  .ref-card {\n    min-width: 0;\n  }\n  .log-panel {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid,\n  .feature-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell {\n    padding: 1rem;\n  }\n  .hero-card,\n  .panel,\n  .log-panel {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header {\n    flex-direction: column;\n  }\n  .cta-row {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n'] }]
   }], () => [{ type: Router }, { type: ActivatedRoute }], null);
 })();
 (() => {
@@ -47607,7 +47614,7 @@ var BasicExample = class _BasicExample {
       classes: "myclass custom-class",
       primaryKey: "countryId",
       enableSearchFilter: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -47697,7 +47704,7 @@ var SingleSelectionExample = class _SingleSelectionExample {
       addNewItemOnFilter: true,
       singleSelection: true,
       text: "Select Country",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -47800,7 +47807,7 @@ var GroupByExample = class _GroupByExample {
       groupBy: "category",
       selectGroup: true,
       searchBy: ["itemName"],
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -47943,7 +47950,7 @@ var SearchFilterExample = class _SearchFilterExample {
       unSelectAllText: "UnSelect All",
       enableSearchFilter: true,
       badgeShowLimit: 3,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48072,7 +48079,7 @@ var TemplatingExample = class _TemplatingExample {
       classes: "myclass custom-class",
       showCheckbox: true,
       groupBy: "category",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48180,7 +48187,7 @@ var ResetDropdownExample = class _ResetDropdownExample {
       selectAllText: "Select All",
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48320,7 +48327,7 @@ var DisableModeExample = class _DisableModeExample {
       enableSearchFilter: false,
       classes: "myclass custom-class",
       disabled: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48466,7 +48473,7 @@ var LimitSelectionExample = class _LimitSelectionExample {
       enableSearchFilter: true,
       classes: "myclass custom-class",
       limitSelection: 2,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48560,7 +48567,7 @@ var LimitBadgesExample = class _LimitBadgesExample {
       unSelectAllText: "UnSelect All",
       enableSearchFilter: true,
       badgeShowLimit: 3,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48654,7 +48661,7 @@ var CustomPlaceholderExample = class _CustomPlaceholderExample {
       enableSearchFilter: true,
       classes: "myclass custom-class",
       searchPlaceholderText: "Custom Placeholder text",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48747,7 +48754,7 @@ var StylingExample = class _StylingExample {
       selectAllText: "Select All",
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class-example",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -48854,7 +48861,7 @@ var UsingWithFormExample = class _UsingWithFormExample {
       selectAllText: "Select All",
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -49307,7 +49314,7 @@ var LazyLoadingExample = class _LazyLoadingExample {
       enableSearchFilter: true,
       lazyLoading: true,
       badgeShowLimit: 4,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -49514,12 +49521,12 @@ var MultipleDropdownsExample = class _MultipleDropdownsExample {
       text: "Select",
       enableSearchFilter: true,
       labelKey: "name",
-      tagToBody: true
+      tagToBody: false
     };
     this.dropdownSettings2 = {
       text: "Select",
       enableSearchFilter: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -49661,7 +49668,7 @@ var DynamicDataSetsExample = class _DynamicDataSetsExample {
       selectAllText: "Select All",
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class",
-      tagToBody: true
+      tagToBody: false
     };
     this.loadDataSet2();
   }
@@ -49813,7 +49820,7 @@ var RemoteDataExample = class _RemoteDataExample {
       groupBy: "region",
       enableSearchFilter: true,
       searchBy: ["name", "capital"],
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -49945,7 +49952,7 @@ var CustomSearchExample = class _CustomSearchExample {
       noDataLabel: "Search Countries...",
       enableSearchFilter: true,
       searchBy: ["name", "capital"],
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50061,7 +50068,7 @@ var SearchFilterByOnePropertyExample = class _SearchFilterByOnePropertyExample {
       badgeShowLimit: 3,
       searchBy: ["itemName"],
       searchPlaceholderText: "Search by name",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50148,7 +50155,7 @@ var LazyLoadingRemoteDataExample = class _LazyLoadingRemoteDataExample {
       lazyLoading: true,
       labelKey: "name",
       limitSelection: 3,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50280,7 +50287,7 @@ var SearchFilterAddItemExample = class _SearchFilterAddItemExample {
       enableSearchFilter: true,
       addNewItemOnFilter: true,
       enableFilterSelectAll: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onAddItem(data) {
@@ -50415,7 +50422,7 @@ var EventsExample = class _EventsExample {
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class",
       primaryKey: "countryId",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50668,7 +50675,7 @@ var UsingInListExample = class _UsingInListExample {
       enableSearchFilter: true,
       classes: "myclass custom-class",
       showCheckbox: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50773,7 +50780,7 @@ var UsingWithinDialog = class _UsingWithinDialog {
       classes: "myclass custom-class",
       primaryKey: "countryId",
       enableSearchFilter: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -50873,7 +50880,7 @@ var DialogContentExampleDialog = class _DialogContentExampleDialog {
       classes: "myclass custom-class",
       primaryKey: "countryId",
       enableSearchFilter: true,
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {
@@ -51482,7 +51489,7 @@ var ThemingExample = class _ThemingExample {
       unSelectAllText: "UnSelect All",
       classes: "myclass custom-class",
       primaryKey: "countryId",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item) {

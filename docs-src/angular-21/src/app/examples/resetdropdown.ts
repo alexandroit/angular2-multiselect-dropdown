@@ -36,7 +36,7 @@ export class ResetDropdownExample implements OnInit {
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       classes: "myclass custom-class",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {

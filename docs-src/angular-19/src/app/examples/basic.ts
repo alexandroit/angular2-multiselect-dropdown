@@ -42,7 +42,7 @@ export class BasicExample implements OnInit {
             classes: "myclass custom-class",
             primaryKey: "countryId",
             enableSearchFilter: true,
-            tagToBody: true,
+            tagToBody: false,
         };
     }
     onItemSelect(item: any) {

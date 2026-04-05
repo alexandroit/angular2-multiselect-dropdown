@@ -31,7 +31,7 @@ export class SingleSelectionExample implements OnInit {
     this.settings = {
       enableSearchFilter: true,
       addNewItemOnFilter: true, singleSelection: true, text: "Select Country",
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {

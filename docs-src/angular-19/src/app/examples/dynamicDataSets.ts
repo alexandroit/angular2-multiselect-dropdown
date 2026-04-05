@@ -19,7 +19,7 @@ export class DynamicDataSetsExample implements OnInit {
             selectAllText: 'Select All',
             unSelectAllText: 'UnSelect All',
             classes: "myclass custom-class",
-            tagToBody: true
+            tagToBody: false
         };
         this.loadDataSet2();
     }

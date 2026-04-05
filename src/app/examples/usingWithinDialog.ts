@@ -43,7 +43,7 @@ export class UsingWithinDialog implements OnInit {
             classes: "myclass custom-class",
             primaryKey: "countryId",
             enableSearchFilter: true,
-            tagToBody: true,
+            tagToBody: false,
         };
     }
     onItemSelect(item: any) {
@@ -103,7 +103,7 @@ export class UsingWithinDialog implements OnInit {
             classes: "myclass custom-class",
             primaryKey: "countryId",
             enableSearchFilter: true,
-            tagToBody: true,
+            tagToBody: false,
         };
     }
     onItemSelect(item: any) {

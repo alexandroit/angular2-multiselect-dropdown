@@ -219,7 +219,9 @@ pre {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid #d9e2ec;
   border-radius: 18px;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 .example-stage-header {
@@ -254,13 +256,17 @@ pre {
 
 .example-preview {
   min-width: 0;
-  overflow-x: auto;
+  overflow: visible;
   padding: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .example-preview angular2-multiselect {
   display: block;
   max-width: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 .example-preview .alert,

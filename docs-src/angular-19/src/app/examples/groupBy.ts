@@ -39,7 +39,7 @@ export class GroupByExample implements OnInit {
       groupBy: "category",
       selectGroup: true,
       searchBy: ["itemName"],
-      tagToBody: true
+      tagToBody: false
     };
   }
   onItemSelect(item: any) {
