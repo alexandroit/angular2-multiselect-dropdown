@@ -1,0 +1,152 @@
+<div class="docs-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div>
+        <div class="topbar-eyebrow">ReviveJS maintained line</div>
+        <h1>@revivejs/angular2-multiselect-dropdown</h1>
+      </div>
+    </div>
+
+    <div class="topbar-meta">
+      <span class="meta-pill">{{ docsMeta.angularVersion }}</span>
+      <span class="meta-pill primary">v{{ docsMeta.packageVersion }}</span>
+    </div>
+  </header>
+
+  <div class="docs-layout">
+    <aside class="rail">
+      <section class="rail-card">
+        <div class="rail-label">Overview</div>
+        <a class="rail-link" href="#install">Install</a>
+        <a class="rail-link" href="#preview">Preview</a>
+        <a class="rail-link" href="#api">API</a>
+      </section>
+
+      <section class="rail-card">
+        <div class="rail-label">Examples</div>
+        <nav class="example-nav" aria-label="Angular multiselect examples">
+          <a
+            *ngFor="let link of links"
+            class="example-link"
+            [routerLink]="[link.path]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            {{ link.data?.['label'] }}
+          </a>
+        </nav>
+      </section>
+
+      <section class="rail-card">
+        <div class="rail-label">Release line</div>
+        <div class="release-item"><strong>Package</strong><span>{{ docsMeta.packageVersion }}</span></div>
+        <div class="release-item"><strong>Angular</strong><span>{{ docsMeta.angularVersion }}</span></div>
+        <div class="release-item"><strong>Docs path</strong><span>/{{ docsMeta.docsPath }}/</span></div>
+        <div class="release-item"><strong>Promise</strong><span>Material look, classic API</span></div>
+      </section>
+    </aside>
+
+    <main class="docs-main">
+      <section class="hero-card">
+        <span class="hero-badge">{{ docsMeta.badge }}</span>
+        <h2>Material-inspired multiselect, without breaking the classic contract.</h2>
+        <p class="hero-copy">
+          This Angular 14 line keeps the familiar <code>&lt;angular2-multiselect&gt;</code> API,
+          <code>ngModel</code> binding, event outputs, and custom template hooks while refining the
+          UI to feel much closer to Angular Material surfaces and field patterns.
+        </p>
+
+        <div class="pill-row">
+          <span class="feature-pill" *ngFor="let pill of featurePills">{{ pill }}</span>
+        </div>
+
+        <div class="compat-grid">
+          <div class="compat-card">
+            <strong>API stability first</strong>
+            Inputs, outputs, settings keys, and template slots stay aligned with the code people already ship.
+          </div>
+          <div class="compat-card">
+            <strong>Material-like visual language</strong>
+            Surface elevation, rounded outlines, calmer color tokens, and cleaner dropdown states.
+          </div>
+          <div class="compat-card">
+            <strong>Angular 14 validation</strong>
+            This demo compiles with an Angular 14 toolchain against the local library source before any publish step.
+          </div>
+        </div>
+      </section>
+
+      <section class="setup-grid" id="install">
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 1</div>
+              <h3>Install the package</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('install', installCode)">{{ copyLabels.install }}</button>
+          </div>
+          <pre [textContent]="installCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 2</div>
+              <h3>Register the module</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('setup', setupCode)">{{ copyLabels.setup }}</button>
+          </div>
+          <pre [textContent]="setupCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 3</div>
+              <h3>Customize the full theme</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('customTheme', customThemeCode)">{{ copyLabels.customTheme }}</button>
+          </div>
+          <pre [textContent]="customThemeCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 4</div>
+              <h3>Render the dropdown</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('template', templateCode)">{{ copyLabels.template }}</button>
+          </div>
+          <pre [textContent]="templateCode"></pre>
+        </article>
+      </section>
+
+      <section class="preview-card" id="preview">
+        <div class="preview-head">
+          <div>
+            <div class="setup-label">Live preview</div>
+            <h3>{{ currentLabel }}</h3>
+            <p>
+              Running against package line <code>{{ docsMeta.packageVersion }}</code> and Angular
+              <code>{{ docsMeta.angularVersion }}</code>.
+            </p>
+          </div>
+          <span class="status-pill">Classic selector preserved</span>
+        </div>
+
+        <div class="preview-canvas">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+
+      <section class="api-grid" id="api">
+        <article class="api-card" *ngFor="let card of apiCards">
+          <div class="setup-label">{{ card.kicker }}</div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.copy }}</p>
+        </article>
+      </section>
+    </main>
+  </div>
+</div>

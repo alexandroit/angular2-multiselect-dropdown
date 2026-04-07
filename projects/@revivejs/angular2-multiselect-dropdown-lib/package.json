@@ -1,18 +1,14 @@
 {
   "$schema": "../../../node_modules/ng-packagr/package.schema.json",
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "13.0.6",
+  "version": "14.0.0",
   "license": "MIT",
   "author": "Pradeep Terli (Original), Alexandro Paixao Marques (Maintainer)",
-  "description": "Angular 21 multiselect dropdown component with search, grouping, custom templates, lazy loading, checkbox selection, and support for reactive and template-driven forms.",
+  "description": "Angular 14 multiselect dropdown component with a Material-inspired UI, search, grouping, custom templates, lazy loading, checkbox selection, and support for reactive and template-driven forms.",
   "keywords": [
     "angular",
-    "angular19",
-    "angular20",
-    "angular21",
-    "angular-19",
-    "angular-20",
-    "angular-21",
+    "angular14",
+    "angular-14",
     "typescript",
     "angular-library",
     "npm-package",
@@ -59,9 +55,9 @@
   ],
   "homepage": "https://github.com/alexandroit/angular2-multiselect-dropdown",
   "peerDependencies": {
-    "@angular/core": ">=19.0.0 <22.0.0",
-    "@angular/forms": ">=19.0.0 <22.0.0",
-    "@angular/common": ">=19.0.0 <22.0.0"
+    "@angular/core": ">=14.0.0 <15.0.0",
+    "@angular/forms": ">=14.0.0 <15.0.0",
+    "@angular/common": ">=14.0.0 <15.0.0"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^17.4.0"

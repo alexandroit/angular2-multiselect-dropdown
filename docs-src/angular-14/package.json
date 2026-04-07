@@ -1,0 +1,35 @@
+{
+  "name": "@revivejs/angular2-multiselect-dropdown-docs-angular14",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "node ./node_modules/@angular/cli/bin/ng",
+    "start": "node ./node_modules/@angular/cli/bin/ng serve --port 4214 --host 0.0.0.0",
+    "build": "node ./node_modules/@angular/cli/bin/ng build --output-path ../../docs/angular-14 --base-href ./ --build-optimizer=false --vendor-chunk=true --named-chunks=true --aot=false"
+  },
+  "dependencies": {
+    "@angular/animations": "14.3.0",
+    "@angular/common": "14.3.0",
+    "@angular/compiler": "14.3.0",
+    "@angular/core": "14.3.0",
+    "@angular/forms": "14.3.0",
+    "@angular/localize": "14.3.0",
+    "@angular/platform-browser": "14.3.0",
+    "@angular/platform-browser-dynamic": "14.3.0",
+    "@angular/router": "14.3.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "core-js": "2.6.12",
+    "rxjs": "7.5.0",
+    "tslib": "2.3.0",
+    "zone.js": "0.11.8"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "14.2.13",
+    "@angular/cli": "14.2.13",
+    "@angular/compiler-cli": "14.3.0",
+    "@types/node": "12.12.54",
+    "sass": "^1.83.0",
+    "typescript": "4.8.4"
+  }
+}
