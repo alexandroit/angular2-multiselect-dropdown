@@ -1,7 +1,7 @@
 {
   "$schema": "../../../node_modules/ng-packagr/package.schema.json",
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "13.0.7",
+  "version": "14.0.1",
   "license": "MIT",
   "author": "Pradeep Terli (Original), Alexandro Paixao Marques (Maintainer)",
   "description": "Angular 21 multiselect dropdown component with a Material-inspired UI, search, grouping, custom templates, lazy loading, checkbox selection, custom CSS/SCSS theming, and support for reactive and template-driven forms.",

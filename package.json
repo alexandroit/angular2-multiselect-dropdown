@@ -1,6 +1,6 @@
 {
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "13.0.7",
+  "version": "14.0.1",
   "scripts": {
     "ng": "ng",
     "start": "cd docs-src/angular-21 && npm start",
