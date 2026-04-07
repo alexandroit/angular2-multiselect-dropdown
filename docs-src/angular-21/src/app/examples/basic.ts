@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { DropdownSettings } from '@revivejs/angular2-multiselect-dropdown';
+import { DropdownSettings } from '@revivejs/angular-multiselect-dropdown';
 @Component({
   standalone: false,
     templateUrl: './views/view.html'

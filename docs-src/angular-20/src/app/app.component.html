@@ -1,183 +1,152 @@
-<div class="shell">
-  <section class="hero">
-    <div class="hero-card hero-main">
-      <span class="badge">{{ docsMeta.badge }}</span>
-      <h1>&#64;revivejs/angular2-multiselect-dropdown</h1>
-      <p>
-        A maintained Angular multiselect dropdown with classic template support, search,
-        grouping, custom templates, lazy loading, and both template-driven and reactive
-        forms workflows.
-      </p>
-
-      <div class="feature-grid">
-        <div class="feature">
-          <strong>Classic API preserved</strong>
-          Keep using <code>&lt;angular2-multiselect&gt;</code>, <code>ngModel</code>, and the
-          familiar callback outputs across the maintained release line.
-        </div>
-        <div class="feature">
-          <strong>Built for forms</strong>
-          Works with standalone templates, <code>ngModel</code>, and
-          <code>formControlName</code> without adapters.
-        </div>
-        <div class="feature">
-          <strong>Rich dropdown behavior</strong>
-          Search, grouping, custom placeholders, badge limits, lazy loading, and remote data
-          hooks are available out of the box.
-        </div>
-        <div class="feature">
-          <strong>Versioned docs</strong>
-          Each Angular release line gets its own docs build so the published package and demo stay
-          aligned.
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn" href="#demos">See demos</a>
-        <a
-          class="btn secondary"
-          href="https://github.com/alexandroit/angular2-multiselect-dropdown#readme"
-          target="_blank"
-          rel="noreferrer">
-          README
-        </a>
+<div class="docs-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div>
+        <div class="topbar-eyebrow">ReviveJS maintained line</div>
+        <h1>@revivejs/angular-multiselect-dropdown</h1>
       </div>
     </div>
 
-    <div class="hero-card hero-setup">
-      <h2>Setup in 3 steps</h2>
-
-      <div class="step">
-        <span class="step-num">1</span>
-        <div>
-          <strong>Install</strong>
-          <pre>{{ installCode }}</pre>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-num">2</span>
-        <div>
-          <strong>Register the module</strong>
-          <pre>{{ setupCode }}</pre>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-num">3</span>
-        <div>
-          <strong>Render the dropdown</strong>
-          <pre>{{ templateCode }}</pre>
-        </div>
-      </div>
+    <div class="topbar-meta">
+      <span class="meta-pill">{{ docsMeta.angularVersion }}</span>
+      <span class="meta-pill primary">v{{ docsMeta.packageVersion }}</span>
     </div>
-  </section>
+  </header>
 
-  <section class="layout" id="demos">
-    <div class="panels">
-      <article class="panel">
-        <div class="panel-header">
-          <h2>Example gallery</h2>
-          <p>
-            Browse the maintained examples to validate how the dropdown behaves with forms,
-            templating, grouping, lazy loading, and remote data.
-          </p>
-        </div>
+  <div class="docs-layout">
+    <aside class="rail">
+      <section class="rail-card">
+        <div class="rail-label">Overview</div>
+        <a class="rail-link" href="#install">Install</a>
+        <a class="rail-link" href="#preview">Preview</a>
+        <a class="rail-link" href="#api">API</a>
+      </section>
 
-        <div class="example-shell">
-          <nav class="example-nav" aria-label="Multiselect examples">
-            <a
-              *ngFor="let link of links"
-              class="example-link"
-              [routerLink]="[link.path]"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }">
-              {{ link.data?.label }}
-            </a>
-          </nav>
+      <section class="rail-card">
+        <div class="rail-label">Examples</div>
+        <nav class="example-nav" aria-label="Angular multiselect examples">
+          <a
+            *ngFor="let link of links"
+            class="example-link"
+            [routerLink]="[link.path]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            {{ link.data?.['label'] }}
+          </a>
+        </nav>
+      </section>
 
-          <div class="example-stage">
-            <div class="example-stage-header">
-              <div>
-                <h3>{{ currentLabel }}</h3>
-                <p>
-                  Live demo rendered against package <code>{{ docsMeta.packageVersion }}</code>
-                  for Angular <code>{{ docsMeta.angularVersion }}</code>.
-                </p>
-              </div>
-              <span class="stage-pill">{{ docsMeta.angularVersion }}</span>
-            </div>
-
-            <div class="example-preview">
-              <router-outlet></router-outlet>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="panel ref-panel">
-        <div class="panel-header">
-          <h2>Quick API reference</h2>
-          <p>
-            The maintained line keeps the familiar API while documenting the most commonly used
-            inputs and outputs in one place.
-          </p>
-        </div>
-
-        <div class="ref-grid">
-          <div class="ref-card">
-            <h4>Core inputs</h4>
-            <table class="api-table">
-              <tr><td><code>[data]</code></td><td>Array of available dropdown items.</td></tr>
-              <tr><td><code>[(ngModel)]</code></td><td>Two-way bind the selected items list.</td></tr>
-              <tr><td><code>[settings]</code></td><td>Pass text, search, grouping, and lazy loading configuration.</td></tr>
-              <tr><td><code>disabled</code></td><td>Disable interaction when the parent form requires it.</td></tr>
-            </table>
-          </div>
-
-          <div class="ref-card">
-            <h4>Templates</h4>
-            <table class="api-table">
-              <tr><td><code>&lt;c-item&gt;</code></td><td>Provide a custom item template for the dropdown list.</td></tr>
-              <tr><td><code>&lt;c-badge&gt;</code></td><td>Customize the selected badge rendering.</td></tr>
-              <tr><td><code>tagToBody</code></td><td>Keep it <code>false</code> in card or sticky layouts so the menu stays anchored to the field.</td></tr>
-            </table>
-          </div>
-
-          <div class="ref-card">
-            <h4>Outputs</h4>
-            <table class="api-table">
-              <tr><td><code>(onSelect)</code></td><td>Emits the selected item.</td></tr>
-              <tr><td><code>(onDeSelect)</code></td><td>Emits when a selected item is removed.</td></tr>
-              <tr><td><code>(onSelectAll)</code></td><td>Emits when all visible items are selected.</td></tr>
-              <tr><td><code>(onDeSelectAll)</code></td><td>Emits when all selections are cleared.</td></tr>
-            </table>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <aside class="log-panel">
-      <h2>Release line</h2>
-      <p>
-        This demo line is aligned with the published package and keeps the classic dropdown API
-        available for maintained Angular applications.
-      </p>
-
-      <div class="log-list">
-        <div class="log-entry">Package line: {{ docsMeta.packageVersion }}</div>
-        <div class="log-entry">Angular compatibility: {{ docsMeta.angularVersion }}</div>
-        <div class="log-entry">Docs path: /{{ docsMeta.docsPath }}/</div>
-        <div class="log-entry">Pattern: versioned docs-src + compiled docs history</div>
-        <div class="log-entry">Key workflows: ngModel, reactive forms, templates, grouping, lazy loading</div>
-      </div>
+      <section class="rail-card">
+        <div class="rail-label">Release line</div>
+        <div class="release-item"><strong>Package</strong><span>{{ docsMeta.packageVersion }}</span></div>
+        <div class="release-item"><strong>Angular</strong><span>{{ docsMeta.angularVersion }}</span></div>
+        <div class="release-item"><strong>Docs path</strong><span>/{{ docsMeta.docsPath }}/</span></div>
+        <div class="release-item"><strong>Promise</strong><span>Material look, classic API</span></div>
+      </section>
     </aside>
-  </section>
 
-  <footer class="footer">
-    <p>
-      Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation,
-      and release stewardship by ReviveJS.
-    </p>
-  </footer>
+    <main class="docs-main">
+      <section class="hero-card">
+        <span class="hero-badge">{{ docsMeta.badge }}</span>
+        <h2>Material-inspired multiselect, without breaking the classic contract.</h2>
+        <p class="hero-copy">
+          This release line keeps the familiar <code>&lt;angular2-multiselect&gt;</code> API,
+          <code>ngModel</code> binding, event outputs, and custom template hooks while refining the
+          UI to feel much closer to Angular Material surfaces and field patterns.
+        </p>
+
+        <div class="pill-row">
+          <span class="feature-pill" *ngFor="let pill of featurePills">{{ pill }}</span>
+        </div>
+
+        <div class="compat-grid">
+          <div class="compat-card">
+            <strong>API stability first</strong>
+            Inputs, outputs, settings keys, and template slots stay aligned with the code people already ship.
+          </div>
+          <div class="compat-card">
+            <strong>Material-like visual language</strong>
+            Surface elevation, rounded outlines, calmer color tokens, and cleaner dropdown states.
+          </div>
+          <div class="compat-card">
+            <strong>Modern line foundation</strong>
+            This shell powers the remodulated lines from Angular 14 through Angular 21 while keeping the legacy selector contract intact.
+          </div>
+        </div>
+      </section>
+
+      <section class="setup-grid" id="install">
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 1</div>
+              <h3>Install the package</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('install', installCode)">{{ copyLabels.install }}</button>
+          </div>
+          <pre [textContent]="installCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 2</div>
+              <h3>Register the module</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('setup', setupCode)">{{ copyLabels.setup }}</button>
+          </div>
+          <pre [textContent]="setupCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 3</div>
+              <h3>Customize the full theme</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('customTheme', customThemeCode)">{{ copyLabels.customTheme }}</button>
+          </div>
+          <pre [textContent]="customThemeCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 4</div>
+              <h3>Render the dropdown</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('template', templateCode)">{{ copyLabels.template }}</button>
+          </div>
+          <pre [textContent]="templateCode"></pre>
+        </article>
+      </section>
+
+      <section class="preview-card" id="preview">
+        <div class="preview-head">
+          <div>
+            <div class="setup-label">Live preview</div>
+            <h3>{{ currentLabel }}</h3>
+            <p>
+              Running against package line <code>{{ docsMeta.packageVersion }}</code> and Angular
+              <code>{{ docsMeta.angularVersion }}</code>.
+            </p>
+          </div>
+          <span class="status-pill">Classic selector preserved</span>
+        </div>
+
+        <div class="preview-canvas">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+
+      <section class="api-grid" id="api">
+        <article class="api-card" *ngFor="let card of apiCards">
+          <div class="setup-label">{{ card.kicker }}</div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.copy }}</p>
+        </article>
+      </section>
+    </main>
+  </div>
 </div>

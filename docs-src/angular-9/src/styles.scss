@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff8ef 0%, #f5fbff 60%, #eef4fb 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+table {
+  width: 100%;
+}
+
+.modal-content {
+  color: #17324d;
+}
+
+.alert {
+  border-radius: 14px;
+}
+
+.btn {
+  text-decoration: none;
+}

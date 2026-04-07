@@ -1,7 +1,7 @@
 {
-  "name": "angular2-multiselect-dropdown",
-  "short_name": "angular2-multiselect-dropdown",
-  "theme_color": "#1976d2",
+  "name": "@revivejs/angular-multiselect-dropdown",
+  "short_name": "multiselect",
+  "theme_color": "#3f51b5",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

@@ -11,24 +11,75 @@ import { DOCS_META } from './docs-meta';
 })
 export class AppComponent implements OnInit {
   readonly docsMeta = DOCS_META;
-  readonly installCode =
-    `npm install @revivejs/angular2-multiselect-dropdown@${this.docsMeta.packageRange}`;
+  readonly installCode = `npm install @revivejs/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
   readonly setupCode = [
     `import { FormsModule } from '@angular/forms';`,
-    `import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';`,
+    `import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';`,
+    ``,
+    `"styles": [`,
+    `  "node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css"`,
+    `]`,
     ``,
     `@NgModule({`,
     `  imports: [BrowserModule, FormsModule, AngularMultiSelectModule]`,
     `})`,
     `export class AppModule {}`
   ].join('\n');
+  readonly customThemeCode = [
+    `"styles": [`,
+    `  "src/styles.scss",`,
+    `  "src/styles/multiselect-dropdown.theme.scss"`,
+    `]`,
+    ``,
+    `/* Start from the package file: */`,
+    `/* node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss */`
+  ].join('\n');
   readonly templateCode = [
     `<angular2-multiselect`,
     `  [data]="items"`,
     `  [(ngModel)]="selectedItems"`,
-    `  [settings]="settings">`,
+    `  [settings]="settings"`,
+    `  (onSelect)="onItemSelect($event)">`,
     `</angular2-multiselect>`
   ].join('\n');
+  readonly featurePills = [
+    'ngModel',
+    'Reactive forms',
+    'Search',
+    'Grouping',
+    'Custom templates',
+    'Lazy loading',
+    'Material-like theme',
+    'Custom CSS/SCSS theme'
+  ];
+  readonly apiCards = [
+    {
+      kicker: 'Selector',
+      title: '<angular2-multiselect>',
+      copy: 'The public selector stays unchanged so existing templates do not need to be rewritten for this line.'
+    },
+    {
+      kicker: 'Binding',
+      title: '[(ngModel)] and formControlName',
+      copy: 'Template-driven and reactive forms remain first-class. This line focuses on compatibility, not API churn.'
+    },
+    {
+      kicker: 'Events',
+      title: 'onSelect, onDeSelect, onSelectAll',
+      copy: 'The classic callback outputs are preserved, so event handling code keeps working while the UI gets refined.'
+    },
+    {
+      kicker: 'Styling',
+      title: 'custom.theme.scss and custom.theme.css',
+      copy: 'A full starter theme now ships with the package so teams can copy it and completely restyle the dropdown without editing library source.'
+    }
+  ];
+  readonly copyLabels: { [key: string]: string } = {
+    install: 'Copy',
+    setup: 'Copy',
+    customTheme: 'Copy',
+    template: 'Copy'
+  };
 
   links = this.router.config.filter((link) => !!link.path && !!link.data?.['label']);
   currentLabel = this.links[0]?.data?.['label'] || 'Basic example';
@@ -42,6 +93,28 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.syncCurrentRoute();
+  }
+
+  copySnippet(key: string, value: string) {
+    const textarea = document.createElement('textarea');
+    textarea.value = value;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      document.execCommand('copy');
+      this.copyLabels[key] = 'Copied';
+    } catch (error) {
+      this.copyLabels[key] = 'Copy failed';
+    } finally {
+      document.body.removeChild(textarea);
+      window.setTimeout(() => {
+        this.copyLabels[key] = 'Copy';
+      }, 1600);
+    }
   }
 
   private syncCurrentRoute() {

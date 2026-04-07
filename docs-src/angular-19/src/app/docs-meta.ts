@@ -1,7 +1,7 @@
 export const DOCS_META = {
-  badge: 'ANGULAR 19.2 · MULTISELECT',
-  angularVersion: '19.2.x',
-  packageVersion: '11.0.3',
-  packageRange: '^11.0.3',
+  badge: 'ANGULAR 19 · MATERIAL REFINED',
+  angularVersion: '19.x',
+  packageVersion: '19.0.0',
+  packageRange: '^19.0.0',
   docsPath: 'angular-19'
 };

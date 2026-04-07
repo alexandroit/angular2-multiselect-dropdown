@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
-import { AngularMultiSelect } from '@revivejs/angular2-multiselect-dropdown';
+import { AngularMultiSelect } from '@revivejs/angular-multiselect-dropdown';
 
 @Component({
   standalone: false,

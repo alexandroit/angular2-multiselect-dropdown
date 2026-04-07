@@ -1,4 +1,4 @@
-# NPM Publishing Guide for @revivejs/angular2-multiselect-dropdown
+# NPM Publishing Guide for @revivejs/angular-multiselect-dropdown
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@
 ### 1. Update Version
 Update the version number in:
 - `package.json` (root)
-- `projects/@revivejs/angular2-multiselect-dropdown-lib/package.json`
+- `projects/@revivejs/angular-multiselect-dropdown-lib/package.json`
 
 ```bash
 npm version major|minor|patch
@@ -25,11 +25,11 @@ npm run build-package
 This will:
 - Compile SASS themes
 - Build with ng-packagr
-- Generate distribution files in `dist/@revivejs/angular2-multiselect-dropdown`
+- Generate distribution files in `dist/@revivejs/angular-multiselect-dropdown`
 
 ### 3. Test Build Output
 ```bash
-cd dist/@revivejs/angular2-multiselect-dropdown
+cd dist/@revivejs/angular-multiselect-dropdown
 npm pack
 # This creates a .tgz file without uploading
 cd ../..
@@ -48,7 +48,7 @@ npm run publish-npm
 npm run build-package
 
 # Navigate to dist folder
-cd dist/@revivejs/angular2-multiselect-dropdown
+cd dist/@revivejs/angular-multiselect-dropdown
 
 # Publish
 npm publish --access public
@@ -61,11 +61,11 @@ cd ../..
 
 ### 1. Verify Publication
 ```bash
-npm view @revivejs/angular2-multiselect-dropdown
+npm view @revivejs/angular-multiselect-dropdown
 ```
 
 ### 2. Create GitHub Release
-- Go to [GitHub Releases](https://github.com/alexandroit/angular2-multiselect-dropdown/releases)
+- Go to [GitHub Releases](https://github.com/alexandroit/angular-multiselect-dropdown/releases)
 - Create a new release with the version tag
 - Add changelog details
 
@@ -83,11 +83,11 @@ npm login
 ```
 
 ### "Invalid package name"
-Ensure the scoped name `@revivejs/angular2-multiselect-dropdown` matches exactly in all files.
+Ensure the scoped name `@revivejs/angular-multiselect-dropdown` matches exactly in all files.
 
 ### "Permission denied"
 - Verify you are the package owner
-- Check npm access: `npm owner ls @revivejs/angular2-multiselect-dropdown`
+- Check npm access: `npm owner ls @revivejs/angular-multiselect-dropdown`
 
 ### Build Errors
 ```bash
@@ -105,22 +105,38 @@ The `.npmrc` file contains:
 
 ## Version Strategy
 
-Following Semantic Versioning (SemVer):
-- **Major** (11.x.0): Breaking changes or major Angular version support
-- **Minor** (11.x.0): New features, backward compatible
-- **Patch** (11.0.x): Bug fixes
+This repository follows a line-per-Angular-major strategy:
+- **2.x.x** for Angular 2
+- **4.x.x** through **13.x.x** for the classic compatibility lines
+- **14.x.x** through **21.x.x** for the Material-refined lines
+
+Use patch releases for fixes within a maintained Angular line. Keep `latest` on the active Angular 21 line unless there is a deliberate reason to move it.
 
 ## Angular Version Compatibility
 
 | Package Version | Angular Versions |
 |---|---|
-| 11.x.x | 19 |
-| 10.x.x | 18 |
-| 9.x.x | 17 |
-| 8.x.x | 16 |
-| 7.x.x | 15 |
+| 21.x.x | 21 |
+| 20.x.x | 20 |
+| 19.x.x | 19 |
+| 18.x.x | 18 |
+| 17.x.x | 17 |
+| 16.x.x | 16 |
+| 15.x.x | 15 |
+| 14.x.x | 14 |
+| 13.x.x | 13 |
+| 12.x.x | 12 |
+| 11.x.x | 11 |
+| 10.x.x | 10 |
+| 9.x.x | 9 |
+| 8.x.x | 8 |
+| 7.x.x | 7 |
+| 6.x.x | 6 |
+| 5.x.x | 5 |
+| 4.x.x | 4 |
+| 2.x.x | 2 |
 
 ---
 
-**Last Updated**: April 1, 2026  
-**Maintainer**: [Alexander Roth](https://github.com/alexandroit)
+**Last Updated**: April 7, 2026  
+**Maintainer**: [Alexandro Paixao Marques](https://github.com/alexandroit)

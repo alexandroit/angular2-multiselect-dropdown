@@ -16,8 +16,8 @@ All notable changes to this project will be documented in this file.
 - Removed Angular Sass deprecation warnings from the demo build
 
 ### See Also
-- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 
 ## [13.0.3] - 2026-04-03
 
@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file.
 - Updated `@ng-bootstrap/ng-bootstrap` to `20.0.0`
 - Updated TypeScript to `~5.9.3`
 - Updated `zone.js` to `~0.16.1` for test compatibility
-- Corrected the GitHub Pages base href to `/angular2-multiselect-dropdown/`
+- Corrected the GitHub Pages base href to `/angular-multiselect-dropdown/`
 - Tightened library peer dependencies to Angular 21
 
 ### Fixed
@@ -45,14 +45,14 @@ All notable changes to this project will be documented in this file.
 
 ### How to Upgrade
 ```bash
-npm install @revivejs/angular2-multiselect-dropdown@^13.0.3
+npm install @revivejs/angular-multiselect-dropdown@^13.0.3
 ```
 
 ### See Also
 - [Angular Version Compatibility](https://angular.dev/reference/versions)
 - [Angular Zoneless Guide](https://angular.dev/guide/zoneless)
-- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 
 ## [12.0.1] - 2026-04-03
 
@@ -63,15 +63,15 @@ npm install @revivejs/angular2-multiselect-dropdown@^13.0.3
 
 ### Changed
 - Refined the Angular 20 package presentation for npm and GitHub
-- Updated package links to the active repository at `alexandroit/angular2-multiselect-dropdown`
+- Updated package links to the active repository at `alexandroit/angular-multiselect-dropdown`
 - Standardized the release messaging around the `12.0.1` Angular 20 line
 
 ### Fixed
 - Removed broken or outdated README links before publishing
 
 ### See Also
-- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 
 ## [12.0.0] - 2026-04-03
 
@@ -93,12 +93,12 @@ npm install @revivejs/angular2-multiselect-dropdown@^13.0.3
 
 ### How to Upgrade
 ```bash
-npm install @revivejs/angular2-multiselect-dropdown@^12.0.0
+npm install @revivejs/angular-multiselect-dropdown@^12.0.0
 ```
 
 ### See Also
-- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 
 ## [11.0.0] - 2026-04-01
 
@@ -122,12 +122,12 @@ npm install @revivejs/angular2-multiselect-dropdown@^12.0.0
 
 ### Breaking Changes
 - Requires Node.js 18+ and npm 9+
-- Package name changed from `angular2-multiselect-dropdown` to `@revivejs/angular2-multiselect-dropdown`
+- Package name changed from `angular2-multiselect-dropdown` to `@revivejs/angular-multiselect-dropdown`
 
 ### How to Upgrade
 ```bash
 npm uninstall angular2-multiselect-dropdown
-npm install @revivejs/angular2-multiselect-dropdown@^11.0.0
+npm install @revivejs/angular-multiselect-dropdown@^11.0.0
 ```
 
 Update your imports:
@@ -136,13 +136,13 @@ Update your imports:
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 // After
-import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';
 ```
 
 ### Credits
 - **Original Author**: Pradeep Terli ([CuppaLabs](https://github.com/CuppaLabs/angular2-multiselect-dropdown))
-- **Current Maintainer**: Alexander Roth ([ReviveJS](https://github.com/alexandroit))
+- **Current Maintainer**: Alexandro Paixao Marques ([ReviveJS](https://github.com/alexandroit))
 
 ### See Also
-- [GitHub Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
+- [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
