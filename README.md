@@ -1,18 +1,18 @@
 # @revivejs/angular-multiselect-dropdown
 
-> A maintained Angular multiselect dropdown for release lines from Angular 2 through Angular 21, with search, grouping, custom item and badge templates, checkbox selection, lazy loading hooks, and Material-inspired theming from Angular 14 onward.
+> A maintained Angular multiselect dropdown project organized around release lines from Angular 2 through Angular 21, with search, grouping, custom item and badge templates, checkbox selection, lazy loading hooks, and Material-inspired theming from Angular 14 onward.
 
 [![npm version](https://img.shields.io/npm/v/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![npm monthly](https://img.shields.io/npm/dm/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![license](https://img.shields.io/npm/l/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/blob/master/LICENSE)
-[![Angular 21](https://img.shields.io/badge/Angular-21-red?style=flat-square&logo=angular)](https://angular.dev)
+[![Angular line](https://img.shields.io/badge/Published%20line-2.0.1-red?style=flat-square&logo=angular)](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/stargazers)
 
-**[Documentation & Demo Matrix](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 21 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
+**[Documentation & Demo Matrix](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 2 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
 
-**Current working line in this repo:** `21.0.0`
+**Latest published version:** `2.0.1`
 
 ---
 
@@ -20,15 +20,15 @@
 
 ## Why this library?
 
-The original `angular2-multiselect-dropdown` package became hard to maintain across newer Angular releases. This maintained line keeps the familiar API shape, form bindings, event outputs, and template hooks while organizing the project around explicit Angular-major release lines from Angular 2 through Angular 21.
+The original `angular2-multiselect-dropdown` package became difficult to maintain across newer Angular releases. This repository is being reorganized into a clear release-line strategy, with one published package line at a time and dedicated documentation surfaces for each Angular major.
 
-From Angular 14 onward, the documentation and styling direction move to the remodulated Material-inspired presentation introduced by ReviveJS. The earlier lines keep a classic compatibility shell so older teams can still find a familiar experience.
+The goal is to preserve the familiar multiselect API, event outputs, template hooks, and theme entry points while bringing the project under a cleaner ReviveJS package and documentation structure.
 
 ## Features
 
 | Feature | Supported |
 | :--- | :---: |
-| Angular release lines from 2 through 21 | ✅ |
+| Release-line strategy from Angular 2 through Angular 21 | ✅ |
 | Primary selector `<angular-multiselect>` | ✅ |
 | Legacy selector alias `<angular2-multiselect>` | ✅ |
 | `[(ngModel)]` support | ✅ |
@@ -42,19 +42,20 @@ From Angular 14 onward, the documentation and styling direction move to the remo
 | Bundled `default.theme.css` | ✅ |
 | Bundled `custom.theme.scss` | ✅ |
 | Bundled `custom.theme.css` | ✅ |
-| GitHub Pages docs by Angular line | ✅ |
+| Versioned docs shell in this repo | ✅ |
 
 ## Table of Contents
 
 1. [Rename Note](#rename-note)
-2. [Angular Version Compatibility](#angular-version-compatibility)
-3. [Installation](#installation)
-4. [Setup](#setup)
-5. [Basic Usage](#basic-usage)
-6. [Custom CSS and SCSS Themes](#custom-css-and-scss-themes)
-7. [Templates and Forms](#templates-and-forms)
-8. [Run Locally](#run-locally)
-9. [License](#license)
+2. [Published Line Status](#published-line-status)
+3. [Planned Release Order](#planned-release-order)
+4. [Installation](#installation)
+5. [Setup](#setup)
+6. [Basic Usage](#basic-usage)
+7. [Custom CSS and SCSS Themes](#custom-css-and-scss-themes)
+8. [Templates and Forms](#templates-and-forms)
+9. [Run Locally](#run-locally)
+10. [License](#license)
 
 ## Rename Note
 
@@ -63,31 +64,29 @@ From Angular 14 onward, the documentation and styling direction move to the remo
 - primary selector: `<angular-multiselect>`
 - legacy alias still accepted: `<angular2-multiselect>`
 
-## Angular Version Compatibility
+## Docs and Demo Links
+
+- Demo matrix: `https://alexandroit.github.io/angular-multiselect-dropdown/`
+- Angular 2 demo: `https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/`
+- npm package: `https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown`
+- GitHub repository: `https://github.com/alexandroit/angular-multiselect-dropdown`
+
+## Published Line Status
 
 Angular 3 is intentionally absent because Angular did not ship a stable major 3 release.
 
-| Package version | Angular line | Docs shell | Demo link |
+| Package version | Maintained line | Status | Demo link |
 | :---: | :---: | :--- | :--- |
-| **21.0.0** | **21.x** | Material refined | [Angular 21 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/) |
-| **20.0.0** | **20.x** | Material refined | [Angular 20 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-20/) |
-| **19.0.0** | **19.x** | Material refined | [Angular 19 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-19/) |
-| **18.0.0** | **18.x** | Material refined | [Angular 18 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-18/) |
-| **17.0.0** | **17.x** | Material refined | [Angular 17 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-17/) |
-| **16.0.0** | **16.x** | Material refined | [Angular 16 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-16/) |
-| **15.0.0** | **15.x** | Material refined | [Angular 15 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-15/) |
-| **14.0.0** | **14.x** | Material refined | [Angular 14 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-14/) |
-| **13.0.0** | **13.x** | Classic | [Angular 13 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-13/) |
-| **12.0.0** | **12.x** | Classic | [Angular 12 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-12/) |
-| **11.0.0** | **11.x** | Classic | [Angular 11 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-11/) |
-| **10.0.0** | **10.x** | Classic | [Angular 10 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-10/) |
-| **9.0.0** | **9.x** | Classic | [Angular 9 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-9/) |
-| **8.0.0** | **8.x** | Classic | [Angular 8 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-8/) |
-| **7.0.0** | **7.x** | Classic | [Angular 7 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-7/) |
-| **6.0.0** | **6.x** | Classic | [Angular 6 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-6/) |
-| **5.0.0** | **5.x** | Classic | [Angular 5 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-5/) |
-| **4.0.0** | **4.x** | Classic | [Angular 4 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-4/) |
-| **2.0.0** | **2.x** | Classic | [Angular 2 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/) |
+| **2.0.1** | **2.x line** | Published patch fixing README and package presentation | [Angular 2 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/) |
+
+## Planned Release Order
+
+The npm rollout is being published sequentially, one line at a time:
+
+`2.x.x` → `4.x.x` → `5.x.x` → `6.x.x` → `7.x.x` → `8.x.x` → `9.x.x` → `10.x.x` → `11.x.x` → `12.x.x` → `13.x.x` → `14.x.x` → `15.x.x` → `16.x.x` → `17.x.x` → `18.x.x` → `19.x.x` → `20.x.x` → `21.x.x`
+
+Important note:
+The repository already contains the scaffolding for the full line matrix, but only the published npm line should be treated as released.
 
 ## Installation
 
@@ -179,8 +178,9 @@ Use the `scss` file when you want full control over the component look inside yo
 npm install
 npm run docs:sync
 npm run build-package
-npm run docs:install:angular-21
-npm run build:docs:angular-21
+cd docs-src/angular-2
+npm install --ignore-scripts
+npm run build
 ```
 
 ## License
