@@ -9,7 +9,7 @@
     Close
   </button>
 </div>
-<angular2-multiselect
+<angular-multiselect
 #dropdownElem
 [data]="itemList"
 [(ngModel)]="selectedItems"
@@ -18,5 +18,5 @@
 (onDeSelect)="OnItemDeSelect($event)"
 (onSelectAll)="onSelectAll($event)"
 (onDeSelectAll)="onDeSelectAll($event)"
-></angular2-multiselect>
+></angular-multiselect>
 <br>

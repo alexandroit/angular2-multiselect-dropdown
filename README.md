@@ -23,19 +23,21 @@ This project now lives under the clearer package name:
 - new package: `@revivejs/angular-multiselect-dropdown`
 - previous package: `@revivejs/angular2-multiselect-dropdown`
 
-The public component selector stays the same for compatibility:
+The primary public component selector is now:
 
-- selector preserved: `<angular2-multiselect>`
+- primary selector: `<angular-multiselect>`
+- legacy alias still accepted: `<angular2-multiselect>`
 
 ## Why this package
 
-The original multiselect dropdown became hard to maintain across newer Angular releases. This maintained line keeps the familiar API shape, selector, form bindings, and template hooks while organizing the project around versioned release lines from Angular 2 through Angular 21.
+The original multiselect dropdown became hard to maintain across newer Angular releases. This maintained line keeps the familiar API shape, form bindings, and template hooks while organizing the project around versioned release lines from Angular 2 through Angular 21.
 
 From Angular 14 onward, the documentation and styling direction move to the remodulated Material-inspired presentation introduced by ReviveJS, while the earlier lines keep a more classic compatibility shell.
 
 ## Highlights
 
-- Selector compatibility with `<angular2-multiselect>`
+- Primary selector `<angular-multiselect>`
+- Legacy selector alias `<angular2-multiselect>`
 - `[(ngModel)]` and `formControlName` support
 - Search and filter
 - Group by field
@@ -52,25 +54,25 @@ Angular 3 is intentionally absent because Angular did not ship a stable major 3 
 
 | Package line | Angular line | Docs shell |
 | :---: | :---: | :--- |
-| `2.0.0` | `2.x` | Classic |
-| `4.0.0` | `4.x` | Classic |
-| `5.0.0` | `5.x` | Classic |
-| `6.0.0` | `6.x` | Classic |
-| `7.0.0` | `7.x` | Classic |
-| `8.0.0` | `8.x` | Classic |
-| `9.0.0` | `9.x` | Classic |
-| `10.0.0` | `10.x` | Classic |
-| `11.0.0` | `11.x` | Classic |
-| `12.0.0` | `12.x` | Classic |
-| `13.0.0` | `13.x` | Classic |
-| `14.0.0` | `14.x` | Material refined |
-| `15.0.0` | `15.x` | Material refined |
-| `16.0.0` | `16.x` | Material refined |
-| `17.0.0` | `17.x` | Material refined |
-| `18.0.0` | `18.x` | Material refined |
-| `19.0.0` | `19.x` | Material refined |
-| `20.0.0` | `20.x` | Material refined |
 | `21.0.0` | `21.x` | Material refined |
+| `20.0.0` | `20.x` | Material refined |
+| `19.0.0` | `19.x` | Material refined |
+| `18.0.0` | `18.x` | Material refined |
+| `17.0.0` | `17.x` | Material refined |
+| `16.0.0` | `16.x` | Material refined |
+| `15.0.0` | `15.x` | Material refined |
+| `14.0.0` | `14.x` | Material refined |
+| `13.0.0` | `13.x` | Classic |
+| `12.0.0` | `12.x` | Classic |
+| `11.0.0` | `11.x` | Classic |
+| `10.0.0` | `10.x` | Classic |
+| `9.0.0` | `9.x` | Classic |
+| `8.0.0` | `8.x` | Classic |
+| `7.0.0` | `7.x` | Classic |
+| `6.0.0` | `6.x` | Classic |
+| `5.0.0` | `5.x` | Classic |
+| `4.0.0` | `4.x` | Classic |
+| `2.0.0` | `2.x` | Classic |
 
 ## Installation
 
@@ -139,13 +141,13 @@ dropdownSettings = {
 ```
 
 ```html
-<angular2-multiselect
+<angular-multiselect
   [data]="dropdownList"
   [(ngModel)]="selectedItems"
   [settings]="dropdownSettings"
   (onSelect)="onItemSelect($event)"
   (onDeSelect)="onItemDeSelect($event)">
-</angular2-multiselect>
+</angular-multiselect>
 ```
 
 ## Templates and forms

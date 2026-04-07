@@ -20,7 +20,8 @@
 
 - new package: `@revivejs/angular-multiselect-dropdown`
 - previous package: `@revivejs/angular2-multiselect-dropdown`
-- selector preserved: `<angular2-multiselect>`
+- primary selector: `<angular-multiselect>`
+- legacy alias still accepted: `<angular2-multiselect>`
 
 ## Highlights
 
@@ -67,11 +68,11 @@ You can also start from:
 ## Basic usage
 
 ```html
-<angular2-multiselect
+<angular-multiselect
   [data]="dropdownList"
   [(ngModel)]="selectedItems"
   [settings]="dropdownSettings">
-</angular2-multiselect>
+</angular-multiselect>
 ```
 
 ## Release line policy

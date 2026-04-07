@@ -1,4 +1,4 @@
-<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"
+<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"
 (onDeSelect)="OnItemDeSelect($event)" (onClose)="onClose()" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
 <c-search>
      <ng-template>
@@ -12,4 +12,4 @@
         <label>{{item.capital}}</label>
     </ng-template>
 </c-item>
-</angular2-multiselect>
+</angular-multiselect>

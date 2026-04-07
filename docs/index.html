@@ -1,62 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>@revivejs/angular2-multiselect-dropdown — Docs</title>
-  <meta http-equiv="refresh" content="0; url=angular-21/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      font-family: "Avenir Next", "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #fff8ef 0%, #f5fbff 60%, #eef4fb 100%);
-      color: #102033;
-    }
-    .card {
-      text-align: center;
-      padding: 40px 48px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 16px 48px rgba(27,66,110,0.12);
-      border: 1px solid rgba(16,32,51,0.09);
-      max-width: 860px;
-    }
-    h1 { margin: 0 0 8px; font-size: 28px; }
-    p  { margin: 0 0 24px; color: #364b63; }
-    .versions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    a.ver {
-      padding: 10px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    a.ver.latest {
-      background: linear-gradient(135deg, #d24b2a 0%, #1f5ba7 100%);
-      color: #fff;
-    }
-    a.ver.other {
-      background: #edf4fa;
-      color: #14324f;
-      border: 1px solid rgba(20,50,79,0.15);
-    }
-    .note { margin-top: 20px; font-size: 12px; color: #7a9bb5; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>@revivejs/angular2-multiselect-dropdown</h1>
-    <p>Select an Angular version to view the documentation:</p>
-    <div class="versions">
-      <a class="ver latest" href="angular-21/">Angular 21 <span style="opacity:.7;font-size:11px">(latest)</span></a>
-      <a class="ver other" href="angular-20/">Angular 20</a>
-      <a class="ver other" href="angular-19/">Angular 19</a>
-    </div>
-    <p class="note">Redirecting to the latest version…</p>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@revivejs/angular-multiselect-dropdown docs</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f7fb;
+        --surface: rgba(255,255,255,0.92);
+        --outline: rgba(63,81,181,0.14);
+        --text: #212121;
+        --muted: #616161;
+        --primary: #3f51b5;
+        --primary-soft: #e8eaf6;
+        --classic: #17324d;
+        --classic-soft: #eef4fb;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top right, rgba(63,81,181,0.14), transparent 28%),
+          linear-gradient(180deg, #f8f9fc 0%, #f5f7fb 44%, #eef2f8 100%);
+      }
+      main {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 32px 20px 56px;
+        display: grid;
+        gap: 24px;
+      }
+      .hero,
+      .group {
+        background: var(--surface);
+        border: 1px solid var(--outline);
+        border-radius: 28px;
+        box-shadow: 0 1px 2px rgba(33,33,33,0.12), 0 10px 24px rgba(63,81,181,0.08);
+        padding: 28px;
+      }
+      h1, h2 { margin: 0; letter-spacing: -0.03em; }
+      .hero p, .group p { color: var(--muted); line-height: 1.7; }
+      .eyebrow {
+        display: inline-flex;
+        border-radius: 999px;
+        padding: 8px 14px;
+        background: var(--primary-soft);
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero h1 { margin-top: 14px; font-size: clamp(1.9rem, 4vw, 3.1rem); }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .card {
+        display: grid;
+        gap: 10px;
+        text-decoration: none;
+        padding: 18px;
+        border-radius: 20px;
+        border: 1px solid var(--outline);
+        color: inherit;
+        background: rgba(255,255,255,0.9);
+      }
+      .card.modern { background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(232,234,246,0.78)); }
+      .card.classic { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(238,244,251,0.96)); }
+      .card strong { font-size: 1.28rem; }
+      .group-head { display: grid; gap: 8px; }
+      @media (max-width: 720px) {
+        .hero, .group { padding: 22px; border-radius: 22px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <span class="eyebrow">ReviveJS version matrix</span>
+        <h1>@revivejs/angular-multiselect-dropdown</h1>
+        <p>
+          Release lines are organized from Angular 2 through Angular 21.
+          Angular 2 through 13 follow the classic compatibility shell.
+          Angular 14 through 21 use the remodulated Material-inspired shell.
+        </p>
+      </section>
+      
+    <section class="group">
+      <div class="group-head">
+        <h2>Angular 21 down to 14</h2>
+        <p>Remodulated documentation shell with the Material-inspired direction introduced from Angular 14 onward.</p>
+      </div>
+      <div class="cards">
+        
+          <a class="card modern" href="./angular-21/">
+            <span class="eyebrow">Angular 21</span>
+            <strong>21.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-20/">
+            <span class="eyebrow">Angular 20</span>
+            <strong>20.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-19/">
+            <span class="eyebrow">Angular 19</span>
+            <strong>19.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-18/">
+            <span class="eyebrow">Angular 18</span>
+            <strong>18.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-17/">
+            <span class="eyebrow">Angular 17</span>
+            <strong>17.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-16/">
+            <span class="eyebrow">Angular 16</span>
+            <strong>16.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-15/">
+            <span class="eyebrow">Angular 15</span>
+            <strong>15.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+          <a class="card modern" href="./angular-14/">
+            <span class="eyebrow">Angular 14</span>
+            <strong>14.0.0</strong>
+            <span>Material remodulated shell</span>
+          </a>
+      </div>
+    </section>
+  
+      
+    <section class="group">
+      <div class="group-head">
+        <h2>Angular 13 down to 2</h2>
+        <p>Classic presentation base, preserving the familiar compatibility flavor for the early release lines.</p>
+      </div>
+      <div class="cards">
+        
+          <a class="card classic" href="./angular-13/">
+            <span class="eyebrow">Angular 13</span>
+            <strong>13.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-12/">
+            <span class="eyebrow">Angular 12</span>
+            <strong>12.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-11/">
+            <span class="eyebrow">Angular 11</span>
+            <strong>11.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-10/">
+            <span class="eyebrow">Angular 10</span>
+            <strong>10.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-9/">
+            <span class="eyebrow">Angular 9</span>
+            <strong>9.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-8/">
+            <span class="eyebrow">Angular 8</span>
+            <strong>8.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-7/">
+            <span class="eyebrow">Angular 7</span>
+            <strong>7.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-6/">
+            <span class="eyebrow">Angular 6</span>
+            <strong>6.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-5/">
+            <span class="eyebrow">Angular 5</span>
+            <strong>5.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-4/">
+            <span class="eyebrow">Angular 4</span>
+            <strong>4.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+          <a class="card classic" href="./angular-2/">
+            <span class="eyebrow">Angular 2</span>
+            <strong>2.0.0</strong>
+            <span>Classic compatibility shell</span>
+          </a>
+      </div>
+    </section>
+  
+    </main>
+  </body>
 </html>

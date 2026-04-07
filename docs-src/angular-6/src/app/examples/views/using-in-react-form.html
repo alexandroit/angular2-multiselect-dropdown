@@ -17,7 +17,7 @@
   <div class="form-group">
     <label for="name">Skills</label>
     <span style="color: red; float: right">* required</span>
-    <angular2-multiselect
+    <angular-multiselect
       [data]="itemList"
       [(ngModel)]="selectedItems"
       [settings]="settings"
@@ -27,7 +27,7 @@
       (onDeSelectAll)="onDeSelectAll($event)"
       formControlName="skills"
     >
-    </angular2-multiselect>
+    </angular-multiselect>
   </div>
   <br>
   <div class="d-grid col-12 mx-auto">

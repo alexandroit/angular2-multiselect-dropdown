@@ -25,7 +25,7 @@ const noop = () => {
 };
 
 @Component({
-    selector: 'angular2-multiselect',
+    selector: 'angular-multiselect, angular2-multiselect',
     templateUrl: './multiselect.component.html',
     host: { '[class]': 'defaultSettings.classes' },
     styleUrls: ['./multiselect.component.scss'],

@@ -35,12 +35,12 @@ export class AppComponent implements OnInit {
     `/* node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss */`
   ].join('\n');
   readonly templateCode = [
-    `<angular2-multiselect`,
+    `<angular-multiselect`,
     `  [data]="items"`,
     `  [(ngModel)]="selectedItems"`,
     `  [settings]="settings"`,
     `  (onSelect)="onItemSelect($event)">`,
-    `</angular2-multiselect>`
+    `</angular-multiselect>`
   ].join('\n');
   readonly featurePills = [
     'ngModel',
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
   readonly apiCards = [
     {
       kicker: 'Selector',
-      title: '<angular2-multiselect>',
+      title: '<angular-multiselect>',
       copy: 'The public selector stays unchanged so existing templates do not need to be rewritten for this line.'
     },
     {

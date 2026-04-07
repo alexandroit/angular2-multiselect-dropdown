@@ -25,13 +25,13 @@
     <div class="form-group">
         <label for="name">Skills </label>
         <span style="color: red;float: right;">* required</span>
-        <angular2-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
+        <angular-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
                               [settings]="settings" 
                               (onSelect)="onItemSelect($event)"
                               (onDeSelect)="OnItemDeSelect($event)" 
                               (onSelectAll)="onSelectAll($event)" 
                               (onDeSelectAll)="onDeSelectAll($event)" name="skills" #skills="ngModel" required>
-        </angular2-multiselect>
+        </angular-multiselect>
         <div [hidden]="skills.valid" class="alert alert-danger">
             <div [hidden]="!skills.hasError('required')">Atleast one Skill is required</div>
         </div>

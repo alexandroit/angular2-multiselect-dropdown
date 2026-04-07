@@ -283,14 +283,14 @@ function writeDocsIndex(lines) {
         </p>
       </section>
       ${renderGroup(
-        'Angular 2 to 13',
-        'Classic presentation base, preserving the familiar legacy flavor for the early release lines.',
-        groups.classic
-      )}
-      ${renderGroup(
-        'Angular 14 to 21',
+        'Angular 21 down to 14',
         'Remodulated documentation shell with the Material-inspired direction introduced from Angular 14 onward.',
         groups.modern
+      )}
+      ${renderGroup(
+        'Angular 13 down to 2',
+        'Classic presentation base, preserving the familiar compatibility flavor for the early release lines.',
+        groups.classic
       )}
     </main>
   </body>

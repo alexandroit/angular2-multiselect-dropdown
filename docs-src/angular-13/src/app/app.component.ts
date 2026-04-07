@@ -23,11 +23,11 @@ export class AppComponent implements OnInit {
     `export class AppModule {}`
   ].join('\n');
   readonly templateCode = [
-    `<angular2-multiselect`,
+    `<angular-multiselect`,
     `  [data]="items"`,
     `  [(ngModel)]="selectedItems"`,
     `  [settings]="settings">`,
-    `</angular2-multiselect>`
+    `</angular-multiselect>`
   ].join('\n');
 
   links = this.router.config.filter((link) => !!link.path && !!link.data?.['label']);

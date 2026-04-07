@@ -1,4 +1,4 @@
-<angular2-multiselect [data]="itemList" 
+<angular-multiselect [data]="itemList" 
 [(ngModel)]="selectedItems" 
 [settings]="settings" 
 [loading] = "loading"
@@ -7,7 +7,7 @@
 (onSelectAll)="onSelectAll($event)" 
 (onDeSelectAll)="onDeSelectAll($event)"
 (onOpen)="onOpen($event)"
-(onScrollToEnd)="fetchMore($event)"></angular2-multiselect>
+(onScrollToEnd)="fetchMore($event)"></angular-multiselect>
 <br />
 <span>Total Records : {{itemList.length}}</span>
 <div class="example-button-row">

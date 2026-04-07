@@ -1,11 +1,11 @@
-  <angular2-multiselect #dropdownElem [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" 
+  <angular-multiselect #dropdownElem [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" 
       (onSelect)="onItemSelect($event)"
       (onDeSelect)="OnItemDeSelect($event)" 
       (onSelectAll)="onSelectAll($event)" 
       (onDeSelectAll)="onDeSelectAll($event)"
       (onOpen)="onOpen($event)"
       (onClose)="onClose($event)">
-  </angular2-multiselect>
+  </angular-multiselect>
 <br>
 <br>
 <div class="row">

@@ -37,6 +37,16 @@ cd ../..
 
 ## Publishing to NPM
 
+Publish the maintained lines sequentially when doing a full release pass:
+
+1. `2.x.x`
+2. `4.x.x`
+3. `5.x.x`
+4. Continue one line at a time
+5. Finish on `21.x.x`
+
+Validate each line before publishing the next one.
+
 ### Option 1: Using npm script
 ```bash
 npm run publish-npm

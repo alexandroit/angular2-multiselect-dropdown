@@ -5,7 +5,7 @@
     Directory Dropdown status: <b>{{directoriesDropdownStatus}}</b>
   </label>
   <br>
-  <angular2-multiselect
+  <angular-multiselect
     id="directorySpecialties"
     name="directorySpecialties"
     [(ngModel)]="selectedDirectorySpecialties"
@@ -16,7 +16,7 @@
     (onSelectAll)="onSelectAll($event)"
     (onDeSelectAll)="onDeSelectAll($event)"
   >
-  </angular2-multiselect>
+  </angular-multiselect>
 </div>
 <br>
 <br>
@@ -26,7 +26,7 @@
     Cases Dropdown status: <b>{{casesDropdownStatus}}</b>
   </label>
   <br>
-  <angular2-multiselect
+  <angular-multiselect
     id="useCases"
     name="useCases"
     [(ngModel)]="selectedUseCases"
@@ -37,5 +37,5 @@
     (onSelectAll)="onSelectAll2($event)"
     (onDeSelectAll)="onDeSelectAll2($event)"
   >
-  </angular2-multiselect>
+  </angular-multiselect>
 </div>
