@@ -1,18 +1,18 @@
 # @revivejs/angular2-multiselect-dropdown
 
-> A maintained **Angular 14 multiselect dropdown** for classic Angular forms workflows, with search, grouping, custom item and badge templates, lazy loading, custom CSS/SCSS theming, and support for both template-driven and reactive forms.
+> A maintained **Angular 21 multiselect dropdown** for classic Angular forms workflows, with search, grouping, custom item and badge templates, lazy loading, custom CSS/SCSS theming, and support for both template-driven and reactive forms.
 
 [![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
 [![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
 [![npm monthly](https://img.shields.io/npm/dm/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
 [![license](https://img.shields.io/npm/l/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/blob/master/LICENSE)
-[![Angular 14](https://img.shields.io/badge/Angular-14-red?style=flat-square&logo=angular)](https://angular.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.8-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![Angular 21](https://img.shields.io/badge/Angular-21-red?style=flat-square&logo=angular)](https://angular.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/stargazers)
 
 **[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular2-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)**
 
-**Latest version:** `14.0.0`
+**Latest version:** `13.0.7`
 
 ---
 
@@ -22,13 +22,13 @@
 
 ## Why this library?
 
-The original `angular2-multiselect-dropdown` package became difficult to use on current Angular versions. This maintained fork preserves the classic API and template structure while updating packaging, docs, and release metadata for a maintained Angular 14 line.
+The original `angular2-multiselect-dropdown` package became difficult to use on current Angular versions. This maintained fork preserves the classic API and template structure while updating packaging, docs, and release metadata for a maintained Angular 21 line, while still keeping older versioned lines documented.
 
 ## Features
 
 | Feature | Supported |
 | :--- | :---: |
-| Angular 14 maintained release line | ✅ |
+| Angular 21 maintained release line | ✅ |
 | Multi-select and single-select modes | ✅ |
 | Search and filter | ✅ |
 | Group by field | ✅ |
@@ -57,10 +57,10 @@ The original `angular2-multiselect-dropdown` package became difficult to use on 
 
 | Package version | Angular version | TypeScript version | Demo link |
 | :---: | :---: | :---: | :--- |
-| **14.0.0** | **14.3.x** | **4.8.x** | [Angular 14 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-14/) |
-| **13.0.6** | **21.2.x** | **5.9.x** | [Angular 21 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
+| **13.0.7** | **21.2.x** | **5.9.x** | [Angular 21 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
 | **12.0.1** | **20.3.x** | **5.8.x** | [Angular 20 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-20/) |
 | **11.0.3** | **19.2.x** | **5.6.x** | [Angular 19 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-19/) |
+| **14.0.0** | **14.3.x** | **4.8.x** | [Angular 14 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-14/) |
 
 ## Installation
 
@@ -227,8 +227,8 @@ The classic output contract is preserved:
 ```bash
 npm install
 npm run build-package
-npm run docs:install:angular-14
-npm run build:docs:angular-14
+npm run docs:install:angular-21
+npm run build:docs:angular-21
 ```
 
 ## License

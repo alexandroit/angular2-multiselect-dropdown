@@ -1,9 +1,9 @@
 {
   "name": "@revivejs/angular2-multiselect-dropdown",
-  "version": "14.0.0",
+  "version": "13.0.7",
   "scripts": {
     "ng": "ng",
-    "start": "cd docs-src/angular-14 && npm start",
+    "start": "cd docs-src/angular-21 && npm start",
     "build": "npm run build-package",
     "test": "ng test",
     "lint": "ng lint",
@@ -17,7 +17,7 @@
     "build:docs:angular-20": "cd docs-src/angular-20 && npm run build",
     "docs:install:angular-21": "cd docs-src/angular-21 && npm install --ignore-scripts",
     "build:docs:angular-21": "cd docs-src/angular-21 && npm run build",
-    "build:docs": "npm run build:docs:angular-14",
+    "build:docs": "npm run build:docs:angular-21",
     "github-pages": "npm run build:docs",
     "publish-npm": "npm run build-package && cd dist/@revivejs/angular2-multiselect-dropdown && npm publish --access public"
   },
