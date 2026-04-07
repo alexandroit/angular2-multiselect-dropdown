@@ -67,7 +67,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexandroit/angular-multiselect-dropdown.git"
+    "url": "git+https://github.com/alexandroit/angular-multiselect-dropdown.git"
   },
   "bugs": {
     "url": "https://github.com/alexandroit/angular-multiselect-dropdown/issues"

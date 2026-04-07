@@ -37076,7 +37076,7 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
   }], null, null);
 })();
 
-// node_modules/@revivejs/angular2-multiselect-dropdown/fesm2022/revivejs-angular2-multiselect-dropdown.mjs
+// node_modules/@revivejs/angular-multiselect-dropdown/fesm2022/revivejs-angular-multiselect-dropdown.mjs
 var tween = __toESM(require_Tween(), 1);
 function CIcon__svg_svg_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -37127,42 +37127,50 @@ var _c5 = ["searchInput"];
 var _c6 = ["selectedList"];
 var _c7 = ["dropdownList"];
 var _c8 = ["cuppaDropdown"];
-var _c9 = (a0) => ({
-  "disabled": a0
+var _c9 = (a0, a1, a2) => ({
+  "is-open": a0,
+  "is-disabled": a1,
+  "is-loading": a2
 });
-var _c10 = (a0) => ({
+var _c10 = (a0, a1, a2, a3) => ({
+  "disabled": a0,
+  "is-active": a1,
+  "has-selection": a2,
+  "single-select-mode": a3
+});
+var _c11 = (a0) => ({
   "tagToBody": a0
 });
-var _c11 = (a0, a1) => ({
+var _c12 = (a0, a1) => ({
   "arrow-up": a0,
   "arrow-down": a1
 });
-var _c12 = (a0) => ({
+var _c13 = (a0) => ({
   "single-select-mode": a0
 });
-var _c13 = (a0) => ({
+var _c14 = (a0) => ({
   "selected-item": a0
 });
-var _c14 = (a0) => ({
+var _c15 = (a0) => ({
   "height": a0
 });
-var _c15 = (a0, a1) => ({
+var _c16 = (a0, a1) => ({
   "grp-title": a0,
   "grp-item": a1
 });
-var _c16 = (a0, a1, a2) => ({
+var _c17 = (a0, a1, a2) => ({
   "grp-title": a0,
   "grp-item": a1,
   "selected-item": a2
 });
-var _c17 = (a0, a1, a2) => ({
+var _c18 = (a0, a1, a2) => ({
   "selected-item": a0,
   "grp-title": a1,
   "grp-item": a2
 });
 function AngularMultiSelect_span_5_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275elementStart(0, "span", 28);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -37187,8 +37195,8 @@ function AngularMultiSelect_span_6_span_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span");
-    \u0275\u0275template(1, AngularMultiSelect_span_6_span_1_Template, 2, 1, "span", 27);
+    \u0275\u0275elementStart(0, "span", 29);
+    \u0275\u0275template(1, AngularMultiSelect_span_6_span_1_Template, 2, 1, "span", 30);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37199,7 +37207,7 @@ function AngularMultiSelect_span_6_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_7_div_1_span_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 34);
+    \u0275\u0275elementStart(0, "span", 37);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -37212,8 +37220,8 @@ function AngularMultiSelect_span_7_div_1_span_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_7_div_1_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 34);
-    \u0275\u0275element(1, "c-templateRenderer", 35);
+    \u0275\u0275elementStart(0, "span", 37);
+    \u0275\u0275element(1, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37226,9 +37234,9 @@ function AngularMultiSelect_span_7_div_1_span_2_Template(rf, ctx) {
 function AngularMultiSelect_span_7_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 30);
-    \u0275\u0275template(1, AngularMultiSelect_span_7_div_1_span_1_Template, 2, 1, "span", 31)(2, AngularMultiSelect_span_7_div_1_span_2_Template, 2, 2, "span", 31);
-    \u0275\u0275elementStart(3, "span", 32);
+    \u0275\u0275elementStart(0, "div", 33);
+    \u0275\u0275template(1, AngularMultiSelect_span_7_div_1_span_1_Template, 2, 1, "span", 34)(2, AngularMultiSelect_span_7_div_1_span_2_Template, 2, 2, "span", 34);
+    \u0275\u0275elementStart(3, "span", 35);
     \u0275\u0275listener("click", function AngularMultiSelect_span_7_div_1_Template_span_click_3_listener($event) {
       const ctx_r4 = \u0275\u0275restoreView(_r3);
       const item_r4 = ctx_r4.$implicit;
@@ -37237,7 +37245,7 @@ function AngularMultiSelect_span_7_div_1_Template(rf, ctx) {
       ctx_r0.onItemClick(item_r4, k_r6, $event);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275element(4, "c-icon", 33);
+    \u0275\u0275element(4, "c-icon", 36);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37252,8 +37260,8 @@ function AngularMultiSelect_span_7_div_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_7_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 28);
-    \u0275\u0275template(1, AngularMultiSelect_span_7_div_1_Template, 5, 3, "div", 29);
+    \u0275\u0275elementStart(0, "span", 31);
+    \u0275\u0275template(1, AngularMultiSelect_span_7_div_1_Template, 5, 3, "div", 32);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37264,7 +37272,7 @@ function AngularMultiSelect_span_7_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_8_div_1_span_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 34);
+    \u0275\u0275elementStart(0, "span", 37);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -37277,8 +37285,8 @@ function AngularMultiSelect_div_8_div_1_span_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_8_div_1_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 34);
-    \u0275\u0275element(1, "c-templateRenderer", 35);
+    \u0275\u0275elementStart(0, "span", 37);
+    \u0275\u0275element(1, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37291,9 +37299,9 @@ function AngularMultiSelect_div_8_div_1_span_2_Template(rf, ctx) {
 function AngularMultiSelect_div_8_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37);
-    \u0275\u0275template(1, AngularMultiSelect_div_8_div_1_span_1_Template, 2, 1, "span", 31)(2, AngularMultiSelect_div_8_div_1_span_2_Template, 2, 2, "span", 31);
-    \u0275\u0275elementStart(3, "span", 32);
+    \u0275\u0275elementStart(0, "div", 40);
+    \u0275\u0275template(1, AngularMultiSelect_div_8_div_1_span_1_Template, 2, 1, "span", 34)(2, AngularMultiSelect_div_8_div_1_span_2_Template, 2, 2, "span", 34);
+    \u0275\u0275elementStart(3, "span", 35);
     \u0275\u0275listener("click", function AngularMultiSelect_div_8_div_1_Template_span_click_3_listener($event) {
       const ctx_r8 = \u0275\u0275restoreView(_r7);
       const item_r8 = ctx_r8.$implicit;
@@ -37302,7 +37310,7 @@ function AngularMultiSelect_div_8_div_1_Template(rf, ctx) {
       ctx_r0.onItemClick(item_r8, k_r10, $event);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275element(4, "c-icon", 33);
+    \u0275\u0275element(4, "c-icon", 36);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37319,8 +37327,8 @@ function AngularMultiSelect_div_8_div_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 28);
-    \u0275\u0275template(1, AngularMultiSelect_div_8_div_1_Template, 5, 4, "div", 36);
+    \u0275\u0275elementStart(0, "div", 31);
+    \u0275\u0275template(1, AngularMultiSelect_div_8_div_1_Template, 5, 4, "div", 39);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37331,7 +37339,7 @@ function AngularMultiSelect_div_8_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 38);
+    \u0275\u0275elementStart(0, "span", 41);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -37344,14 +37352,14 @@ function AngularMultiSelect_span_9_Template(rf, ctx) {
 function AngularMultiSelect_span_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span", 39);
+    \u0275\u0275elementStart(0, "span", 42);
     \u0275\u0275listener("click", function AngularMultiSelect_span_10_Template_span_click_0_listener($event) {
       \u0275\u0275restoreView(_r11);
       const ctx_r0 = \u0275\u0275nextContext();
       ctx_r0.clearSelection($event);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275element(1, "c-icon", 33);
+    \u0275\u0275element(1, "c-icon", 36);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37361,8 +37369,8 @@ function AngularMultiSelect_span_10_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 40);
-    \u0275\u0275element(1, "c-icon", 33);
+    \u0275\u0275elementStart(0, "span", 43);
+    \u0275\u0275element(1, "c-icon", 36);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37372,8 +37380,8 @@ function AngularMultiSelect_span_11_Template(rf, ctx) {
 }
 function AngularMultiSelect_span_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 41);
-    \u0275\u0275element(1, "c-icon", 33);
+    \u0275\u0275elementStart(0, "span", 44);
+    \u0275\u0275element(1, "c-icon", 36);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37384,7 +37392,7 @@ function AngularMultiSelect_span_12_Template(rf, ctx) {
 function AngularMultiSelect_div_18_input_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "input", 46);
+    \u0275\u0275elementStart(0, "input", 49);
     \u0275\u0275listener("change", function AngularMultiSelect_div_18_input_1_Template_input_change_0_listener($event) {
       \u0275\u0275restoreView(_r12);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37399,12 +37407,12 @@ function AngularMultiSelect_div_18_input_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 42);
-    \u0275\u0275template(1, AngularMultiSelect_div_18_input_1_Template, 1, 3, "input", 43);
-    \u0275\u0275elementStart(2, "label", 44)(3, "span", 45);
+    \u0275\u0275elementStart(0, "div", 45);
+    \u0275\u0275template(1, AngularMultiSelect_div_18_input_1_Template, 1, 3, "input", 46);
+    \u0275\u0275elementStart(2, "label", 47)(3, "span", 48);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 45);
+    \u0275\u0275elementStart(5, "span", 48);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()()();
   }
@@ -37426,19 +37434,19 @@ function AngularMultiSelect_div_18_Template(rf, ctx) {
 }
 function AngularMultiSelect_img_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "img", 47);
+    \u0275\u0275element(0, "img", 50);
   }
 }
 function AngularMultiSelect_div_20_span_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span", 53);
+    \u0275\u0275elementStart(0, "span", 56);
     \u0275\u0275listener("click", function AngularMultiSelect_div_20_span_3_Template_span_click_0_listener() {
       \u0275\u0275restoreView(_r13);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.clearSearch());
     });
-    \u0275\u0275element(1, "c-icon", 33);
+    \u0275\u0275element(1, "c-icon", 36);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37451,13 +37459,13 @@ function AngularMultiSelect_div_20_span_3_Template(rf, ctx) {
 function AngularMultiSelect_div_20_span_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span", 53);
+    \u0275\u0275elementStart(0, "span", 56);
     \u0275\u0275listener("click", function AngularMultiSelect_div_20_span_4_Template_span_click_0_listener() {
       \u0275\u0275restoreView(_r14);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.resetInfiniteSearch());
     });
-    \u0275\u0275element(1, "c-icon", 33);
+    \u0275\u0275element(1, "c-icon", 36);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37470,7 +37478,7 @@ function AngularMultiSelect_div_20_span_4_Template(rf, ctx) {
 function AngularMultiSelect_div_20_input_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "input", 54, 3);
+    \u0275\u0275elementStart(0, "input", 57, 3);
     \u0275\u0275twoWayListener("ngModelChange", function AngularMultiSelect_div_20_input_5_Template_input_ngModelChange_0_listener($event) {
       \u0275\u0275restoreView(_r15);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37493,7 +37501,7 @@ function AngularMultiSelect_div_20_input_5_Template(rf, ctx) {
 function AngularMultiSelect_div_20_input_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "input", 54, 3);
+    \u0275\u0275elementStart(0, "input", 57, 3);
     \u0275\u0275twoWayListener("ngModelChange", function AngularMultiSelect_div_20_input_6_Template_input_ngModelChange_0_listener($event) {
       \u0275\u0275restoreView(_r16);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37516,7 +37524,7 @@ function AngularMultiSelect_div_20_input_6_Template(rf, ctx) {
 function AngularMultiSelect_div_20_input_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "input", 54, 3);
+    \u0275\u0275elementStart(0, "input", 57, 3);
     \u0275\u0275twoWayListener("ngModelChange", function AngularMultiSelect_div_20_input_7_Template_input_ngModelChange_0_listener($event) {
       \u0275\u0275restoreView(_r17);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37538,7 +37546,7 @@ function AngularMultiSelect_div_20_input_7_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_20_c_templateRenderer_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "c-templateRenderer", 35);
+    \u0275\u0275element(0, "c-templateRenderer", 38);
   }
   if (rf & 2) {
     const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37547,10 +37555,10 @@ function AngularMultiSelect_div_20_c_templateRenderer_8_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_20_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 48)(1, "span", 49);
-    \u0275\u0275element(2, "c-icon", 33);
+    \u0275\u0275elementStart(0, "div", 51)(1, "span", 52);
+    \u0275\u0275element(2, "c-icon", 36);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(3, AngularMultiSelect_div_20_span_3_Template, 2, 2, "span", 50)(4, AngularMultiSelect_div_20_span_4_Template, 2, 2, "span", 50)(5, AngularMultiSelect_div_20_input_5_Template, 2, 2, "input", 51)(6, AngularMultiSelect_div_20_input_6_Template, 2, 2, "input", 51)(7, AngularMultiSelect_div_20_input_7_Template, 2, 2, "input", 51)(8, AngularMultiSelect_div_20_c_templateRenderer_8_Template, 1, 2, "c-templateRenderer", 52);
+    \u0275\u0275template(3, AngularMultiSelect_div_20_span_3_Template, 2, 2, "span", 53)(4, AngularMultiSelect_div_20_span_4_Template, 2, 2, "span", 53)(5, AngularMultiSelect_div_20_input_5_Template, 2, 2, "input", 54)(6, AngularMultiSelect_div_20_input_6_Template, 2, 2, "input", 54)(7, AngularMultiSelect_div_20_input_7_Template, 2, 2, "input", 54)(8, AngularMultiSelect_div_20_c_templateRenderer_8_Template, 1, 2, "c-templateRenderer", 55);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37574,17 +37582,17 @@ function AngularMultiSelect_div_20_Template(rf, ctx) {
 function AngularMultiSelect_div_21_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r18 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 57);
+    \u0275\u0275elementStart(0, "div", 60);
     \u0275\u0275listener("click", function AngularMultiSelect_div_21_div_1_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r18);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.toggleFilterSelectAll());
     });
-    \u0275\u0275element(1, "input", 58);
-    \u0275\u0275elementStart(2, "label")(3, "span", 45);
+    \u0275\u0275element(1, "input", 61);
+    \u0275\u0275elementStart(2, "label")(3, "span", 48);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 45);
+    \u0275\u0275elementStart(5, "span", 48);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()()();
   }
@@ -37605,17 +37613,17 @@ function AngularMultiSelect_div_21_div_1_Template(rf, ctx) {
 function AngularMultiSelect_div_21_div_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 57);
+    \u0275\u0275elementStart(0, "div", 60);
     \u0275\u0275listener("click", function AngularMultiSelect_div_21_div_2_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r19);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.toggleFilterSelectAll());
     });
-    \u0275\u0275element(1, "input", 59);
-    \u0275\u0275elementStart(2, "label")(3, "span", 45);
+    \u0275\u0275element(1, "input", 62);
+    \u0275\u0275elementStart(2, "label")(3, "span", 48);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 45);
+    \u0275\u0275elementStart(5, "span", 48);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()()();
   }
@@ -37635,8 +37643,8 @@ function AngularMultiSelect_div_21_div_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 55);
-    \u0275\u0275template(1, AngularMultiSelect_div_21_div_1_Template, 7, 6, "div", 56)(2, AngularMultiSelect_div_21_div_2_Template, 7, 6, "div", 56);
+    \u0275\u0275elementStart(0, "div", 58);
+    \u0275\u0275template(1, AngularMultiSelect_div_21_div_1_Template, 7, 6, "div", 59)(2, AngularMultiSelect_div_21_div_2_Template, 7, 6, "div", 59);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37650,17 +37658,17 @@ function AngularMultiSelect_div_21_Template(rf, ctx) {
 function AngularMultiSelect_div_22_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r20 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 57);
+    \u0275\u0275elementStart(0, "div", 60);
     \u0275\u0275listener("click", function AngularMultiSelect_div_22_div_1_Template_div_click_0_listener() {
       \u0275\u0275restoreView(_r20);
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.toggleInfiniteFilterSelectAll());
     });
-    \u0275\u0275element(1, "input", 59);
-    \u0275\u0275elementStart(2, "label")(3, "span", 45);
+    \u0275\u0275element(1, "input", 62);
+    \u0275\u0275elementStart(2, "label")(3, "span", 48);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 45);
+    \u0275\u0275elementStart(5, "span", 48);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()()();
   }
@@ -37680,8 +37688,8 @@ function AngularMultiSelect_div_22_div_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 55);
-    \u0275\u0275template(1, AngularMultiSelect_div_22_div_1_Template, 7, 6, "div", 56);
+    \u0275\u0275elementStart(0, "div", 58);
+    \u0275\u0275template(1, AngularMultiSelect_div_22_div_1_Template, 7, 6, "div", 59);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37693,7 +37701,7 @@ function AngularMultiSelect_div_22_Template(rf, ctx) {
 function AngularMultiSelect_div_23_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r21 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 61)(1, "button", 62);
+    \u0275\u0275elementStart(0, "div", 64)(1, "button", 65);
     \u0275\u0275listener("click", function AngularMultiSelect_div_23_div_1_Template_button_click_1_listener() {
       \u0275\u0275restoreView(_r21);
       const ctx_r0 = \u0275\u0275nextContext(2);
@@ -37710,8 +37718,8 @@ function AngularMultiSelect_div_23_div_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 55);
-    \u0275\u0275template(1, AngularMultiSelect_div_23_div_1_Template, 3, 1, "div", 60);
+    \u0275\u0275elementStart(0, "div", 58);
+    \u0275\u0275template(1, AngularMultiSelect_div_23_div_1_Template, 3, 1, "div", 63);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -37722,7 +37730,7 @@ function AngularMultiSelect_div_23_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_24_li_2_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 59);
+    \u0275\u0275element(0, "input", 62);
   }
   if (rf & 2) {
     const item_r24 = \u0275\u0275nextContext().$implicit;
@@ -37733,7 +37741,7 @@ function AngularMultiSelect_div_24_li_2_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_24_li_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r22 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_24_li_2_Template_li_click_0_listener($event) {
       const ctx_r22 = \u0275\u0275restoreView(_r22);
       const item_r24 = ctx_r22.$implicit;
@@ -37741,7 +37749,7 @@ function AngularMultiSelect_div_24_li_2_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r24, i_r25, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_24_li_2_input_1_Template, 1, 2, "input", 67);
+    \u0275\u0275template(1, AngularMultiSelect_div_24_li_2_input_1_Template, 1, 2, "input", 70);
     \u0275\u0275elementStart(2, "label");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
@@ -37749,7 +37757,7 @@ function AngularMultiSelect_div_24_li_2_Template(rf, ctx) {
   if (rf & 2) {
     const item_r24 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(3, _c13, ctx_r0.isSelected(item_r24) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(3, _c14, ctx_r0.isSelected(item_r24) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -37758,8 +37766,8 @@ function AngularMultiSelect_div_24_li_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_24_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 64);
-    \u0275\u0275template(2, AngularMultiSelect_div_24_li_2_Template, 4, 5, "li", 65);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 67);
+    \u0275\u0275template(2, AngularMultiSelect_div_24_li_2_Template, 4, 5, "li", 68);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37771,7 +37779,7 @@ function AngularMultiSelect_div_24_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_25_li_3_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r29 = \u0275\u0275nextContext().$implicit;
@@ -37782,7 +37790,7 @@ function AngularMultiSelect_div_25_li_3_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_25_li_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r27 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_25_li_3_Template_li_click_0_listener($event) {
       const ctx_r27 = \u0275\u0275restoreView(_r27);
       const item_r29 = ctx_r27.$implicit;
@@ -37790,7 +37798,7 @@ function AngularMultiSelect_div_25_li_3_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r29, i_r30, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_25_li_3_input_1_Template, 1, 2, "input", 69);
+    \u0275\u0275template(1, AngularMultiSelect_div_25_li_3_input_1_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(2, "label");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
@@ -37798,7 +37806,7 @@ function AngularMultiSelect_div_25_li_3_Template(rf, ctx) {
   if (rf & 2) {
     const item_r29 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(3, _c13, ctx_r0.isSelected(item_r29) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(3, _c14, ctx_r0.isSelected(item_r29) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -37808,7 +37816,7 @@ function AngularMultiSelect_div_25_li_3_Template(rf, ctx) {
 function AngularMultiSelect_div_25_Template(rf, ctx) {
   if (rf & 1) {
     const _r26 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 68, 4);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 71, 4);
     \u0275\u0275listener("vsStart", function AngularMultiSelect_div_25_Template_ul_vsStart_1_listener($event) {
       \u0275\u0275restoreView(_r26);
       const ctx_r0 = \u0275\u0275nextContext();
@@ -37818,7 +37826,7 @@ function AngularMultiSelect_div_25_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.onScrollEnd($event));
     });
-    \u0275\u0275template(3, AngularMultiSelect_div_25_li_3_Template, 4, 5, "li", 65);
+    \u0275\u0275template(3, AngularMultiSelect_div_25_li_3_Template, 4, 5, "li", 68);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37826,14 +37834,14 @@ function AngularMultiSelect_div_25_Template(rf, ctx) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("max-height", ctx_r0.settings.maxHeight + "px");
     \u0275\u0275advance();
-    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c14, ctx_r0.settings.maxHeight + "px"));
+    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c15, ctx_r0.settings.maxHeight + "px"));
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", scroll_r31.viewPortItems);
   }
 }
 function AngularMultiSelect_div_26_li_2_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r34 = \u0275\u0275nextContext().$implicit;
@@ -37844,7 +37852,7 @@ function AngularMultiSelect_div_26_li_2_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_26_li_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r32 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_26_li_2_Template_li_click_0_listener($event) {
       const ctx_r32 = \u0275\u0275restoreView(_r32);
       const item_r34 = ctx_r32.$implicit;
@@ -37852,14 +37860,14 @@ function AngularMultiSelect_div_26_li_2_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r34, i_r35, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_26_li_2_input_1_Template, 1, 2, "input", 69);
-    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 35);
+    \u0275\u0275template(1, AngularMultiSelect_div_26_li_2_input_1_Template, 1, 2, "input", 72);
+    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const item_r34 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c13, ctx_r0.isSelected(item_r34) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c14, ctx_r0.isSelected(item_r34) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -37868,8 +37876,8 @@ function AngularMultiSelect_div_26_li_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_26_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 64);
-    \u0275\u0275template(2, AngularMultiSelect_div_26_li_2_Template, 4, 6, "li", 65);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 67);
+    \u0275\u0275template(2, AngularMultiSelect_div_26_li_2_Template, 4, 6, "li", 68);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37881,7 +37889,7 @@ function AngularMultiSelect_div_26_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_27_li_3_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r39 = \u0275\u0275nextContext().$implicit;
@@ -37892,7 +37900,7 @@ function AngularMultiSelect_div_27_li_3_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_27_li_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r37 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_27_li_3_Template_li_click_0_listener($event) {
       const ctx_r37 = \u0275\u0275restoreView(_r37);
       const item_r39 = ctx_r37.$implicit;
@@ -37900,14 +37908,14 @@ function AngularMultiSelect_div_27_li_3_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r39, i_r40, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_27_li_3_input_1_Template, 1, 2, "input", 69);
-    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 35);
+    \u0275\u0275template(1, AngularMultiSelect_div_27_li_3_input_1_Template, 1, 2, "input", 72);
+    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const item_r39 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c13, ctx_r0.isSelected(item_r39) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c14, ctx_r0.isSelected(item_r39) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -37917,7 +37925,7 @@ function AngularMultiSelect_div_27_li_3_Template(rf, ctx) {
 function AngularMultiSelect_div_27_Template(rf, ctx) {
   if (rf & 1) {
     const _r36 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 68, 5);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 71, 5);
     \u0275\u0275listener("vsStart", function AngularMultiSelect_div_27_Template_ul_vsStart_1_listener($event) {
       \u0275\u0275restoreView(_r36);
       const ctx_r0 = \u0275\u0275nextContext();
@@ -37927,7 +37935,7 @@ function AngularMultiSelect_div_27_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.onScrollEnd($event));
     });
-    \u0275\u0275template(3, AngularMultiSelect_div_27_li_3_Template, 4, 6, "li", 65);
+    \u0275\u0275template(3, AngularMultiSelect_div_27_li_3_Template, 4, 6, "li", 68);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -37935,14 +37943,14 @@ function AngularMultiSelect_div_27_Template(rf, ctx) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("max-height", ctx_r0.settings.maxHeight + "px");
     \u0275\u0275advance();
-    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c14, ctx_r0.settings.maxHeight + "px"));
+    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c15, ctx_r0.settings.maxHeight + "px"));
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", scroll2_r41.viewPortItems);
   }
 }
 function AngularMultiSelect_div_28_span_3_li_1_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r45 = \u0275\u0275nextContext(2).$implicit;
@@ -37953,7 +37961,7 @@ function AngularMultiSelect_div_28_span_3_li_1_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_28_span_3_li_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r43 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_28_span_3_li_1_Template_li_click_0_listener($event) {
       \u0275\u0275restoreView(_r43);
       const ctx_r43 = \u0275\u0275nextContext();
@@ -37962,14 +37970,14 @@ function AngularMultiSelect_div_28_span_3_li_1_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r45, i_r46, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_1_input_1_Template, 1, 2, "input", 69);
-    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 35);
+    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_1_input_1_Template, 1, 2, "input", 72);
+    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const item_r45 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c15, item_r45.grpTitle, !item_r45.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c16, item_r45.grpTitle, !item_r45.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox && !ctx_r0.settings.singleSelection);
     \u0275\u0275advance(2);
@@ -37978,7 +37986,7 @@ function AngularMultiSelect_div_28_span_3_li_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_28_span_3_li_2_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r45 = \u0275\u0275nextContext(2).$implicit;
@@ -37988,15 +37996,15 @@ function AngularMultiSelect_div_28_span_3_li_2_input_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_28_span_3_li_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "li", 74);
-    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_2_input_1_Template, 1, 2, "input", 69);
-    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 35);
+    \u0275\u0275elementStart(0, "li", 77);
+    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_2_input_1_Template, 1, 2, "input", 72);
+    \u0275\u0275element(2, "label")(3, "c-templateRenderer", 38);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const item_r45 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c15, item_r45.grpTitle, !item_r45.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c16, item_r45.grpTitle, !item_r45.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -38006,7 +38014,7 @@ function AngularMultiSelect_div_28_span_3_li_2_Template(rf, ctx) {
 function AngularMultiSelect_div_28_span_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_1_Template, 4, 7, "li", 72)(2, AngularMultiSelect_div_28_span_3_li_2_Template, 4, 7, "li", 73);
+    \u0275\u0275template(1, AngularMultiSelect_div_28_span_3_li_1_Template, 4, 7, "li", 75)(2, AngularMultiSelect_div_28_span_3_li_2_Template, 4, 7, "li", 76);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -38020,7 +38028,7 @@ function AngularMultiSelect_div_28_span_3_Template(rf, ctx) {
 function AngularMultiSelect_div_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r42 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 68, 6);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 71, 6);
     \u0275\u0275listener("vsStart", function AngularMultiSelect_div_28_Template_ul_vsStart_1_listener($event) {
       \u0275\u0275restoreView(_r42);
       const ctx_r0 = \u0275\u0275nextContext();
@@ -38030,7 +38038,7 @@ function AngularMultiSelect_div_28_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.onScrollEnd($event));
     });
-    \u0275\u0275template(3, AngularMultiSelect_div_28_span_3_Template, 3, 2, "span", 71);
+    \u0275\u0275template(3, AngularMultiSelect_div_28_span_3_Template, 3, 2, "span", 74);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -38038,14 +38046,14 @@ function AngularMultiSelect_div_28_Template(rf, ctx) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("max-height", ctx_r0.settings.maxHeight + "px");
     \u0275\u0275advance();
-    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c14, ctx_r0.settings.maxHeight + "px"));
+    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(6, _c15, ctx_r0.settings.maxHeight + "px"));
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", scroll3_r47.viewPortItems);
   }
 }
 function AngularMultiSelect_div_29_span_2_input_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r49 = \u0275\u0275nextContext().$implicit;
@@ -38055,7 +38063,7 @@ function AngularMultiSelect_div_29_span_2_input_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_29_span_2_span_6_input_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const val_r52 = \u0275\u0275nextContext().$implicit;
@@ -38066,7 +38074,7 @@ function AngularMultiSelect_div_29_span_2_span_6_input_2_Template(rf, ctx) {
 function AngularMultiSelect_div_29_span_2_span_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r50 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span")(1, "li", 66);
+    \u0275\u0275elementStart(0, "span")(1, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_29_span_2_span_6_Template_li_click_1_listener($event) {
       const ctx_r50 = \u0275\u0275restoreView(_r50);
       const val_r52 = ctx_r50.$implicit;
@@ -38075,15 +38083,15 @@ function AngularMultiSelect_div_29_span_2_span_6_Template(rf, ctx) {
       ctx_r0.onItemClick(val_r52, j_r53, $event);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_span_6_input_2_Template, 1, 2, "input", 69);
-    \u0275\u0275element(3, "label")(4, "c-templateRenderer", 35);
+    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_span_6_input_2_Template, 1, 2, "input", 72);
+    \u0275\u0275element(3, "label")(4, "c-templateRenderer", 38);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const val_r52 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c15, val_r52.grpTitle, !val_r52.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c16, val_r52.grpTitle, !val_r52.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -38093,25 +38101,25 @@ function AngularMultiSelect_div_29_span_2_span_6_Template(rf, ctx) {
 function AngularMultiSelect_div_29_span_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r48 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span")(1, "li", 66);
+    \u0275\u0275elementStart(0, "span")(1, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_29_span_2_Template_li_click_1_listener() {
       const item_r49 = \u0275\u0275restoreView(_r48).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.selectGroup(item_r49));
     });
-    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_input_2_Template, 1, 2, "input", 69);
+    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_input_2_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(3, "label");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "ul", 64);
-    \u0275\u0275template(6, AngularMultiSelect_div_29_span_2_span_6_Template, 5, 7, "span", 71);
+    \u0275\u0275elementStart(5, "ul", 67);
+    \u0275\u0275template(6, AngularMultiSelect_div_29_span_2_span_6_Template, 5, 7, "span", 74);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const item_r49 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c15, item_r49.grpTitle, !item_r49.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c16, item_r49.grpTitle, !item_r49.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox && !ctx_r0.settings.singleSelection);
     \u0275\u0275advance(2);
@@ -38122,8 +38130,8 @@ function AngularMultiSelect_div_29_span_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 64);
-    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_Template, 7, 7, "span", 71);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 67);
+    \u0275\u0275template(2, AngularMultiSelect_div_29_span_2_Template, 7, 7, "span", 74);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -38135,7 +38143,7 @@ function AngularMultiSelect_div_29_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_30_span_4_li_1_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r55 = \u0275\u0275nextContext(2).$implicit;
@@ -38145,8 +38153,8 @@ function AngularMultiSelect_div_30_span_4_li_1_input_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_30_span_4_li_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "li", 74);
-    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_1_input_1_Template, 1, 2, "input", 69);
+    \u0275\u0275elementStart(0, "li", 77);
+    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_1_input_1_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(2, "label");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
@@ -38154,7 +38162,7 @@ function AngularMultiSelect_div_30_span_4_li_1_Template(rf, ctx) {
   if (rf & 2) {
     const item_r55 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c16, item_r55.grpTitle, !item_r55.grpTitle && !ctx_r0.settings.singleSelection, ctx_r0.isSelected(item_r55) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c17, item_r55.grpTitle, !item_r55.grpTitle && !ctx_r0.settings.singleSelection, ctx_r0.isSelected(item_r55) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox && !item_r55.grpTitle && !ctx_r0.settings.singleSelection);
     \u0275\u0275advance(2);
@@ -38163,7 +38171,7 @@ function AngularMultiSelect_div_30_span_4_li_1_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_30_span_4_li_2_input_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r55 = \u0275\u0275nextContext(2).$implicit;
@@ -38174,7 +38182,7 @@ function AngularMultiSelect_div_30_span_4_li_2_input_1_Template(rf, ctx) {
 function AngularMultiSelect_div_30_span_4_li_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r56 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "li", 66);
+    \u0275\u0275elementStart(0, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_30_span_4_li_2_Template_li_click_0_listener($event) {
       \u0275\u0275restoreView(_r56);
       const ctx_r56 = \u0275\u0275nextContext();
@@ -38183,7 +38191,7 @@ function AngularMultiSelect_div_30_span_4_li_2_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.onItemClick(item_r55, i_r58, $event));
     });
-    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_2_input_1_Template, 1, 2, "input", 69);
+    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_2_input_1_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(2, "label");
     \u0275\u0275text(3);
     \u0275\u0275elementEnd()();
@@ -38191,7 +38199,7 @@ function AngularMultiSelect_div_30_span_4_li_2_Template(rf, ctx) {
   if (rf & 2) {
     const item_r55 = \u0275\u0275nextContext().$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c16, item_r55.grpTitle, !item_r55.grpTitle && !ctx_r0.settings.singleSelection, ctx_r0.isSelected(item_r55) == true));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c17, item_r55.grpTitle, !item_r55.grpTitle && !ctx_r0.settings.singleSelection, ctx_r0.isSelected(item_r55) == true));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox && !item_r55.grpTitle);
     \u0275\u0275advance(2);
@@ -38201,7 +38209,7 @@ function AngularMultiSelect_div_30_span_4_li_2_Template(rf, ctx) {
 function AngularMultiSelect_div_30_span_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_1_Template, 4, 7, "li", 73)(2, AngularMultiSelect_div_30_span_4_li_2_Template, 4, 7, "li", 72);
+    \u0275\u0275template(1, AngularMultiSelect_div_30_span_4_li_1_Template, 4, 7, "li", 76)(2, AngularMultiSelect_div_30_span_4_li_2_Template, 4, 7, "li", 75);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -38215,7 +38223,7 @@ function AngularMultiSelect_div_30_span_4_Template(rf, ctx) {
 function AngularMultiSelect_div_30_Template(rf, ctx) {
   if (rf & 1) {
     const _r54 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 63)(1, "virtual-scroller", 75);
+    \u0275\u0275elementStart(0, "div", 66)(1, "virtual-scroller", 78);
     \u0275\u0275listener("vsUpdate", function AngularMultiSelect_div_30_Template_virtual_scroller_vsUpdate_1_listener($event) {
       \u0275\u0275restoreView(_r54);
       const ctx_r0 = \u0275\u0275nextContext();
@@ -38225,7 +38233,7 @@ function AngularMultiSelect_div_30_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.onScrollEnd($event));
     });
-    \u0275\u0275elementStart(2, "ul", 68, 7);
+    \u0275\u0275elementStart(2, "ul", 71, 7);
     \u0275\u0275listener("vsStart", function AngularMultiSelect_div_30_Template_ul_vsStart_2_listener($event) {
       \u0275\u0275restoreView(_r54);
       const ctx_r0 = \u0275\u0275nextContext();
@@ -38235,7 +38243,7 @@ function AngularMultiSelect_div_30_Template(rf, ctx) {
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.onScrollEnd($event));
     });
-    \u0275\u0275template(4, AngularMultiSelect_div_30_span_4_Template, 3, 2, "span", 71);
+    \u0275\u0275template(4, AngularMultiSelect_div_30_span_4_Template, 3, 2, "span", 74);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -38243,16 +38251,16 @@ function AngularMultiSelect_div_30_Template(rf, ctx) {
     const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275styleProp("max-height", ctx_r0.settings.maxHeight + "px");
     \u0275\u0275advance();
-    \u0275\u0275property("items", ctx_r0.groupedData)("ngStyle", \u0275\u0275pureFunction1(8, _c14, ctx_r0.settings.maxHeight + "px"));
+    \u0275\u0275property("items", ctx_r0.groupedData)("ngStyle", \u0275\u0275pureFunction1(8, _c15, ctx_r0.settings.maxHeight + "px"));
     \u0275\u0275advance();
-    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(10, _c14, ctx_r0.settings.maxHeight + "px"));
+    \u0275\u0275property("enableUnequalChildrenSizes", ctx_r0.randomSize)("items", ctx_r0.virtualdata)("ngStyle", \u0275\u0275pureFunction1(10, _c15, ctx_r0.settings.maxHeight + "px"));
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", scroll4_r59.viewPortItems);
   }
 }
 function AngularMultiSelect_div_31_span_2_input_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const item_r61 = \u0275\u0275nextContext().$implicit;
@@ -38262,7 +38270,7 @@ function AngularMultiSelect_div_31_span_2_input_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_31_span_2_span_6_input_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "input", 70);
+    \u0275\u0275element(0, "input", 73);
   }
   if (rf & 2) {
     const val_r64 = \u0275\u0275nextContext().$implicit;
@@ -38273,7 +38281,7 @@ function AngularMultiSelect_div_31_span_2_span_6_input_2_Template(rf, ctx) {
 function AngularMultiSelect_div_31_span_2_span_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r62 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span")(1, "li", 66);
+    \u0275\u0275elementStart(0, "span")(1, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_31_span_2_span_6_Template_li_click_1_listener($event) {
       const ctx_r62 = \u0275\u0275restoreView(_r62);
       const val_r64 = ctx_r62.$implicit;
@@ -38282,7 +38290,7 @@ function AngularMultiSelect_div_31_span_2_span_6_Template(rf, ctx) {
       ctx_r0.onItemClick(val_r64, j_r65, $event);
       return \u0275\u0275resetView($event.stopPropagation());
     });
-    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_span_6_input_2_Template, 1, 2, "input", 69);
+    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_span_6_input_2_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(3, "label");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()()();
@@ -38291,7 +38299,7 @@ function AngularMultiSelect_div_31_span_2_span_6_Template(rf, ctx) {
     const val_r64 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c17, ctx_r0.isSelected(val_r64) == true, val_r64.grpTitle, !val_r64.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(3, _c18, ctx_r0.isSelected(val_r64) == true, val_r64.grpTitle, !val_r64.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox);
     \u0275\u0275advance(2);
@@ -38301,25 +38309,25 @@ function AngularMultiSelect_div_31_span_2_span_6_Template(rf, ctx) {
 function AngularMultiSelect_div_31_span_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r60 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "span")(1, "li", 66);
+    \u0275\u0275elementStart(0, "span")(1, "li", 69);
     \u0275\u0275listener("click", function AngularMultiSelect_div_31_span_2_Template_li_click_1_listener() {
       const item_r61 = \u0275\u0275restoreView(_r60).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.selectGroup(item_r61));
     });
-    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_input_2_Template, 1, 2, "input", 69);
+    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_input_2_Template, 1, 2, "input", 72);
     \u0275\u0275elementStart(3, "label");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "ul", 64);
-    \u0275\u0275template(6, AngularMultiSelect_div_31_span_2_span_6_Template, 5, 7, "span", 71);
+    \u0275\u0275elementStart(5, "ul", 67);
+    \u0275\u0275template(6, AngularMultiSelect_div_31_span_2_span_6_Template, 5, 7, "span", 74);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const item_r61 = ctx.$implicit;
     const ctx_r0 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c15, item_r61.grpTitle, !item_r61.grpTitle && !ctx_r0.settings.singleSelection));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(4, _c16, item_r61.grpTitle, !item_r61.grpTitle && !ctx_r0.settings.singleSelection));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r0.settings.showCheckbox && !ctx_r0.settings.singleSelection);
     \u0275\u0275advance(2);
@@ -38330,8 +38338,8 @@ function AngularMultiSelect_div_31_span_2_Template(rf, ctx) {
 }
 function AngularMultiSelect_div_31_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 63)(1, "ul", 64);
-    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_Template, 7, 7, "span", 71);
+    \u0275\u0275elementStart(0, "div", 66)(1, "ul", 67);
+    \u0275\u0275template(2, AngularMultiSelect_div_31_span_2_Template, 7, 7, "span", 74);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -38343,7 +38351,7 @@ function AngularMultiSelect_div_31_Template(rf, ctx) {
 }
 function AngularMultiSelect_h5_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "h5", 76);
+    \u0275\u0275elementStart(0, "h5", 79);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -40950,7 +40958,7 @@ var AngularMultiSelect = class _AngularMultiSelect {
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
     type: _AngularMultiSelect,
-    selectors: [["angular2-multiselect"]],
+    selectors: [["angular-multiselect"], ["angular2-multiselect"]],
     contentQueries: function AngularMultiSelect_ContentQueries(rf, ctx, dirIndex) {
       if (rf & 1) {
         \u0275\u0275contentQuery(dirIndex, Item, 5)(dirIndex, Badge, 5)(dirIndex, Search, 5);
@@ -41010,8 +41018,8 @@ var AngularMultiSelect = class _AngularMultiSelect {
     standalone: false,
     features: [\u0275\u0275ProvidersFeature([DROPDOWN_CONTROL_VALUE_ACCESSOR, DROPDOWN_CONTROL_VALIDATION]), \u0275\u0275NgOnChangesFeature],
     decls: 33,
-    vars: 50,
-    consts: [["cuppaDropdown", ""], ["selectedList", ""], ["dropdownList", ""], ["searchInput", ""], ["scroll", ""], ["scroll2", ""], ["scroll3", ""], ["scroll4", ""], [1, "cuppa-dropdown", 3, "clickOutside"], [1, "selected-list"], [1, "c-btn", 3, "click", "ngClass"], [4, "ngIf"], ["class", "c-list", 4, "ngIf"], ["class", "countplaceholder", 4, "ngIf"], ["class", "c-remove clear-all", 3, "click", 4, "ngIf"], ["class", "c-angle-down", 4, "ngIf"], ["class", "c-angle-up", 4, "ngIf"], [1, "dropdown-list", "animated", "fadeIn", 3, "ngClass", "hidden"], [1, "arrow-2", 3, "ngClass"], [3, "ngClass"], [1, "list-area", 3, "ngClass"], ["class", "pure-checkbox select-all", 4, "ngIf"], ["class", "loading-icon", "src", "assets/img/loading.gif", 4, "ngIf"], ["class", "list-filter", 4, "ngIf"], ["class", "filter-select-all", 4, "ngIf"], ["style", "overflow: auto;", 3, "maxHeight", 4, "ngIf"], ["class", "list-message", 4, "ngIf"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-list"], ["class", "c-token", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-token"], ["class", "c-label", 4, "ngIf"], [1, "c-remove", 3, "click"], [3, "name"], [1, "c-label"], [3, "data", "item"], ["class", "c-token", 3, "hidden", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-token", 3, "hidden"], [1, "countplaceholder"], [1, "c-remove", "clear-all", 3, "click"], [1, "c-angle-down"], [1, "c-angle-up"], [1, "pure-checkbox", "select-all"], ["type", "checkbox", 3, "checked", "disabled", "id", "change", 4, "ngIf"], [3, "for"], [3, "hidden"], ["type", "checkbox", 3, "change", "checked", "disabled", "id"], ["src", "assets/img/loading.gif", 1, "loading-icon"], [1, "list-filter"], ["id", "searchIcon", 1, "c-search"], ["class", "c-clear", 3, "hidden", "click", 4, "ngIf"], ["class", "c-input", "type", "text", "aria-labelledby", "searchIcon", 3, "placeholder", "ngModel", "ngModelChange", "keyup", 4, "ngIf"], [3, "data", "item", 4, "ngIf"], [1, "c-clear", 3, "click", "hidden"], ["type", "text", "aria-labelledby", "searchIcon", 1, "c-input", 3, "ngModelChange", "keyup", "placeholder", "ngModel"], [1, "filter-select-all"], ["class", "pure-checkbox select-all", 3, "click", 4, "ngIf"], [1, "pure-checkbox", "select-all", 3, "click"], ["type", "checkbox", "aria-labelledby", "optionName", "aria-label", "option", 3, "checked", "disabled"], ["type", "checkbox", "aria-labelledby", "option", 3, "checked", "disabled"], ["class", "btn-container", 4, "ngIf"], [1, "btn-container"], [1, "c-btn", "btn-iceblue", 3, "click"], [2, "overflow", "auto"], [1, "lazyContainer"], ["class", "pure-checkbox", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "pure-checkbox", 3, "click", "ngClass"], ["type", "checkbox", "aria-labelledby", "option", 3, "checked", "disabled", 4, "ngIf"], ["virtualScroller", "", 1, "lazyContainer", 3, "vsStart", "vsEnd", "enableUnequalChildrenSizes", "items", "ngStyle"], ["type", "checkbox", 3, "checked", "disabled", 4, "ngIf"], ["type", "checkbox", 3, "checked", "disabled"], [4, "ngFor", "ngForOf"], ["class", "pure-checkbox", 3, "ngClass", "click", 4, "ngIf"], ["class", "pure-checkbox", 3, "ngClass", 4, "ngIf"], [1, "pure-checkbox", 3, "ngClass"], [3, "vsUpdate", "vsEnd", "items", "ngStyle"], [1, "list-message"]],
+    vars: 61,
+    consts: [["cuppaDropdown", ""], ["selectedList", ""], ["dropdownList", ""], ["searchInput", ""], ["scroll", ""], ["scroll2", ""], ["scroll3", ""], ["scroll4", ""], [1, "cuppa-dropdown", 3, "clickOutside", "ngClass"], [1, "selected-list"], ["role", "combobox", "aria-haspopup", "listbox", 1, "c-btn", 3, "click", "ngClass"], ["class", "c-placeholder", 4, "ngIf"], ["class", "c-single-value", 4, "ngIf"], ["class", "c-list c-chip-list", 4, "ngIf"], ["class", "countplaceholder", 4, "ngIf"], ["class", "c-remove clear-all", 3, "click", 4, "ngIf"], ["class", "c-angle-down", 4, "ngIf"], ["class", "c-angle-up", 4, "ngIf"], ["role", "presentation", 1, "dropdown-list", "animated", "fadeIn", 3, "ngClass", "hidden"], [1, "arrow-2", 3, "ngClass"], [3, "ngClass"], [1, "list-area", 3, "ngClass"], ["class", "pure-checkbox select-all", 4, "ngIf"], ["class", "loading-icon", "src", "assets/img/loading.gif", 4, "ngIf"], ["class", "list-filter", 4, "ngIf"], ["class", "filter-select-all", 4, "ngIf"], ["style", "overflow: auto;", 3, "maxHeight", 4, "ngIf"], ["class", "list-message", 4, "ngIf"], [1, "c-placeholder"], [1, "c-single-value"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-list", "c-chip-list"], ["class", "c-token", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-token"], ["class", "c-label", 4, "ngIf"], [1, "c-remove", 3, "click"], [3, "name"], [1, "c-label"], [3, "data", "item"], ["class", "c-token", 3, "hidden", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "c-token", 3, "hidden"], [1, "countplaceholder"], [1, "c-remove", "clear-all", 3, "click"], [1, "c-angle-down"], [1, "c-angle-up"], [1, "pure-checkbox", "select-all"], ["type", "checkbox", 3, "checked", "disabled", "id", "change", 4, "ngIf"], [3, "for"], [3, "hidden"], ["type", "checkbox", 3, "change", "checked", "disabled", "id"], ["src", "assets/img/loading.gif", 1, "loading-icon"], [1, "list-filter"], ["id", "searchIcon", 1, "c-search"], ["class", "c-clear", 3, "hidden", "click", 4, "ngIf"], ["class", "c-input", "type", "text", "aria-labelledby", "searchIcon", 3, "placeholder", "ngModel", "ngModelChange", "keyup", 4, "ngIf"], [3, "data", "item", 4, "ngIf"], [1, "c-clear", 3, "click", "hidden"], ["type", "text", "aria-labelledby", "searchIcon", 1, "c-input", 3, "ngModelChange", "keyup", "placeholder", "ngModel"], [1, "filter-select-all"], ["class", "pure-checkbox select-all", 3, "click", 4, "ngIf"], [1, "pure-checkbox", "select-all", 3, "click"], ["type", "checkbox", "aria-labelledby", "optionName", "aria-label", "option", 3, "checked", "disabled"], ["type", "checkbox", "aria-labelledby", "option", 3, "checked", "disabled"], ["class", "btn-container", 4, "ngIf"], [1, "btn-container"], [1, "c-btn", "btn-iceblue", 3, "click"], [2, "overflow", "auto"], [1, "lazyContainer"], ["class", "pure-checkbox", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "pure-checkbox", 3, "click", "ngClass"], ["type", "checkbox", "aria-labelledby", "option", 3, "checked", "disabled", 4, "ngIf"], ["virtualScroller", "", 1, "lazyContainer", 3, "vsStart", "vsEnd", "enableUnequalChildrenSizes", "items", "ngStyle"], ["type", "checkbox", 3, "checked", "disabled", 4, "ngIf"], ["type", "checkbox", 3, "checked", "disabled"], [4, "ngFor", "ngForOf"], ["class", "pure-checkbox", 3, "ngClass", "click", 4, "ngIf"], ["class", "pure-checkbox", 3, "ngClass", 4, "ngIf"], [1, "pure-checkbox", 3, "ngClass"], [3, "vsUpdate", "vsEnd", "items", "ngStyle"], [1, "list-message"]],
     template: function AngularMultiSelect_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 8, 0);
@@ -41022,18 +41030,19 @@ var AngularMultiSelect = class _AngularMultiSelect {
         \u0275\u0275listener("click", function AngularMultiSelect_Template_div_click_4_listener($event) {
           return ctx.toggleDropdown($event);
         });
-        \u0275\u0275template(5, AngularMultiSelect_span_5_Template, 2, 1, "span", 11)(6, AngularMultiSelect_span_6_Template, 2, 2, "span", 11)(7, AngularMultiSelect_span_7_Template, 2, 2, "span", 12)(8, AngularMultiSelect_div_8_Template, 2, 2, "div", 12)(9, AngularMultiSelect_span_9_Template, 2, 1, "span", 13)(10, AngularMultiSelect_span_10_Template, 2, 1, "span", 14)(11, AngularMultiSelect_span_11_Template, 2, 1, "span", 15)(12, AngularMultiSelect_span_12_Template, 2, 1, "span", 16);
+        \u0275\u0275template(5, AngularMultiSelect_span_5_Template, 2, 1, "span", 11)(6, AngularMultiSelect_span_6_Template, 2, 2, "span", 12)(7, AngularMultiSelect_span_7_Template, 2, 2, "span", 13)(8, AngularMultiSelect_div_8_Template, 2, 2, "div", 13)(9, AngularMultiSelect_span_9_Template, 2, 1, "span", 14)(10, AngularMultiSelect_span_10_Template, 2, 1, "span", 15)(11, AngularMultiSelect_span_11_Template, 2, 1, "span", 16)(12, AngularMultiSelect_span_12_Template, 2, 1, "span", 17);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(13, "div", 17, 2);
-        \u0275\u0275element(15, "div", 18)(16, "div", 19);
-        \u0275\u0275elementStart(17, "div", 20);
-        \u0275\u0275template(18, AngularMultiSelect_div_18_Template, 7, 6, "div", 21)(19, AngularMultiSelect_img_19_Template, 1, 0, "img", 22)(20, AngularMultiSelect_div_20_Template, 9, 7, "div", 23)(21, AngularMultiSelect_div_21_Template, 3, 2, "div", 24)(22, AngularMultiSelect_div_22_Template, 2, 1, "div", 24)(23, AngularMultiSelect_div_23_Template, 2, 1, "div", 24)(24, AngularMultiSelect_div_24_Template, 3, 3, "div", 25)(25, AngularMultiSelect_div_25_Template, 4, 8, "div", 25)(26, AngularMultiSelect_div_26_Template, 3, 3, "div", 25)(27, AngularMultiSelect_div_27_Template, 4, 8, "div", 25)(28, AngularMultiSelect_div_28_Template, 4, 8, "div", 25)(29, AngularMultiSelect_div_29_Template, 3, 3, "div", 25)(30, AngularMultiSelect_div_30_Template, 5, 12, "div", 25)(31, AngularMultiSelect_div_31_Template, 3, 3, "div", 25)(32, AngularMultiSelect_h5_32_Template, 2, 1, "h5", 26);
+        \u0275\u0275elementStart(13, "div", 18, 2);
+        \u0275\u0275element(15, "div", 19)(16, "div", 20);
+        \u0275\u0275elementStart(17, "div", 21);
+        \u0275\u0275template(18, AngularMultiSelect_div_18_Template, 7, 6, "div", 22)(19, AngularMultiSelect_img_19_Template, 1, 0, "img", 23)(20, AngularMultiSelect_div_20_Template, 9, 7, "div", 24)(21, AngularMultiSelect_div_21_Template, 3, 2, "div", 25)(22, AngularMultiSelect_div_22_Template, 2, 1, "div", 25)(23, AngularMultiSelect_div_23_Template, 2, 1, "div", 25)(24, AngularMultiSelect_div_24_Template, 3, 3, "div", 26)(25, AngularMultiSelect_div_25_Template, 4, 8, "div", 26)(26, AngularMultiSelect_div_26_Template, 3, 3, "div", 26)(27, AngularMultiSelect_div_27_Template, 4, 8, "div", 26)(28, AngularMultiSelect_div_28_Template, 4, 8, "div", 26)(29, AngularMultiSelect_div_29_Template, 3, 3, "div", 26)(30, AngularMultiSelect_div_30_Template, 5, 12, "div", 26)(31, AngularMultiSelect_div_31_Template, 3, 3, "div", 26)(32, AngularMultiSelect_h5_32_Template, 2, 1, "h5", 27);
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(42, _c9, ctx.isActive, ctx.settings.disabled, ctx.loading));
         \u0275\u0275advance(4);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(38, _c9, ctx.settings.disabled));
-        \u0275\u0275attribute("tabindex", 0);
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction4(46, _c10, ctx.settings.disabled, ctx.isActive, (ctx.selectedItems == null ? null : ctx.selectedItems.length) > 0, ctx.settings.singleSelection));
+        \u0275\u0275attribute("tabindex", 0)("aria-expanded", ctx.isActive)("aria-disabled", ctx.settings.disabled);
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", (ctx.selectedItems == null ? null : ctx.selectedItems.length) == 0);
         \u0275\u0275advance();
@@ -41052,13 +41061,14 @@ var AngularMultiSelect = class _AngularMultiSelect {
         \u0275\u0275property("ngIf", ctx.isActive);
         \u0275\u0275advance();
         \u0275\u0275styleProp("width", ctx.dropDownWidth, "px")("top", ctx.dropDownTop)("bottom", ctx.dropDownBottom)("left", ctx.dropDownLeft, "px");
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(40, _c10, ctx.settings.tagToBody))("hidden", !ctx.isActive);
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(51, _c11, ctx.settings.tagToBody))("hidden", !ctx.isActive);
+        \u0275\u0275attribute("aria-hidden", !ctx.isActive);
         \u0275\u0275advance(2);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(42, _c11, ctx.settings.position == "bottom", ctx.settings.position == "top"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(53, _c12, ctx.settings.position == "bottom", ctx.settings.position == "top"));
         \u0275\u0275advance();
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(45, _c11, ctx.settings.position == "bottom", ctx.settings.position == "top"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction2(56, _c12, ctx.settings.position == "bottom", ctx.settings.position == "top"));
         \u0275\u0275advance();
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(48, _c12, ctx.settings.singleSelection));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(59, _c13, ctx.settings.singleSelection));
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", ctx.settings.enableCheckAll && !ctx.settings.singleSelection && !ctx.settings.limitSelection && (ctx.data == null ? null : ctx.data.length) > 0 && !ctx.isDisabledItemPresent);
         \u0275\u0275advance();
@@ -41092,7 +41102,7 @@ var AngularMultiSelect = class _AngularMultiSelect {
       }
     },
     dependencies: () => [NgClass, NgForOf, NgIf, NgStyle, DefaultValueAccessor, NgControlStatus, NgModel, VirtualScrollerComponent, ClickOutsideDirective, TemplateRenderer, CIcon],
-    styles: ['virtual-scroll{display:block;width:100%}.cuppa-dropdown{position:relative}.c-btn{display:inline-block;border-width:1px;line-height:1.25;border-radius:3px;font-size:.85rem;padding:5px 10px;cursor:pointer;align-items:center;min-height:38px}.c-btn.disabled{background:#ccc}.selected-list .c-list{float:left;padding:0;margin:0;width:calc(100% - 20px)}.selected-list .c-list .c-token{list-style:none;padding:4px 22px 4px 8px;border-radius:2px;margin-right:4px;margin-top:2px;float:left;position:relative}.selected-list .c-list .c-token .c-label{display:block;float:left}.selected-list .c-list .c-token .c-remove{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:8px}.selected-list .c-list .c-token .c-remove svg{fill:#fff}.selected-list .fa-angle-down,.selected-list .fa-angle-up{font-size:15pt;position:absolute;right:10px;top:50%;transform:translateY(-50%)}.selected-list .c-angle-down,.selected-list .c-angle-up{width:12px;height:12px;position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none}.selected-list .c-angle-down svg,.selected-list .c-angle-up svg{fill:#333}.selected-list .countplaceholder{position:absolute;right:45px;top:50%;transform:translateY(-50%)}.selected-list .c-btn{width:100%;padding:5px 10px;cursor:pointer;display:flex;position:relative}.selected-list .c-btn .c-icon{position:absolute;right:5px;top:50%;transform:translateY(-50%)}.dropdown-list.tagToBody{position:fixed}.dropdown-list{position:absolute;padding-top:14px;width:100%;z-index:99999}.dropdown-list ul{padding:0;list-style:none;overflow:auto;margin:0}.dropdown-list ul li{padding:10px;cursor:pointer;text-align:left}.dropdown-list ul li:first-child{padding-top:10px}.dropdown-list ul li:last-child{padding-bottom:10px}.dropdown-list ::-webkit-scrollbar{width:8px}.dropdown-list ::-webkit-scrollbar-thumb{background:#ccc;border-radius:5px}.dropdown-list ::-webkit-scrollbar-track{background:#f2f2f2}.arrow-up,.arrow-down{width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:15px solid #fff;margin-left:15px;position:absolute;top:0}.arrow-down{bottom:-14px;top:unset;transform:rotate(180deg)}.arrow-2{border-bottom:15px solid #ccc;top:-1px}.arrow-down.arrow-2{top:unset;bottom:-16px}.list-area{border:1px solid #ccc;border-radius:3px;background:#fff;margin:0}.select-all{padding:10px;border-bottom:1px solid #ccc;text-align:left}.list-filter{border-bottom:1px solid #ccc;position:relative;padding-left:35px;height:35px}.list-filter input{border:0px;width:100%;height:100%;padding:0}.list-filter input:focus{outline:none}.list-filter .c-search{position:absolute;top:4px;left:10px;width:15px;height:15px}.list-filter .c-search svg{fill:#888}.list-filter .c-clear{position:absolute;top:4px;right:10px;width:15px;height:15px}.list-filter .c-clear svg{fill:#888}.pure-checkbox input[type=checkbox]{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.pure-checkbox input[type=checkbox]:focus+label:before,.pure-checkbox input[type=checkbox]:hover+label:before{background-color:none}.pure-checkbox input[type=checkbox]:active+label:before{transition-duration:0s}.pure-checkbox input[type=checkbox]:disabled+label{color:#ccc}.pure-checkbox input[type=checkbox]+label{position:relative;padding-left:2em;vertical-align:middle;-webkit-user-select:none;user-select:none;cursor:pointer;margin:0;font-weight:300}.pure-checkbox input[type=checkbox]+label:before{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:15px;height:15px;margin-top:-9px;text-align:center;transition:all .4s ease;border-radius:3px}.pure-checkbox input[type=checkbox]+label:after{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:15px;height:15px;margin-top:-9px;transform:scale(0);transform-origin:50%;transition:transform .2s ease-out}.pure-checkbox input[type=checkbox]:disabled+label:before{border-color:#ccc}.pure-checkbox input[type=checkbox]:disabled:focus+label:before .pure-checkbox input[type=checkbox]:disabled:hover+label:before{background-color:inherit}.pure-checkbox input[type=checkbox]:disabled:checked+label:before{background-color:#ccc}.pure-checkbox input[type=checkbox]+label:after{background-color:transparent;top:50%;left:3px;width:9px;height:4px;margin-top:-5px;border-style:solid;border-width:0 0 2px 2px;border-image:none;transform:rotate(-45deg) scale(0)}.pure-checkbox input[type=checkbox]:checked+label:after{content:"";transform:rotate(-45deg) scale(1);transition:transform .2s ease-out}.pure-checkbox input[type=radio]:checked+label:before{background-color:#fff}.pure-checkbox input[type=radio]:checked+label:after{transform:scale(1)}.pure-checkbox input[type=radio]+label:before{border-radius:50%}.pure-checkbox input[type=checkbox]:checked+label:after{transform:rotate(-45deg) scale(1)}.list-message{text-align:center;margin:0;padding:15px 0;font-size:initial}.list-grp{padding:0 15px!important}.list-grp h4{text-transform:capitalize;margin:15px 0 0;font-size:14px;font-weight:700}.list-grp>li{padding-left:15px!important}.grp-item{padding-left:30px!important}.grp-title{padding-bottom:0!important}.grp-title label{margin-bottom:0!important;font-weight:800;text-transform:capitalize}.grp-title:hover{background:none!important}.loading-icon{width:20px;position:absolute;right:10px;top:23px;z-index:1}.nodata-label{width:100%;text-align:center;padding:10px 0 0}.btn-container{text-align:center;padding:5px}.clear-all{width:8px;position:absolute;top:50%;right:30px;transform:translateY(-50%)}\n'],
+    styles: ['virtual-scroll{display:block;width:100%}.cuppa-dropdown{--ms-primary: #3f51b5;--ms-primary-soft: rgba(63, 81, 181, .12);--ms-surface: #ffffff;--ms-surface-soft: #f5f7fb;--ms-surface-muted: #e8eaf6;--ms-outline: #c5cae9;--ms-outline-strong: #7986cb;--ms-on-surface: #212121;--ms-on-surface-muted: #5f6368;--ms-chip-bg: #e8eaf6;--ms-chip-text: #303f9f;--ms-chip-remove: #303f9f;--ms-shadow: 0 1px 2px rgba(33, 33, 33, .16), 0 12px 32px rgba(63, 81, 181, .12);--ms-shadow-soft: 0 1px 2px rgba(33, 33, 33, .12), 0 4px 12px rgba(33, 33, 33, .08);position:relative;display:block;width:100%;color:var(--ms-on-surface);font:inherit}.selected-list{width:100%}.c-btn{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:8px;width:100%;min-height:56px;padding:11px 54px 11px 16px;border-radius:18px;border:1px solid var(--ms-outline);background:var(--ms-surface);box-shadow:var(--ms-shadow-soft);cursor:pointer;line-height:1.45;transition:border-color .16s ease,box-shadow .16s ease,background-color .16s ease,transform .16s ease}.c-btn:hover{border-color:var(--ms-outline-strong)}.c-btn.is-active{border-color:var(--ms-primary);box-shadow:0 0 0 3px #6750a424,var(--ms-shadow-soft)}.c-btn.disabled{cursor:not-allowed;opacity:.72}.c-placeholder,.c-single-value{color:var(--ms-on-surface-muted);font-size:.95rem}.c-btn.has-selection .c-single-value,.c-btn.has-selection .c-placeholder{color:var(--ms-on-surface);font-weight:500}.c-list{display:flex;flex:1 1 auto;flex-wrap:wrap;gap:8px;margin:0;padding:0;min-width:0}.c-chip-list{padding-right:8px}.c-token{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:32px;max-width:100%;padding:6px 30px 6px 12px;border-radius:999px;background:var(--ms-chip-bg);color:var(--ms-chip-text);box-shadow:inset 0 0 0 1px #6750a414}.c-token .c-label{display:inline-flex;align-items:center;min-width:0;line-height:1.3;font-size:.85rem;font-weight:500}.c-remove{position:absolute;right:10px;top:50%;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;transform:translateY(-50%);color:var(--ms-chip-remove)}.c-remove svg,.c-angle-down svg,.c-angle-up svg{fill:currentColor}.clear-all{position:absolute;top:50%;right:42px;width:20px;height:20px;transform:translateY(-50%);color:var(--ms-on-surface-muted)}.countplaceholder{position:absolute;top:50%;right:76px;transform:translateY(-50%);color:var(--ms-on-surface-muted);font-size:.8rem;font-weight:600}.c-angle-down,.c-angle-up{position:absolute;top:50%;right:16px;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;transform:translateY(-50%);color:var(--ms-on-surface-muted);pointer-events:none}.dropdown-list{position:absolute;width:100%;padding-top:8px;z-index:99999}.dropdown-list.tagToBody{position:fixed}.arrow-up,.arrow-down,.arrow-2{display:none}.list-area{overflow:hidden;border-radius:22px;background:var(--ms-surface);border:1px solid var(--ms-outline);box-shadow:var(--ms-shadow)}.select-all,.filter-select-all{padding:10px 14px;border-bottom:1px solid rgba(125,119,134,.16);background:#f7f2fac2}.list-filter{position:relative;display:flex;align-items:center;min-height:52px;padding-left:48px;padding-right:44px;border-bottom:1px solid rgba(125,119,134,.16);background:var(--ms-surface)}.list-filter .c-input,.list-filter input{width:100%;height:100%;border:0;background:transparent;color:var(--ms-on-surface);font:inherit}.list-filter .c-input::placeholder,.list-filter input::placeholder{color:var(--ms-on-surface-muted)}.list-filter .c-input:focus,.list-filter input:focus{outline:none}.list-filter .c-search,.list-filter .c-clear{position:absolute;top:50%;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;transform:translateY(-50%);color:var(--ms-on-surface-muted)}.list-filter .c-search{left:16px}.list-filter .c-clear{right:16px;cursor:pointer}.btn-container{padding:10px 14px 14px;text-align:center}.btn-iceblue{width:100%;min-height:40px;border-radius:999px;border:1px solid transparent;background:var(--ms-primary);color:#fff;font-weight:600}.dropdown-list ul{list-style:none;margin:0;padding:8px;overflow:auto}.dropdown-list ul li{display:flex;align-items:center;min-height:48px;margin:0;padding:12px 14px;border-radius:14px;cursor:pointer;text-align:left;transition:background-color .16s ease,color .16s ease}.dropdown-list ul li:hover{background:var(--ms-surface-soft)}.selected-item{background:var(--ms-primary-soft)!important;color:var(--ms-primary)}.selected-item:hover{background:#6750a42e!important}.grp-item{padding-left:42px!important}.grp-title{margin-top:6px;padding-top:10px!important;padding-bottom:8px!important;background:transparent!important;color:var(--ms-on-surface-muted);cursor:default!important}.grp-title label{margin-bottom:0!important;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.grp-title:hover{background:transparent!important}.pure-checkbox{position:relative}.pure-checkbox input[type=checkbox]{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.pure-checkbox input[type=checkbox]+label{position:relative;display:block;width:100%;margin:0;padding-left:32px;color:inherit;cursor:pointer;font-weight:500;-webkit-user-select:none;user-select:none}.pure-checkbox input[type=checkbox]+label:before{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:18px;height:18px;margin-top:-10px;border:2px solid var(--ms-outline-strong);border-radius:6px;background:var(--ms-surface);transition:all .18s ease}.pure-checkbox input[type=checkbox]+label:after{box-sizing:content-box;content:"";position:absolute;top:50%;left:5px;width:7px;height:3px;margin-top:-3px;border-style:solid;border-width:0 0 2px 2px;border-color:#fff;transform:rotate(-45deg) scale(0);transform-origin:50%;transition:transform .16s ease-out}.pure-checkbox input[type=checkbox]:focus+label:before,.pure-checkbox input[type=checkbox]:hover+label:before{border-color:var(--ms-primary);box-shadow:0 0 0 4px #3f51b51f}.pure-checkbox input[type=checkbox]:checked+label:before{border-color:var(--ms-primary);background:var(--ms-primary)}.pure-checkbox input[type=checkbox]:checked+label:after{transform:rotate(-45deg) scale(1)}.pure-checkbox input[type=checkbox]:disabled+label{color:#b1acb8;cursor:not-allowed}.pure-checkbox input[type=checkbox]:disabled+label:before{border-color:#d5d0db;background:#f2edf7;box-shadow:none}.single-select-mode .pure-checkbox input[type=checkbox]+label:before,.single-select-mode .pure-checkbox input[type=checkbox]+label:after{opacity:0}.single-select-mode .pure-checkbox input[type=checkbox]+label{padding-left:0}.list-message,.nodata-label{margin:0;padding:22px 16px 24px;color:var(--ms-on-surface-muted);text-align:center;font-size:.95rem;font-weight:500}.list-grp{padding:0 15px!important}.list-grp h4{margin:16px 0 6px;color:var(--ms-on-surface);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.list-grp>li{padding-left:15px!important}.loading-icon{position:absolute;top:18px;right:16px;width:18px;z-index:2}.dropdown-list ::-webkit-scrollbar{width:10px}.dropdown-list ::-webkit-scrollbar-thumb{background:#7d778657;border-radius:999px;border:2px solid transparent;background-clip:padding-box}.dropdown-list ::-webkit-scrollbar-track{background:transparent}\n'],
     encapsulation: 2
   });
 };
@@ -41100,24 +41110,31 @@ var AngularMultiSelect = class _AngularMultiSelect {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AngularMultiSelect, [{
     type: Component,
     args: [{
-      selector: "angular2-multiselect",
+      selector: "angular-multiselect, angular2-multiselect",
       host: {
         "[class]": "defaultSettings.classes"
       },
       providers: [DROPDOWN_CONTROL_VALUE_ACCESSOR, DROPDOWN_CONTROL_VALIDATION],
       encapsulation: ViewEncapsulation.None,
       standalone: false,
-      template: `<div class="cuppa-dropdown" (clickOutside)="closeDropdownOnClickOut()" #cuppaDropdown>
+      template: `<div class="cuppa-dropdown" [ngClass]="{'is-open': isActive, 'is-disabled': settings.disabled, 'is-loading': loading}" (clickOutside)="closeDropdownOnClickOut()" #cuppaDropdown>
     <div class="selected-list" #selectedList>
-        <div class="c-btn" (click)="toggleDropdown($event)" [ngClass]="{'disabled': settings.disabled}" [attr.tabindex]="0">
+        <div class="c-btn"
+            (click)="toggleDropdown($event)"
+            [ngClass]="{'disabled': settings.disabled, 'is-active': isActive, 'has-selection': selectedItems?.length > 0, 'single-select-mode': settings.singleSelection}"
+            [attr.tabindex]="0"
+            role="combobox"
+            aria-haspopup="listbox"
+            [attr.aria-expanded]="isActive"
+            [attr.aria-disabled]="settings.disabled">
 
-            <span *ngIf="selectedItems?.length == 0">{{settings.text}}</span>
-            <span *ngIf="settings.singleSelection && !badgeTempl">
+            <span class="c-placeholder" *ngIf="selectedItems?.length == 0">{{settings.text}}</span>
+            <span class="c-single-value" *ngIf="settings.singleSelection && !badgeTempl">
                 <span *ngFor="let item of selectedItems;trackBy: trackByFn.bind(this);let k = index">
                     {{item[settings.labelKey]}}
                 </span>
             </span>
-            <span class="c-list" *ngIf="selectedItems?.length > 0 && settings.singleSelection && badgeTempl ">
+            <span class="c-list c-chip-list" *ngIf="selectedItems?.length > 0 && settings.singleSelection && badgeTempl ">
                 <div class="c-token" *ngFor="let item of selectedItems;trackBy: trackByFn.bind(this);let k = index">
                     <span *ngIf="!badgeTempl" class="c-label">{{item[settings.labelKey]}}</span>
 
@@ -41129,7 +41146,7 @@ var AngularMultiSelect = class _AngularMultiSelect {
                     </span>
                 </div>
             </span>
-            <div class="c-list" *ngIf="selectedItems?.length > 0 && !settings.singleSelection">
+            <div class="c-list c-chip-list" *ngIf="selectedItems?.length > 0 && !settings.singleSelection">
                 <div class="c-token" *ngFor="let item of selectedItems;trackBy: trackByFn.bind(this);let k = index" [hidden]="k > settings.badgeShowLimit-1">
                     <span *ngIf="!badgeTempl" class="c-label">{{item[settings.labelKey]}}</span>
                     <span *ngIf="badgeTempl" class="c-label">
@@ -41153,12 +41170,14 @@ var AngularMultiSelect = class _AngularMultiSelect {
             </span>
         </div>
     </div>
-    <div #dropdownList class="dropdown-list animated fadeIn" 
+    <div #dropdownList class="dropdown-list animated fadeIn"
     [ngClass]="{'tagToBody': settings.tagToBody}"
     [style.width.px]="dropDownWidth" 
     [style.top]="dropDownTop" 
     [style.bottom]="dropDownBottom"
     [style.left.px]="dropDownLeft" 
+        role="presentation"
+        [attr.aria-hidden]="!isActive"
         [hidden]="!isActive">
         <div [ngClass]="{'arrow-up': settings.position == 'bottom', 'arrow-down': settings.position == 'top'}" class="arrow-2"></div>
         <div [ngClass]="{'arrow-up': settings.position == 'bottom', 'arrow-down': settings.position == 'top'}"></div>
@@ -41396,8 +41415,9 @@ var AngularMultiSelect = class _AngularMultiSelect {
             <h5 class="list-message" *ngIf="data?.length == 0">{{settings.noDataLabel}}</h5>
         </div>
     </div>
-</div>`,
-      styles: ['virtual-scroll{display:block;width:100%}.cuppa-dropdown{position:relative}.c-btn{display:inline-block;border-width:1px;line-height:1.25;border-radius:3px;font-size:.85rem;padding:5px 10px;cursor:pointer;align-items:center;min-height:38px}.c-btn.disabled{background:#ccc}.selected-list .c-list{float:left;padding:0;margin:0;width:calc(100% - 20px)}.selected-list .c-list .c-token{list-style:none;padding:4px 22px 4px 8px;border-radius:2px;margin-right:4px;margin-top:2px;float:left;position:relative}.selected-list .c-list .c-token .c-label{display:block;float:left}.selected-list .c-list .c-token .c-remove{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:8px}.selected-list .c-list .c-token .c-remove svg{fill:#fff}.selected-list .fa-angle-down,.selected-list .fa-angle-up{font-size:15pt;position:absolute;right:10px;top:50%;transform:translateY(-50%)}.selected-list .c-angle-down,.selected-list .c-angle-up{width:12px;height:12px;position:absolute;right:10px;top:50%;transform:translateY(-50%);pointer-events:none}.selected-list .c-angle-down svg,.selected-list .c-angle-up svg{fill:#333}.selected-list .countplaceholder{position:absolute;right:45px;top:50%;transform:translateY(-50%)}.selected-list .c-btn{width:100%;padding:5px 10px;cursor:pointer;display:flex;position:relative}.selected-list .c-btn .c-icon{position:absolute;right:5px;top:50%;transform:translateY(-50%)}.dropdown-list.tagToBody{position:fixed}.dropdown-list{position:absolute;padding-top:14px;width:100%;z-index:99999}.dropdown-list ul{padding:0;list-style:none;overflow:auto;margin:0}.dropdown-list ul li{padding:10px;cursor:pointer;text-align:left}.dropdown-list ul li:first-child{padding-top:10px}.dropdown-list ul li:last-child{padding-bottom:10px}.dropdown-list ::-webkit-scrollbar{width:8px}.dropdown-list ::-webkit-scrollbar-thumb{background:#ccc;border-radius:5px}.dropdown-list ::-webkit-scrollbar-track{background:#f2f2f2}.arrow-up,.arrow-down{width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:15px solid #fff;margin-left:15px;position:absolute;top:0}.arrow-down{bottom:-14px;top:unset;transform:rotate(180deg)}.arrow-2{border-bottom:15px solid #ccc;top:-1px}.arrow-down.arrow-2{top:unset;bottom:-16px}.list-area{border:1px solid #ccc;border-radius:3px;background:#fff;margin:0}.select-all{padding:10px;border-bottom:1px solid #ccc;text-align:left}.list-filter{border-bottom:1px solid #ccc;position:relative;padding-left:35px;height:35px}.list-filter input{border:0px;width:100%;height:100%;padding:0}.list-filter input:focus{outline:none}.list-filter .c-search{position:absolute;top:4px;left:10px;width:15px;height:15px}.list-filter .c-search svg{fill:#888}.list-filter .c-clear{position:absolute;top:4px;right:10px;width:15px;height:15px}.list-filter .c-clear svg{fill:#888}.pure-checkbox input[type=checkbox]{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.pure-checkbox input[type=checkbox]:focus+label:before,.pure-checkbox input[type=checkbox]:hover+label:before{background-color:none}.pure-checkbox input[type=checkbox]:active+label:before{transition-duration:0s}.pure-checkbox input[type=checkbox]:disabled+label{color:#ccc}.pure-checkbox input[type=checkbox]+label{position:relative;padding-left:2em;vertical-align:middle;-webkit-user-select:none;user-select:none;cursor:pointer;margin:0;font-weight:300}.pure-checkbox input[type=checkbox]+label:before{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:15px;height:15px;margin-top:-9px;text-align:center;transition:all .4s ease;border-radius:3px}.pure-checkbox input[type=checkbox]+label:after{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:15px;height:15px;margin-top:-9px;transform:scale(0);transform-origin:50%;transition:transform .2s ease-out}.pure-checkbox input[type=checkbox]:disabled+label:before{border-color:#ccc}.pure-checkbox input[type=checkbox]:disabled:focus+label:before .pure-checkbox input[type=checkbox]:disabled:hover+label:before{background-color:inherit}.pure-checkbox input[type=checkbox]:disabled:checked+label:before{background-color:#ccc}.pure-checkbox input[type=checkbox]+label:after{background-color:transparent;top:50%;left:3px;width:9px;height:4px;margin-top:-5px;border-style:solid;border-width:0 0 2px 2px;border-image:none;transform:rotate(-45deg) scale(0)}.pure-checkbox input[type=checkbox]:checked+label:after{content:"";transform:rotate(-45deg) scale(1);transition:transform .2s ease-out}.pure-checkbox input[type=radio]:checked+label:before{background-color:#fff}.pure-checkbox input[type=radio]:checked+label:after{transform:scale(1)}.pure-checkbox input[type=radio]+label:before{border-radius:50%}.pure-checkbox input[type=checkbox]:checked+label:after{transform:rotate(-45deg) scale(1)}.list-message{text-align:center;margin:0;padding:15px 0;font-size:initial}.list-grp{padding:0 15px!important}.list-grp h4{text-transform:capitalize;margin:15px 0 0;font-size:14px;font-weight:700}.list-grp>li{padding-left:15px!important}.grp-item{padding-left:30px!important}.grp-title{padding-bottom:0!important}.grp-title label{margin-bottom:0!important;font-weight:800;text-transform:capitalize}.grp-title:hover{background:none!important}.loading-icon{width:20px;position:absolute;right:10px;top:23px;z-index:1}.nodata-label{width:100%;text-align:center;padding:10px 0 0}.btn-container{text-align:center;padding:5px}.clear-all{width:8px;position:absolute;top:50%;right:30px;transform:translateY(-50%)}\n']
+</div>
+`,
+      styles: ['virtual-scroll{display:block;width:100%}.cuppa-dropdown{--ms-primary: #3f51b5;--ms-primary-soft: rgba(63, 81, 181, .12);--ms-surface: #ffffff;--ms-surface-soft: #f5f7fb;--ms-surface-muted: #e8eaf6;--ms-outline: #c5cae9;--ms-outline-strong: #7986cb;--ms-on-surface: #212121;--ms-on-surface-muted: #5f6368;--ms-chip-bg: #e8eaf6;--ms-chip-text: #303f9f;--ms-chip-remove: #303f9f;--ms-shadow: 0 1px 2px rgba(33, 33, 33, .16), 0 12px 32px rgba(63, 81, 181, .12);--ms-shadow-soft: 0 1px 2px rgba(33, 33, 33, .12), 0 4px 12px rgba(33, 33, 33, .08);position:relative;display:block;width:100%;color:var(--ms-on-surface);font:inherit}.selected-list{width:100%}.c-btn{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:8px;width:100%;min-height:56px;padding:11px 54px 11px 16px;border-radius:18px;border:1px solid var(--ms-outline);background:var(--ms-surface);box-shadow:var(--ms-shadow-soft);cursor:pointer;line-height:1.45;transition:border-color .16s ease,box-shadow .16s ease,background-color .16s ease,transform .16s ease}.c-btn:hover{border-color:var(--ms-outline-strong)}.c-btn.is-active{border-color:var(--ms-primary);box-shadow:0 0 0 3px #6750a424,var(--ms-shadow-soft)}.c-btn.disabled{cursor:not-allowed;opacity:.72}.c-placeholder,.c-single-value{color:var(--ms-on-surface-muted);font-size:.95rem}.c-btn.has-selection .c-single-value,.c-btn.has-selection .c-placeholder{color:var(--ms-on-surface);font-weight:500}.c-list{display:flex;flex:1 1 auto;flex-wrap:wrap;gap:8px;margin:0;padding:0;min-width:0}.c-chip-list{padding-right:8px}.c-token{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:32px;max-width:100%;padding:6px 30px 6px 12px;border-radius:999px;background:var(--ms-chip-bg);color:var(--ms-chip-text);box-shadow:inset 0 0 0 1px #6750a414}.c-token .c-label{display:inline-flex;align-items:center;min-width:0;line-height:1.3;font-size:.85rem;font-weight:500}.c-remove{position:absolute;right:10px;top:50%;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;transform:translateY(-50%);color:var(--ms-chip-remove)}.c-remove svg,.c-angle-down svg,.c-angle-up svg{fill:currentColor}.clear-all{position:absolute;top:50%;right:42px;width:20px;height:20px;transform:translateY(-50%);color:var(--ms-on-surface-muted)}.countplaceholder{position:absolute;top:50%;right:76px;transform:translateY(-50%);color:var(--ms-on-surface-muted);font-size:.8rem;font-weight:600}.c-angle-down,.c-angle-up{position:absolute;top:50%;right:16px;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;transform:translateY(-50%);color:var(--ms-on-surface-muted);pointer-events:none}.dropdown-list{position:absolute;width:100%;padding-top:8px;z-index:99999}.dropdown-list.tagToBody{position:fixed}.arrow-up,.arrow-down,.arrow-2{display:none}.list-area{overflow:hidden;border-radius:22px;background:var(--ms-surface);border:1px solid var(--ms-outline);box-shadow:var(--ms-shadow)}.select-all,.filter-select-all{padding:10px 14px;border-bottom:1px solid rgba(125,119,134,.16);background:#f7f2fac2}.list-filter{position:relative;display:flex;align-items:center;min-height:52px;padding-left:48px;padding-right:44px;border-bottom:1px solid rgba(125,119,134,.16);background:var(--ms-surface)}.list-filter .c-input,.list-filter input{width:100%;height:100%;border:0;background:transparent;color:var(--ms-on-surface);font:inherit}.list-filter .c-input::placeholder,.list-filter input::placeholder{color:var(--ms-on-surface-muted)}.list-filter .c-input:focus,.list-filter input:focus{outline:none}.list-filter .c-search,.list-filter .c-clear{position:absolute;top:50%;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;transform:translateY(-50%);color:var(--ms-on-surface-muted)}.list-filter .c-search{left:16px}.list-filter .c-clear{right:16px;cursor:pointer}.btn-container{padding:10px 14px 14px;text-align:center}.btn-iceblue{width:100%;min-height:40px;border-radius:999px;border:1px solid transparent;background:var(--ms-primary);color:#fff;font-weight:600}.dropdown-list ul{list-style:none;margin:0;padding:8px;overflow:auto}.dropdown-list ul li{display:flex;align-items:center;min-height:48px;margin:0;padding:12px 14px;border-radius:14px;cursor:pointer;text-align:left;transition:background-color .16s ease,color .16s ease}.dropdown-list ul li:hover{background:var(--ms-surface-soft)}.selected-item{background:var(--ms-primary-soft)!important;color:var(--ms-primary)}.selected-item:hover{background:#6750a42e!important}.grp-item{padding-left:42px!important}.grp-title{margin-top:6px;padding-top:10px!important;padding-bottom:8px!important;background:transparent!important;color:var(--ms-on-surface-muted);cursor:default!important}.grp-title label{margin-bottom:0!important;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.grp-title:hover{background:transparent!important}.pure-checkbox{position:relative}.pure-checkbox input[type=checkbox]{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.pure-checkbox input[type=checkbox]+label{position:relative;display:block;width:100%;margin:0;padding-left:32px;color:inherit;cursor:pointer;font-weight:500;-webkit-user-select:none;user-select:none}.pure-checkbox input[type=checkbox]+label:before{box-sizing:content-box;content:"";position:absolute;top:50%;left:0;width:18px;height:18px;margin-top:-10px;border:2px solid var(--ms-outline-strong);border-radius:6px;background:var(--ms-surface);transition:all .18s ease}.pure-checkbox input[type=checkbox]+label:after{box-sizing:content-box;content:"";position:absolute;top:50%;left:5px;width:7px;height:3px;margin-top:-3px;border-style:solid;border-width:0 0 2px 2px;border-color:#fff;transform:rotate(-45deg) scale(0);transform-origin:50%;transition:transform .16s ease-out}.pure-checkbox input[type=checkbox]:focus+label:before,.pure-checkbox input[type=checkbox]:hover+label:before{border-color:var(--ms-primary);box-shadow:0 0 0 4px #3f51b51f}.pure-checkbox input[type=checkbox]:checked+label:before{border-color:var(--ms-primary);background:var(--ms-primary)}.pure-checkbox input[type=checkbox]:checked+label:after{transform:rotate(-45deg) scale(1)}.pure-checkbox input[type=checkbox]:disabled+label{color:#b1acb8;cursor:not-allowed}.pure-checkbox input[type=checkbox]:disabled+label:before{border-color:#d5d0db;background:#f2edf7;box-shadow:none}.single-select-mode .pure-checkbox input[type=checkbox]+label:before,.single-select-mode .pure-checkbox input[type=checkbox]+label:after{opacity:0}.single-select-mode .pure-checkbox input[type=checkbox]+label{padding-left:0}.list-message,.nodata-label{margin:0;padding:22px 16px 24px;color:var(--ms-on-surface-muted);text-align:center;font-size:.95rem;font-weight:500}.list-grp{padding:0 15px!important}.list-grp h4{margin:16px 0 6px;color:var(--ms-on-surface);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.list-grp>li{padding-left:15px!important}.loading-icon{position:absolute;top:18px;right:16px;width:18px;z-index:2}.dropdown-list ::-webkit-scrollbar{width:10px}.dropdown-list ::-webkit-scrollbar-thumb{background:#7d778657;border-radius:999px;border:2px solid transparent;background-clip:padding-box}.dropdown-list ::-webkit-scrollbar-track{background:transparent}\n']
     }]
   }], () => [{
     type: ElementRef
@@ -47244,27 +47264,61 @@ function provideRouterInitializer() {
 
 // src/app/docs-meta.ts
 var DOCS_META = {
-  badge: "ANGULAR 21.2 \xB7 MULTISELECT",
-  angularVersion: "21.2.x",
-  packageVersion: "14.0.1",
-  packageRange: "^14.0.1",
+  badge: "ANGULAR 21 \xB7 MATERIAL REFINED",
+  angularVersion: "21.x",
+  packageVersion: "21.0.0",
+  packageRange: "^21.0.0",
   docsPath: "angular-21"
 };
 
 // src/app/app.component.ts
 var _c02 = (a0) => [a0];
-var _c18 = () => ({ exact: true });
-function AppComponent_a_80_Template(rf, ctx) {
+var _c19 = () => ({ exact: true });
+function AppComponent_a_30_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 31);
+    \u0275\u0275elementStart(0, "a", 38);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     const link_r1 = ctx.$implicit;
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(3, _c02, link_r1.path))("routerLinkActiveOptions", \u0275\u0275pureFunction0(5, _c18));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(3, _c02, link_r1.path))("routerLinkActiveOptions", \u0275\u0275pureFunction0(5, _c19));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", link_r1.data == null ? null : link_r1.data.label, " ");
+    \u0275\u0275textInterpolate1(" ", link_r1.data == null ? null : link_r1.data["label"], " ");
+  }
+}
+function AppComponent_span_72_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 39);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const pill_r2 = ctx.$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(pill_r2);
+  }
+}
+function AppComponent_article_147_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "article", 40)(1, "div", 29);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "h3");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p");
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const card_r3 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(card_r3.kicker);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(card_r3.title);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(card_r3.copy);
   }
 }
 var AppComponent = class _AppComponent {
@@ -47272,23 +47326,75 @@ var AppComponent = class _AppComponent {
     this.router = router;
     this.activatedRoute = activatedRoute;
     this.docsMeta = DOCS_META;
-    this.installCode = `npm install @revivejs/angular2-multiselect-dropdown@${this.docsMeta.packageRange}`;
+    this.installCode = `npm install @revivejs/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
     this.setupCode = [
       `import { FormsModule } from '@angular/forms';`,
-      `import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';`,
+      `import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';`,
+      ``,
+      `"styles": [`,
+      `  "node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css"`,
+      `]`,
       ``,
       `@NgModule({`,
       `  imports: [BrowserModule, FormsModule, AngularMultiSelectModule]`,
       `})`,
       `export class AppModule {}`
     ].join("\n");
+    this.customThemeCode = [
+      `"styles": [`,
+      `  "src/styles.scss",`,
+      `  "src/styles/multiselect-dropdown.theme.scss"`,
+      `]`,
+      ``,
+      `/* Start from the package file: */`,
+      `/* node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss */`
+    ].join("\n");
     this.templateCode = [
-      `<angular2-multiselect`,
+      `<angular-multiselect`,
       `  [data]="items"`,
       `  [(ngModel)]="selectedItems"`,
-      `  [settings]="settings">`,
-      `</angular2-multiselect>`
+      `  [settings]="settings"`,
+      `  (onSelect)="onItemSelect($event)">`,
+      `</angular-multiselect>`
     ].join("\n");
+    this.featurePills = [
+      "ngModel",
+      "Reactive forms",
+      "Search",
+      "Grouping",
+      "Custom templates",
+      "Lazy loading",
+      "Material-like theme",
+      "Custom CSS/SCSS theme"
+    ];
+    this.apiCards = [
+      {
+        kicker: "Selector",
+        title: "<angular-multiselect>",
+        copy: "The public selector stays unchanged so existing templates do not need to be rewritten for this line."
+      },
+      {
+        kicker: "Binding",
+        title: "[(ngModel)] and formControlName",
+        copy: "Template-driven and reactive forms remain first-class. This line focuses on compatibility, not API churn."
+      },
+      {
+        kicker: "Events",
+        title: "onSelect, onDeSelect, onSelectAll",
+        copy: "The classic callback outputs are preserved, so event handling code keeps working while the UI gets refined."
+      },
+      {
+        kicker: "Styling",
+        title: "custom.theme.scss and custom.theme.css",
+        copy: "A full starter theme now ships with the package so teams can copy it and completely restyle the dropdown without editing library source."
+      }
+    ];
+    this.copyLabels = {
+      install: "Copy",
+      setup: "Copy",
+      customTheme: "Copy",
+      template: "Copy"
+    };
     this.links = this.router.config.filter((link) => !!link.path && !!link.data?.["label"]);
     this.currentLabel = this.links[0]?.data?.["label"] || "Basic example";
     this.currentPath = this.links[0]?.path || "basic";
@@ -47296,6 +47402,26 @@ var AppComponent = class _AppComponent {
   }
   ngOnInit() {
     this.syncCurrentRoute();
+  }
+  copySnippet(key, value) {
+    const textarea = document.createElement("textarea");
+    textarea.value = value;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      this.copyLabels[key] = "Copied";
+    } catch (error) {
+      this.copyLabels[key] = "Copy failed";
+    } finally {
+      document.body.removeChild(textarea);
+      window.setTimeout(() => {
+        this.copyLabels[key] = "Copy";
+      }, 1600);
+    }
   }
   syncCurrentRoute() {
     let route = this.activatedRoute.firstChild;
@@ -47311,261 +47437,392 @@ var AppComponent = class _AppComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], standalone: false, decls: 205, vars: 12, consts: [[1, "shell"], [1, "hero"], [1, "hero-card", "hero-main"], [1, "badge"], [1, "feature-grid"], [1, "feature"], [1, "cta-row"], ["href", "#demos", 1, "btn"], ["href", "https://github.com/alexandroit/angular2-multiselect-dropdown#readme", "target", "_blank", "rel", "noreferrer", 1, "btn", "secondary"], [1, "hero-card", "hero-setup"], [1, "step"], [1, "step-num"], ["id", "demos", 1, "layout"], [1, "panels"], [1, "panel"], [1, "panel-header"], [1, "example-shell"], ["aria-label", "Multiselect examples", 1, "example-nav"], ["class", "example-link", "routerLinkActive", "active", 3, "routerLink", "routerLinkActiveOptions", 4, "ngFor", "ngForOf"], [1, "example-stage"], [1, "example-stage-header"], [1, "stage-pill"], [1, "example-preview"], [1, "panel", "ref-panel"], [1, "ref-grid"], [1, "ref-card"], [1, "api-table"], [1, "log-panel"], [1, "log-list"], [1, "log-entry"], [1, "footer"], ["routerLinkActive", "active", 1, "example-link", 3, "routerLink", "routerLinkActiveOptions"]], template: function AppComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], standalone: false, decls: 148, vars: 20, consts: [[1, "docs-shell"], [1, "topbar"], [1, "brand"], [1, "brand-mark"], [1, "topbar-eyebrow"], [1, "topbar-meta"], [1, "meta-pill"], [1, "meta-pill", "primary"], [1, "docs-layout"], [1, "rail"], [1, "rail-card"], [1, "rail-label"], ["href", "#install", 1, "rail-link"], ["href", "#preview", 1, "rail-link"], ["href", "#api", 1, "rail-link"], ["aria-label", "Angular multiselect examples", 1, "example-nav"], ["class", "example-link", "routerLinkActive", "active", 3, "routerLink", "routerLinkActiveOptions", 4, "ngFor", "ngForOf"], [1, "release-item"], [1, "docs-main"], [1, "hero-card"], [1, "hero-badge"], [1, "hero-copy"], [1, "pill-row"], ["class", "feature-pill", 4, "ngFor", "ngForOf"], [1, "compat-grid"], [1, "compat-card"], ["id", "install", 1, "setup-grid"], [1, "setup-card"], [1, "setup-head"], [1, "setup-label"], [1, "copy-button", 3, "click"], [3, "textContent"], ["id", "preview", 1, "preview-card"], [1, "preview-head"], [1, "status-pill"], [1, "preview-canvas"], ["id", "api", 1, "api-grid"], ["class", "api-card", 4, "ngFor", "ngForOf"], ["routerLinkActive", "active", 1, "example-link", 3, "routerLink", "routerLinkActiveOptions"], [1, "feature-pill"], [1, "api-card"]], template: function AppComponent_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "div", 0)(1, "section", 1)(2, "div", 2)(3, "span", 3);
-        \u0275\u0275text(4);
+        \u0275\u0275elementStart(0, "div", 0)(1, "header", 1)(2, "div", 2)(3, "div", 3);
+        \u0275\u0275text(4, "M");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(5, "h1");
-        \u0275\u0275text(6, "@revivejs/angular2-multiselect-dropdown");
+        \u0275\u0275elementStart(5, "div")(6, "div", 4);
+        \u0275\u0275text(7, "ReviveJS maintained line");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(7, "p");
-        \u0275\u0275text(8, " A maintained Angular multiselect dropdown with classic template support, search, grouping, custom templates, lazy loading, and both template-driven and reactive forms workflows. ");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(9, "div", 4)(10, "div", 5)(11, "strong");
-        \u0275\u0275text(12, "Classic API preserved");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(13, " Keep using ");
-        \u0275\u0275elementStart(14, "code");
-        \u0275\u0275text(15, "<angular2-multiselect>");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(16, ", ");
-        \u0275\u0275elementStart(17, "code");
-        \u0275\u0275text(18, "ngModel");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(19, ", and the familiar callback outputs across the maintained release line. ");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(20, "div", 5)(21, "strong");
-        \u0275\u0275text(22, "Built for forms");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(23, " Works with standalone templates, ");
-        \u0275\u0275elementStart(24, "code");
-        \u0275\u0275text(25, "ngModel");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(26, ", and ");
-        \u0275\u0275elementStart(27, "code");
-        \u0275\u0275text(28, "formControlName");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(29, " without adapters. ");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(30, "div", 5)(31, "strong");
-        \u0275\u0275text(32, "Rich dropdown behavior");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(33, " Search, grouping, custom placeholders, badge limits, lazy loading, and remote data hooks are available out of the box. ");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(34, "div", 5)(35, "strong");
-        \u0275\u0275text(36, "Versioned docs");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(37, " Each Angular release line gets its own docs build so the published package and demo stay aligned. ");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(38, "div", 6)(39, "a", 7);
-        \u0275\u0275text(40, "See demos");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(41, "a", 8);
-        \u0275\u0275text(42, " README ");
+        \u0275\u0275elementStart(8, "h1");
+        \u0275\u0275text(9, "@revivejs/angular-multiselect-dropdown");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(43, "div", 9)(44, "h2");
-        \u0275\u0275text(45, "Setup in 3 steps");
+        \u0275\u0275elementStart(10, "div", 5)(11, "span", 6);
+        \u0275\u0275text(12);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(46, "div", 10)(47, "span", 11);
-        \u0275\u0275text(48, "1");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(49, "div")(50, "strong");
-        \u0275\u0275text(51, "Install");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "pre");
-        \u0275\u0275text(53);
+        \u0275\u0275elementStart(13, "span", 7);
+        \u0275\u0275text(14);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(54, "div", 10)(55, "span", 11);
-        \u0275\u0275text(56, "2");
+        \u0275\u0275elementStart(15, "div", 8)(16, "aside", 9)(17, "section", 10)(18, "div", 11);
+        \u0275\u0275text(19, "Overview");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(57, "div")(58, "strong");
-        \u0275\u0275text(59, "Register the module");
+        \u0275\u0275elementStart(20, "a", 12);
+        \u0275\u0275text(21, "Install");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(60, "pre");
-        \u0275\u0275text(61);
+        \u0275\u0275elementStart(22, "a", 13);
+        \u0275\u0275text(23, "Preview");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(24, "a", 14);
+        \u0275\u0275text(25, "API");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(26, "section", 10)(27, "div", 11);
+        \u0275\u0275text(28, "Examples");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(29, "nav", 15);
+        \u0275\u0275template(30, AppComponent_a_30_Template, 2, 6, "a", 16);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(31, "section", 10)(32, "div", 11);
+        \u0275\u0275text(33, "Release line");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(34, "div", 17)(35, "strong");
+        \u0275\u0275text(36, "Package");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(37, "span");
+        \u0275\u0275text(38);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(39, "div", 17)(40, "strong");
+        \u0275\u0275text(41, "Angular");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(42, "span");
+        \u0275\u0275text(43);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(44, "div", 17)(45, "strong");
+        \u0275\u0275text(46, "Docs path");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(47, "span");
+        \u0275\u0275text(48);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(49, "div", 17)(50, "strong");
+        \u0275\u0275text(51, "Promise");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(52, "span");
+        \u0275\u0275text(53, "Material look, classic API");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(54, "main", 18)(55, "section", 19)(56, "span", 20);
+        \u0275\u0275text(57);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(58, "h2");
+        \u0275\u0275text(59, "Material-inspired multiselect, without breaking the classic contract.");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(60, "p", 21);
+        \u0275\u0275text(61, " This release line promotes ");
+        \u0275\u0275elementStart(62, "code");
+        \u0275\u0275text(63, "<angular-multiselect>");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(64, " as the primary selector, while still accepting the legacy ");
+        \u0275\u0275elementStart(65, "code");
+        \u0275\u0275text(66, "<angular2-multiselect>");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(67, " API, ");
+        \u0275\u0275elementStart(68, "code");
+        \u0275\u0275text(69, "ngModel");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(70, " binding, event outputs, and custom template hooks while refining the UI to feel much closer to Angular Material surfaces and field patterns. ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(71, "div", 22);
+        \u0275\u0275template(72, AppComponent_span_72_Template, 2, 1, "span", 23);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(73, "div", 24)(74, "div", 25)(75, "strong");
+        \u0275\u0275text(76, "API stability first");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(77, " Inputs, outputs, settings keys, and template slots stay aligned with the code people already ship. ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(78, "div", 25)(79, "strong");
+        \u0275\u0275text(80, "Material-like visual language");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(81, " Surface elevation, rounded outlines, calmer color tokens, and cleaner dropdown states. ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(82, "div", 25)(83, "strong");
+        \u0275\u0275text(84, "Modern line foundation");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(85, " This shell powers the remodulated lines from Angular 14 through Angular 21 while keeping the legacy selector contract intact. ");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(62, "div", 10)(63, "span", 11);
-        \u0275\u0275text(64, "3");
+        \u0275\u0275elementStart(86, "section", 26)(87, "article", 27)(88, "div", 28)(89, "div")(90, "div", 29);
+        \u0275\u0275text(91, "Step 1");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(65, "div")(66, "strong");
-        \u0275\u0275text(67, "Render the dropdown");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "pre");
-        \u0275\u0275text(69);
-        \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(70, "section", 12)(71, "div", 13)(72, "article", 14)(73, "div", 15)(74, "h2");
-        \u0275\u0275text(75, "Example gallery");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(76, "p");
-        \u0275\u0275text(77, " Browse the maintained examples to validate how the dropdown behaves with forms, templating, grouping, lazy loading, and remote data. ");
+        \u0275\u0275elementStart(92, "h3");
+        \u0275\u0275text(93, "Install the package");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(78, "div", 16)(79, "nav", 17);
-        \u0275\u0275template(80, AppComponent_a_80_Template, 2, 6, "a", 18);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(81, "div", 19)(82, "div", 20)(83, "div")(84, "h3");
-        \u0275\u0275text(85);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(86, "p");
-        \u0275\u0275text(87, " Live demo rendered against package ");
-        \u0275\u0275elementStart(88, "code");
-        \u0275\u0275text(89);
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(90, " for Angular ");
-        \u0275\u0275elementStart(91, "code");
-        \u0275\u0275text(92);
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(93, ". ");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(94, "span", 21);
+        \u0275\u0275elementStart(94, "button", 30);
+        \u0275\u0275listener("click", function AppComponent_Template_button_click_94_listener() {
+          return ctx.copySnippet("install", ctx.installCode);
+        });
         \u0275\u0275text(95);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(96, "div", 22);
-        \u0275\u0275element(97, "router-outlet");
+        \u0275\u0275element(96, "pre", 31);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(97, "article", 27)(98, "div", 28)(99, "div")(100, "div", 29);
+        \u0275\u0275text(101, "Step 2");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(102, "h3");
+        \u0275\u0275text(103, "Register the module");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(104, "button", 30);
+        \u0275\u0275listener("click", function AppComponent_Template_button_click_104_listener() {
+          return ctx.copySnippet("setup", ctx.setupCode);
+        });
+        \u0275\u0275text(105);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275element(106, "pre", 31);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(107, "article", 27)(108, "div", 28)(109, "div")(110, "div", 29);
+        \u0275\u0275text(111, "Step 3");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(112, "h3");
+        \u0275\u0275text(113, "Customize the full theme");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(114, "button", 30);
+        \u0275\u0275listener("click", function AppComponent_Template_button_click_114_listener() {
+          return ctx.copySnippet("customTheme", ctx.customThemeCode);
+        });
+        \u0275\u0275text(115);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275element(116, "pre", 31);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(117, "article", 27)(118, "div", 28)(119, "div")(120, "div", 29);
+        \u0275\u0275text(121, "Step 4");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(122, "h3");
+        \u0275\u0275text(123, "Render the dropdown");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(124, "button", 30);
+        \u0275\u0275listener("click", function AppComponent_Template_button_click_124_listener() {
+          return ctx.copySnippet("template", ctx.templateCode);
+        });
+        \u0275\u0275text(125);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275element(126, "pre", 31);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(127, "section", 32)(128, "div", 33)(129, "div")(130, "div", 29);
+        \u0275\u0275text(131, "Live preview");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(132, "h3");
+        \u0275\u0275text(133);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(134, "p");
+        \u0275\u0275text(135, " Running against package line ");
+        \u0275\u0275elementStart(136, "code");
+        \u0275\u0275text(137);
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(138, " and Angular ");
+        \u0275\u0275elementStart(139, "code");
+        \u0275\u0275text(140);
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(141, ". ");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(142, "span", 34);
+        \u0275\u0275text(143, "Classic selector preserved");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(144, "div", 35);
+        \u0275\u0275element(145, "router-outlet");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(146, "section", 36);
+        \u0275\u0275template(147, AppComponent_article_147_Template, 7, 3, "article", 37);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(98, "article", 23)(99, "div", 15)(100, "h2");
-        \u0275\u0275text(101, "Quick API reference");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(102, "p");
-        \u0275\u0275text(103, " The maintained line keeps the familiar API while documenting the most commonly used inputs and outputs in one place. ");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(104, "div", 24)(105, "div", 25)(106, "h4");
-        \u0275\u0275text(107, "Core inputs");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(108, "table", 26)(109, "tr")(110, "td")(111, "code");
-        \u0275\u0275text(112, "[data]");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(113, "td");
-        \u0275\u0275text(114, "Array of available dropdown items.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(115, "tr")(116, "td")(117, "code");
-        \u0275\u0275text(118, "[(ngModel)]");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(119, "td");
-        \u0275\u0275text(120, "Two-way bind the selected items list.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(121, "tr")(122, "td")(123, "code");
-        \u0275\u0275text(124, "[settings]");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(125, "td");
-        \u0275\u0275text(126, "Pass text, search, grouping, and lazy loading configuration.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(127, "tr")(128, "td")(129, "code");
-        \u0275\u0275text(130, "disabled");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(131, "td");
-        \u0275\u0275text(132, "Disable interaction when the parent form requires it.");
-        \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(133, "div", 25)(134, "h4");
-        \u0275\u0275text(135, "Templates");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(136, "table", 26)(137, "tr")(138, "td")(139, "code");
-        \u0275\u0275text(140, "<c-item>");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(141, "td");
-        \u0275\u0275text(142, "Provide a custom item template for the dropdown list.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(143, "tr")(144, "td")(145, "code");
-        \u0275\u0275text(146, "<c-badge>");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(147, "td");
-        \u0275\u0275text(148, "Customize the selected badge rendering.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(149, "tr")(150, "td")(151, "code");
-        \u0275\u0275text(152, "tagToBody");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(153, "td");
-        \u0275\u0275text(154, "Keep it ");
-        \u0275\u0275elementStart(155, "code");
-        \u0275\u0275text(156, "false");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(157, " in card or sticky layouts so the menu stays anchored to the field.");
-        \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(158, "div", 25)(159, "h4");
-        \u0275\u0275text(160, "Outputs");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(161, "table", 26)(162, "tr")(163, "td")(164, "code");
-        \u0275\u0275text(165, "(onSelect)");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(166, "td");
-        \u0275\u0275text(167, "Emits the selected item.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(168, "tr")(169, "td")(170, "code");
-        \u0275\u0275text(171, "(onDeSelect)");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(172, "td");
-        \u0275\u0275text(173, "Emits when a selected item is removed.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(174, "tr")(175, "td")(176, "code");
-        \u0275\u0275text(177, "(onSelectAll)");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(178, "td");
-        \u0275\u0275text(179, "Emits when all visible items are selected.");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(180, "tr")(181, "td")(182, "code");
-        \u0275\u0275text(183, "(onDeSelectAll)");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(184, "td");
-        \u0275\u0275text(185, "Emits when all selections are cleared.");
-        \u0275\u0275elementEnd()()()()()()();
-        \u0275\u0275elementStart(186, "aside", 27)(187, "h2");
-        \u0275\u0275text(188, "Release line");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(189, "p");
-        \u0275\u0275text(190, " This demo line is aligned with the published package and keeps the classic dropdown API available for maintained Angular applications. ");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(191, "div", 28)(192, "div", 29);
-        \u0275\u0275text(193);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(194, "div", 29);
-        \u0275\u0275text(195);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(196, "div", 29);
-        \u0275\u0275text(197);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(198, "div", 29);
-        \u0275\u0275text(199, "Pattern: versioned docs-src + compiled docs history");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(200, "div", 29);
-        \u0275\u0275text(201, "Key workflows: ngModel, reactive forms, templates, grouping, lazy loading");
-        \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(202, "footer", 30)(203, "p");
-        \u0275\u0275text(204, " Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation, and release stewardship by ReviveJS. ");
-        \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(4);
-        \u0275\u0275textInterpolate(ctx.docsMeta.badge);
-        \u0275\u0275advance(49);
-        \u0275\u0275textInterpolate(ctx.installCode);
-        \u0275\u0275advance(8);
-        \u0275\u0275textInterpolate(ctx.setupCode);
-        \u0275\u0275advance(8);
-        \u0275\u0275textInterpolate(ctx.templateCode);
-        \u0275\u0275advance(11);
+        \u0275\u0275advance(12);
+        \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
+        \u0275\u0275advance(2);
+        \u0275\u0275textInterpolate1("v", ctx.docsMeta.packageVersion);
+        \u0275\u0275advance(16);
         \u0275\u0275property("ngForOf", ctx.links);
+        \u0275\u0275advance(8);
+        \u0275\u0275textInterpolate(ctx.docsMeta.packageVersion);
         \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate1("/", ctx.docsMeta.docsPath, "/");
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate(ctx.docsMeta.badge);
+        \u0275\u0275advance(15);
+        \u0275\u0275property("ngForOf", ctx.featurePills);
+        \u0275\u0275advance(23);
+        \u0275\u0275textInterpolate(ctx.copyLabels.install);
+        \u0275\u0275advance();
+        \u0275\u0275property("textContent", ctx.installCode);
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate(ctx.copyLabels.setup);
+        \u0275\u0275advance();
+        \u0275\u0275property("textContent", ctx.setupCode);
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate(ctx.copyLabels.customTheme);
+        \u0275\u0275advance();
+        \u0275\u0275property("textContent", ctx.customThemeCode);
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate(ctx.copyLabels.template);
+        \u0275\u0275advance();
+        \u0275\u0275property("textContent", ctx.templateCode);
+        \u0275\u0275advance(7);
         \u0275\u0275textInterpolate(ctx.currentLabel);
         \u0275\u0275advance(4);
         \u0275\u0275textInterpolate(ctx.docsMeta.packageVersion);
         \u0275\u0275advance(3);
         \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
-        \u0275\u0275advance(3);
-        \u0275\u0275textInterpolate(ctx.docsMeta.angularVersion);
-        \u0275\u0275advance(98);
-        \u0275\u0275textInterpolate1("Package line: ", ctx.docsMeta.packageVersion);
-        \u0275\u0275advance(2);
-        \u0275\u0275textInterpolate1("Angular compatibility: ", ctx.docsMeta.angularVersion);
-        \u0275\u0275advance(2);
-        \u0275\u0275textInterpolate1("Docs path: /", ctx.docsMeta.docsPath, "/");
+        \u0275\u0275advance(7);
+        \u0275\u0275property("ngForOf", ctx.apiCards);
       }
-    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ['\n[_nghost-%COMP%] {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell[_ngcontent-%COMP%] {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1[_ngcontent-%COMP%], \nh2[_ngcontent-%COMP%], \nh3[_ngcontent-%COMP%], \nh4[_ngcontent-%COMP%] {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np[_ngcontent-%COMP%], \ntd[_ngcontent-%COMP%], \nth[_ngcontent-%COMP%], \nbutton[_ngcontent-%COMP%], \ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%], \nlabel[_ngcontent-%COMP%] {\n  font: inherit;\n}\ncode[_ngcontent-%COMP%], \npre[_ngcontent-%COMP%] {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card[_ngcontent-%COMP%], \n.panel[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%] {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.panel-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.feature[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary[_ngcontent-%COMP%] {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.step[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num[_ngcontent-%COMP%] {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout[_ngcontent-%COMP%] {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header[_ngcontent-%COMP%] {\n  margin-bottom: 1rem;\n}\n.panel-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.log-panel[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin: 0 0 0.4rem;\n}\n.example-shell[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: visible;\n  position: relative;\n  z-index: 1;\n}\n.example-stage-header[_ngcontent-%COMP%] {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill[_ngcontent-%COMP%] {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview[_ngcontent-%COMP%] {\n  min-width: 0;\n  overflow: visible;\n  padding: 1rem;\n  position: relative;\n  z-index: 2;\n}\n.example-preview[_ngcontent-%COMP%]   angular2-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n  position: relative;\n  z-index: 3;\n}\n.example-preview[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.example-preview[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n}\n.example-preview[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%] {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 0.75rem;\n}\n.api-table[_ngcontent-%COMP%] {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry[_ngcontent-%COMP%] {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer[_ngcontent-%COMP%] {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%], \n   .example-shell[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .layout[_ngcontent-%COMP%] {\n    gap: 1rem;\n  }\n  .panels[_ngcontent-%COMP%], \n   .example-stage[_ngcontent-%COMP%], \n   .example-preview[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%], \n   .ref-card[_ngcontent-%COMP%] {\n    min-width: 0;\n  }\n  .log-panel[_ngcontent-%COMP%] {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid[_ngcontent-%COMP%], \n   .feature-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell[_ngcontent-%COMP%] {\n    padding: 1rem;\n  }\n  .hero-card[_ngcontent-%COMP%], \n   .panel[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%] {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .cta-row[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */'] });
+    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ["\n[_nghost-%COMP%] {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell[_ngcontent-%COMP%] {\n  padding: 24px;\n}\n.topbar[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark[_ngcontent-%COMP%] {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow[_ngcontent-%COMP%], \n.setup-label[_ngcontent-%COMP%], \n.rail-label[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%] {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card[_ngcontent-%COMP%], \n.hero-card[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%] {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card[_ngcontent-%COMP%] {\n  padding: 18px;\n}\n.rail-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link[_ngcontent-%COMP%]    + .rail-link[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item[_ngcontent-%COMP%]    + .release-item[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 24px;\n}\n.hero-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%] {\n  padding: 28px;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.compat-card[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row[_ngcontent-%COMP%], \n.compat-grid[_ngcontent-%COMP%], \n.setup-grid[_ngcontent-%COMP%], \n.api-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 16px;\n}\n.pill-row[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card[_ngcontent-%COMP%] {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.setup-head[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre[_ngcontent-%COMP%] {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.preview-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas[_ngcontent-%COMP%] {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas[_ngcontent-%COMP%]   angular-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n.api-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode[_ngcontent-%COMP%] {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout[_ngcontent-%COMP%], \n   .setup-grid[_ngcontent-%COMP%], \n   .compat-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .rail[_ngcontent-%COMP%] {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .hero-card[_ngcontent-%COMP%], \n   .preview-card[_ngcontent-%COMP%], \n   .setup-card[_ngcontent-%COMP%], \n   .api-card[_ngcontent-%COMP%], \n   .rail-card[_ngcontent-%COMP%] {\n    border-radius: 22px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .setup-head[_ngcontent-%COMP%], \n   .preview-head[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .topbar[_ngcontent-%COMP%] {\n    padding: 18px;\n  }\n  .preview-canvas[_ngcontent-%COMP%] {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */"] });
   }
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AppComponent, [{
     type: Component,
-    args: [{ standalone: false, selector: "app-root", template: '<div class="shell">\n  <section class="hero">\n    <div class="hero-card hero-main">\n      <span class="badge">{{ docsMeta.badge }}</span>\n      <h1>&#64;revivejs/angular2-multiselect-dropdown</h1>\n      <p>\n        A maintained Angular multiselect dropdown with classic template support, search,\n        grouping, custom templates, lazy loading, and both template-driven and reactive\n        forms workflows.\n      </p>\n\n      <div class="feature-grid">\n        <div class="feature">\n          <strong>Classic API preserved</strong>\n          Keep using <code>&lt;angular2-multiselect&gt;</code>, <code>ngModel</code>, and the\n          familiar callback outputs across the maintained release line.\n        </div>\n        <div class="feature">\n          <strong>Built for forms</strong>\n          Works with standalone templates, <code>ngModel</code>, and\n          <code>formControlName</code> without adapters.\n        </div>\n        <div class="feature">\n          <strong>Rich dropdown behavior</strong>\n          Search, grouping, custom placeholders, badge limits, lazy loading, and remote data\n          hooks are available out of the box.\n        </div>\n        <div class="feature">\n          <strong>Versioned docs</strong>\n          Each Angular release line gets its own docs build so the published package and demo stay\n          aligned.\n        </div>\n      </div>\n\n      <div class="cta-row">\n        <a class="btn" href="#demos">See demos</a>\n        <a\n          class="btn secondary"\n          href="https://github.com/alexandroit/angular2-multiselect-dropdown#readme"\n          target="_blank"\n          rel="noreferrer">\n          README\n        </a>\n      </div>\n    </div>\n\n    <div class="hero-card hero-setup">\n      <h2>Setup in 3 steps</h2>\n\n      <div class="step">\n        <span class="step-num">1</span>\n        <div>\n          <strong>Install</strong>\n          <pre>{{ installCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">2</span>\n        <div>\n          <strong>Register the module</strong>\n          <pre>{{ setupCode }}</pre>\n        </div>\n      </div>\n\n      <div class="step">\n        <span class="step-num">3</span>\n        <div>\n          <strong>Render the dropdown</strong>\n          <pre>{{ templateCode }}</pre>\n        </div>\n      </div>\n    </div>\n  </section>\n\n  <section class="layout" id="demos">\n    <div class="panels">\n      <article class="panel">\n        <div class="panel-header">\n          <h2>Example gallery</h2>\n          <p>\n            Browse the maintained examples to validate how the dropdown behaves with forms,\n            templating, grouping, lazy loading, and remote data.\n          </p>\n        </div>\n\n        <div class="example-shell">\n          <nav class="example-nav" aria-label="Multiselect examples">\n            <a\n              *ngFor="let link of links"\n              class="example-link"\n              [routerLink]="[link.path]"\n              routerLinkActive="active"\n              [routerLinkActiveOptions]="{ exact: true }">\n              {{ link.data?.label }}\n            </a>\n          </nav>\n\n          <div class="example-stage">\n            <div class="example-stage-header">\n              <div>\n                <h3>{{ currentLabel }}</h3>\n                <p>\n                  Live demo rendered against package <code>{{ docsMeta.packageVersion }}</code>\n                  for Angular <code>{{ docsMeta.angularVersion }}</code>.\n                </p>\n              </div>\n              <span class="stage-pill">{{ docsMeta.angularVersion }}</span>\n            </div>\n\n            <div class="example-preview">\n              <router-outlet></router-outlet>\n            </div>\n          </div>\n        </div>\n      </article>\n\n      <article class="panel ref-panel">\n        <div class="panel-header">\n          <h2>Quick API reference</h2>\n          <p>\n            The maintained line keeps the familiar API while documenting the most commonly used\n            inputs and outputs in one place.\n          </p>\n        </div>\n\n        <div class="ref-grid">\n          <div class="ref-card">\n            <h4>Core inputs</h4>\n            <table class="api-table">\n              <tr><td><code>[data]</code></td><td>Array of available dropdown items.</td></tr>\n              <tr><td><code>[(ngModel)]</code></td><td>Two-way bind the selected items list.</td></tr>\n              <tr><td><code>[settings]</code></td><td>Pass text, search, grouping, and lazy loading configuration.</td></tr>\n              <tr><td><code>disabled</code></td><td>Disable interaction when the parent form requires it.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Templates</h4>\n            <table class="api-table">\n              <tr><td><code>&lt;c-item&gt;</code></td><td>Provide a custom item template for the dropdown list.</td></tr>\n              <tr><td><code>&lt;c-badge&gt;</code></td><td>Customize the selected badge rendering.</td></tr>\n              <tr><td><code>tagToBody</code></td><td>Keep it <code>false</code> in card or sticky layouts so the menu stays anchored to the field.</td></tr>\n            </table>\n          </div>\n\n          <div class="ref-card">\n            <h4>Outputs</h4>\n            <table class="api-table">\n              <tr><td><code>(onSelect)</code></td><td>Emits the selected item.</td></tr>\n              <tr><td><code>(onDeSelect)</code></td><td>Emits when a selected item is removed.</td></tr>\n              <tr><td><code>(onSelectAll)</code></td><td>Emits when all visible items are selected.</td></tr>\n              <tr><td><code>(onDeSelectAll)</code></td><td>Emits when all selections are cleared.</td></tr>\n            </table>\n          </div>\n        </div>\n      </article>\n    </div>\n\n    <aside class="log-panel">\n      <h2>Release line</h2>\n      <p>\n        This demo line is aligned with the published package and keeps the classic dropdown API\n        available for maintained Angular applications.\n      </p>\n\n      <div class="log-list">\n        <div class="log-entry">Package line: {{ docsMeta.packageVersion }}</div>\n        <div class="log-entry">Angular compatibility: {{ docsMeta.angularVersion }}</div>\n        <div class="log-entry">Docs path: /{{ docsMeta.docsPath }}/</div>\n        <div class="log-entry">Pattern: versioned docs-src + compiled docs history</div>\n        <div class="log-entry">Key workflows: ngModel, reactive forms, templates, grouping, lazy loading</div>\n      </div>\n    </aside>\n  </section>\n\n  <footer class="footer">\n    <p>\n      Original library by Cuppa Labs. Maintained publication, Angular upgrades, docs curation,\n      and release stewardship by ReviveJS.\n    </p>\n  </footer>\n</div>\n', styles: ['/* src/app/app.component.scss */\n:host {\n  color: #17324d;\n  display: block;\n  font-family:\n    "Avenir Next",\n    "Helvetica Neue",\n    sans-serif;\n}\n.shell {\n  background:\n    radial-gradient(\n      circle at top left,\n      rgba(12, 115, 184, 0.14),\n      transparent 32%),\n    radial-gradient(\n      circle at top right,\n      rgba(214, 90, 37, 0.18),\n      transparent 34%),\n    #f5f7fb;\n  min-height: 100vh;\n  padding: 2rem;\n}\nh1,\nh2,\nh3,\nh4 {\n  font-family:\n    Georgia,\n    "Times New Roman",\n    serif;\n  letter-spacing: -0.02em;\n}\np,\ntd,\nth,\nbutton,\ninput,\nselect,\nlabel {\n  font: inherit;\n}\ncode,\npre {\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n}\n.hero {\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.95fr);\n  margin: 0 auto 1.5rem;\n  max-width: 1440px;\n}\n.hero-card,\n.panel,\n.log-panel {\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  background: rgba(255, 255, 255, 0.88);\n  border: 1px solid rgba(191, 206, 223, 0.8);\n  border-radius: 24px;\n  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);\n  min-width: 0;\n  padding: 1.4rem;\n}\n.badge {\n  background: #17324d;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-block;\n  font-size: 0.72rem;\n  font-weight: 800;\n  letter-spacing: 0.05em;\n  margin-bottom: 1rem;\n  padding: 0.35rem 0.65rem;\n}\n.hero-main h1 {\n  font-size: clamp(2.4rem, 4vw, 3.4rem);\n  margin: 0 0 0.85rem;\n}\n.hero-main p,\n.panel-header p,\n.log-panel p,\n.feature {\n  color: #59708a;\n  line-height: 1.6;\n}\n.feature-grid {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  margin: 1.25rem 0;\n}\n.feature {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 16px;\n  padding: 0.95rem 1rem;\n}\n.feature strong {\n  color: #17324d;\n  display: block;\n  margin-bottom: 0.2rem;\n}\n.cta-row {\n  display: flex;\n  gap: 0.8rem;\n  margin-top: 1rem;\n}\n.btn {\n  background:\n    linear-gradient(\n      135deg,\n      #c15d3f,\n      #9e4a31);\n  border-radius: 999px;\n  color: #fff;\n  padding: 0.72rem 1.1rem;\n  text-decoration: none;\n}\n.btn.secondary {\n  background: transparent;\n  border: 1px solid #c7d4e2;\n  color: #17324d;\n}\n.hero-setup {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n.hero-setup h2 {\n  margin: 0;\n}\n.step {\n  display: grid;\n  gap: 0.8rem;\n  grid-template-columns: auto minmax(0, 1fr);\n}\n.step-num {\n  align-items: center;\n  background: #0c73b8;\n  border-radius: 999px;\n  color: #fff;\n  display: inline-flex;\n  font-size: 0.8rem;\n  font-weight: 700;\n  height: 1.9rem;\n  justify-content: center;\n  width: 1.9rem;\n}\n.hero-setup pre {\n  background: #13263a;\n  border-radius: 14px;\n  color: #edf4fb;\n  font-size: 0.83rem;\n  line-height: 1.6;\n  margin: 0.55rem 0 0;\n  overflow: auto;\n  padding: 0.95rem 1rem;\n  white-space: pre-wrap;\n}\n.layout {\n  align-items: start;\n  display: grid;\n  gap: 1.25rem;\n  grid-template-columns: minmax(0, 1fr) 300px;\n  margin: 0 auto;\n  max-width: 1440px;\n}\n.panels {\n  display: grid;\n  gap: 1.25rem;\n}\n.panel-header {\n  margin-bottom: 1rem;\n}\n.panel-header h2,\n.log-panel h2 {\n  margin: 0 0 0.4rem;\n}\n.example-shell {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);\n}\n.example-nav {\n  display: grid;\n  gap: 0.65rem;\n  align-content: start;\n}\n.example-link {\n  background: rgba(245, 247, 251, 0.92);\n  border: 1px solid #d9e2ec;\n  border-radius: 14px;\n  color: #17324d;\n  padding: 0.78rem 0.9rem;\n  text-decoration: none;\n  transition: all 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: #17324d;\n  border-color: #17324d;\n  box-shadow: 0 12px 26px rgba(23, 50, 77, 0.12);\n  color: #fff;\n}\n.example-stage {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  overflow: visible;\n  position: relative;\n  z-index: 1;\n}\n.example-stage-header {\n  align-items: start;\n  background: rgba(245, 247, 251, 0.92);\n  border-bottom: 1px solid #d9e2ec;\n  display: flex;\n  gap: 1rem;\n  justify-content: space-between;\n  padding: 1rem 1rem 0.9rem;\n}\n.example-stage-header h3 {\n  margin: 0 0 0.35rem;\n}\n.example-stage-header p {\n  color: #59708a;\n  margin: 0;\n}\n.stage-pill {\n  background: rgba(12, 115, 184, 0.12);\n  border-radius: 999px;\n  color: #0c73b8;\n  display: inline-flex;\n  font-size: 0.74rem;\n  font-weight: 700;\n  padding: 0.35rem 0.7rem;\n  white-space: nowrap;\n}\n.example-preview {\n  min-width: 0;\n  overflow: visible;\n  padding: 1rem;\n  position: relative;\n  z-index: 2;\n}\n.example-preview angular2-multiselect {\n  display: block;\n  max-width: 100%;\n  position: relative;\n  z-index: 3;\n}\n.example-preview .alert,\n.example-preview .table,\n.example-preview form,\n.example-preview .modal-content {\n  margin-top: 1rem;\n}\n.example-preview .table {\n  background: #fff;\n  border-radius: 14px;\n  overflow: hidden;\n}\n.ref-grid {\n  display: grid;\n  gap: 1rem;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.ref-card {\n  background: rgba(255, 255, 255, 0.72);\n  border: 1px solid #d9e2ec;\n  border-radius: 18px;\n  padding: 1rem;\n}\n.ref-card h4 {\n  margin: 0 0 0.75rem;\n}\n.api-table {\n  border-collapse: collapse;\n  width: 100%;\n}\n.api-table td {\n  border-bottom: 1px solid #d9e2ec;\n  padding: 0.7rem 0;\n  text-align: left;\n  vertical-align: top;\n}\n.api-table td:first-child {\n  color: #17324d;\n  white-space: nowrap;\n  width: 1%;\n}\n.log-panel {\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  max-height: calc(100vh - 2.4rem);\n  min-width: 0;\n  overflow: hidden;\n  position: sticky;\n  top: 1.2rem;\n}\n.log-list {\n  display: grid;\n  gap: 0.55rem;\n  max-height: calc(100vh - 12rem);\n  overflow-y: auto;\n}\n.log-entry {\n  background: rgba(245, 247, 251, 0.96);\n  border: 1px solid #d9e2ec;\n  border-radius: 12px;\n  color: #41566f;\n  font-family:\n    "IBM Plex Mono",\n    "Courier New",\n    monospace;\n  font-size: 0.76rem;\n  line-height: 1.5;\n  padding: 0.65rem 0.72rem;\n  word-break: break-word;\n}\n.footer {\n  margin: 1.5rem auto 0;\n  max-width: 1440px;\n  padding: 0 0.5rem;\n}\n.footer p {\n  color: #59708a;\n  line-height: 1.7;\n}\n@media (max-width: 1180px) {\n  .layout,\n  .hero,\n  .example-shell {\n    grid-template-columns: 1fr;\n  }\n  .layout {\n    gap: 1rem;\n  }\n  .panels,\n  .example-stage,\n  .example-preview,\n  .log-panel,\n  .ref-card {\n    min-width: 0;\n  }\n  .log-panel {\n    max-height: min(360px, 50vh);\n    order: 2;\n    position: static;\n  }\n  .ref-grid,\n  .feature-grid {\n    grid-template-columns: 1fr;\n  }\n}\n@media (max-width: 760px) {\n  .shell {\n    padding: 1rem;\n  }\n  .hero-card,\n  .panel,\n  .log-panel {\n    border-radius: 18px;\n    padding: 1rem;\n  }\n  .example-stage-header {\n    flex-direction: column;\n  }\n  .cta-row {\n    flex-direction: column;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n'] }]
+    args: [{ standalone: false, selector: "app-root", template: `<div class="docs-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">M</div>
+      <div>
+        <div class="topbar-eyebrow">ReviveJS maintained line</div>
+        <h1>@revivejs/angular-multiselect-dropdown</h1>
+      </div>
+    </div>
+
+    <div class="topbar-meta">
+      <span class="meta-pill">{{ docsMeta.angularVersion }}</span>
+      <span class="meta-pill primary">v{{ docsMeta.packageVersion }}</span>
+    </div>
+  </header>
+
+  <div class="docs-layout">
+    <aside class="rail">
+      <section class="rail-card">
+        <div class="rail-label">Overview</div>
+        <a class="rail-link" href="#install">Install</a>
+        <a class="rail-link" href="#preview">Preview</a>
+        <a class="rail-link" href="#api">API</a>
+      </section>
+
+      <section class="rail-card">
+        <div class="rail-label">Examples</div>
+        <nav class="example-nav" aria-label="Angular multiselect examples">
+          <a
+            *ngFor="let link of links"
+            class="example-link"
+            [routerLink]="[link.path]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            {{ link.data?.['label'] }}
+          </a>
+        </nav>
+      </section>
+
+      <section class="rail-card">
+        <div class="rail-label">Release line</div>
+        <div class="release-item"><strong>Package</strong><span>{{ docsMeta.packageVersion }}</span></div>
+        <div class="release-item"><strong>Angular</strong><span>{{ docsMeta.angularVersion }}</span></div>
+        <div class="release-item"><strong>Docs path</strong><span>/{{ docsMeta.docsPath }}/</span></div>
+        <div class="release-item"><strong>Promise</strong><span>Material look, classic API</span></div>
+      </section>
+    </aside>
+
+    <main class="docs-main">
+      <section class="hero-card">
+        <span class="hero-badge">{{ docsMeta.badge }}</span>
+        <h2>Material-inspired multiselect, without breaking the classic contract.</h2>
+        <p class="hero-copy">
+          This release line promotes <code>&lt;angular-multiselect&gt;</code> as the primary selector,
+          while still accepting the legacy <code>&lt;angular2-multiselect&gt;</code> API,
+          <code>ngModel</code> binding, event outputs, and custom template hooks while refining the
+          UI to feel much closer to Angular Material surfaces and field patterns.
+        </p>
+
+        <div class="pill-row">
+          <span class="feature-pill" *ngFor="let pill of featurePills">{{ pill }}</span>
+        </div>
+
+        <div class="compat-grid">
+          <div class="compat-card">
+            <strong>API stability first</strong>
+            Inputs, outputs, settings keys, and template slots stay aligned with the code people already ship.
+          </div>
+          <div class="compat-card">
+            <strong>Material-like visual language</strong>
+            Surface elevation, rounded outlines, calmer color tokens, and cleaner dropdown states.
+          </div>
+          <div class="compat-card">
+            <strong>Modern line foundation</strong>
+            This shell powers the remodulated lines from Angular 14 through Angular 21 while keeping the legacy selector contract intact.
+          </div>
+        </div>
+      </section>
+
+      <section class="setup-grid" id="install">
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 1</div>
+              <h3>Install the package</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('install', installCode)">{{ copyLabels.install }}</button>
+          </div>
+          <pre [textContent]="installCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 2</div>
+              <h3>Register the module</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('setup', setupCode)">{{ copyLabels.setup }}</button>
+          </div>
+          <pre [textContent]="setupCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 3</div>
+              <h3>Customize the full theme</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('customTheme', customThemeCode)">{{ copyLabels.customTheme }}</button>
+          </div>
+          <pre [textContent]="customThemeCode"></pre>
+        </article>
+
+        <article class="setup-card">
+          <div class="setup-head">
+            <div>
+              <div class="setup-label">Step 4</div>
+              <h3>Render the dropdown</h3>
+            </div>
+            <button class="copy-button" (click)="copySnippet('template', templateCode)">{{ copyLabels.template }}</button>
+          </div>
+          <pre [textContent]="templateCode"></pre>
+        </article>
+      </section>
+
+      <section class="preview-card" id="preview">
+        <div class="preview-head">
+          <div>
+            <div class="setup-label">Live preview</div>
+            <h3>{{ currentLabel }}</h3>
+            <p>
+              Running against package line <code>{{ docsMeta.packageVersion }}</code> and Angular
+              <code>{{ docsMeta.angularVersion }}</code>.
+            </p>
+          </div>
+          <span class="status-pill">Classic selector preserved</span>
+        </div>
+
+        <div class="preview-canvas">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+
+      <section class="api-grid" id="api">
+        <article class="api-card" *ngFor="let card of apiCards">
+          <div class="setup-label">{{ card.kicker }}</div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.copy }}</p>
+        </article>
+      </section>
+    </main>
+  </div>
+</div>
+`, styles: ["/* src/app/app.component.scss */\n:host {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell {\n  padding: 24px;\n}\n.topbar {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow,\n.setup-label,\n.rail-label {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar h1 {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill,\n.hero-badge,\n.status-pill,\n.feature-pill {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill,\n.feature-pill,\n.status-pill {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary,\n.hero-badge {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card,\n.hero-card,\n.setup-card,\n.preview-card,\n.api-card {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card {\n  padding: 18px;\n}\n.rail-link {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link + .rail-link {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item + .release-item {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item strong {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main {\n  display: grid;\n  gap: 24px;\n}\n.hero-card,\n.preview-card {\n  padding: 28px;\n}\n.hero-card h2,\n.setup-card h3,\n.preview-card h3,\n.api-card h3 {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card h2 {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy,\n.preview-head p,\n.api-card p,\n.compat-card {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row,\n.compat-grid,\n.setup-grid,\n.api-grid {\n  display: grid;\n  gap: 16px;\n}\n.pill-row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card strong {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card {\n  padding: 22px;\n}\n.setup-head,\n.preview-head {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head h3 {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head {\n  margin-bottom: 20px;\n}\n.preview-head h3 {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas angular-multiselect {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas form,\n.preview-canvas .table,\n.preview-canvas .modal-content,\n.preview-canvas .alert {\n  margin-top: 20px;\n}\n.api-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card {\n  padding: 22px;\n}\n.api-card h3 {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout,\n  .setup-grid,\n  .compat-grid,\n  .api-grid {\n    grid-template-columns: 1fr;\n  }\n  .rail {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell {\n    padding: 16px;\n  }\n  .topbar,\n  .hero-card,\n  .preview-card,\n  .setup-card,\n  .api-card,\n  .rail-card {\n    border-radius: 22px;\n  }\n  .topbar,\n  .setup-head,\n  .preview-head {\n    flex-direction: column;\n  }\n  .topbar {\n    padding: 18px;\n  }\n  .preview-canvas {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
   }], () => [{ type: Router }, { type: ActivatedRoute }], null);
 })();
 (() => {
@@ -47639,18 +47896,18 @@ var BasicExample = class _BasicExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _BasicExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function BasicExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function BasicExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function BasicExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function BasicExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function BasicExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function BasicExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function BasicExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function BasicExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function BasicExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function BasicExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function BasicExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -47666,7 +47923,7 @@ var BasicExample = class _BasicExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BasicExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [{ type: Title }, { type: Meta }], null);
 })();
 (() => {
@@ -47735,20 +47992,20 @@ var SingleSelectionExample = class _SingleSelectionExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SingleSelectionExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onAddFilterNewItem", "onDeSelectAll", "data", "ngModel", "settings"]], template: function SingleSelectionExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function SingleSelectionExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function SingleSelectionExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function SingleSelectionExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function SingleSelectionExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function SingleSelectionExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function SingleSelectionExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function SingleSelectionExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function SingleSelectionExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onAddFilterNewItem", function SingleSelectionExample_Template_angular2_multiselect_onAddFilterNewItem_0_listener($event) {
+        })("onAddFilterNewItem", function SingleSelectionExample_Template_angular_multiselect_onAddFilterNewItem_0_listener($event) {
           return ctx.onAddItem($event);
-        })("onDeSelectAll", function SingleSelectionExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function SingleSelectionExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -47764,7 +48021,7 @@ var SingleSelectionExample = class _SingleSelectionExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SingleSelectionExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onAddFilterNewItem)="onAddItem($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n>\n</angular2-multiselect>' }]
+    args: [{ standalone: false, template: '<angular-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onAddFilterNewItem)="onAddItem($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n>\n</angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -47861,24 +48118,24 @@ var GroupByExample = class _GroupByExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _GroupByExample, selectors: [["ng-component"]], standalone: false, decls: 8, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "onGroupSelect", "onGroupDeSelect", "data", "ngModel", "settings"], [1, "example-button-row"], [1, "btn", "btn-primary", 3, "click"]], template: function GroupByExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function GroupByExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function GroupByExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function GroupByExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function GroupByExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function GroupByExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function GroupByExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function GroupByExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function GroupByExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function GroupByExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function GroupByExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
-        })("ngModelChange", function GroupByExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        })("ngModelChange", function GroupByExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           return ctx.onChange($event);
-        })("onGroupSelect", function GroupByExample_Template_angular2_multiselect_onGroupSelect_0_listener($event) {
+        })("onGroupSelect", function GroupByExample_Template_angular_multiselect_onGroupSelect_0_listener($event) {
           return ctx.onGroupSelect($event);
-        })("onGroupDeSelect", function GroupByExample_Template_angular2_multiselect_onGroupDeSelect_0_listener($event) {
+        })("onGroupDeSelect", function GroupByExample_Template_angular_multiselect_onGroupDeSelect_0_listener($event) {
           return ctx.onGroupDeSelect($event);
         });
         \u0275\u0275elementEnd();
@@ -47908,7 +48165,7 @@ var GroupByExample = class _GroupByExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(GroupByExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n(ngModelChange)="onChange($event)"\n(onGroupSelect)="onGroupSelect($event)"\n(onGroupDeSelect)="onGroupDeSelect($event)"\n></angular2-multiselect>\n<div class="example-button-row">\n  <br />\n  <br />\n  <button class="btn btn-primary" (click)="loadDataSet1()">\n    Load Fruits\n  </button>\n  <button class="btn btn-primary" (click)="loadDataSet2()">\n    Load Countries\n  </button>\n</div>' }]
+    args: [{ standalone: false, template: '<angular-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n(ngModelChange)="onChange($event)"\n(onGroupSelect)="onGroupSelect($event)"\n(onGroupDeSelect)="onGroupDeSelect($event)"\n></angular-multiselect>\n<div class="example-button-row">\n  <br />\n  <br />\n  <button class="btn btn-primary" (click)="loadDataSet1()">\n    Load Fruits\n  </button>\n  <button class="btn btn-primary" (click)="loadDataSet2()">\n    Load Countries\n  </button>\n</div>' }]
   }], () => [], null);
 })();
 (() => {
@@ -47975,18 +48232,18 @@ var SearchFilterExample = class _SearchFilterExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SearchFilterExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function SearchFilterExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function SearchFilterExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function SearchFilterExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function SearchFilterExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function SearchFilterExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function SearchFilterExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function SearchFilterExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function SearchFilterExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function SearchFilterExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48002,7 +48259,7 @@ var SearchFilterExample = class _SearchFilterExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SearchFilterExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48110,22 +48367,22 @@ var TemplatingExample = class _TemplatingExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TemplatingExample, selectors: [["ng-component"]], standalone: false, decls: 5, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "onGroupSelect", "onGroupDeSelect", "data", "ngModel", "settings"], [2, "margin", "0px"], [2, "width", "16px", "margin", "0 0 0 4px", 3, "src"], [2, "width", "30px", "border", "1px solid #efefef", "margin-right", "20px", 3, "src"], [2, "color", "#333", "margin-right", "20px"]], template: function TemplatingExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function TemplatingExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function TemplatingExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function TemplatingExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function TemplatingExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function TemplatingExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function TemplatingExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function TemplatingExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function TemplatingExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function TemplatingExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function TemplatingExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
-        })("onGroupSelect", function TemplatingExample_Template_angular2_multiselect_onGroupSelect_0_listener($event) {
+        })("onGroupSelect", function TemplatingExample_Template_angular_multiselect_onGroupSelect_0_listener($event) {
           return ctx.onGroupSelect($event);
-        })("onGroupDeSelect", function TemplatingExample_Template_angular2_multiselect_onGroupDeSelect_0_listener($event) {
+        })("onGroupDeSelect", function TemplatingExample_Template_angular_multiselect_onGroupDeSelect_0_listener($event) {
           return ctx.onGroupDeSelect($event);
         });
         \u0275\u0275elementStart(1, "c-badge");
@@ -48146,7 +48403,7 @@ var TemplatingExample = class _TemplatingExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(TemplatingExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" \n(onGroupSelect)="onGroupSelect($event)" (onGroupDeSelect)="onGroupDeSelect($event)">\n<c-badge>\n    <ng-template let-item="item">\n        <label style="margin: 0px;">{{item.itemName}}</label>\n        <img [src]="item.image" style="width: 16px; margin: 0 0 0 4px;" />\n    </ng-template>\n</c-badge>\n<c-item>\n    <ng-template let-item="item">\n        <img [src]="item.image" style="width: 30px; border: 1px solid #efefef;margin-right: 20px;" />\n        <label style="color: #333;margin-right: 20px;">{{item.itemName}}</label>\n        <label><small>Capital - {{item.capital}}</small></label>\n    </ng-template>\n</c-item>\n</angular2-multiselect>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)" \n(onGroupSelect)="onGroupSelect($event)" (onGroupDeSelect)="onGroupDeSelect($event)">\n<c-badge>\n    <ng-template let-item="item">\n        <label style="margin: 0px;">{{item.itemName}}</label>\n        <img [src]="item.image" style="width: 16px; margin: 0 0 0 4px;" />\n    </ng-template>\n</c-badge>\n<c-item>\n    <ng-template let-item="item">\n        <img [src]="item.image" style="width: 30px; border: 1px solid #efefef;margin-right: 20px;" />\n        <label style="color: #333;margin-right: 20px;">{{item.itemName}}</label>\n        <label><small>Capital - {{item.capital}}</small></label>\n    </ng-template>\n</c-item>\n</angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48252,19 +48509,19 @@ var ResetDropdownExample = class _ResetDropdownExample {
         });
         \u0275\u0275text(6, " Close ");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(7, "angular2-multiselect", 3, 0);
-        \u0275\u0275twoWayListener("ngModelChange", function ResetDropdownExample_Template_angular2_multiselect_ngModelChange_7_listener($event) {
+        \u0275\u0275elementStart(7, "angular-multiselect", 3, 0);
+        \u0275\u0275twoWayListener("ngModelChange", function ResetDropdownExample_Template_angular_multiselect_ngModelChange_7_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275listener("onSelect", function ResetDropdownExample_Template_angular2_multiselect_onSelect_7_listener($event) {
+        \u0275\u0275listener("onSelect", function ResetDropdownExample_Template_angular_multiselect_onSelect_7_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function ResetDropdownExample_Template_angular2_multiselect_onDeSelect_7_listener($event) {
+        })("onDeSelect", function ResetDropdownExample_Template_angular_multiselect_onDeSelect_7_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function ResetDropdownExample_Template_angular2_multiselect_onSelectAll_7_listener($event) {
+        })("onSelectAll", function ResetDropdownExample_Template_angular_multiselect_onSelectAll_7_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function ResetDropdownExample_Template_angular2_multiselect_onDeSelectAll_7_listener($event) {
+        })("onDeSelectAll", function ResetDropdownExample_Template_angular_multiselect_onDeSelectAll_7_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48282,7 +48539,7 @@ var ResetDropdownExample = class _ResetDropdownExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ResetDropdownExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<div class="example-button-row">\n  <button (click)="changeData()" class="btn btn-primary">\n    Reset</button\n  >\n  <button (click)="open($event)" class="btn btn-primary">\n    Open</button\n  >\n  <button (click)="close($event)" class="btn btn-primary">\n    Close\n  </button>\n</div>\n<angular2-multiselect\n#dropdownElem\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n></angular2-multiselect>\n<br>\n' }]
+    args: [{ standalone: false, template: '<div class="example-button-row">\n  <button (click)="changeData()" class="btn btn-primary">\n    Reset</button\n  >\n  <button (click)="open($event)" class="btn btn-primary">\n    Open</button\n  >\n  <button (click)="close($event)" class="btn btn-primary">\n    Close\n  </button>\n</div>\n<angular-multiselect\n#dropdownElem\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n></angular-multiselect>\n<br>\n' }]
   }], () => [], { dropdownElem: [{
     type: ViewChild,
     args: ["dropdownElem", { static: true }]
@@ -48390,18 +48647,18 @@ var DisableModeExample = class _DisableModeExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DisableModeExample, selectors: [["ng-component"]], standalone: false, decls: 8, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], [1, "example-button-row"], [1, "btn", "btn-primary", 3, "click"]], template: function DisableModeExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function DisableModeExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function DisableModeExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function DisableModeExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function DisableModeExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function DisableModeExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function DisableModeExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function DisableModeExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function DisableModeExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function DisableModeExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function DisableModeExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48431,7 +48688,7 @@ var DisableModeExample = class _DisableModeExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DisableModeExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>\n<div class="example-button-row">\n  <br>\n  <br>\n    <button (click)="disable()" class="btn btn-primary">Disable</button>\n    <button (click)="enable()" class="btn btn-primary">Enable</button>\n</div>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular-multiselect>\n<div class="example-button-row">\n  <br>\n  <br>\n    <button (click)="disable()" class="btn btn-primary">Disable</button>\n    <button (click)="enable()" class="btn btn-primary">Enable</button>\n</div>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48498,18 +48755,18 @@ var LimitSelectionExample = class _LimitSelectionExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LimitSelectionExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function LimitSelectionExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function LimitSelectionExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function LimitSelectionExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function LimitSelectionExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function LimitSelectionExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function LimitSelectionExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function LimitSelectionExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function LimitSelectionExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function LimitSelectionExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function LimitSelectionExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function LimitSelectionExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48525,7 +48782,7 @@ var LimitSelectionExample = class _LimitSelectionExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LimitSelectionExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48592,18 +48849,18 @@ var LimitBadgesExample = class _LimitBadgesExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LimitBadgesExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function LimitBadgesExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function LimitBadgesExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function LimitBadgesExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function LimitBadgesExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function LimitBadgesExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function LimitBadgesExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function LimitBadgesExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function LimitBadgesExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function LimitBadgesExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function LimitBadgesExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function LimitBadgesExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48619,7 +48876,7 @@ var LimitBadgesExample = class _LimitBadgesExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LimitBadgesExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48686,18 +48943,18 @@ var CustomPlaceholderExample = class _CustomPlaceholderExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _CustomPlaceholderExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function CustomPlaceholderExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function CustomPlaceholderExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function CustomPlaceholderExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function CustomPlaceholderExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function CustomPlaceholderExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function CustomPlaceholderExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function CustomPlaceholderExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function CustomPlaceholderExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function CustomPlaceholderExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function CustomPlaceholderExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function CustomPlaceholderExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48713,7 +48970,7 @@ var CustomPlaceholderExample = class _CustomPlaceholderExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CustomPlaceholderExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48779,18 +49036,18 @@ var StylingExample = class _StylingExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StylingExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function StylingExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function StylingExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function StylingExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function StylingExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function StylingExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function StylingExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function StylingExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function StylingExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function StylingExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function StylingExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function StylingExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -48806,7 +49063,7 @@ var StylingExample = class _StylingExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StylingExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -48936,19 +49193,19 @@ var UsingWithFormExample = class _UsingWithFormExample {
         \u0275\u0275elementStart(32, "span", 10);
         \u0275\u0275text(33, "* required");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(34, "angular2-multiselect", 12, 3);
-        \u0275\u0275twoWayListener("ngModelChange", function UsingWithFormExample_Template_angular2_multiselect_ngModelChange_34_listener($event) {
+        \u0275\u0275elementStart(34, "angular-multiselect", 12, 3);
+        \u0275\u0275twoWayListener("ngModelChange", function UsingWithFormExample_Template_angular_multiselect_ngModelChange_34_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.formModel.skills, $event) || (ctx.formModel.skills = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275listener("onSelect", function UsingWithFormExample_Template_angular2_multiselect_onSelect_34_listener($event) {
+        \u0275\u0275listener("onSelect", function UsingWithFormExample_Template_angular_multiselect_onSelect_34_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function UsingWithFormExample_Template_angular2_multiselect_onDeSelect_34_listener($event) {
+        })("onDeSelect", function UsingWithFormExample_Template_angular_multiselect_onDeSelect_34_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function UsingWithFormExample_Template_angular2_multiselect_onSelectAll_34_listener($event) {
+        })("onSelectAll", function UsingWithFormExample_Template_angular_multiselect_onSelectAll_34_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function UsingWithFormExample_Template_angular2_multiselect_onDeSelectAll_34_listener($event) {
+        })("onDeSelectAll", function UsingWithFormExample_Template_angular_multiselect_onDeSelectAll_34_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -49061,13 +49318,13 @@ var UsingWithFormExample = class _UsingWithFormExample {
     <div class="form-group">
         <label for="name">Skills </label>
         <span style="color: red;float: right;">* required</span>
-        <angular2-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
+        <angular-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
                               [settings]="settings" 
                               (onSelect)="onItemSelect($event)"
                               (onDeSelect)="OnItemDeSelect($event)" 
                               (onSelectAll)="onSelectAll($event)" 
                               (onDeSelectAll)="onDeSelectAll($event)" name="skills" #skills="ngModel" required>
-        </angular2-multiselect>
+        </angular-multiselect>
         <div [hidden]="skills.valid" class="alert alert-danger">
             <div [hidden]="!skills.hasError('required')">Atleast one Skill is required</div>
         </div>
@@ -49200,18 +49457,18 @@ var UsingWithReactiveFormExample = class _UsingWithReactiveFormExample {
         \u0275\u0275elementStart(16, "span", 4);
         \u0275\u0275text(17, "* required");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(18, "angular2-multiselect", 6);
-        \u0275\u0275twoWayListener("ngModelChange", function UsingWithReactiveFormExample_Template_angular2_multiselect_ngModelChange_18_listener($event) {
+        \u0275\u0275elementStart(18, "angular-multiselect", 6);
+        \u0275\u0275twoWayListener("ngModelChange", function UsingWithReactiveFormExample_Template_angular_multiselect_ngModelChange_18_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function UsingWithReactiveFormExample_Template_angular2_multiselect_onSelect_18_listener($event) {
+        \u0275\u0275listener("onSelect", function UsingWithReactiveFormExample_Template_angular_multiselect_onSelect_18_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function UsingWithReactiveFormExample_Template_angular2_multiselect_onDeSelect_18_listener($event) {
+        })("onDeSelect", function UsingWithReactiveFormExample_Template_angular_multiselect_onDeSelect_18_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function UsingWithReactiveFormExample_Template_angular2_multiselect_onSelectAll_18_listener($event) {
+        })("onSelectAll", function UsingWithReactiveFormExample_Template_angular_multiselect_onSelectAll_18_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function UsingWithReactiveFormExample_Template_angular2_multiselect_onDeSelectAll_18_listener($event) {
+        })("onDeSelectAll", function UsingWithReactiveFormExample_Template_angular_multiselect_onDeSelectAll_18_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd()();
@@ -49274,7 +49531,7 @@ var UsingWithReactiveFormExample = class _UsingWithReactiveFormExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UsingWithReactiveFormExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<form\n  [formGroup]="userForm"\n  novalidate\n  style="border: 1px solid #ccc; padding: 10px"\n>\n  <div class="form-group">\n    <label for="name">Name</label>\n    <input class="form-control" formControlName="name" />\n  </div>\n  <br>\n  <div class="form-group">\n    <label for="name">Email Address</label>\n    <span style="color: red; float: right">* required</span>\n    <input class="form-control" formControlName="email" />\n  </div>\n  <br>\n  <div class="form-group">\n    <label for="name">Skills</label>\n    <span style="color: red; float: right">* required</span>\n    <angular2-multiselect\n      [data]="itemList"\n      [(ngModel)]="selectedItems"\n      [settings]="settings"\n      (onSelect)="onItemSelect($event)"\n      (onDeSelect)="OnItemDeSelect($event)"\n      (onSelectAll)="onSelectAll($event)"\n      (onDeSelectAll)="onDeSelectAll($event)"\n      formControlName="skills"\n    >\n    </angular2-multiselect>\n  </div>\n  <br>\n  <div class="d-grid col-12 mx-auto">\n    <button\n    (click)="submitForm()"\n    [disabled]="!userForm.valid"\n    class="btn btn-success btn-block"\n  >\n    Submit\n  </button>\n  </div>\n\n</form>\n<table class="table">\n  <tr>\n    <td><label>Name</label></td>\n    <td>{{userForm.value.name}}</td>\n  </tr>\n  <tr>\n    <td><label>Email</label></td>\n    <td>{{userForm.value.email}}</td>\n  </tr>\n  <tr>\n    <td><label>Skills</label></td>\n    <td>\n      <h6 *ngFor="let obj of userForm.value.skills">{{obj.itemName}}</h6>\n    </td>\n  </tr>\n</table>\n<span>{{userForm.value | json}}</span>\n<p>Form status: {{ userForm.status | json }}</p>\n' }]
+    args: [{ standalone: false, template: '<form\n  [formGroup]="userForm"\n  novalidate\n  style="border: 1px solid #ccc; padding: 10px"\n>\n  <div class="form-group">\n    <label for="name">Name</label>\n    <input class="form-control" formControlName="name" />\n  </div>\n  <br>\n  <div class="form-group">\n    <label for="name">Email Address</label>\n    <span style="color: red; float: right">* required</span>\n    <input class="form-control" formControlName="email" />\n  </div>\n  <br>\n  <div class="form-group">\n    <label for="name">Skills</label>\n    <span style="color: red; float: right">* required</span>\n    <angular-multiselect\n      [data]="itemList"\n      [(ngModel)]="selectedItems"\n      [settings]="settings"\n      (onSelect)="onItemSelect($event)"\n      (onDeSelect)="OnItemDeSelect($event)"\n      (onSelectAll)="onSelectAll($event)"\n      (onDeSelectAll)="onDeSelectAll($event)"\n      formControlName="skills"\n    >\n    </angular-multiselect>\n  </div>\n  <br>\n  <div class="d-grid col-12 mx-auto">\n    <button\n    (click)="submitForm()"\n    [disabled]="!userForm.valid"\n    class="btn btn-success btn-block"\n  >\n    Submit\n  </button>\n  </div>\n\n</form>\n<table class="table">\n  <tr>\n    <td><label>Name</label></td>\n    <td>{{userForm.value.name}}</td>\n  </tr>\n  <tr>\n    <td><label>Email</label></td>\n    <td>{{userForm.value.email}}</td>\n  </tr>\n  <tr>\n    <td><label>Skills</label></td>\n    <td>\n      <h6 *ngFor="let obj of userForm.value.skills">{{obj.itemName}}</h6>\n    </td>\n  </tr>\n</table>\n<span>{{userForm.value | json}}</span>\n<p>Form status: {{ userForm.status | json }}</p>\n' }]
   }], () => [{ type: UntypedFormBuilder }], null);
 })();
 (() => {
@@ -49348,18 +49605,18 @@ var LazyLoadingExample = class _LazyLoadingExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LazyLoadingExample, selectors: [["ng-component"]], standalone: false, decls: 9, vars: 4, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], [1, "example-button-row"], ["mat-raised-button", "", "color", "warn", 1, "btn", "btn-danger", 3, "click"]], template: function LazyLoadingExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function LazyLoadingExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function LazyLoadingExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function LazyLoadingExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function LazyLoadingExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function LazyLoadingExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function LazyLoadingExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function LazyLoadingExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function LazyLoadingExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function LazyLoadingExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function LazyLoadingExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -49389,7 +49646,7 @@ var LazyLoadingExample = class _LazyLoadingExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LazyLoadingExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n></angular2-multiselect>\n<br />\n<span>Total Records : {{itemList.length}}</span>\n<div class="example-button-row">\n<br />\n<br />\n<button\n  mat-raised-button\n  color="warn"\n  (click)="changeData()"\n  class="btn btn-danger"\n>\n  Reset\n</button>\n</div>' }]
+    args: [{ standalone: false, template: '<angular-multiselect\n[data]="itemList"\n[(ngModel)]="selectedItems"\n[settings]="settings"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)"\n(onSelectAll)="onSelectAll($event)"\n(onDeSelectAll)="onDeSelectAll($event)"\n></angular-multiselect>\n<br />\n<span>Total Records : {{itemList.length}}</span>\n<div class="example-button-row">\n<br />\n<br />\n<button\n  mat-raised-button\n  color="warn"\n  (click)="changeData()"\n  class="btn btn-danger"\n>\n  Reset\n</button>\n</div>' }]
   }], () => [], null);
 })();
 (() => {
@@ -49579,18 +49836,18 @@ var MultipleDropdownsExample = class _MultipleDropdownsExample {
         \u0275\u0275text(7);
         \u0275\u0275elementEnd()();
         \u0275\u0275element(8, "br");
-        \u0275\u0275elementStart(9, "angular2-multiselect", 3);
-        \u0275\u0275twoWayListener("ngModelChange", function MultipleDropdownsExample_Template_angular2_multiselect_ngModelChange_9_listener($event) {
+        \u0275\u0275elementStart(9, "angular-multiselect", 3);
+        \u0275\u0275twoWayListener("ngModelChange", function MultipleDropdownsExample_Template_angular_multiselect_ngModelChange_9_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedDirectorySpecialties, $event) || (ctx.selectedDirectorySpecialties = $event);
           return $event;
         });
-        \u0275\u0275listener("onOpen", function MultipleDropdownsExample_Template_angular2_multiselect_onOpen_9_listener($event) {
+        \u0275\u0275listener("onOpen", function MultipleDropdownsExample_Template_angular_multiselect_onOpen_9_listener($event) {
           return ctx.onDirectoriesOpen($event);
-        })("onClose", function MultipleDropdownsExample_Template_angular2_multiselect_onClose_9_listener($event) {
+        })("onClose", function MultipleDropdownsExample_Template_angular_multiselect_onClose_9_listener($event) {
           return ctx.onDirectoriesClose($event);
-        })("onSelectAll", function MultipleDropdownsExample_Template_angular2_multiselect_onSelectAll_9_listener($event) {
+        })("onSelectAll", function MultipleDropdownsExample_Template_angular_multiselect_onSelectAll_9_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function MultipleDropdownsExample_Template_angular2_multiselect_onDeSelectAll_9_listener($event) {
+        })("onDeSelectAll", function MultipleDropdownsExample_Template_angular_multiselect_onDeSelectAll_9_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd()();
@@ -49605,18 +49862,18 @@ var MultipleDropdownsExample = class _MultipleDropdownsExample {
         \u0275\u0275text(19);
         \u0275\u0275elementEnd()();
         \u0275\u0275element(20, "br");
-        \u0275\u0275elementStart(21, "angular2-multiselect", 5);
-        \u0275\u0275twoWayListener("ngModelChange", function MultipleDropdownsExample_Template_angular2_multiselect_ngModelChange_21_listener($event) {
+        \u0275\u0275elementStart(21, "angular-multiselect", 5);
+        \u0275\u0275twoWayListener("ngModelChange", function MultipleDropdownsExample_Template_angular_multiselect_ngModelChange_21_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedUseCases, $event) || (ctx.selectedUseCases = $event);
           return $event;
         });
-        \u0275\u0275listener("onOpen", function MultipleDropdownsExample_Template_angular2_multiselect_onOpen_21_listener($event) {
+        \u0275\u0275listener("onOpen", function MultipleDropdownsExample_Template_angular_multiselect_onOpen_21_listener($event) {
           return ctx.onCasesOpen($event);
-        })("onClose", function MultipleDropdownsExample_Template_angular2_multiselect_onClose_21_listener($event) {
+        })("onClose", function MultipleDropdownsExample_Template_angular_multiselect_onClose_21_listener($event) {
           return ctx.onCasesClose($event);
-        })("onSelectAll", function MultipleDropdownsExample_Template_angular2_multiselect_onSelectAll_21_listener($event) {
+        })("onSelectAll", function MultipleDropdownsExample_Template_angular_multiselect_onSelectAll_21_listener($event) {
           return ctx.onSelectAll2($event);
-        })("onDeSelectAll", function MultipleDropdownsExample_Template_angular2_multiselect_onDeSelectAll_21_listener($event) {
+        })("onDeSelectAll", function MultipleDropdownsExample_Template_angular_multiselect_onDeSelectAll_21_listener($event) {
           return ctx.onDeSelectAll2($event);
         });
         \u0275\u0275elementEnd()();
@@ -49639,7 +49896,7 @@ var MultipleDropdownsExample = class _MultipleDropdownsExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MultipleDropdownsExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<div class="form-group col-md-12">\n  <label for="directorySpecialties">Directory Specialties</label>\n  <br>\n  <label class="float-right">\n    Directory Dropdown status: <b>{{directoriesDropdownStatus}}</b>\n  </label>\n  <br>\n  <angular2-multiselect\n    id="directorySpecialties"\n    name="directorySpecialties"\n    [(ngModel)]="selectedDirectorySpecialties"\n    [data]="directorySpecialties"\n    [settings]="dropdownSettings"\n    (onOpen)="onDirectoriesOpen($event)"\n    (onClose)="onDirectoriesClose($event)"\n    (onSelectAll)="onSelectAll($event)"\n    (onDeSelectAll)="onDeSelectAll($event)"\n  >\n  </angular2-multiselect>\n</div>\n<br>\n<br>\n<div class="form-group col-md-12">\n  <label for="useCases">Use Cases</label><br>\n  <label class="float-right">\n    Cases Dropdown status: <b>{{casesDropdownStatus}}</b>\n  </label>\n  <br>\n  <angular2-multiselect\n    id="useCases"\n    name="useCases"\n    [(ngModel)]="selectedUseCases"\n    [data]="useCases"\n    [settings]="dropdownSettings2"\n    (onOpen)="onCasesOpen($event)"\n    (onClose)="onCasesClose($event)"\n    (onSelectAll)="onSelectAll2($event)"\n    (onDeSelectAll)="onDeSelectAll2($event)"\n  >\n  </angular2-multiselect>\n</div>' }]
+    args: [{ standalone: false, template: '<div class="form-group col-md-12">\n  <label for="directorySpecialties">Directory Specialties</label>\n  <br>\n  <label class="float-right">\n    Directory Dropdown status: <b>{{directoriesDropdownStatus}}</b>\n  </label>\n  <br>\n  <angular-multiselect\n    id="directorySpecialties"\n    name="directorySpecialties"\n    [(ngModel)]="selectedDirectorySpecialties"\n    [data]="directorySpecialties"\n    [settings]="dropdownSettings"\n    (onOpen)="onDirectoriesOpen($event)"\n    (onClose)="onDirectoriesClose($event)"\n    (onSelectAll)="onSelectAll($event)"\n    (onDeSelectAll)="onDeSelectAll($event)"\n  >\n  </angular-multiselect>\n</div>\n<br>\n<br>\n<div class="form-group col-md-12">\n  <label for="useCases">Use Cases</label><br>\n  <label class="float-right">\n    Cases Dropdown status: <b>{{casesDropdownStatus}}</b>\n  </label>\n  <br>\n  <angular-multiselect\n    id="useCases"\n    name="useCases"\n    [(ngModel)]="selectedUseCases"\n    [data]="useCases"\n    [settings]="dropdownSettings2"\n    (onOpen)="onCasesOpen($event)"\n    (onClose)="onCasesClose($event)"\n    (onSelectAll)="onSelectAll2($event)"\n    (onDeSelectAll)="onDeSelectAll2($event)"\n  >\n  </angular-multiselect>\n</div>' }]
   }], () => [{ type: MockService }], null);
 })();
 (() => {
@@ -49722,18 +49979,18 @@ var DynamicDataSetsExample = class _DynamicDataSetsExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DynamicDataSetsExample, selectors: [["ng-component"]], standalone: false, decls: 8, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], [1, "example-button-row"], [1, "btn", "btn-primary", 3, "click"]], template: function DynamicDataSetsExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function DynamicDataSetsExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function DynamicDataSetsExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function DynamicDataSetsExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function DynamicDataSetsExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function DynamicDataSetsExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function DynamicDataSetsExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function DynamicDataSetsExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function DynamicDataSetsExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function DynamicDataSetsExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function DynamicDataSetsExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -49763,7 +50020,7 @@ var DynamicDataSetsExample = class _DynamicDataSetsExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DynamicDataSetsExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>\n<div class="example-button-row">\n    <br>\n    <br>\n      <button class="btn btn-primary" (click)="loadDataSet1()">Load Fruits</button>\n<button class="btn btn-primary" (click)="loadDataSet2()">Load Countries</button>\n  </div>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular-multiselect>\n<div class="example-button-row">\n    <br>\n    <br>\n      <button class="btn btn-primary" (click)="loadDataSet1()">Load Fruits</button>\n<button class="btn btn-primary" (click)="loadDataSet2()">Load Countries</button>\n  </div>' }]
   }], () => [{ type: MockService }], null);
 })();
 (() => {
@@ -49848,18 +50105,18 @@ var RemoteDataExample = class _RemoteDataExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _RemoteDataExample, selectors: [["ng-component"]], standalone: false, decls: 3, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], [2, "color", "#333", "width", "150px"], [2, "width", "30px", "border", "1px solid #efefef", "margin-right", "0px", 3, "src"]], template: function RemoteDataExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function RemoteDataExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function RemoteDataExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function RemoteDataExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function RemoteDataExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function RemoteDataExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function RemoteDataExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function RemoteDataExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function RemoteDataExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function RemoteDataExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function RemoteDataExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementStart(1, "c-item");
@@ -49877,7 +50134,7 @@ var RemoteDataExample = class _RemoteDataExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(RemoteDataExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n<c-item>\n  <ng-template let-item="item">\n      <label style="color: #333;width: 150px;">{{item.name}}</label>\n      <img [src]="item.flag" style="width: 30px; border: 1px solid #efefef;margin-right: 0px;" />\n      <label>{{item.capital}}</label>\n  </ng-template>\n</c-item>\n</angular2-multiselect>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n<c-item>\n  <ng-template let-item="item">\n      <label style="color: #333;width: 150px;">{{item.name}}</label>\n      <img [src]="item.flag" style="width: 30px; border: 1px solid #efefef;margin-right: 0px;" />\n      <label>{{item.capital}}</label>\n  </ng-template>\n</c-item>\n</angular-multiselect>' }]
   }], () => [{ type: HttpClient }], null);
 })();
 (() => {
@@ -49990,20 +50247,20 @@ var CustomSearchExample = class _CustomSearchExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _CustomSearchExample, selectors: [["ng-component"]], standalone: false, decls: 5, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onClose", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], ["type", "text", "placeholder", "Search countries", 2, "border", "none", "width", "100%", "height", "100%", "outline", "none", 3, "ngModelChange", "keyup", "ngModel"], [2, "color", "#333", "width", "150px"], [2, "width", "30px", "border", "1px solid #efefef", "margin-right", "0px", 3, "src"]], template: function CustomSearchExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function CustomSearchExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function CustomSearchExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function CustomSearchExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function CustomSearchExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function CustomSearchExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function CustomSearchExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onClose", function CustomSearchExample_Template_angular2_multiselect_onClose_0_listener() {
+        })("onClose", function CustomSearchExample_Template_angular_multiselect_onClose_0_listener() {
           return ctx.onClose();
-        })("onSelectAll", function CustomSearchExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function CustomSearchExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function CustomSearchExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function CustomSearchExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementStart(1, "c-search");
@@ -50024,7 +50281,7 @@ var CustomSearchExample = class _CustomSearchExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CustomSearchExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onClose)="onClose()" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n<c-search>\n     <ng-template>\n         <input type="text" [(ngModel)]="filter" (keyup)="onSearch($event)" placeholder="Search countries" style="border: none;width: 100%; height: 100%;outline: none;"/>\n     </ng-template>\n</c-search>\n<c-item>\n    <ng-template let-item="item">\n        <label style="color: #333;width: 150px;">{{item.name}}</label>\n        <img [src]="item.flag" style="width: 30px; border: 1px solid #efefef;margin-right: 0px;" />\n        <label>{{item.capital}}</label>\n    </ng-template>\n</c-item>\n</angular2-multiselect>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" (onClose)="onClose()" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n<c-search>\n     <ng-template>\n         <input type="text" [(ngModel)]="filter" (keyup)="onSearch($event)" placeholder="Search countries" style="border: none;width: 100%; height: 100%;outline: none;"/>\n     </ng-template>\n</c-search>\n<c-item>\n    <ng-template let-item="item">\n        <label style="color: #333;width: 150px;">{{item.name}}</label>\n        <img [src]="item.flag" style="width: 30px; border: 1px solid #efefef;margin-right: 0px;" />\n        <label>{{item.capital}}</label>\n    </ng-template>\n</c-item>\n</angular-multiselect>' }]
   }], () => [{ type: HttpClient }], null);
 })();
 (() => {
@@ -50093,18 +50350,18 @@ var SearchFilterByOnePropertyExample = class _SearchFilterByOnePropertyExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SearchFilterByOnePropertyExample, selectors: [["ng-component"]], standalone: false, decls: 1, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function SearchFilterByOnePropertyExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterByOnePropertyExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterByOnePropertyExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function SearchFilterByOnePropertyExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function SearchFilterByOnePropertyExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function SearchFilterByOnePropertyExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function SearchFilterByOnePropertyExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function SearchFilterByOnePropertyExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function SearchFilterByOnePropertyExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function SearchFilterByOnePropertyExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function SearchFilterByOnePropertyExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -50120,7 +50377,7 @@ var SearchFilterByOnePropertyExample = class _SearchFilterByOnePropertyExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SearchFilterByOnePropertyExample, [{
     type: Component,
-    args: [{ standalone: false, template: '\n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular2-multiselect>' }]
+    args: [{ standalone: false, template: '\n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n                (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n                </angular-multiselect>' }]
   }], () => [], null);
 })();
 (() => {
@@ -50198,22 +50455,22 @@ var LazyLoadingRemoteDataExample = class _LazyLoadingRemoteDataExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LazyLoadingRemoteDataExample, selectors: [["ng-component"]], standalone: false, decls: 9, vars: 5, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "onOpen", "onScrollToEnd", "data", "ngModel", "settings", "loading"], [1, "example-button-row"], ["mat-raised-button", "", "color", "warn", 1, "btn", "btn-danger", 3, "click"]], template: function LazyLoadingRemoteDataExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function LazyLoadingRemoteDataExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
-        })("onOpen", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onOpen_0_listener($event) {
+        })("onOpen", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onOpen_0_listener($event) {
           return ctx.onOpen($event);
-        })("onScrollToEnd", function LazyLoadingRemoteDataExample_Template_angular2_multiselect_onScrollToEnd_0_listener($event) {
+        })("onScrollToEnd", function LazyLoadingRemoteDataExample_Template_angular_multiselect_onScrollToEnd_0_listener($event) {
           return ctx.fetchMore($event);
         });
         \u0275\u0275elementEnd();
@@ -50243,7 +50500,7 @@ var LazyLoadingRemoteDataExample = class _LazyLoadingRemoteDataExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LazyLoadingRemoteDataExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<angular2-multiselect [data]="itemList" \n[(ngModel)]="selectedItems" \n[settings]="settings" \n[loading] = "loading"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" \n(onSelectAll)="onSelectAll($event)" \n(onDeSelectAll)="onDeSelectAll($event)"\n(onOpen)="onOpen($event)"\n(onScrollToEnd)="fetchMore($event)"></angular2-multiselect>\n<br />\n<span>Total Records : {{itemList.length}}</span>\n<div class="example-button-row">\n  <br />\n  <br />\n  <button\n    mat-raised-button\n    color="warn"\n    (click)="changeData()"\n    class="btn btn-danger"\n  >\n    Reset\n  </button>\n</div>' }]
+    args: [{ standalone: false, template: '<angular-multiselect [data]="itemList" \n[(ngModel)]="selectedItems" \n[settings]="settings" \n[loading] = "loading"\n(onSelect)="onItemSelect($event)"\n(onDeSelect)="OnItemDeSelect($event)" \n(onSelectAll)="onSelectAll($event)" \n(onDeSelectAll)="onDeSelectAll($event)"\n(onOpen)="onOpen($event)"\n(onScrollToEnd)="fetchMore($event)"></angular-multiselect>\n<br />\n<span>Total Records : {{itemList.length}}</span>\n<div class="example-button-row">\n  <br />\n  <br />\n  <button\n    mat-raised-button\n    color="warn"\n    (click)="changeData()"\n    class="btn btn-danger"\n  >\n    Reset\n  </button>\n</div>' }]
   }], () => [{ type: MockService }], null);
 })();
 (() => {
@@ -50318,20 +50575,20 @@ var SearchFilterAddItemExample = class _SearchFilterAddItemExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SearchFilterAddItemExample, selectors: [["ng-component"]], standalone: false, decls: 7, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "onAddFilterNewItem", "data", "ngModel", "settings"], ["role", "alert", 1, "alert", "alert-warning"]], template: function SearchFilterAddItemExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterAddItemExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function SearchFilterAddItemExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function SearchFilterAddItemExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function SearchFilterAddItemExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function SearchFilterAddItemExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function SearchFilterAddItemExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function SearchFilterAddItemExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function SearchFilterAddItemExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function SearchFilterAddItemExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function SearchFilterAddItemExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
-        })("onAddFilterNewItem", function SearchFilterAddItemExample_Template_angular2_multiselect_onAddFilterNewItem_0_listener($event) {
+        })("onAddFilterNewItem", function SearchFilterAddItemExample_Template_angular_multiselect_onAddFilterNewItem_0_listener($event) {
           return ctx.onAddItem($event);
         });
         \u0275\u0275elementEnd();
@@ -50354,7 +50611,7 @@ var SearchFilterAddItemExample = class _SearchFilterAddItemExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SearchFilterAddItemExample, [{
     type: Component,
-    args: [{ standalone: false, template: `<angular2-multiselect
+    args: [{ standalone: false, template: `<angular-multiselect
 [data]="itemList"
 [(ngModel)]="selectedItems"
 [settings]="settings"
@@ -50364,7 +50621,7 @@ var SearchFilterAddItemExample = class _SearchFilterAddItemExample {
 (onDeSelectAll)="onDeSelectAll($event)"
 (onAddFilterNewItem)="onAddItem($event)"
 >
-</angular2-multiselect>
+</angular-multiselect>
 <br>
 <div class="alert alert-warning" role="alert">
   <b>How this example works !! </b>
@@ -50460,23 +50717,23 @@ var EventsExample = class _EventsExample {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _EventsExample, selectors: [["ng-component"]], standalone: false, decls: 35, vars: 9, consts: [["dropdownElem", ""], [3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "onOpen", "onClose", "data", "ngModel", "settings"], [1, "row"], [1, "col-md-4"], [1, "output-text", 3, "ngModelChange", "ngModel"]], template: function EventsExample_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = \u0275\u0275getCurrentView();
-        \u0275\u0275elementStart(0, "angular2-multiselect", 1, 0);
-        \u0275\u0275twoWayListener("ngModelChange", function EventsExample_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 1, 0);
+        \u0275\u0275twoWayListener("ngModelChange", function EventsExample_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275listener("onSelect", function EventsExample_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function EventsExample_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function EventsExample_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function EventsExample_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function EventsExample_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function EventsExample_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function EventsExample_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function EventsExample_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
-        })("onOpen", function EventsExample_Template_angular2_multiselect_onOpen_0_listener($event) {
+        })("onOpen", function EventsExample_Template_angular_multiselect_onOpen_0_listener($event) {
           return ctx.onOpen($event);
-        })("onClose", function EventsExample_Template_angular2_multiselect_onClose_0_listener($event) {
+        })("onClose", function EventsExample_Template_angular_multiselect_onClose_0_listener($event) {
           return ctx.onClose($event);
         });
         \u0275\u0275elementEnd();
@@ -50571,7 +50828,7 @@ var EventsExample = class _EventsExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(EventsExample, [{
     type: Component,
-    args: [{ standalone: false, template: '  <angular2-multiselect #dropdownElem [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" \n      (onSelect)="onItemSelect($event)"\n      (onDeSelect)="OnItemDeSelect($event)" \n      (onSelectAll)="onSelectAll($event)" \n      (onDeSelectAll)="onDeSelectAll($event)"\n      (onOpen)="onOpen($event)"\n      (onClose)="onClose($event)">\n  </angular2-multiselect>\n<br>\n<br>\n<div class="row">\n  <div class="col-md-4">\n      <h5>On Select</h5>\n      <textarea class="output-text" [(ngModel)]="selectedItemString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Un-select</h5>\n      <textarea class="output-text" [(ngModel)]="unSelectedItemString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Open</h5>\n      <textarea class="output-text" [(ngModel)]="openString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Close</h5>\n      <textarea class="output-text" [(ngModel)]="closeString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Select All</h5>\n      <textarea class="output-text" [(ngModel)]="selectAllString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Un-Select All</h5>\n      <textarea class="output-text" [(ngModel)]="unSelectAllString">Event output goes here...\n      </textarea>\n  </div>\n</div>' }]
+    args: [{ standalone: false, template: '  <angular-multiselect #dropdownElem [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" \n      (onSelect)="onItemSelect($event)"\n      (onDeSelect)="OnItemDeSelect($event)" \n      (onSelectAll)="onSelectAll($event)" \n      (onDeSelectAll)="onDeSelectAll($event)"\n      (onOpen)="onOpen($event)"\n      (onClose)="onClose($event)">\n  </angular-multiselect>\n<br>\n<br>\n<div class="row">\n  <div class="col-md-4">\n      <h5>On Select</h5>\n      <textarea class="output-text" [(ngModel)]="selectedItemString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Un-select</h5>\n      <textarea class="output-text" [(ngModel)]="unSelectedItemString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Open</h5>\n      <textarea class="output-text" [(ngModel)]="openString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Close</h5>\n      <textarea class="output-text" [(ngModel)]="closeString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Select All</h5>\n      <textarea class="output-text" [(ngModel)]="selectAllString">Event output goes here...\n      </textarea>\n  </div>\n  <div class="col-md-4">\n      <h5>On Un-Select All</h5>\n      <textarea class="output-text" [(ngModel)]="unSelectAllString">Event output goes here...\n      </textarea>\n  </div>\n</div>' }]
   }], () => [], null);
 })();
 (() => {
@@ -50585,25 +50842,25 @@ function UsingInListExample_tr_9_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "td")(4, "angular2-multiselect", 4);
-    \u0275\u0275twoWayListener("ngModelChange", function UsingInListExample_tr_9_Template_angular2_multiselect_ngModelChange_4_listener($event) {
+    \u0275\u0275elementStart(3, "td")(4, "angular-multiselect", 4);
+    \u0275\u0275twoWayListener("ngModelChange", function UsingInListExample_tr_9_Template_angular_multiselect_ngModelChange_4_listener($event) {
       const item_r2 = \u0275\u0275restoreView(_r1).$implicit;
       \u0275\u0275twoWayBindingSet(item_r2.countries, $event) || (item_r2.countries = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("onSelect", function UsingInListExample_tr_9_Template_angular2_multiselect_onSelect_4_listener($event) {
+    \u0275\u0275listener("onSelect", function UsingInListExample_tr_9_Template_angular_multiselect_onSelect_4_listener($event) {
       \u0275\u0275restoreView(_r1);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.onItemSelect($event));
-    })("onDeSelect", function UsingInListExample_tr_9_Template_angular2_multiselect_onDeSelect_4_listener($event) {
+    })("onDeSelect", function UsingInListExample_tr_9_Template_angular_multiselect_onDeSelect_4_listener($event) {
       \u0275\u0275restoreView(_r1);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.OnItemDeSelect($event));
-    })("onSelectAll", function UsingInListExample_tr_9_Template_angular2_multiselect_onSelectAll_4_listener($event) {
+    })("onSelectAll", function UsingInListExample_tr_9_Template_angular_multiselect_onSelectAll_4_listener($event) {
       \u0275\u0275restoreView(_r1);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.onSelectAll($event));
-    })("onDeSelectAll", function UsingInListExample_tr_9_Template_angular2_multiselect_onDeSelectAll_4_listener($event) {
+    })("onDeSelectAll", function UsingInListExample_tr_9_Template_angular_multiselect_onDeSelectAll_4_listener($event) {
       \u0275\u0275restoreView(_r1);
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.onDeSelectAll($event));
@@ -50730,7 +50987,7 @@ var UsingInListExample = class _UsingInListExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UsingInListExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<div class="col-md-12 mr-auto ml-auto dropdown-container">\n  <table class="table table-bordered">\n    <thead class="thead-dark">\n      <tr>\n        <th>Customer</th>\n        <th>Countries</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor="let item of customers">\n        <td>{{item.name}}</td>\n        <td>\n          <angular2-multiselect\n            [data]="itemList"\n            [(ngModel)]="item.countries"\n            [settings]="settings"\n            (onSelect)="onItemSelect($event)"\n            (onDeSelect)="OnItemDeSelect($event)"\n            (onSelectAll)="onSelectAll($event)"\n            (onDeSelectAll)="onDeSelectAll($event)"\n          >\n          </angular2-multiselect>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  {{customers | json}}\n</div>' }]
+    args: [{ standalone: false, template: '<div class="col-md-12 mr-auto ml-auto dropdown-container">\n  <table class="table table-bordered">\n    <thead class="thead-dark">\n      <tr>\n        <th>Customer</th>\n        <th>Countries</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor="let item of customers">\n        <td>{{item.name}}</td>\n        <td>\n          <angular-multiselect\n            [data]="itemList"\n            [(ngModel)]="item.countries"\n            [settings]="settings"\n            (onSelect)="onItemSelect($event)"\n            (onDeSelect)="OnItemDeSelect($event)"\n            (onSelectAll)="onSelectAll($event)"\n            (onDeSelectAll)="onDeSelectAll($event)"\n          >\n          </angular-multiselect>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  {{customers | json}}\n</div>' }]
   }], () => [], null);
 })();
 (() => {
@@ -50813,18 +51070,18 @@ var UsingWithinDialog = class _UsingWithinDialog {
         \u0275\u0275elementEnd();
         \u0275\u0275element(9, "button", 7);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(10, "div", 8)(11, "angular2-multiselect", 9);
-        \u0275\u0275twoWayListener("ngModelChange", function UsingWithinDialog_Template_angular2_multiselect_ngModelChange_11_listener($event) {
+        \u0275\u0275elementStart(10, "div", 8)(11, "angular-multiselect", 9);
+        \u0275\u0275twoWayListener("ngModelChange", function UsingWithinDialog_Template_angular_multiselect_ngModelChange_11_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function UsingWithinDialog_Template_angular2_multiselect_onSelect_11_listener($event) {
+        \u0275\u0275listener("onSelect", function UsingWithinDialog_Template_angular_multiselect_onSelect_11_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function UsingWithinDialog_Template_angular2_multiselect_onDeSelect_11_listener($event) {
+        })("onDeSelect", function UsingWithinDialog_Template_angular_multiselect_onDeSelect_11_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function UsingWithinDialog_Template_angular2_multiselect_onSelectAll_11_listener($event) {
+        })("onSelectAll", function UsingWithinDialog_Template_angular_multiselect_onSelectAll_11_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function UsingWithinDialog_Template_angular2_multiselect_onDeSelectAll_11_listener($event) {
+        })("onDeSelectAll", function UsingWithinDialog_Template_angular_multiselect_onDeSelectAll_11_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd()();
@@ -50844,7 +51101,7 @@ var UsingWithinDialog = class _UsingWithinDialog {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(UsingWithinDialog, [{
     type: Component,
-    args: [{ standalone: false, template: '<div class="d-grid gap-2 col-6 mx-auto">\n\n<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">\n    Launch demo modal\n  </button>\n</div>\n<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">\n    <div class="modal-dialog">\n      <div class="modal-content">\n        <div class="modal-header">\n          <h5 class="modal-title" id="exampleModalLabel">Dropdown in Modal</h5>\n          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>\n        </div>\n        <div class="modal-body">\n          \n <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n </angular2-multiselect>\n        </div>\n        <div class="modal-footer">\n          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>' }]
+    args: [{ standalone: false, template: '<div class="d-grid gap-2 col-6 mx-auto">\n\n<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">\n    Launch demo modal\n  </button>\n</div>\n<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">\n    <div class="modal-dialog">\n      <div class="modal-content">\n        <div class="modal-header">\n          <h5 class="modal-title" id="exampleModalLabel">Dropdown in Modal</h5>\n          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>\n        </div>\n        <div class="modal-body">\n          \n <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">\n </angular-multiselect>\n        </div>\n        <div class="modal-footer">\n          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>' }]
   }], () => [{ type: Title }, { type: Meta }], null);
 })();
 (() => {
@@ -50905,18 +51162,18 @@ var DialogContentExampleDialog = class _DialogContentExampleDialog {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DialogContentExampleDialog, selectors: [["dialog-content-example-dialog"]], standalone: false, decls: 39, vars: 3, consts: [[3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"]], template: function DialogContentExampleDialog_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "angular2-multiselect", 0);
-        \u0275\u0275twoWayListener("ngModelChange", function DialogContentExampleDialog_Template_angular2_multiselect_ngModelChange_0_listener($event) {
+        \u0275\u0275elementStart(0, "angular-multiselect", 0);
+        \u0275\u0275twoWayListener("ngModelChange", function DialogContentExampleDialog_Template_angular_multiselect_ngModelChange_0_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function DialogContentExampleDialog_Template_angular2_multiselect_onSelect_0_listener($event) {
+        \u0275\u0275listener("onSelect", function DialogContentExampleDialog_Template_angular_multiselect_onSelect_0_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function DialogContentExampleDialog_Template_angular2_multiselect_onDeSelect_0_listener($event) {
+        })("onDeSelect", function DialogContentExampleDialog_Template_angular_multiselect_onDeSelect_0_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function DialogContentExampleDialog_Template_angular2_multiselect_onSelectAll_0_listener($event) {
+        })("onSelectAll", function DialogContentExampleDialog_Template_angular_multiselect_onSelectAll_0_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function DialogContentExampleDialog_Template_angular2_multiselect_onDeSelectAll_0_listener($event) {
+        })("onDeSelectAll", function DialogContentExampleDialog_Template_angular_multiselect_onDeSelectAll_0_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd();
@@ -50989,9 +51246,9 @@ var DialogContentExampleDialog = class _DialogContentExampleDialog {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DialogContentExampleDialog, [{
     type: Component,
-    args: [{ standalone: false, selector: "dialog-content-example-dialog", template: `<angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"
+    args: [{ standalone: false, selector: "dialog-content-example-dialog", template: `<angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"
 (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
-</angular2-multiselect>
+</angular-multiselect>
   <h3>Develop across all platforms</h3>
   <p>Learn one way to build applications with Angular and reuse your code and abilities to build
     apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
@@ -51514,18 +51771,18 @@ var ThemingExample = class _ThemingExample {
   static {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ThemingExample, selectors: [["ng-component"]], standalone: false, decls: 4, vars: 3, consts: [[1, "col-md-8", "mr-auto", "ml-auto", "dropdown-container"], [3, "ngModelChange", "onSelect", "onDeSelect", "onSelectAll", "onDeSelectAll", "data", "ngModel", "settings"], [1, "example-title", "code-section"]], template: function ThemingExample_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "div", 0)(1, "angular2-multiselect", 1);
-        \u0275\u0275twoWayListener("ngModelChange", function ThemingExample_Template_angular2_multiselect_ngModelChange_1_listener($event) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "angular-multiselect", 1);
+        \u0275\u0275twoWayListener("ngModelChange", function ThemingExample_Template_angular_multiselect_ngModelChange_1_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedItems, $event) || (ctx.selectedItems = $event);
           return $event;
         });
-        \u0275\u0275listener("onSelect", function ThemingExample_Template_angular2_multiselect_onSelect_1_listener($event) {
+        \u0275\u0275listener("onSelect", function ThemingExample_Template_angular_multiselect_onSelect_1_listener($event) {
           return ctx.onItemSelect($event);
-        })("onDeSelect", function ThemingExample_Template_angular2_multiselect_onDeSelect_1_listener($event) {
+        })("onDeSelect", function ThemingExample_Template_angular_multiselect_onDeSelect_1_listener($event) {
           return ctx.OnItemDeSelect($event);
-        })("onSelectAll", function ThemingExample_Template_angular2_multiselect_onSelectAll_1_listener($event) {
+        })("onSelectAll", function ThemingExample_Template_angular_multiselect_onSelectAll_1_listener($event) {
           return ctx.onSelectAll($event);
-        })("onDeSelectAll", function ThemingExample_Template_angular2_multiselect_onDeSelectAll_1_listener($event) {
+        })("onDeSelectAll", function ThemingExample_Template_angular_multiselect_onDeSelectAll_1_listener($event) {
           return ctx.onDeSelectAll($event);
         });
         \u0275\u0275elementEnd()();
@@ -51545,7 +51802,7 @@ var ThemingExample = class _ThemingExample {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ThemingExample, [{
     type: Component,
-    args: [{ standalone: false, template: '<div class="col-md-8 mr-auto ml-auto dropdown-container">\n    <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n        (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>\n</div>\n<h4 class="example-title code-section">Code</h4>\n\n<!--<p-tabView>\n    <p-tabPanel header="{{tstitle}}">\n       <ng2-gist [gistId]="tsgist"></ng2-gist>\n    </p-tabPanel>\n    <p-tabPanel header="{{htmltitle}}">\n        <ng2-gist [gistId]="htmlgist"></ng2-gist>\n    </p-tabPanel>\n    <span *ngIf="cssgist">\n        <p-tabPanel header="{{csstitle}}">\n        <ng2-gist [gistId]="cssgist"></ng2-gist>\n    </p-tabPanel>\n    </span>\n</p-tabView>\n-->' }]
+    args: [{ standalone: false, template: '<div class="col-md-8 mr-auto ml-auto dropdown-container">\n    <angular-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" (onSelect)="onItemSelect($event)"\n        (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)"></angular-multiselect>\n</div>\n<h4 class="example-title code-section">Code</h4>\n\n<!--<p-tabView>\n    <p-tabPanel header="{{tstitle}}">\n       <ng2-gist [gistId]="tsgist"></ng2-gist>\n    </p-tabPanel>\n    <p-tabPanel header="{{htmltitle}}">\n        <ng2-gist [gistId]="htmlgist"></ng2-gist>\n    </p-tabPanel>\n    <span *ngIf="cssgist">\n        <p-tabPanel header="{{csstitle}}">\n        <ng2-gist [gistId]="cssgist"></ng2-gist>\n    </p-tabPanel>\n    </span>\n</p-tabView>\n-->' }]
   }], () => [], null);
 })();
 (() => {

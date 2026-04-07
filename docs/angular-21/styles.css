@@ -11359,151 +11359,148 @@ fieldset:disabled .btn {
 }
 
 /* src/styles.scss */
+:root {
+  color-scheme: light;
+  --mat-docs-primary: #3f51b5;
+  --mat-docs-primary-strong: #303f9f;
+  --mat-docs-primary-soft: #e8eaf6;
+  --mat-docs-accent: #ff4081;
+  --mat-docs-accent-soft: #fce4ec;
+  --mat-docs-surface: #ffffff;
+  --mat-docs-surface-2: #fafafa;
+  --mat-docs-surface-3: #f5f5f5;
+  --mat-docs-outline: #e0e0e0;
+  --mat-docs-outline-strong: #b0bec5;
+  --mat-docs-text: #212121;
+  --mat-docs-text-muted: #616161;
+  --mat-docs-shadow: 0 1px 2px rgba(33, 33, 33, 0.12), 0 10px 24px rgba(63, 81, 181, 0.08);
+}
+html,
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100%;
   background:
+    radial-gradient(
+      circle at top right,
+      rgba(63, 81, 181, 0.14),
+      transparent 28%),
     linear-gradient(
       180deg,
-      #fff8ef 0%,
-      #f5fbff 60%,
-      #eef4fb 100%);
+      #f7f8fc 0%,
+      #f5f7fb 42%,
+      #eef2f8 100%);
+  color: var(--mat-docs-text);
+  font-family:
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
 }
-* {
+body {
+  min-height: 100vh;
+}
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 a {
   color: inherit;
 }
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+code,
+pre {
+  font-family:
+    "Roboto Mono",
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+}
 table {
   width: 100%;
 }
 .modal-content {
-  color: #17324d;
+  color: var(--mat-docs-text);
+  border-radius: 28px;
+  border: 1px solid rgba(63, 81, 181, 0.12);
+  box-shadow: var(--mat-docs-shadow);
 }
 .alert {
-  border-radius: 14px;
+  border-radius: 16px;
 }
 .btn {
   text-decoration: none;
 }
+.boot-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.boot-card {
+  display: grid;
+  gap: 16px;
+  place-items: center;
+  padding: 28px 32px;
+  min-width: min(360px, 100%);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(63, 81, 181, 0.12);
+  box-shadow: var(--mat-docs-shadow);
+}
+.boot-card p {
+  margin: 0;
+  color: var(--mat-docs-text-muted);
+}
+.boot-loader {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgba(63, 81, 181, 0.16);
+  border-top-color: var(--mat-docs-primary);
+  animation: docs-spin 1s linear infinite;
+}
+@keyframes docs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-/* node_modules/@revivejs/angular2-multiselect-dropdown/themes/default.theme.css */
-.mat-toolbar {
-  background: #ffffff;
+/* node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css */
+.cuppa-dropdown {
+  --ms-primary: #3f51b5;
+  --ms-primary-soft: rgba(63, 81, 181, 0.12);
+  --ms-surface: #ffffff;
+  --ms-surface-soft: #f5f7fb;
+  --ms-surface-muted: #e8eaf6;
+  --ms-outline: #c5cae9;
+  --ms-outline-strong: #7986cb;
+  --ms-on-surface: #212121;
+  --ms-on-surface-muted: #5f6368;
+  --ms-chip-bg: #e8eaf6;
+  --ms-chip-text: #303f9f;
+  --ms-chip-remove: #303f9f;
+  --ms-shadow: 0 1px 2px rgba(33, 33, 33, 0.16), 0 12px 32px rgba(63, 81, 181, 0.12);
+  --ms-shadow-soft: 0 1px 2px rgba(33, 33, 33, 0.12), 0 4px 12px rgba(33, 33, 33, 0.08);
 }
-.c-btn {
-  background: #fff;
-  border: 1px solid #ccc;
-  color: #333;
+.cuppa-dropdown .c-btn {
+  background: var(--ms-surface);
+  border-color: var(--ms-outline);
+  color: var(--ms-on-surface);
 }
-.selected-list .c-list .c-token {
-  background: #0079FE;
+.cuppa-dropdown .c-btn:hover {
+  border-color: var(--ms-outline-strong);
 }
-.selected-list .c-list .c-token .c-label {
-  color: #fff;
+.cuppa-dropdown .selected-item {
+  background: var(--ms-primary-soft);
 }
-.selected-list .c-list .c-token .c-remove svg {
-  fill: #fff;
-}
-.selected-list .c-angle-down svg,
-.selected-list .c-angle-up svg {
-  fill: #333;
-}
-.dropdown-list ul li:hover {
-  background: #f5f5f5;
-}
-.arrow-up,
-.arrow-down {
-  border-bottom: 15px solid #fff;
-}
-.arrow-2 {
-  border-bottom: 15px solid #ccc;
-}
-.list-area {
-  border: 1px solid #ccc;
-  background: #fff;
-  box-shadow: 0px 1px 5px #959595;
-}
-.select-all {
-  border-bottom: 1px solid #ccc;
-}
-.list-filter {
-  border-bottom: 1px solid #ccc;
-}
-.list-filter .c-search svg {
-  fill: #888;
-}
-.list-filter .c-clear svg {
-  fill: #888;
-}
-.pure-checkbox input[type=checkbox]:focus + label:before,
-.pure-checkbox input[type=checkbox]:hover + label:before {
-  border-color: #0079FE;
-  background-color: #f2f2f2;
-}
-.pure-checkbox input[type=checkbox] + label {
-  color: #000;
-}
-.pure-checkbox input[type=checkbox] + label:before {
-  color: #0079FE;
-  border: 1px solid #0079FE;
-}
-.pure-checkbox input[type=checkbox] + label:after {
-  background-color: #0079FE;
-}
-.pure-checkbox input[type=checkbox]:disabled + label:before {
-  border-color: #cccccc;
-}
-.pure-checkbox input[type=checkbox]:disabled:checked + label:before {
-  background-color: #cccccc;
-}
-.pure-checkbox input[type=checkbox] + label:after {
-  border-color: #ffffff;
-}
-.pure-checkbox input[type=radio]:checked + label:before {
-  background-color: white;
-}
-.pure-checkbox input[type=checkbox]:checked + label:before {
-  background: #0079FE;
-}
-.single-select-mode .pure-checkbox input[type=checkbox]:focus + label:before,
-.single-select-mode .pure-checkbox input[type=checkbox]:hover + label:before {
-  border-color: #0079FE;
-  background-color: #f2f2f2;
-}
-.single-select-mode .pure-checkbox input[type=checkbox] + label {
-  color: #000;
-}
-.single-select-mode .pure-checkbox input[type=checkbox] + label:before {
-  color: transparent !important;
-  border: 0px solid #0079FE;
-}
-.single-select-mode .pure-checkbox input[type=checkbox] + label:after {
-  background-color: transparent !important;
-}
-.single-select-mode .pure-checkbox input[type=checkbox]:disabled + label:before {
-  border-color: #cccccc;
-}
-.single-select-mode .pure-checkbox input[type=checkbox]:disabled:checked + label:before {
-  background-color: #cccccc;
-}
-.single-select-mode .pure-checkbox input[type=checkbox] + label:after {
-  border-color: #0079FE;
-}
-.single-select-mode .pure-checkbox input[type=radio]:checked + label:before {
-  background-color: white;
-}
-.single-select-mode .pure-checkbox input[type=checkbox]:checked + label:before {
-  background: none !important;
-}
-.selected-item {
-  background: #e9f4ff;
-}
-.btn-iceblue {
-  background: #0079FE;
-  border: 1px solid #ccc;
-  color: #fff;
+.cuppa-dropdown .btn-iceblue {
+  background: var(--ms-primary);
+  color: #ffffff;
 }
 
 /* angular:styles/global:styles */

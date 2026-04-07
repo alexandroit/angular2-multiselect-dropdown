@@ -6,13 +6,13 @@
 [![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![npm monthly](https://img.shields.io/npm/dm/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![license](https://img.shields.io/npm/l/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/blob/master/LICENSE)
-[![Angular 2](https://img.shields.io/badge/Angular-2.x-red?style=flat-square&logo=angular)](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)
+[![Angular 21](https://img.shields.io/badge/Angular-21.x-red?style=flat-square&logo=angular)](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/stargazers)
 
-**[Documentation & Live Demos](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 2 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
+**[Documentation & Live Demos](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 21 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
 
-**Latest version:** `2.0.2`
+**Latest version:** `21.0.0`
 
 ---
 
@@ -24,13 +24,13 @@
 
 The original `angular2-multiselect-dropdown` package became difficult to keep current across multiple Angular generations. This maintained package keeps the classic API and template structure intact, introduces the new primary selector `<angular-multiselect>`, preserves the legacy alias `<angular2-multiselect>`, and publishes the project line by line so older applications can keep a predictable upgrade path.
 
-The repository already contains the documentation matrix from Angular 2 through Angular 21. The npm rollout is being released sequentially, and `2.0.2` is the current published line.
+The repository contains the full documentation matrix from Angular 2 through Angular 21. The npm rollout is complete line by line, and `21.0.0` is the current latest published line for Angular 21 applications.
 
 ## Features
 
 | Feature | Supported |
 | :--- | :---: |
-| Angular 2 published release line | ✅ |
+| Angular 21 latest published release line | ✅ |
 | Multi-select and single-select modes | ✅ |
 | Search and filter | ✅ |
 | Group by field | ✅ |
@@ -72,9 +72,9 @@ Angular 3 is intentionally absent because Angular did not ship a stable major 3 
 
 | Package version | Angular version | TypeScript version | Demo link |
 | :---: | :---: | :---: | :--- |
-| **2.0.2** | **2.x published line** | **5.9.x build pipeline** | [Angular 2 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/) |
+| **21.0.0** | **21.x latest published line** | **5.9.x build pipeline** | [Angular 21 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/) |
 
-The rest of the Angular 4 through Angular 21 lines remain documented in the repository and will continue to be published one line at a time.
+Published compatibility lines are available for Angular 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, and 21.
 
 ## Installation
 
@@ -248,7 +248,7 @@ The classic output contract is preserved:
 npm install
 npm run docs:sync
 npm run build-package
-cd docs-src/angular-2
+cd docs-src/angular-21
 npm install --ignore-scripts
 npm run build
 ```
