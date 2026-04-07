@@ -12,7 +12,7 @@
 
 **[Documentation & Live Demos](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 21 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
 
-**Latest version:** `21.0.0`
+**Latest version:** `21.0.1`
 
 ---
 
@@ -24,7 +24,7 @@
 
 The original `angular2-multiselect-dropdown` package became difficult to keep current across multiple Angular generations. This maintained package keeps the classic API and template structure intact, introduces the new primary selector `<angular-multiselect>`, preserves the legacy alias `<angular2-multiselect>`, and publishes the project line by line so older applications can keep a predictable upgrade path.
 
-The repository contains the full documentation matrix from Angular 2 through Angular 21. The npm rollout is complete line by line, and `21.0.0` is the current latest published line for Angular 21 applications.
+The repository contains the full documentation matrix from Angular 2 through Angular 21. The npm rollout is complete line by line, and `21.0.1` is the current latest published line for Angular 21 applications.
 
 ## Features
 
@@ -72,7 +72,7 @@ Angular 3 is intentionally absent because Angular did not ship a stable major 3 
 
 | Package version | Angular version | TypeScript version | Demo link |
 | :---: | :---: | :---: | :--- |
-| **21.0.0** | **21.x latest published line** | **5.9.x build pipeline** | [Angular 21 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/) |
+| **21.0.1** | **21.x latest published line** | **5.9.x build pipeline** | [Angular 21 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-21/) |
 
 Published compatibility lines are available for Angular 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, and 21.
 
