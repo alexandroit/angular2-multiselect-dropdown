@@ -1,22 +1,63 @@
 # @revivejs/angular-multiselect-dropdown
 
-> A maintained Angular multiselect dropdown project organized around release lines from Angular 2 through Angular 21, with search, grouping, custom item and badge templates, checkbox selection, lazy loading hooks, and Material-inspired theming from Angular 14 onward.
+> A maintained Angular multiselect dropdown for classic Angular forms workflows, with search, grouping, custom item and badge templates, lazy loading, custom CSS/SCSS theming, and support for both template-driven and reactive forms.
 
 [![npm version](https://img.shields.io/npm/v/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![npm monthly](https://img.shields.io/npm/dm/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
 [![license](https://img.shields.io/npm/l/@revivejs/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/blob/master/LICENSE)
-[![Angular line](https://img.shields.io/badge/Published%20line-2.0.1-red?style=flat-square&logo=angular)](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)
+[![Angular 2](https://img.shields.io/badge/Angular-2.x-red?style=flat-square&logo=angular)](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular-multiselect-dropdown/stargazers)
 
-**[Documentation & Demo Matrix](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 2 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
+**[Documentation & Live Demos](https://alexandroit.github.io/angular-multiselect-dropdown/)** | **[Angular 2 Demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular-multiselect-dropdown)**
 
-**Latest published version:** `2.0.1`
+**Latest version:** `2.0.2`
 
 ---
 
-> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown). Current maintenance, docs restructuring, Angular line stewardship, and publishing by [Alexandro Paixao Marques](https://github.com/alexandroit/angular-multiselect-dropdown).
+> **Credits:** Original library by [Cuppa Labs](https://github.com/CuppaLabs/angular2-multiselect-dropdown). Current maintenance, Angular line stewardship, publishing, and documentation by [Alexandro Paixao Marques](https://github.com/alexandroit/angular-multiselect-dropdown).
+
+---
+
+## Why this library?
+
+The original `angular2-multiselect-dropdown` package became difficult to keep current across multiple Angular generations. This maintained package keeps the classic API and template structure intact, introduces the new primary selector `<angular-multiselect>`, preserves the legacy alias `<angular2-multiselect>`, and publishes the project line by line so older applications can keep a predictable upgrade path.
+
+The repository already contains the documentation matrix from Angular 2 through Angular 21. The npm rollout is being released sequentially, and `2.0.2` is the current published line.
+
+## Features
+
+| Feature | Supported |
+| :--- | :---: |
+| Angular 2 published release line | ✅ |
+| Multi-select and single-select modes | ✅ |
+| Search and filter | ✅ |
+| Group by field | ✅ |
+| Custom item templates (`<c-item>`) | ✅ |
+| Custom badge templates (`<c-badge>`) | ✅ |
+| Template-driven forms (`ngModel`) | ✅ |
+| Reactive forms (`formControlName`) | ✅ |
+| Lazy loading and remote-data hooks | ✅ |
+| Theming via bundled CSS/SCSS | ✅ |
+| Primary selector `<angular-multiselect>` | ✅ |
+| Legacy selector `<angular2-multiselect>` | ✅ |
+| Versioned docs builds per Angular line | ✅ |
+
+## Table of Contents
+
+1. [Rename Note](#rename-note)
+2. [Angular Version Compatibility](#angular-version-compatibility)
+3. [Installation](#installation)
+4. [Setup](#setup)
+5. [Custom CSS and SCSS Themes](#custom-css-and-scss-themes)
+6. [Basic Usage](#basic-usage)
+7. [Custom Templates](#custom-templates)
+8. [Forms Integration](#forms-integration)
+9. [Lazy Loading and Remote Data](#lazy-loading-and-remote-data)
+10. [Events](#events)
+11. [Run Locally](#run-locally)
+12. [License](#license)
 
 ## Rename Note
 
@@ -25,36 +66,25 @@
 - primary selector: `<angular-multiselect>`
 - legacy alias still accepted: `<angular2-multiselect>`
 
-## Docs and Demo Links
+## Angular Version Compatibility
 
-- Demo matrix: `https://alexandroit.github.io/angular-multiselect-dropdown/`
-- Angular 2 demo: `https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/`
-- npm package: `https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown`
-- GitHub repository: `https://github.com/alexandroit/angular-multiselect-dropdown`
+Angular 3 is intentionally absent because Angular did not ship a stable major 3 release.
 
-## Highlights
+| Package version | Angular version | TypeScript version | Demo link |
+| :---: | :---: | :---: | :--- |
+| **2.0.2** | **2.x published line** | **5.9.x build pipeline** | [Angular 2 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/) |
 
-- Primary selector `<angular-multiselect>`
-- Legacy alias `<angular2-multiselect>`
-- Search and filter
-- Group by field
-- `<c-item>` and `<c-badge>` template hooks
-- Template-driven and reactive forms support
-- Lazy loading hooks
-- `default.theme.css`
-- `custom.theme.scss` and `custom.theme.css`
-
-## Published Line Status
-
-| Package version | Maintained line | Demo link |
-| :---: | :---: | :--- |
-| **2.0.1** | **2.x line** | [Angular 2 demo](https://alexandroit.github.io/angular-multiselect-dropdown/angular-2/) |
+The rest of the Angular 4 through Angular 21 lines remain documented in the repository and will continue to be published one line at a time.
 
 ## Installation
 
 ```bash
 npm install @revivejs/angular-multiselect-dropdown
 ```
+
+## Setup
+
+### 1. Import the module
 
 ```ts
 import { NgModule } from '@angular/core';
@@ -63,12 +93,16 @@ import { FormsModule } from '@angular/forms';
 import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AngularMultiSelectModule]
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AngularMultiSelectModule
+  ]
 })
 export class AppModule {}
 ```
 
-## Theme Files
+### 2. Add the default theme
 
 ```json
 "styles": [
@@ -76,27 +110,148 @@ export class AppModule {}
 ]
 ```
 
-You can also start from:
+## Custom CSS and SCSS Themes
+
+The package also ships a full custom starter theme in both formats:
 
 - `node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss`
 - `node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.css`
 
+Use the `scss` file when you want to take over the component styles completely and keep the theme in your app source:
+
+```json
+"styles": [
+  "src/styles.scss",
+  "src/styles/multiselect-dropdown.theme.scss"
+]
+```
+
+Start `src/styles/multiselect-dropdown.theme.scss` from the package file above and edit the selectors and tokens freely.
+
+Use the `css` file when you want a plain compiled starter that can be copied and adjusted without a Sass pipeline.
+
 ## Basic Usage
+
+```ts
+dropdownList = [
+  { id: 1, itemName: 'India' },
+  { id: 2, itemName: 'Singapore' },
+  { id: 3, itemName: 'Australia' },
+  { id: 4, itemName: 'Canada' }
+];
+
+selectedItems = [{ id: 2, itemName: 'Singapore' }];
+
+dropdownSettings = {
+  singleSelection: false,
+  text: 'Select Countries',
+  selectAllText: 'Select All',
+  unSelectAllText: 'UnSelect All',
+  enableSearchFilter: true,
+  tagToBody: false
+};
+```
+
+```html
+<angular-multiselect
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onDeSelect)="onItemDeSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+  (onDeSelectAll)="onDeSelectAll($event)">
+</angular-multiselect>
+```
+
+## Custom Templates
 
 ```html
 <angular-multiselect
   [data]="dropdownList"
   [(ngModel)]="selectedItems"
   [settings]="dropdownSettings">
+  <c-item>
+    <ng-template let-item="item">
+      <label>{{ item.itemName }}</label>
+      <img [src]="item.image" style="width: 24px; margin-left: 8px;" />
+    </ng-template>
+  </c-item>
 </angular-multiselect>
 ```
 
-## Release Line Policy
+The same template contract also works with the legacy selector:
 
-- Angular 2 through 13 follow the classic compatibility shell.
-- Angular 14 through 21 follow the remodulated Material-inspired shell.
-- Angular 3 is intentionally absent because Angular did not ship a stable major 3 release.
-- Full npm publishing should run line by line from Angular 2 up to Angular 21.
+```html
+<angular2-multiselect></angular2-multiselect>
+```
+
+## Forms Integration
+
+### Template-driven forms
+
+```html
+<form #form="ngForm">
+  <angular-multiselect
+    [data]="skills"
+    [(ngModel)]="selectedSkills"
+    [settings]="settings"
+    name="skills"
+    required>
+  </angular-multiselect>
+</form>
+```
+
+### Reactive forms
+
+```html
+<form [formGroup]="userForm">
+  <angular-multiselect
+    [data]="skills"
+    [settings]="settings"
+    formControlName="skills">
+  </angular-multiselect>
+</form>
+```
+
+## Lazy Loading and Remote Data
+
+Enable lazy loading through the settings object and respond to the scroll event from your container logic:
+
+```ts
+settings = {
+  text: 'Select Items',
+  enableSearchFilter: true,
+  lazyLoading: true,
+  labelKey: 'name',
+  primaryKey: 'id'
+};
+```
+
+The versioned docs include working examples for lazy loading, remote data, grouping, templating, and forms usage.
+
+For sticky cards, constrained containers, or dashboard layouts, keep `tagToBody: false` so the dropdown panel stays anchored to the field and does not jump across the page.
+
+## Events
+
+The classic output contract is preserved:
+
+- `(onSelect)`
+- `(onDeSelect)`
+- `(onSelectAll)`
+- `(onDeSelectAll)`
+- `(onAddFilterNewItem)`
+
+## Run Locally
+
+```bash
+npm install
+npm run docs:sync
+npm run build-package
+cd docs-src/angular-2
+npm install --ignore-scripts
+npm run build
+```
 
 ## License
 
