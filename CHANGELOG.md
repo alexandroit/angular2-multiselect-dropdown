@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file.
 
 ### See Also
 - [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@stackline/angular-multiselect-dropdown)
 
 ## [13.0.3] - 2026-04-03
 
@@ -45,14 +45,14 @@ All notable changes to this project will be documented in this file.
 
 ### How to Upgrade
 ```bash
-npm install @revivejs/angular-multiselect-dropdown@^13.0.3
+npm install @stackline/angular-multiselect-dropdown@^13.0.3
 ```
 
 ### See Also
 - [Angular Version Compatibility](https://angular.dev/reference/versions)
 - [Angular Zoneless Guide](https://angular.dev/guide/zoneless)
 - [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@stackline/angular-multiselect-dropdown)
 
 ## [12.0.1] - 2026-04-03
 
@@ -71,7 +71,7 @@ npm install @revivejs/angular-multiselect-dropdown@^13.0.3
 
 ### See Also
 - [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@stackline/angular-multiselect-dropdown)
 
 ## [12.0.0] - 2026-04-03
 
@@ -93,12 +93,12 @@ npm install @revivejs/angular-multiselect-dropdown@^13.0.3
 
 ### How to Upgrade
 ```bash
-npm install @revivejs/angular-multiselect-dropdown@^12.0.0
+npm install @stackline/angular-multiselect-dropdown@^12.0.0
 ```
 
 ### See Also
 - [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@stackline/angular-multiselect-dropdown)
 
 ## [11.0.0] - 2026-04-01
 
@@ -122,12 +122,12 @@ npm install @revivejs/angular-multiselect-dropdown@^12.0.0
 
 ### Breaking Changes
 - Requires Node.js 18+ and npm 9+
-- Package name changed from `angular2-multiselect-dropdown` to `@revivejs/angular-multiselect-dropdown`
+- Package name changed from `angular2-multiselect-dropdown` to `@stackline/angular-multiselect-dropdown`
 
 ### How to Upgrade
 ```bash
 npm uninstall angular2-multiselect-dropdown
-npm install @revivejs/angular-multiselect-dropdown@^11.0.0
+npm install @stackline/angular-multiselect-dropdown@^11.0.0
 ```
 
 Update your imports:
@@ -136,13 +136,13 @@ Update your imports:
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 // After
-import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@stackline/angular-multiselect-dropdown';
 ```
 
 ### Credits
 - **Original Author**: Pradeep Terli ([CuppaLabs](https://github.com/CuppaLabs/angular2-multiselect-dropdown))
-- **Current Maintainer**: Alexandro Paixao Marques ([ReviveJS](https://github.com/alexandroit))
+- **Current Maintainer**: Alexandro Paixao Marques ([Stackline](https://github.com/alexandroit))
 
 ### See Also
 - [GitHub Repository](https://github.com/alexandroit/angular-multiselect-dropdown)
-- [NPM Package](https://www.npmjs.com/package/@revivejs/angular-multiselect-dropdown)
+- [NPM Package](https://www.npmjs.com/package/@stackline/angular-multiselect-dropdown)

@@ -1,4 +1,4 @@
-# NPM Publishing Guide for @revivejs/angular-multiselect-dropdown
+# NPM Publishing Guide for @stackline/angular-multiselect-dropdown
 
 ## Prerequisites
 
@@ -8,32 +8,42 @@
 
 ## Before Publishing
 
-### 1. Update Version
-Update the version number in:
-- `package.json` (root)
-- `projects/@revivejs/angular-multiselect-dropdown-lib/package.json`
+### 1. Choose the Angular Line
+Pick the line you want to release from `docs-src/line-matrix.json`.
 
-```bash
-npm version major|minor|patch
-```
+Examples:
+- Angular 21 line: `21.0.1`
+- Angular 20 line: `20.0.0`
+- Angular 13 line: `13.0.0`
 
-### 2. Build the Library
+The repository source stays on the active Angular 21 workspace. Release metadata for older lines is now stamped into `dist/@stackline/angular-multiselect-dropdown/package.json` during the build step so the published package does not inherit Angular 21 peer dependencies by mistake.
+
+### 2. Build the Library for a Specific Line
 ```bash
+# Default: latest line from docs-src/line-matrix.json
 npm run build-package
+
+# Specific Angular line
+npm run build-package:line -- --line 13
 ```
 
 This will:
 - Compile SASS themes
 - Build with ng-packagr
-- Generate distribution files in `dist/@revivejs/angular-multiselect-dropdown`
+- Generate distribution files in `dist/@stackline/angular-multiselect-dropdown`
+- Stamp the target line `version` and Angular `peerDependencies` into the generated `package.json`
 
-### 3. Test Build Output
+### 3. Validate Build Output
 ```bash
-cd dist/@revivejs/angular-multiselect-dropdown
+cd dist/@stackline/angular-multiselect-dropdown
 npm pack
 # This creates a .tgz file without uploading
 cd ../..
 ```
+
+Before publishing, confirm `dist/@stackline/angular-multiselect-dropdown/package.json` matches the target line:
+- `version` must equal the line version from `docs-src/line-matrix.json`
+- `peerDependencies` must target only that Angular major
 
 ## Publishing to NPM
 
@@ -49,16 +59,20 @@ Validate each line before publishing the next one.
 
 ### Option 1: Using npm script
 ```bash
+# Publish the latest line
 npm run publish-npm
+
+# Publish a specific line
+npm run publish-npm:line -- --line 13
 ```
 
 ### Option 2: Manual Publishing
 ```bash
 # Build first
-npm run build-package
+npm run build-package:line -- --line 13
 
 # Navigate to dist folder
-cd dist/@revivejs/angular-multiselect-dropdown
+cd dist/@stackline/angular-multiselect-dropdown
 
 # Publish
 npm publish --access public
@@ -71,7 +85,7 @@ cd ../..
 
 ### 1. Verify Publication
 ```bash
-npm view @revivejs/angular-multiselect-dropdown
+npm view @stackline/angular-multiselect-dropdown
 ```
 
 ### 2. Create GitHub Release
@@ -93,11 +107,11 @@ npm login
 ```
 
 ### "Invalid package name"
-Ensure the scoped name `@revivejs/angular-multiselect-dropdown` matches exactly in all files.
+Ensure the scoped name `@stackline/angular-multiselect-dropdown` matches exactly in all files.
 
 ### "Permission denied"
 - Verify you are the package owner
-- Check npm access: `npm owner ls @revivejs/angular-multiselect-dropdown`
+- Check npm access: `npm owner ls @stackline/angular-multiselect-dropdown`
 
 ### Build Errors
 ```bash
@@ -111,7 +125,7 @@ npm run build-package
 The `.npmrc` file contains:
 - Registry URL: `https://registry.npmjs.org/`
 - Access level: `public` (allows public installations)
-- Scope: `@revivejs`
+- Scope: `@stackline`
 
 ## Version Strategy
 
@@ -121,6 +135,12 @@ This repository follows a line-per-Angular-major strategy:
 - **14.x.x** through **21.x.x** for the Material-refined lines
 
 Use patch releases for fixes within a maintained Angular line. Keep `latest` on the active Angular 21 line unless there is a deliberate reason to move it.
+
+## Release Safety
+
+- Never publish an older line by editing only the version number.
+- Always use `npm run build-package:line -- --line <major>` or `npm run publish-npm:line -- --line <major>`.
+- npm versions are immutable, so any previously published line with wrong `peerDependencies` must be corrected with a new patch release for that same line.
 
 ## Angular Version Compatibility
 
@@ -148,5 +168,10 @@ Use patch releases for fixes within a maintained Angular line. Keep `latest` on 
 
 ---
 
-**Last Updated**: April 7, 2026  
+**Last Updated**: April 8, 2026  
 **Maintainer**: [Alexandro Paixao Marques](https://github.com/alexandroit)
+
+## Family Rule
+
+Every published package family must lock `peerDependencies` to exactly one framework major.
+Validate the family against every exact framework release under `docs-src/<family>/<release>/` using `npm install` before publishing.

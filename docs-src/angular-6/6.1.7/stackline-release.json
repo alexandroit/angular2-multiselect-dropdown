@@ -1,0 +1,15 @@
+{
+  "packageName": "@stackline/angular-multiselect-dropdown",
+  "projectRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown",
+  "framework": "angular",
+  "family": "angular-6",
+  "major": 6,
+  "exactVersion": "6.1.7",
+  "installMode": "npm-install",
+  "localInstallSource": "../../../dist/@stackline/angular-multiselect-dropdown",
+  "expectedExports": [],
+  "installCommand": "npm install --ignore-scripts",
+  "validateCommand": "npm run validate",
+  "buildCommand": "npm run build-package:line -- --line 6",
+  "generatedAt": "2026-04-08T22:21:40.196Z"
+}

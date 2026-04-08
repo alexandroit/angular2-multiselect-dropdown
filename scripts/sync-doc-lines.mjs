@@ -82,15 +82,15 @@ function updatePackageJson(targetDir, line) {
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
   const port = 4200 + line.angular;
 
-  packageJson.name = `@revivejs/angular-multiselect-dropdown-docs-angular${line.angular}`;
+  packageJson.name = `@stackline/angular-multiselect-dropdown-docs-angular${line.angular}`;
   packageJson.scripts = {
     ng: 'ng',
     start: `ng serve --port ${port} --host 0.0.0.0`,
     build: 'ng build --configuration development --base-href ./'
   };
 
-  if (packageJson.dependencies['@revivejs/angular-multiselect-dropdown']) {
-    packageJson.dependencies['@revivejs/angular-multiselect-dropdown'] = line.packageRange;
+  if (packageJson.dependencies['@stackline/angular-multiselect-dropdown']) {
+    packageJson.dependencies['@stackline/angular-multiselect-dropdown'] = line.packageRange;
   }
 
   writeJson(packageJsonPath, packageJson);
@@ -99,7 +99,7 @@ function updatePackageJson(targetDir, line) {
 function updateAngularJson(targetDir, line) {
   const angularJsonPath = path.join(targetDir, 'angular.json');
   const angularJson = JSON.parse(fs.readFileSync(angularJsonPath, 'utf8'));
-  const projectName = `@revivejs/angular-multiselect-dropdown-docs-angular${line.angular}`;
+  const projectName = `@stackline/angular-multiselect-dropdown-docs-angular${line.angular}`;
   const currentProjectName = Object.keys(angularJson.projects)[0];
   const currentProject = angularJson.projects[currentProjectName];
 
@@ -117,11 +117,11 @@ function updateAngularJson(targetDir, line) {
   currentProject.architect.build.options.styles = styles.map((entry) =>
     typeof entry === 'string'
       ? entry.replace(
-          'node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css',
-          'node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css'
+          'node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css',
+          'node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css'
         ).replace(
-          'node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css',
-          'node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css'
+          'node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css',
+          'node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css'
         )
       : entry
   );
@@ -135,13 +135,13 @@ function updateAngularJson(targetDir, line) {
 
 function updateIndexFiles(targetDir, line) {
   replaceInFile(path.join(targetDir, 'src', 'index.html'), [
-    [/<title>.*?<\/title>/, `<title>@revivejs/angular-multiselect-dropdown — Angular ${line.angular} docs</title>`]
+    [/<title>.*?<\/title>/, `<title>@stackline/angular-multiselect-dropdown — Angular ${line.angular} docs</title>`]
   ]);
 
   const manifestPath = path.join(targetDir, 'src', 'manifest.webmanifest');
   if (fs.existsSync(manifestPath)) {
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-    manifest.name = '@revivejs/angular-multiselect-dropdown';
+    manifest.name = '@stackline/angular-multiselect-dropdown';
     manifest.short_name = 'multiselect';
     manifest.theme_color = '#3f51b5';
     writeJson(manifestPath, manifest);
@@ -193,7 +193,7 @@ function writeDocsIndex(lines) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@revivejs/angular-multiselect-dropdown docs</title>
+    <title>@stackline/angular-multiselect-dropdown docs</title>
     <style>
       :root {
         color-scheme: light;
@@ -274,8 +274,8 @@ function writeDocsIndex(lines) {
   <body>
     <main>
       <section class="hero">
-        <span class="eyebrow">ReviveJS version matrix</span>
-        <h1>@revivejs/angular-multiselect-dropdown</h1>
+        <span class="eyebrow">Stackline version matrix</span>
+        <h1>@stackline/angular-multiselect-dropdown</h1>
         <p>
           Release lines are organized from Angular 2 through Angular 21.
           Angular 2 through 13 follow the classic compatibility shell.

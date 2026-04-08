@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
-const distDir = path.join(rootDir, 'dist', '@revivejs', 'angular-multiselect-dropdown');
+const distDir = path.join(rootDir, 'dist', '@stackline', 'angular-multiselect-dropdown');
 
 function stripSourceMapComment(filePath) {
   if (!fs.existsSync(filePath)) {

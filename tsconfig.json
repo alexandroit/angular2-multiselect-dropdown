@@ -20,10 +20,10 @@
       "dom"
     ],
     "paths": {
-      "@revivejs/angular-multiselect-dropdown-lib": ["projects/@revivejs/angular-multiselect-dropdown-lib/src/public_api"],
+      "@stackline/angular-multiselect-dropdown-lib": ["projects/@stackline/angular-multiselect-dropdown-lib/src/public_api"],
       "angular-multiselect-dropdown-lib": [
-        "dist/@revivejs/angular-multiselect-dropdown",
-        "dist/@revivejs/angular-multiselect-dropdown/public_api"
+        "dist/@stackline/angular-multiselect-dropdown",
+        "dist/@stackline/angular-multiselect-dropdown/public_api"
       ]
     },
     "useDefineForClassFields": false

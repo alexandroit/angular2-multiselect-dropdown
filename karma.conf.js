@@ -19,7 +19,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/@revivejs/angular-multiselect-dropdown'),
+      dir: require('path').join(__dirname, './coverage/@stackline/angular-multiselect-dropdown'),
       subdir: '.',
       reporters: [
         { type: 'html' },

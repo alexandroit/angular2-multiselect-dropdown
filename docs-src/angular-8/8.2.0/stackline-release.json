@@ -1,0 +1,15 @@
+{
+  "packageName": "@stackline/angular-multiselect-dropdown",
+  "projectRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown",
+  "framework": "angular",
+  "family": "angular-8",
+  "major": 8,
+  "exactVersion": "8.2.0",
+  "installMode": "npm-install",
+  "localInstallSource": "../../../dist/@stackline/angular-multiselect-dropdown",
+  "expectedExports": [],
+  "installCommand": "npm install --ignore-scripts",
+  "validateCommand": "npm run validate",
+  "buildCommand": "npm run build-package:line -- --line 8",
+  "generatedAt": "2026-04-08T22:22:16.619Z"
+}

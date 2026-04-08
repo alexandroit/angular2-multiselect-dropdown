@@ -1,7 +1,7 @@
 export const DOCS_META = {
-  badge: 'ANGULAR 15 · MATERIAL REFINED',
-  angularVersion: '15.x',
+  badge: 'ANGULAR 15 FAMILY',
+  angularVersion: '15.0.0 -> 15.2.10',
   packageVersion: '15.0.0',
-  packageRange: '^15.0.0',
+  packageRange: '15',
   docsPath: 'angular-15'
 };

@@ -1,0 +1,78 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/package.schema.json",
+  "name": "@stackline/angular-multiselect-dropdown",
+  "version": "21.0.1",
+  "license": "MIT",
+  "author": "Pradeep Terli (Original), Alexandro Paixao Marques (Maintainer)",
+  "description": "Angular multiselect dropdown for maintained release lines from Angular 2 through Angular 21, with search, grouping, custom templates, checkbox selection, reactive and template-driven forms support, and Material-inspired theming from Angular 14 onward.",
+  "keywords": [
+    "angular",
+    "angular-library",
+    "angular-component",
+    "angular-multiselect-dropdown",
+    "angular multiselect dropdown",
+    "angular-multiselect",
+    "angular multiselect",
+    "angular-select",
+    "angular multi select",
+    "multiselect",
+    "multiselect-dropdown",
+    "multi-select",
+    "dropdown",
+    "select",
+    "dropdown-search",
+    "checkbox-dropdown",
+    "checkbox multiselect",
+    "searchable-dropdown",
+    "select-all",
+    "dropdown-with-search",
+    "search-filter",
+    "group-by",
+    "grouped-dropdown",
+    "custom-templates",
+    "template-driven-forms",
+    "reactive-forms",
+    "ngmodel",
+    "formcontrolname",
+    "forms",
+    "ui-component",
+    "material-inspired",
+    "material-like",
+    "theming",
+    "scss-theme",
+    "css-theme",
+    "legacy-angular",
+    "angular-compatibility",
+    "angular21",
+    "angular20",
+    "angular19",
+    "angular14",
+    "angular2-multiselect",
+    "angular2-multiselect-dropdown",
+    "migration-friendly",
+    "maintained",
+    "revivejs",
+    "ngx",
+    "ngx-multiselect",
+    "virtual-scroll"
+  ],
+  "homepage": "https://github.com/alexandroit/angular-multiselect-dropdown",
+  "peerDependencies": {
+    "@angular/core": ">=21.0.0 <22.0.0",
+    "@angular/forms": ">=21.0.0 <22.0.0",
+    "@angular/common": ">=21.0.0 <22.0.0"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^17.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandroit/angular-multiselect-dropdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandroit/angular-multiselect-dropdown/issues"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

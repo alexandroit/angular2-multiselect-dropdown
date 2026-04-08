@@ -11,7 +11,7 @@ import { CheckForUpdateService } from './check-for-update.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = '@revivejs/angular-multiselect-dropdown';
+  title = '@stackline/angular-multiselect-dropdown';
   currentComponent: any = {
     label: '',
     tstitle: '',

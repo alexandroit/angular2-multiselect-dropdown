@@ -11,13 +11,13 @@ import { DOCS_META } from './docs-meta';
 })
 export class AppComponent implements OnInit {
   readonly docsMeta = DOCS_META;
-  readonly installCode = `npm install @revivejs/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
+  readonly installCode = `npm install @stackline/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
   readonly setupCode = [
     `import { FormsModule } from '@angular/forms';`,
-    `import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';`,
+    `import { AngularMultiSelectModule } from '@stackline/angular-multiselect-dropdown';`,
     ``,
     `"styles": [`,
-    `  "node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css"`,
+    `  "node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css"`,
     `]`,
     ``,
     `@NgModule({`,
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     `]`,
     ``,
     `/* Start from the package file: */`,
-    `/* node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss */`
+    `/* node_modules/@stackline/angular-multiselect-dropdown/themes/custom.theme.scss */`
   ].join('\n');
   readonly templateCode = [
     `<angular-multiselect`,

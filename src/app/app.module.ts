@@ -5,7 +5,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
 import { MockService } from './examples/mock-data';
 import { AppComponent } from './app.component';
-import { AngularMultiSelectModule } from '../../projects/@revivejs/angular-multiselect-dropdown-lib/src/lib/multiselect.component';
+import { AngularMultiSelectModule } from '../../projects/@stackline/angular-multiselect-dropdown-lib/src/lib/multiselect.component';
 import { AppRouterModule } from './app.router';
 import { BasicExample } from './examples/basic';
 import { SingleSelectionExample } from './examples/singleselection';

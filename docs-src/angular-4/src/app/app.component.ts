@@ -12,10 +12,10 @@ import { DOCS_META } from './docs-meta';
 export class AppComponent implements OnInit {
   readonly docsMeta = DOCS_META;
   readonly installCode =
-    `npm install @revivejs/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
+    `npm install @stackline/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
   readonly setupCode = [
     `import { FormsModule } from '@angular/forms';`,
-    `import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';`,
+    `import { AngularMultiSelectModule } from '@stackline/angular-multiselect-dropdown';`,
     ``,
     `@NgModule({`,
     `  imports: [BrowserModule, FormsModule, AngularMultiSelectModule]`,

@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "projects": {
-    "@revivejs/angular-multiselect-dropdown-docs-angular4": {
+    "@stackline/angular-multiselect-dropdown-docs-angular4": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -29,7 +29,7 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss",
-              "node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css"
+              "node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js"
@@ -59,14 +59,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "@revivejs/angular-multiselect-dropdown-docs-angular4:build:development"
+            "buildTarget": "@stackline/angular-multiselect-dropdown-docs-angular4:build:development"
           },
           "configurations": {
             "production": {
-              "buildTarget": "@revivejs/angular-multiselect-dropdown-docs-angular4:build:production"
+              "buildTarget": "@stackline/angular-multiselect-dropdown-docs-angular4:build:production"
             },
             "development": {
-              "buildTarget": "@revivejs/angular-multiselect-dropdown-docs-angular4:build:development"
+              "buildTarget": "@stackline/angular-multiselect-dropdown-docs-angular4:build:development"
             }
           },
           "defaultConfiguration": "development"

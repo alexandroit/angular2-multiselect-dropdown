@@ -1,5 +1,5 @@
 {
-  "name": "@revivejs/angular-multiselect-dropdown",
+  "name": "@stackline/angular-multiselect-dropdown",
   "version": "21.0.1",
   "scripts": {
     "ng": "ng",
@@ -8,13 +8,16 @@
     "test": "ng test",
     "lint": "ng lint",
     "docs:sync": "node scripts/sync-doc-lines.mjs",
-    "build-sass": "npx sass --load-path=scss projects/@revivejs/angular-multiselect-dropdown-lib/themes/default.theme.scss:projects/@revivejs/angular-multiselect-dropdown-lib/themes/default.theme.css projects/@revivejs/angular-multiselect-dropdown-lib/themes/custom.theme.scss:projects/@revivejs/angular-multiselect-dropdown-lib/themes/custom.theme.css",
-    "build-package": "npm run build-sass && npx ng-packagr -p projects/@revivejs/angular-multiselect-dropdown-lib/ng-package.json && node scripts/prune-package-artifacts.mjs",
+    "build-sass": "npx sass --load-path=scss projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.css projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.css",
+    "build-package:raw": "npm run build-sass && npx ng-packagr -p projects/@stackline/angular-multiselect-dropdown-lib/ng-package.json && node scripts/prune-package-artifacts.mjs",
+    "build-package": "node scripts/release-line.mjs",
+    "build-package:line": "node scripts/release-line.mjs",
     "docs:install:angular-21": "cd docs-src/angular-21 && npm install --ignore-scripts",
     "build:docs:angular-21": "cd docs-src/angular-21 && npm run build",
     "build:docs": "npm run build:docs:angular-21",
     "github-pages": "npm run build:docs",
-    "publish-npm": "npm run build-package && cd dist/@revivejs/angular-multiselect-dropdown && npm publish --access public"
+    "publish-npm": "node scripts/release-line.mjs --publish",
+    "publish-npm:line": "node scripts/release-line.mjs --publish"
   },
   "private": true,
   "dependencies": {
