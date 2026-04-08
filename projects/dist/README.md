@@ -1,18 +1,18 @@
-# @revivejs/angular2-multiselect-dropdown
+# @stackline/angular2-multiselect-dropdown
 
-> A maintained **Angular 21 multiselect dropdown** for classic Angular forms workflows, with search, grouping, custom item and badge templates, lazy loading, and support for both template-driven and reactive forms.
+> A maintained **Angular 21 multiselect dropdown** for classic Angular forms workflows, with search, grouping, custom item and badge templates, lazy loading, custom CSS/SCSS theming, and support for both template-driven and reactive forms.
 
-[![npm version](https://img.shields.io/npm/v/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
-[![npm downloads](https://img.shields.io/npm/dt/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
-[![npm monthly](https://img.shields.io/npm/dm/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)
-[![license](https://img.shields.io/npm/l/@revivejs/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@stackline/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/angular2-multiselect-dropdown)
+[![npm downloads](https://img.shields.io/npm/dt/@stackline/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/angular2-multiselect-dropdown)
+[![npm monthly](https://img.shields.io/npm/dm/@stackline/angular2-multiselect-dropdown.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/angular2-multiselect-dropdown)
+[![license](https://img.shields.io/npm/l/@stackline/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/blob/master/LICENSE)
 [![Angular 21](https://img.shields.io/badge/Angular-21-red?style=flat-square&logo=angular)](https://angular.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![GitHub stars](https://img.shields.io/github/stars/alexandroit/angular2-multiselect-dropdown.svg?style=flat-square)](https://github.com/alexandroit/angular2-multiselect-dropdown/stargazers)
 
-**[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown/)** | **[npm](https://www.npmjs.com/package/@revivejs/angular2-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular2-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)**
+**[Documentation & Live Demos](https://alexandroit.github.io/angular2-multiselect-dropdown/)** | **[npm](https://www.npmjs.com/package/@stackline/angular2-multiselect-dropdown)** | **[Issues](https://github.com/alexandroit/angular2-multiselect-dropdown/issues)** | **[Repository](https://github.com/alexandroit/angular2-multiselect-dropdown)**
 
-**Latest version:** `13.0.6`
+**Latest version:** `14.0.1`
 
 ---
 
@@ -22,7 +22,7 @@
 
 ## Why this library?
 
-The original `angular2-multiselect-dropdown` package became difficult to use on current Angular versions. This maintained fork preserves the classic API and template structure while updating packaging, docs, and release metadata for the modern Angular major line.
+The original `angular2-multiselect-dropdown` package became difficult to use on current Angular versions. This maintained fork preserves the classic API and template structure while updating packaging, docs, and release metadata for a maintained Angular 21 line, while still keeping older versioned lines documented.
 
 ## Features
 
@@ -55,17 +55,23 @@ The original `angular2-multiselect-dropdown` package became difficult to use on 
 
 ## Angular Version Compatibility
 
-| Package version | Angular version | TypeScript version | Demo link |
-| :---: | :---: | :---: | :--- |
-| **13.0.6** | **21.2.x** | **5.9.x** | [Angular 21 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
-| **12.0.1** | **20.3.x** | **5.8.x** | [Angular 20 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-20/) |
-| **11.0.3** | **19.2.x** | **5.6.x** | [Angular 19 demo](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-19/) |
+Each package family only installs on its matching Angular family. Framework major and package major are not always the same package number, so use the package family column below.
+
+| Package family | Framework family | Peer range | Tested release window | Demo link |
+| :---: | :---: | :---: | :---: | :--- |
+| **14.x** | **Angular 21 only** | **`>=21.0.0 <22.0.0`** | **21.0.0 -> 21.2.8** | [Angular 21 family docs](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-21/) |
+| **12.x** | **Angular 20 only** | **`>=20.0.0 <21.0.0`** | **20.0.0 -> 20.3.18** | [Angular 20 family docs](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-20/) |
+| **11.x** | **Angular 19 only** | **`>=19.0.0 <20.0.0`** | **19.0.0 -> 19.2.20** | [Angular 19 family docs](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-19/) |
+| **14.x** | **Angular 14 only** | **`>=14.0.0 <15.0.0`** | **14.0.0 -> 14.3.0** | [Angular 14 family docs](https://alexandroit.github.io/angular2-multiselect-dropdown/angular-14/) |
+
 
 ## Installation
 
 ```bash
-npm install @revivejs/angular2-multiselect-dropdown
+npm install @stackline/angular2-multiselect-dropdown
 ```
+
+Choose the package family from the compatibility table above. Each published family is locked to one framework major only.
 
 ## Setup
 
@@ -75,7 +81,7 @@ npm install @revivejs/angular2-multiselect-dropdown
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@stackline/angular2-multiselect-dropdown';
 
 @NgModule({
   imports: [
@@ -91,9 +97,29 @@ export class AppModule {}
 
 ```json
 "styles": [
-  "node_modules/@revivejs/angular2-multiselect-dropdown/themes/default.theme.css"
+  "node_modules/@stackline/angular2-multiselect-dropdown/themes/default.theme.css"
 ]
 ```
+
+## Custom CSS and SCSS Themes
+
+The package now also ships a full custom starter theme in both formats:
+
+- `node_modules/@stackline/angular2-multiselect-dropdown/themes/custom.theme.scss`
+- `node_modules/@stackline/angular2-multiselect-dropdown/themes/custom.theme.css`
+
+Use the `scss` file when you want to take over the component styles completely and keep the theme in your app source:
+
+```json
+"styles": [
+  "src/styles.scss",
+  "src/styles/multiselect-dropdown.theme.scss"
+]
+```
+
+Start `src/styles/multiselect-dropdown.theme.scss` from the package file above and edit the tokens and selectors freely.
+
+Use the `css` file when you want a plain compiled starter that can be copied and adjusted without a Sass pipeline.
 
 ## Basic Usage
 

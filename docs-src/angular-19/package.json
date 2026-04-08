@@ -1,5 +1,5 @@
 {
-  "name": "@revivejs/angular2-multiselect-dropdown-docs-angular19",
+  "name": "@stackline/angular2-multiselect-dropdown-docs-angular19",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -17,7 +17,7 @@
     "@angular/platform-browser-dynamic": "~19.2.0",
     "@angular/router": "~19.2.0",
     "@popperjs/core": "^2.11.8",
-    "@revivejs/angular2-multiselect-dropdown": "^11.0.3",
+    "@stackline/angular2-multiselect-dropdown": "^11.0.3",
     "bootstrap": "^5.3.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",

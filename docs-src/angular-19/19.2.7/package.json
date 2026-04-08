@@ -1,0 +1,27 @@
+{
+  "name": "@stackline/angular2-multiselect-dropdown-docs-angular19-19-2-7",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "validate": "node ./stackline-validate.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "19.2.7",
+    "@angular/compiler": "19.2.7",
+    "@angular/core": "19.2.7",
+    "@angular/forms": "19.2.7",
+    "@angular/localize": "19.2.7",
+    "@angular/platform-browser": "19.2.7",
+    "@angular/platform-browser-dynamic": "19.2.7",
+    "@angular/router": "19.2.7",
+    "@popperjs/core": "^2.11.8",
+    "@stackline/angular2-multiselect-dropdown": "file:../../../dist/@stackline/angular2-multiselect-dropdown",
+    "bootstrap": "^5.3.8",
+    "rxjs": "7.8.2",
+    "tslib": "^2.5.0",
+    "zone.js": "0.15.1"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

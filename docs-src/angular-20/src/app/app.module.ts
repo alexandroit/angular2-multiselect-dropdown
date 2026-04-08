@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { AngularMultiSelectModule } from '@revivejs/angular2-multiselect-dropdown';
+import { AngularMultiSelectModule } from '@stackline/angular2-multiselect-dropdown';
 
 import { AppComponent } from './app.component';
 import { AppRouterModule } from './app.router';

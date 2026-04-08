@@ -1,0 +1,15 @@
+{
+  "packageName": "@stackline/angular2-multiselect-dropdown",
+  "projectRoot": "angular2-multiselect-dropdown/angular2-multiselect-dropdown",
+  "framework": "angular",
+  "family": "angular-20",
+  "major": 20,
+  "exactVersion": "20.0.3",
+  "installMode": "npm-install",
+  "localInstallSource": "../../../dist/@stackline/angular2-multiselect-dropdown",
+  "expectedExports": [],
+  "installCommand": "npm install --ignore-scripts",
+  "validateCommand": "npm run validate",
+  "buildCommand": "npm run build-package:line -- --line 20",
+  "generatedAt": "2026-04-08T22:21:48.135Z"
+}
