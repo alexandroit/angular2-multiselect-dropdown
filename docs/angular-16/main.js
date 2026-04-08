@@ -37076,7 +37076,7 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
   }], null, null);
 })();
 
-// node_modules/@revivejs/angular-multiselect-dropdown/fesm2022/revivejs-angular-multiselect-dropdown.mjs
+// node_modules/@stackline/angular-multiselect-dropdown/fesm2022/revivejs-angular-multiselect-dropdown.mjs
 var tween = __toESM(require_Tween(), 1);
 function CIcon__svg_svg_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -47326,13 +47326,13 @@ var AppComponent = class _AppComponent {
     this.router = router;
     this.activatedRoute = activatedRoute;
     this.docsMeta = DOCS_META;
-    this.installCode = `npm install @revivejs/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
+    this.installCode = `npm install @stackline/angular-multiselect-dropdown@${this.docsMeta.packageRange}`;
     this.setupCode = [
       `import { FormsModule } from '@angular/forms';`,
-      `import { AngularMultiSelectModule } from '@revivejs/angular-multiselect-dropdown';`,
+      `import { AngularMultiSelectModule } from '@stackline/angular-multiselect-dropdown';`,
       ``,
       `"styles": [`,
-      `  "node_modules/@revivejs/angular-multiselect-dropdown/themes/default.theme.css"`,
+      `  "node_modules/@stackline/angular-multiselect-dropdown/themes/default.theme.css"`,
       `]`,
       ``,
       `@NgModule({`,
@@ -47347,7 +47347,7 @@ var AppComponent = class _AppComponent {
       `]`,
       ``,
       `/* Start from the package file: */`,
-      `/* node_modules/@revivejs/angular-multiselect-dropdown/themes/custom.theme.scss */`
+      `/* node_modules/@stackline/angular-multiselect-dropdown/themes/custom.theme.scss */`
     ].join("\n");
     this.templateCode = [
       `<angular-multiselect`,
@@ -47443,10 +47443,10 @@ var AppComponent = class _AppComponent {
         \u0275\u0275text(4, "M");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(5, "div")(6, "div", 4);
-        \u0275\u0275text(7, "ReviveJS maintained line");
+        \u0275\u0275text(7, "Stackline maintained line");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(8, "h1");
-        \u0275\u0275text(9, "@revivejs/angular-multiselect-dropdown");
+        \u0275\u0275text(9, "@stackline/angular-multiselect-dropdown");
         \u0275\u0275elementEnd()()();
         \u0275\u0275elementStart(10, "div", 5)(11, "span", 6);
         \u0275\u0275text(12);
@@ -47674,8 +47674,8 @@ var AppComponent = class _AppComponent {
     <div class="brand">
       <div class="brand-mark">M</div>
       <div>
-        <div class="topbar-eyebrow">ReviveJS maintained line</div>
-        <h1>@revivejs/angular-multiselect-dropdown</h1>
+        <div class="topbar-eyebrow">Stackline maintained line</div>
+        <h1>@stackline/angular-multiselect-dropdown</h1>
       </div>
     </div>
 
