@@ -1,0 +1,19 @@
+{
+  "packageName": "@stackline/angular-multiselect-dropdown",
+  "projectRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown",
+  "family": "angular-14",
+  "framework": "angular",
+  "exactVersion": "14.3.0",
+  "releaseRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-14/14.3.0",
+  "build": null,
+  "install": {
+    "success": true,
+    "command": "npm install --ignore-scripts"
+  },
+  "validate": {
+    "success": true,
+    "command": "npm run validate"
+  },
+  "success": true,
+  "generatedAt": "2026-04-09T02:13:46.332Z"
+}
