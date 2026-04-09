@@ -44,4 +44,3 @@ globalThis.$localize = $localize;
    * License: MIT
    *)
 */
-//# sourceMappingURL=polyfills.js.map

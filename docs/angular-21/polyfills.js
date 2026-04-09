@@ -1,4 +1,9 @@
 // node_modules/@angular/localize/fesm2022/_localize-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var BLOCK_MARKER$1 = ":";
 var Endian;
 (function(Endian2) {
@@ -33,15 +38,9 @@ function stripBlock(messagePart, rawMessagePart) {
 }
 
 // node_modules/@angular/localize/fesm2022/init.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 globalThis.$localize = $localize;
-/*! Bundled license information:
-
-@angular/localize/fesm2022/_localize-chunk.mjs:
-@angular/localize/fesm2022/init.mjs:
-  (**
-   * @license Angular v21.2.7
-   * (c) 2010-2026 Google LLC. https://angular.dev/
-   * License: MIT
-   *)
-*/
-//# sourceMappingURL=polyfills.js.map

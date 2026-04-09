@@ -630,6 +630,11 @@ var require_Tween = __commonJS({
 });
 
 // node_modules/@angular/core/fesm2022/_effect-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var activeConsumer = null;
 var inNotificationPhase = false;
 var epoch = 1;
@@ -2794,6 +2799,11 @@ function tap(observerOrNext, error, complete) {
 }
 
 // node_modules/@angular/core/fesm2022/_not_found-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var _currentInjector = void 0;
 function getCurrentInjector() {
   return _currentInjector;
@@ -2809,6 +2819,11 @@ function isNotFound(e) {
 }
 
 // node_modules/@angular/core/fesm2022/_untracked-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 function createLinkedSignal(sourceFn, computationFn, equalityFn) {
   const node = Object.create(LINKED_SIGNAL_NODE);
   node.source = sourceFn;
@@ -2900,6 +2915,11 @@ function untracked(nonReactiveReadsFn) {
 }
 
 // node_modules/@angular/core/fesm2022/primitives-signals.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var formatter = {
   header: (sig, config2) => {
     if (!isSignal(sig) || config2?.ngSkipFormatting) return null;
@@ -3001,7 +3021,19 @@ if (typeof ngDevMode === "undefined" || ngDevMode) {
   installDevToolsSignalFormatter();
 }
 
+// node_modules/@angular/core/fesm2022/primitives-di.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
 // node_modules/@angular/core/fesm2022/_effect-chunk2.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var Version = class {
   full;
   major;
@@ -3015,7 +3047,7 @@ var Version = class {
     this.patch = parts.slice(2).join(".");
   }
 };
-var VERSION = /* @__PURE__ */ new Version("21.2.7");
+var VERSION = /* @__PURE__ */ new Version("21.2.8");
 var DOC_PAGE_BASE_URL = (() => {
   const full = VERSION.full;
   const isPreRelease = full.includes("-next") || full.includes("-rc") || full === "0.0.0-PLACEHOLDER";
@@ -5862,6 +5894,11 @@ function createEffectFn(node, fn) {
 }
 
 // node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 function noSideEffects(fn) {
   return {
     toString: fn
@@ -13080,7 +13117,7 @@ var ComponentFactory2 = class extends ComponentFactory$1 {
   }
 };
 function createRootTView(rootSelectorOrNode, componentDef, componentBindings, directives) {
-  const tAttributes = rootSelectorOrNode ? ["ng-version", "21.2.7"] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
+  const tAttributes = rootSelectorOrNode ? ["ng-version", "21.2.8"] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
   let creationBindings = null;
   let updateBindings = null;
   let varsToAllocate = 0;
@@ -16764,9 +16801,11 @@ function triggerResourceLoading(tDetails, lView, tNode) {
   }
   tDetails.loadingPromise = Promise.allSettled(dependenciesFn()).then((results) => {
     let failed = false;
+    let failedReason = null;
     const directiveDefs = [];
     const pipeDefs = [];
-    for (const result of results) {
+    for (let i = 0; i < results.length; i++) {
+      const result = results[i];
       if (result.status === "fulfilled") {
         const dependency = result.value;
         const directiveDef = getComponentDef(dependency) || getDirectiveDef(dependency);
@@ -16780,6 +16819,7 @@ function triggerResourceLoading(tDetails, lView, tNode) {
         }
       } else {
         failed = true;
+        failedReason = result.reason instanceof Error ? result.reason : new Error(String(result.reason));
         break;
       }
     }
@@ -16787,7 +16827,32 @@ function triggerResourceLoading(tDetails, lView, tNode) {
       tDetails.loadingState = DeferDependenciesLoadingState.FAILED;
       if (tDetails.errorTmplIndex === null) {
         const templateLocation = ngDevMode ? getTemplateLocationDetails(lView) : "";
-        const error = new RuntimeError(-750, ngDevMode && `Loading dependencies for \`@defer\` block failed, but no \`@error\` block was configured${templateLocation}. Consider using the \`@error\` block to render an error state.`);
+        let errorMsg = "";
+        if (ngDevMode) {
+          errorMsg = `Loading dependencies for \`@defer\` block failed, but no \`@error\` block was configured${templateLocation}. Consider using the \`@error\` block to render an error state.`;
+          const depsFn = tDetails.dependencyResolverFn;
+          const errorReason = failedReason?.message;
+          if (depsFn) {
+            errorMsg += `
+
+Angular tried to invoke the following dependency function (compiler-generated):
+\`\`\`
+${depsFn.toString()}
+\`\`\``;
+          }
+          if (errorReason) {
+            errorMsg += depsFn ? `
+
+but it resulted in the following error:
+
+${errorReason}` : `
+
+The loading resulted in the following error:
+
+${errorReason}`;
+          }
+        }
+        const error = new RuntimeError(-750, errorMsg);
         handleUncaughtError(lView, error);
       }
     } else {
@@ -22208,6 +22273,11 @@ var MissingTranslationStrategy;
 })(MissingTranslationStrategy || (MissingTranslationStrategy = {}));
 
 // node_modules/@angular/core/fesm2022/_resource-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var OutputEmitterRef = class {
   destroyed = false;
   listeners = null;
@@ -22568,6 +22638,11 @@ var ResourceWrappedError = class extends Error {
 };
 
 // node_modules/@angular/core/fesm2022/core.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var REQUIRED_UNSET_VALUE = /* @__PURE__ */ Symbol("InputSignalNode#UNSET");
 var INPUT_SIGNAL_NODE = /* @__PURE__ */ (() => {
   return __spreadProps(__spreadValues({}, SIGNAL_NODE), {
@@ -24094,6 +24169,11 @@ var REQUEST_CONTEXT = new InjectionToken(typeof ngDevMode === "undefined" || ngD
 });
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var _DOM = null;
 function getDOM() {
   return _DOM;
@@ -24210,6 +24290,11 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
 })();
 
 // node_modules/@angular/common/fesm2022/_location-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 function joinWithSlash(start, end) {
   if (!start) return end;
   if (!end) return start;
@@ -24515,6 +24600,11 @@ function _stripOrigin(baseHref) {
 }
 
 // node_modules/@angular/common/fesm2022/_common_module-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var HashLocationStrategy = class _HashLocationStrategy extends LocationStrategy {
   _platformLocation;
   _baseHref = "";
@@ -27317,6 +27407,11 @@ var CommonModule = class _CommonModule {
 })();
 
 // node_modules/@angular/common/fesm2022/_platform_navigation-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var PRECOMMIT_HANDLER_SUPPORTED = new InjectionToken("", {
   factory: () => {
     return typeof window !== "undefined" && typeof window.NavigationPrecommitController !== "undefined";
@@ -27343,6 +27438,11 @@ var PlatformNavigation = class _PlatformNavigation {
 })();
 
 // node_modules/@angular/common/fesm2022/_xhr-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 function parseCookieValue(cookieStr, name) {
   name = encodeURIComponent(name);
   for (const cookie of cookieStr.split(";")) {
@@ -27358,6 +27458,11 @@ var XhrFactory = class {
 };
 
 // node_modules/@angular/common/fesm2022/common.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var NavigationAdapterForLocation = class _NavigationAdapterForLocation extends Location {
   navigation = inject2(PlatformNavigation);
   destroyRef = inject2(DestroyRef);
@@ -28640,6 +28745,11 @@ function booleanOrUrlAttribute(value) {
 }
 
 // node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var EventManagerPlugin = class {
   _doc;
   constructor(_doc) {
@@ -29325,6 +29435,11 @@ var EmulatedEncapsulationDomRenderer2 = class extends NoneEncapsulationDomRender
 };
 
 // node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var BrowserDomAdapter = class _BrowserDomAdapter extends DomAdapter {
   supportsDOMEvents = true;
   static makeCurrent() {
@@ -29665,6 +29780,11 @@ var BrowserModule = class _BrowserModule {
 })();
 
 // node_modules/@angular/common/fesm2022/_module-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var HttpHeaders = class _HttpHeaders {
   headers;
   normalizedNames = /* @__PURE__ */ new Map();
@@ -31648,6 +31768,11 @@ var HttpClientJsonpModule = class _HttpClientJsonpModule {
 })();
 
 // node_modules/@angular/common/fesm2022/http.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var HTTP_TRANSFER_CACHE_ORIGIN_MAP = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_TRANSFER_CACHE_ORIGIN_MAP" : "");
 var BODY = "b";
 var HEADERS = "h";
@@ -31960,6 +32085,11 @@ var HttpResourceImpl = class extends ResourceImpl {
 };
 
 // node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var Meta = class _Meta {
   _doc;
   _dom;
@@ -32418,6 +32548,11 @@ var HydrationFeatureKind;
 })(HydrationFeatureKind || (HydrationFeatureKind = {}));
 
 // node_modules/@angular/forms/fesm2022/forms.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var BaseControlValueAccessor = class _BaseControlValueAccessor {
   _renderer;
   _elementRef;
@@ -33109,7 +33244,7 @@ var ngModelWithFormGroupExample = `
       <input [(ngModel)]="showMoreControls" [ngModelOptions]="{standalone: true}">
   </div>
 `;
-var VERSION2 = /* @__PURE__ */ new Version("21.2.7");
+var VERSION2 = /* @__PURE__ */ new Version("21.2.8");
 function controlParentException(nameOrIndex) {
   return new RuntimeError(1050, `formControlName must be used with a parent formGroup or formArray directive. You'll want to add a formGroup/formArray
       directive and pass it an existing FormGroup/FormArray instance (you can create one in your class).
@@ -37076,7 +37211,7 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
   }], null, null);
 })();
 
-// node_modules/@stackline/angular-multiselect-dropdown/fesm2022/revivejs-angular-multiselect-dropdown.mjs
+// node_modules/@stackline/angular-multiselect-dropdown/fesm2022/stackline-angular-multiselect-dropdown.mjs
 var tween = __toESM(require_Tween(), 1);
 function CIcon__svg_svg_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -41569,6 +41704,11 @@ var AngularMultiSelectModule = class _AngularMultiSelectModule {
 })();
 
 // node_modules/@angular/router/fesm2022/_router-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var PRIMARY_OUTLET = "primary";
 var RouteTitleKey = /* @__PURE__ */ Symbol("RouteTitle");
 var ParamsAsMap = class {
@@ -45916,6 +46056,11 @@ function validateCommands(commands) {
 }
 
 // node_modules/@angular/router/fesm2022/_router_module-chunk.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var ReactiveRouterState = class _ReactiveRouterState {
   router = inject2(Router);
   stateManager = inject2(StateManager);
@@ -47262,12 +47407,19 @@ function provideRouterInitializer() {
   }];
 }
 
+// node_modules/@angular/router/fesm2022/router.mjs
+/**
+ * @license Angular v21.2.8
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
 // src/app/docs-meta.ts
 var DOCS_META = {
-  badge: "ANGULAR 21 \xB7 MATERIAL REFINED",
-  angularVersion: "21.x",
+  badge: "ANGULAR 21 FAMILY",
+  angularVersion: "21.0.0 -> 21.2.8",
   packageVersion: "21.0.1",
-  packageRange: "^21.0.1",
+  packageRange: "21",
   docsPath: "angular-21"
 };
 
@@ -51894,36 +52046,3 @@ if (environment.production) {
   enableProdMode();
 }
 platformBrowser().bootstrapModule(AppModule).catch((err) => console.error(err));
-/*! Bundled license information:
-
-@angular/core/fesm2022/_effect-chunk.mjs:
-@angular/core/fesm2022/_not_found-chunk.mjs:
-@angular/core/fesm2022/_untracked-chunk.mjs:
-@angular/core/fesm2022/primitives-signals.mjs:
-@angular/core/fesm2022/primitives-di.mjs:
-@angular/core/fesm2022/_effect-chunk2.mjs:
-@angular/core/fesm2022/_debug_node-chunk.mjs:
-@angular/core/fesm2022/_resource-chunk.mjs:
-@angular/core/fesm2022/core.mjs:
-@angular/common/fesm2022/_platform_location-chunk.mjs:
-@angular/common/fesm2022/_location-chunk.mjs:
-@angular/common/fesm2022/_common_module-chunk.mjs:
-@angular/common/fesm2022/_platform_navigation-chunk.mjs:
-@angular/common/fesm2022/_xhr-chunk.mjs:
-@angular/common/fesm2022/common.mjs:
-@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs:
-@angular/platform-browser/fesm2022/_browser-chunk.mjs:
-@angular/common/fesm2022/_module-chunk.mjs:
-@angular/common/fesm2022/http.mjs:
-@angular/platform-browser/fesm2022/platform-browser.mjs:
-@angular/forms/fesm2022/forms.mjs:
-@angular/router/fesm2022/_router-chunk.mjs:
-@angular/router/fesm2022/_router_module-chunk.mjs:
-@angular/router/fesm2022/router.mjs:
-  (**
-   * @license Angular v21.2.7
-   * (c) 2010-2026 Google LLC. https://angular.dev/
-   * License: MIT
-   *)
-*/
-//# sourceMappingURL=main.js.map

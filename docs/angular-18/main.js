@@ -37076,7 +37076,7 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
   }], null, null);
 })();
 
-// node_modules/@stackline/angular-multiselect-dropdown/fesm2022/revivejs-angular-multiselect-dropdown.mjs
+// node_modules/@stackline/angular-multiselect-dropdown/fesm2022/stackline-angular-multiselect-dropdown.mjs
 var tween = __toESM(require_Tween(), 1);
 function CIcon__svg_svg_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -51926,4 +51926,3 @@ platformBrowser().bootstrapModule(AppModule).catch((err) => console.error(err));
    * License: MIT
    *)
 */
-//# sourceMappingURL=main.js.map

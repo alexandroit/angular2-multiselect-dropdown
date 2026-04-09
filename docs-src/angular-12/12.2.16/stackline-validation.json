@@ -1,0 +1,19 @@
+{
+  "packageName": "@stackline/angular-multiselect-dropdown",
+  "projectRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown",
+  "family": "angular-12",
+  "framework": "angular",
+  "exactVersion": "12.2.16",
+  "releaseRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-12/12.2.16",
+  "build": null,
+  "install": {
+    "success": true,
+    "command": "npm install --ignore-scripts"
+  },
+  "validate": {
+    "success": true,
+    "command": "npm run validate"
+  },
+  "success": true,
+  "generatedAt": "2026-04-09T02:10:29.195Z"
+}

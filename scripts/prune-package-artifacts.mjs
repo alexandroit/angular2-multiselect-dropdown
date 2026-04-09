@@ -26,8 +26,8 @@ function removeFile(filePath) {
   }
 }
 
-removeFile(path.join(distDir, 'fesm2022', 'revivejs-angular-multiselect-dropdown.mjs.map'));
-stripSourceMapComment(path.join(distDir, 'fesm2022', 'revivejs-angular-multiselect-dropdown.mjs'));
+removeFile(path.join(distDir, 'fesm2022', 'stackline-angular-multiselect-dropdown.mjs.map'));
+stripSourceMapComment(path.join(distDir, 'fesm2022', 'stackline-angular-multiselect-dropdown.mjs'));
 stripSourceMapComment(path.join(distDir, 'themes', 'default.theme.css'));
 stripSourceMapComment(path.join(distDir, 'themes', 'custom.theme.css'));
 

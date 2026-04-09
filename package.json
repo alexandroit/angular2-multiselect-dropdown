@@ -60,5 +60,10 @@
     "ng-packagr": "~21.2.2",
     "sass": "^1.83.0",
     "typescript": "~5.9.3"
+  },
+  "description": "",
+  "homepage": "",
+  "peerDependencies": {
+    "@angular/core": ">=21.0.0 <22.0.0"
   }
 }

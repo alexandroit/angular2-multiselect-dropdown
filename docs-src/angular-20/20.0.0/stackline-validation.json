@@ -4,19 +4,19 @@
   "family": "angular-20",
   "framework": "angular",
   "exactVersion": "20.0.0",
-  "releaseRoot": "/storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
+  "releaseRoot": "angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
   "build": {
     "command": "npm run build-package:line -- --line 20",
-    "cwd": "/storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown",
+    "cwd": "angular-multiselect-dropdown/angular-multiselect-dropdown",
     "startedAt": "2026-04-08T22:19:26.583Z",
     "finishedAt": "2026-04-08T22:19:31.231Z",
     "exitCode": 0,
     "success": true,
-    "output": "> @stackline/angular-multiselect-dropdown@21.0.1 build-package:line\n> node scripts/release-line.mjs --line 20\n\n\n> @stackline/angular-multiselect-dropdown@21.0.1 build-package:raw\n> npm run build-sass && npx ng-packagr -p projects/@stackline/angular-multiselect-dropdown-lib/ng-package.json && node scripts/prune-package-artifacts.mjs\n\n\n> @stackline/angular-multiselect-dropdown@21.0.1 build-sass\n> npx sass --load-path=scss projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.css projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.css\n\nBuilding Angular Package\n[debug] Found primary entry point: @stackline/angular-multiselect-dropdown\n[debug] Initializing tsconfig for @stackline/angular-multiselect-dropdown\n[debug] Analysing sources for @stackline/angular-multiselect-dropdown\n[debug] tsc program structure is reused: No old program\n\n------------------------------------------------------------------------------\nBuilding entry point '@stackline/angular-multiselect-dropdown'\n------------------------------------------------------------------------------\n[debug] Writing package.json\n[debug] Dependency @tweenjs/tween.js is allowed in 'dependencies'\n[debug] Dependency tslib is allowed in 'dependencies'\n\n------------------------------------------------------------------------------\nBuilt Angular Package\n- from: /storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/projects/@stackline/angular-multiselect-dropdown-lib\n- to:   /storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/dist/@stackline/angular-multiselect-dropdown\n------------------------------------------------------------------------------\n\nBuild at: 2026-04-08T22:19:31.143Z - Time: 2883ms\n\nPruned non-essential published artifacts from dist package.\nPrepared dist package for Angular 20 as version 20.0.0 with peer range >=20.0.0 <21.0.0."
+    "output": "> @stackline/angular-multiselect-dropdown@21.0.1 build-package:line\n> node scripts/release-line.mjs --line 20\n\n\n> @stackline/angular-multiselect-dropdown@21.0.1 build-package:raw\n> npm run build-sass && npx ng-packagr -p projects/@stackline/angular-multiselect-dropdown-lib/ng-package.json && node scripts/prune-package-artifacts.mjs\n\n\n> @stackline/angular-multiselect-dropdown@21.0.1 build-sass\n> npx sass --load-path=scss projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/default.theme.css projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.scss:projects/@stackline/angular-multiselect-dropdown-lib/themes/custom.theme.css\n\nBuilding Angular Package\n[debug] Found primary entry point: @stackline/angular-multiselect-dropdown\n[debug] Initializing tsconfig for @stackline/angular-multiselect-dropdown\n[debug] Analysing sources for @stackline/angular-multiselect-dropdown\n[debug] tsc program structure is reused: No old program\n\n------------------------------------------------------------------------------\nBuilding entry point '@stackline/angular-multiselect-dropdown'\n------------------------------------------------------------------------------\n[debug] Writing package.json\n[debug] Dependency @tweenjs/tween.js is allowed in 'dependencies'\n[debug] Dependency tslib is allowed in 'dependencies'\n\n------------------------------------------------------------------------------\nBuilt Angular Package\n- from: angular-multiselect-dropdown/angular-multiselect-dropdown/projects/@stackline/angular-multiselect-dropdown-lib\n- to:   angular-multiselect-dropdown/angular-multiselect-dropdown/dist/@stackline/angular-multiselect-dropdown\n------------------------------------------------------------------------------\n\nBuild at: 2026-04-08T22:19:31.143Z - Time: 2883ms\n\nPruned non-essential published artifacts from dist package.\nPrepared dist package for Angular 20 as version 20.0.0 with peer range >=20.0.0 <21.0.0."
   },
   "install": {
     "command": "npm install --ignore-scripts",
-    "cwd": "/storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
+    "cwd": "angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
     "startedAt": "2026-04-08T22:19:31.231Z",
     "finishedAt": "2026-04-08T22:19:37.715Z",
     "exitCode": 0,
@@ -25,12 +25,12 @@
   },
   "validate": {
     "command": "npm run validate",
-    "cwd": "/storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
+    "cwd": "angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0",
     "startedAt": "2026-04-08T22:19:37.715Z",
     "finishedAt": "2026-04-08T22:19:38.691Z",
     "exitCode": 0,
     "success": true,
-    "output": "> @stackline/angular-multiselect-dropdown-docs-angular20-20-0-0@1.0.0 validate\n> node ./stackline-validate.mjs\n\nValidated @stackline/angular-multiselect-dropdown for angular 20.0.0 in /storage/data/github/revivejs/angular-multiselect-dropdown/angular-multiselect-dropdown/docs-src/angular-20/20.0.0"
+    "output": "> @stackline/angular-multiselect-dropdown-docs-angular20-20-0-0@1.0.0 validate\n> node ./stackline-validate.mjs\n\nValidated @stackline/angular-multiselect-dropdown for angular 20.0.0
   },
   "success": true,
   "generatedAt": "2026-04-08T22:19:26.582Z"
