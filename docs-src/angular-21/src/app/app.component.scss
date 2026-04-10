@@ -117,6 +117,8 @@
 .setup-card,
 .preview-card,
 .api-card {
+  box-sizing: border-box;
+  min-width: 0;
   border-radius: 28px;
   border: 1px solid rgba(63, 81, 181, 0.14);
   background: rgba(255, 255, 255, 0.9);
@@ -182,10 +184,12 @@
 .docs-main {
   display: grid;
   gap: 24px;
+  min-width: 0;
 }
 
 .hero-card,
 .preview-card {
+  width: 100%;
   padding: 28px;
 }
 
