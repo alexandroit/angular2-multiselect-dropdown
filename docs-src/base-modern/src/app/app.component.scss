@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
   padding: 18px 22px;
   margin: 0 auto 24px;
   max-width: 1480px;
@@ -99,7 +99,7 @@
 .docs-layout {
   display: grid;
   grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
-  gap: 24px;
+  gap: 32px;
   align-items: start;
   margin: 0 auto;
   max-width: 1480px;
@@ -124,7 +124,7 @@
 }
 
 .rail-card {
-  padding: 18px;
+  padding: 20px;
 }
 
 .rail-link {
@@ -181,12 +181,12 @@
 
 .docs-main {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .hero-card,
 .preview-card {
-  padding: 28px;
+  padding: 34px;
 }
 
 .hero-card h2,
@@ -216,7 +216,7 @@
 .setup-grid,
 .api-grid {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .pill-row {
@@ -248,7 +248,7 @@
 }
 
 .setup-card {
-  padding: 22px;
+  padding: 24px;
 }
 
 .setup-head,
@@ -256,7 +256,13 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
+}
+
+.setup-head > div,
+.preview-head > div {
+  display: grid;
+  gap: 4px;
 }
 
 .setup-head h3 {
@@ -296,7 +302,7 @@ pre {
 }
 
 .preview-head {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .preview-head h3 {
@@ -306,7 +312,7 @@ pre {
 
 .preview-canvas {
   min-height: 540px;
-  padding: 22px;
+  padding: 26px;
   border-radius: 24px;
   border: 1px solid rgba(63, 81, 181, 0.12);
   background:
@@ -314,9 +320,21 @@ pre {
   overflow: visible;
 }
 
-.preview-canvas angular-multiselect {
+:host ::ng-deep .preview-canvas angular-multiselect,
+:host ::ng-deep .preview-canvas angular2-multiselect {
   display: block;
   max-width: 100%;
+}
+
+:host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown,
+:host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown {
+  display: block;
+  max-width: 100%;
+}
+
+:host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+:host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+  margin-bottom: clamp(13rem, 30vw, 18rem);
 }
 
 .preview-canvas form,
@@ -358,6 +376,11 @@ code {
     position: static;
     order: 2;
   }
+
+  :host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+  :host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+    margin-bottom: clamp(12rem, 40vw, 16rem);
+  }
 }
 
 @media (max-width: 780px) {
@@ -386,7 +409,7 @@ code {
 
   .preview-canvas {
     min-height: 420px;
-    padding: 16px;
+    padding: 18px;
   }
 }
 
@@ -432,6 +455,11 @@ code {
 
   .preview-canvas {
     min-height: 360px;
+  }
+
+  :host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+  :host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+    margin-bottom: 13rem;
   }
 }
 

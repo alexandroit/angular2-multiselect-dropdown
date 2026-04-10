@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
   padding: 18px 22px;
   margin: 0 auto 24px;
   max-width: 1480px;
@@ -99,7 +99,7 @@
 .docs-layout {
   display: grid;
   grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
-  gap: 24px;
+  gap: 32px;
   align-items: start;
   margin: 0 auto;
   max-width: 1480px;
@@ -117,8 +117,6 @@
 .setup-card,
 .preview-card,
 .api-card {
-  box-sizing: border-box;
-  min-width: 0;
   border-radius: 28px;
   border: 1px solid rgba(63, 81, 181, 0.14);
   background: rgba(255, 255, 255, 0.9);
@@ -126,7 +124,7 @@
 }
 
 .rail-card {
-  padding: 18px;
+  padding: 20px;
 }
 
 .rail-link {
@@ -183,14 +181,12 @@
 
 .docs-main {
   display: grid;
-  gap: 24px;
-  min-width: 0;
+  gap: 32px;
 }
 
 .hero-card,
 .preview-card {
-  width: 100%;
-  padding: 28px;
+  padding: 34px;
 }
 
 .hero-card h2,
@@ -220,7 +216,7 @@
 .setup-grid,
 .api-grid {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
 .pill-row {
@@ -252,7 +248,7 @@
 }
 
 .setup-card {
-  padding: 22px;
+  padding: 24px;
 }
 
 .setup-head,
@@ -260,7 +256,13 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
+}
+
+.setup-head > div,
+.preview-head > div {
+  display: grid;
+  gap: 4px;
 }
 
 .setup-head h3 {
@@ -300,7 +302,7 @@ pre {
 }
 
 .preview-head {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .preview-head h3 {
@@ -310,7 +312,7 @@ pre {
 
 .preview-canvas {
   min-height: 540px;
-  padding: 22px;
+  padding: 26px;
   border-radius: 24px;
   border: 1px solid rgba(63, 81, 181, 0.12);
   background:
@@ -318,9 +320,21 @@ pre {
   overflow: visible;
 }
 
-.preview-canvas angular-multiselect {
+:host ::ng-deep .preview-canvas angular-multiselect,
+:host ::ng-deep .preview-canvas angular2-multiselect {
   display: block;
   max-width: 100%;
+}
+
+:host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown,
+:host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown {
+  display: block;
+  max-width: 100%;
+}
+
+:host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+:host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+  margin-bottom: clamp(13rem, 30vw, 18rem);
 }
 
 .preview-canvas form,
@@ -362,6 +376,11 @@ code {
     position: static;
     order: 2;
   }
+
+  :host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+  :host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+    margin-bottom: clamp(12rem, 40vw, 16rem);
+  }
 }
 
 @media (max-width: 780px) {
@@ -390,7 +409,7 @@ code {
 
   .preview-canvas {
     min-height: 420px;
-    padding: 16px;
+    padding: 18px;
   }
 }
 
@@ -437,66 +456,10 @@ code {
   .preview-canvas {
     min-height: 360px;
   }
-}
 
-/* stackline-docs-wrap-fix-2026 */
-.hero-main h1,
-.hero h1,
-.page-header h1,
-.docs-hero h1,
-article h1:first-child {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  line-height: 1.02;
-}
-
-.hero-card,
-.panel,
-.sidebar-card,
-.demo-card,
-.preview-frame,
-.surface-card,
-.table-shell,
-.install-card,
-.copy-card,
-.card-shell,
-.showcase-card,
-.docs-card,
-.docs-panel {
-  min-width: 0;
-}
-
-.badge,
-.hero-badge,
-.version-pill,
-.release-pill {
-  max-width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 640px) {
-  .hero-main h1,
-  .hero h1,
-  .page-header h1,
-  .docs-hero h1,
-  article h1:first-child {
-    font-size: clamp(2rem, 11vw, 3.15rem);
-  }
-}
-
-/* stackline-docs-mobile-title-fix-2026 */
-@media (max-width: 640px) {
-  .hero-main h1,
-  .hero h1,
-  .page-header h1,
-  .docs-hero h1,
-  article h1:first-child {
-    font-size: clamp(1.7rem, 8vw, 2.65rem) !important;
-    line-height: 0.98 !important;
-    letter-spacing: -0.035em !important;
-    word-break: break-all;
+  :host ::ng-deep .preview-canvas angular-multiselect .cuppa-dropdown.is-open,
+  :host ::ng-deep .preview-canvas angular2-multiselect .cuppa-dropdown.is-open {
+    margin-bottom: 13rem;
   }
 }
 
