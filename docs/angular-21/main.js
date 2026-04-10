@@ -1,11 +1,7 @@
-var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
@@ -33,25 +29,6 @@ var __objRest = (source, exclude) => {
     }
   return target;
 };
-var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-};
-var __copyProps = (to, from2, except, desc) => {
-  if (from2 && typeof from2 === "object" || typeof from2 === "function") {
-    for (let key of __getOwnPropNames(from2))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from2[key], enumerable: !(desc = __getOwnPropDesc(from2, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -72,562 +49,6 @@ var __async = (__this, __arguments, generator) => {
     step((generator = generator.apply(__this, __arguments)).next());
   });
 };
-
-// node_modules/@tweenjs/tween.js/src/Tween.js
-var require_Tween = __commonJS({
-  "node_modules/@tweenjs/tween.js/src/Tween.js"(exports, module) {
-    var _Group = function() {
-      this._tweens = {};
-      this._tweensAddedDuringUpdate = {};
-    };
-    _Group.prototype = {
-      getAll: function() {
-        return Object.keys(this._tweens).map(function(tweenId) {
-          return this._tweens[tweenId];
-        }.bind(this));
-      },
-      removeAll: function() {
-        this._tweens = {};
-      },
-      add: function(tween2) {
-        this._tweens[tween2.getId()] = tween2;
-        this._tweensAddedDuringUpdate[tween2.getId()] = tween2;
-      },
-      remove: function(tween2) {
-        delete this._tweens[tween2.getId()];
-        delete this._tweensAddedDuringUpdate[tween2.getId()];
-      },
-      update: function(time, preserve) {
-        var tweenIds = Object.keys(this._tweens);
-        if (tweenIds.length === 0) {
-          return false;
-        }
-        time = time !== void 0 ? time : TWEEN.now();
-        while (tweenIds.length > 0) {
-          this._tweensAddedDuringUpdate = {};
-          for (var i = 0; i < tweenIds.length; i++) {
-            var tween2 = this._tweens[tweenIds[i]];
-            if (tween2 && tween2.update(time) === false) {
-              tween2._isPlaying = false;
-              if (!preserve) {
-                delete this._tweens[tweenIds[i]];
-              }
-            }
-          }
-          tweenIds = Object.keys(this._tweensAddedDuringUpdate);
-        }
-        return true;
-      }
-    };
-    var TWEEN = new _Group();
-    TWEEN.Group = _Group;
-    TWEEN._nextId = 0;
-    TWEEN.nextId = function() {
-      return TWEEN._nextId++;
-    };
-    if (typeof self === "undefined" && typeof process !== "undefined" && process.hrtime) {
-      TWEEN.now = function() {
-        var time = process.hrtime();
-        return time[0] * 1e3 + time[1] / 1e6;
-      };
-    } else if (typeof self !== "undefined" && self.performance !== void 0 && self.performance.now !== void 0) {
-      TWEEN.now = self.performance.now.bind(self.performance);
-    } else if (Date.now !== void 0) {
-      TWEEN.now = Date.now;
-    } else {
-      TWEEN.now = function() {
-        return (/* @__PURE__ */ new Date()).getTime();
-      };
-    }
-    TWEEN.Tween = function(object, group) {
-      this._object = object;
-      this._valuesStart = {};
-      this._valuesEnd = {};
-      this._valuesStartRepeat = {};
-      this._duration = 1e3;
-      this._repeat = 0;
-      this._repeatDelayTime = void 0;
-      this._yoyo = false;
-      this._isPlaying = false;
-      this._reversed = false;
-      this._delayTime = 0;
-      this._startTime = null;
-      this._easingFunction = TWEEN.Easing.Linear.None;
-      this._interpolationFunction = TWEEN.Interpolation.Linear;
-      this._chainedTweens = [];
-      this._onStartCallback = null;
-      this._onStartCallbackFired = false;
-      this._onUpdateCallback = null;
-      this._onRepeatCallback = null;
-      this._onCompleteCallback = null;
-      this._onStopCallback = null;
-      this._group = group || TWEEN;
-      this._id = TWEEN.nextId();
-    };
-    TWEEN.Tween.prototype = {
-      getId: function() {
-        return this._id;
-      },
-      isPlaying: function() {
-        return this._isPlaying;
-      },
-      to: function(properties, duration) {
-        this._valuesEnd = properties;
-        if (duration !== void 0) {
-          this._duration = duration;
-        }
-        return this;
-      },
-      duration: function duration(d) {
-        this._duration = d;
-        return this;
-      },
-      start: function(time) {
-        this._group.add(this);
-        this._isPlaying = true;
-        this._onStartCallbackFired = false;
-        this._startTime = time !== void 0 ? typeof time === "string" ? TWEEN.now() + parseFloat(time) : time : TWEEN.now();
-        this._startTime += this._delayTime;
-        for (var property in this._valuesEnd) {
-          if (this._valuesEnd[property] instanceof Array) {
-            if (this._valuesEnd[property].length === 0) {
-              continue;
-            }
-            this._valuesEnd[property] = [this._object[property]].concat(this._valuesEnd[property]);
-          }
-          if (this._object[property] === void 0) {
-            continue;
-          }
-          this._valuesStart[property] = this._object[property];
-          if (this._valuesStart[property] instanceof Array === false) {
-            this._valuesStart[property] *= 1;
-          }
-          this._valuesStartRepeat[property] = this._valuesStart[property] || 0;
-        }
-        return this;
-      },
-      stop: function() {
-        if (!this._isPlaying) {
-          return this;
-        }
-        this._group.remove(this);
-        this._isPlaying = false;
-        if (this._onStopCallback !== null) {
-          this._onStopCallback(this._object);
-        }
-        this.stopChainedTweens();
-        return this;
-      },
-      end: function() {
-        this.update(Infinity);
-        return this;
-      },
-      stopChainedTweens: function() {
-        for (var i = 0, numChainedTweens = this._chainedTweens.length; i < numChainedTweens; i++) {
-          this._chainedTweens[i].stop();
-        }
-      },
-      group: function(group) {
-        this._group = group;
-        return this;
-      },
-      delay: function(amount) {
-        this._delayTime = amount;
-        return this;
-      },
-      repeat: function(times) {
-        this._repeat = times;
-        return this;
-      },
-      repeatDelay: function(amount) {
-        this._repeatDelayTime = amount;
-        return this;
-      },
-      yoyo: function(yoyo) {
-        this._yoyo = yoyo;
-        return this;
-      },
-      easing: function(easingFunction) {
-        this._easingFunction = easingFunction;
-        return this;
-      },
-      interpolation: function(interpolationFunction) {
-        this._interpolationFunction = interpolationFunction;
-        return this;
-      },
-      chain: function() {
-        this._chainedTweens = arguments;
-        return this;
-      },
-      onStart: function(callback) {
-        this._onStartCallback = callback;
-        return this;
-      },
-      onUpdate: function(callback) {
-        this._onUpdateCallback = callback;
-        return this;
-      },
-      onRepeat: function onRepeat(callback) {
-        this._onRepeatCallback = callback;
-        return this;
-      },
-      onComplete: function(callback) {
-        this._onCompleteCallback = callback;
-        return this;
-      },
-      onStop: function(callback) {
-        this._onStopCallback = callback;
-        return this;
-      },
-      update: function(time) {
-        var property;
-        var elapsed;
-        var value;
-        if (time < this._startTime) {
-          return true;
-        }
-        if (this._onStartCallbackFired === false) {
-          if (this._onStartCallback !== null) {
-            this._onStartCallback(this._object);
-          }
-          this._onStartCallbackFired = true;
-        }
-        elapsed = (time - this._startTime) / this._duration;
-        elapsed = this._duration === 0 || elapsed > 1 ? 1 : elapsed;
-        value = this._easingFunction(elapsed);
-        for (property in this._valuesEnd) {
-          if (this._valuesStart[property] === void 0) {
-            continue;
-          }
-          var start = this._valuesStart[property] || 0;
-          var end = this._valuesEnd[property];
-          if (end instanceof Array) {
-            this._object[property] = this._interpolationFunction(end, value);
-          } else {
-            if (typeof end === "string") {
-              if (end.charAt(0) === "+" || end.charAt(0) === "-") {
-                end = start + parseFloat(end);
-              } else {
-                end = parseFloat(end);
-              }
-            }
-            if (typeof end === "number") {
-              this._object[property] = start + (end - start) * value;
-            }
-          }
-        }
-        if (this._onUpdateCallback !== null) {
-          this._onUpdateCallback(this._object, elapsed);
-        }
-        if (elapsed === 1) {
-          if (this._repeat > 0) {
-            if (isFinite(this._repeat)) {
-              this._repeat--;
-            }
-            for (property in this._valuesStartRepeat) {
-              if (typeof this._valuesEnd[property] === "string") {
-                this._valuesStartRepeat[property] = this._valuesStartRepeat[property] + parseFloat(this._valuesEnd[property]);
-              }
-              if (this._yoyo) {
-                var tmp = this._valuesStartRepeat[property];
-                this._valuesStartRepeat[property] = this._valuesEnd[property];
-                this._valuesEnd[property] = tmp;
-              }
-              this._valuesStart[property] = this._valuesStartRepeat[property];
-            }
-            if (this._yoyo) {
-              this._reversed = !this._reversed;
-            }
-            if (this._repeatDelayTime !== void 0) {
-              this._startTime = time + this._repeatDelayTime;
-            } else {
-              this._startTime = time + this._delayTime;
-            }
-            if (this._onRepeatCallback !== null) {
-              this._onRepeatCallback(this._object);
-            }
-            return true;
-          } else {
-            if (this._onCompleteCallback !== null) {
-              this._onCompleteCallback(this._object);
-            }
-            for (var i = 0, numChainedTweens = this._chainedTweens.length; i < numChainedTweens; i++) {
-              this._chainedTweens[i].start(this._startTime + this._duration);
-            }
-            return false;
-          }
-        }
-        return true;
-      }
-    };
-    TWEEN.Easing = {
-      Linear: {
-        None: function(k) {
-          return k;
-        }
-      },
-      Quadratic: {
-        In: function(k) {
-          return k * k;
-        },
-        Out: function(k) {
-          return k * (2 - k);
-        },
-        InOut: function(k) {
-          if ((k *= 2) < 1) {
-            return 0.5 * k * k;
-          }
-          return -0.5 * (--k * (k - 2) - 1);
-        }
-      },
-      Cubic: {
-        In: function(k) {
-          return k * k * k;
-        },
-        Out: function(k) {
-          return --k * k * k + 1;
-        },
-        InOut: function(k) {
-          if ((k *= 2) < 1) {
-            return 0.5 * k * k * k;
-          }
-          return 0.5 * ((k -= 2) * k * k + 2);
-        }
-      },
-      Quartic: {
-        In: function(k) {
-          return k * k * k * k;
-        },
-        Out: function(k) {
-          return 1 - --k * k * k * k;
-        },
-        InOut: function(k) {
-          if ((k *= 2) < 1) {
-            return 0.5 * k * k * k * k;
-          }
-          return -0.5 * ((k -= 2) * k * k * k - 2);
-        }
-      },
-      Quintic: {
-        In: function(k) {
-          return k * k * k * k * k;
-        },
-        Out: function(k) {
-          return --k * k * k * k * k + 1;
-        },
-        InOut: function(k) {
-          if ((k *= 2) < 1) {
-            return 0.5 * k * k * k * k * k;
-          }
-          return 0.5 * ((k -= 2) * k * k * k * k + 2);
-        }
-      },
-      Sinusoidal: {
-        In: function(k) {
-          return 1 - Math.cos(k * Math.PI / 2);
-        },
-        Out: function(k) {
-          return Math.sin(k * Math.PI / 2);
-        },
-        InOut: function(k) {
-          return 0.5 * (1 - Math.cos(Math.PI * k));
-        }
-      },
-      Exponential: {
-        In: function(k) {
-          return k === 0 ? 0 : Math.pow(1024, k - 1);
-        },
-        Out: function(k) {
-          return k === 1 ? 1 : 1 - Math.pow(2, -10 * k);
-        },
-        InOut: function(k) {
-          if (k === 0) {
-            return 0;
-          }
-          if (k === 1) {
-            return 1;
-          }
-          if ((k *= 2) < 1) {
-            return 0.5 * Math.pow(1024, k - 1);
-          }
-          return 0.5 * (-Math.pow(2, -10 * (k - 1)) + 2);
-        }
-      },
-      Circular: {
-        In: function(k) {
-          return 1 - Math.sqrt(1 - k * k);
-        },
-        Out: function(k) {
-          return Math.sqrt(1 - --k * k);
-        },
-        InOut: function(k) {
-          if ((k *= 2) < 1) {
-            return -0.5 * (Math.sqrt(1 - k * k) - 1);
-          }
-          return 0.5 * (Math.sqrt(1 - (k -= 2) * k) + 1);
-        }
-      },
-      Elastic: {
-        In: function(k) {
-          if (k === 0) {
-            return 0;
-          }
-          if (k === 1) {
-            return 1;
-          }
-          return -Math.pow(2, 10 * (k - 1)) * Math.sin((k - 1.1) * 5 * Math.PI);
-        },
-        Out: function(k) {
-          if (k === 0) {
-            return 0;
-          }
-          if (k === 1) {
-            return 1;
-          }
-          return Math.pow(2, -10 * k) * Math.sin((k - 0.1) * 5 * Math.PI) + 1;
-        },
-        InOut: function(k) {
-          if (k === 0) {
-            return 0;
-          }
-          if (k === 1) {
-            return 1;
-          }
-          k *= 2;
-          if (k < 1) {
-            return -0.5 * Math.pow(2, 10 * (k - 1)) * Math.sin((k - 1.1) * 5 * Math.PI);
-          }
-          return 0.5 * Math.pow(2, -10 * (k - 1)) * Math.sin((k - 1.1) * 5 * Math.PI) + 1;
-        }
-      },
-      Back: {
-        In: function(k) {
-          var s = 1.70158;
-          return k * k * ((s + 1) * k - s);
-        },
-        Out: function(k) {
-          var s = 1.70158;
-          return --k * k * ((s + 1) * k + s) + 1;
-        },
-        InOut: function(k) {
-          var s = 1.70158 * 1.525;
-          if ((k *= 2) < 1) {
-            return 0.5 * (k * k * ((s + 1) * k - s));
-          }
-          return 0.5 * ((k -= 2) * k * ((s + 1) * k + s) + 2);
-        }
-      },
-      Bounce: {
-        In: function(k) {
-          return 1 - TWEEN.Easing.Bounce.Out(1 - k);
-        },
-        Out: function(k) {
-          if (k < 1 / 2.75) {
-            return 7.5625 * k * k;
-          } else if (k < 2 / 2.75) {
-            return 7.5625 * (k -= 1.5 / 2.75) * k + 0.75;
-          } else if (k < 2.5 / 2.75) {
-            return 7.5625 * (k -= 2.25 / 2.75) * k + 0.9375;
-          } else {
-            return 7.5625 * (k -= 2.625 / 2.75) * k + 0.984375;
-          }
-        },
-        InOut: function(k) {
-          if (k < 0.5) {
-            return TWEEN.Easing.Bounce.In(k * 2) * 0.5;
-          }
-          return TWEEN.Easing.Bounce.Out(k * 2 - 1) * 0.5 + 0.5;
-        }
-      }
-    };
-    TWEEN.Interpolation = {
-      Linear: function(v, k) {
-        var m = v.length - 1;
-        var f = m * k;
-        var i = Math.floor(f);
-        var fn = TWEEN.Interpolation.Utils.Linear;
-        if (k < 0) {
-          return fn(v[0], v[1], f);
-        }
-        if (k > 1) {
-          return fn(v[m], v[m - 1], m - f);
-        }
-        return fn(v[i], v[i + 1 > m ? m : i + 1], f - i);
-      },
-      Bezier: function(v, k) {
-        var b = 0;
-        var n = v.length - 1;
-        var pw = Math.pow;
-        var bn = TWEEN.Interpolation.Utils.Bernstein;
-        for (var i = 0; i <= n; i++) {
-          b += pw(1 - k, n - i) * pw(k, i) * v[i] * bn(n, i);
-        }
-        return b;
-      },
-      CatmullRom: function(v, k) {
-        var m = v.length - 1;
-        var f = m * k;
-        var i = Math.floor(f);
-        var fn = TWEEN.Interpolation.Utils.CatmullRom;
-        if (v[0] === v[m]) {
-          if (k < 0) {
-            i = Math.floor(f = m * (1 + k));
-          }
-          return fn(v[(i - 1 + m) % m], v[i], v[(i + 1) % m], v[(i + 2) % m], f - i);
-        } else {
-          if (k < 0) {
-            return v[0] - (fn(v[0], v[0], v[1], v[1], -f) - v[0]);
-          }
-          if (k > 1) {
-            return v[m] - (fn(v[m], v[m], v[m - 1], v[m - 1], f - m) - v[m]);
-          }
-          return fn(v[i ? i - 1 : 0], v[i], v[m < i + 1 ? m : i + 1], v[m < i + 2 ? m : i + 2], f - i);
-        }
-      },
-      Utils: {
-        Linear: function(p0, p1, t) {
-          return (p1 - p0) * t + p0;
-        },
-        Bernstein: function(n, i) {
-          var fc = TWEEN.Interpolation.Utils.Factorial;
-          return fc(n) / fc(i) / fc(n - i);
-        },
-        Factorial: /* @__PURE__ */ (function() {
-          var a = [1];
-          return function(n) {
-            var s = 1;
-            if (a[n]) {
-              return a[n];
-            }
-            for (var i = n; i > 1; i--) {
-              s *= i;
-            }
-            a[n] = s;
-            return s;
-          };
-        })(),
-        CatmullRom: function(p0, p1, p2, p3, t) {
-          var v0 = (p2 - p0) * 0.5;
-          var v1 = (p3 - p1) * 0.5;
-          var t2 = t * t;
-          var t3 = t * t2;
-          return (2 * p1 - 2 * p2 + v0 + v1) * t3 + (-3 * p1 + 3 * p2 - 2 * v0 - v1) * t2 + v0 * t + p1;
-        }
-      }
-    };
-    (function(root) {
-      if (typeof define === "function" && define.amd) {
-        define([], function() {
-          return TWEEN;
-        });
-      } else if (typeof module !== "undefined" && typeof exports === "object") {
-        module.exports = TWEEN;
-      } else if (root !== void 0) {
-        root.TWEEN = TWEEN;
-      }
-    })(exports);
-  }
-});
 
 // node_modules/@angular/core/fesm2022/_effect-chunk.mjs
 /**
@@ -971,8 +392,8 @@ function createSignal(initialValue, equal) {
   }
   runPostProducerCreatedFn(node);
   const set = (newValue) => signalSetFn(node, newValue);
-  const update = (updateFn) => signalUpdateFn(node, updateFn);
-  return [getter, set, update];
+  const update2 = (updateFn) => signalUpdateFn(node, updateFn);
+  return [getter, set, update2];
 }
 function signalGetFn(node) {
   producerAccessed(node);
@@ -1851,9 +1272,9 @@ var AsyncAction = class extends Action {
 
 // node_modules/rxjs/dist/esm/internal/Scheduler.js
 var Scheduler = class _Scheduler {
-  constructor(schedulerActionCtor, now = _Scheduler.now) {
+  constructor(schedulerActionCtor, now2 = _Scheduler.now) {
     this.schedulerActionCtor = schedulerActionCtor;
-    this.now = now;
+    this.now = now2;
   }
   schedule(work, delay = 0, state) {
     return new this.schedulerActionCtor(this, work).schedule(state, delay);
@@ -1863,8 +1284,8 @@ Scheduler.now = dateTimestampProvider.now;
 
 // node_modules/rxjs/dist/esm/internal/scheduler/AsyncScheduler.js
 var AsyncScheduler = class extends Scheduler {
-  constructor(SchedulerAction, now = Scheduler.now) {
-    super(SchedulerAction, now);
+  constructor(SchedulerAction, now2 = Scheduler.now) {
+    super(SchedulerAction, now2);
     this.actions = [];
     this._active = false;
   }
@@ -2141,13 +1562,13 @@ function fromIterable(iterable) {
 }
 function fromAsyncIterable(asyncIterable) {
   return new Observable((subscriber) => {
-    process2(asyncIterable, subscriber).catch((err) => subscriber.error(err));
+    process(asyncIterable, subscriber).catch((err) => subscriber.error(err));
   });
 }
 function fromReadableStreamLike(readableStream) {
   return fromAsyncIterable(readableStreamLikeToAsyncGenerator(readableStream));
 }
-function process2(asyncIterable, subscriber) {
+function process(asyncIterable, subscriber) {
   var asyncIterable_1, asyncIterable_1_1;
   var e_1, _a;
   return __awaiter(this, void 0, void 0, function* () {
@@ -2605,9 +2026,9 @@ function debounceTime(dueTime, scheduler = asyncScheduler) {
     };
     function emitWhenIdle() {
       const targetTime = lastTime + dueTime;
-      const now = scheduler.now();
-      if (now < targetTime) {
-        activeTask = this.schedule(void 0, targetTime - now);
+      const now2 = scheduler.now();
+      if (now2 < targetTime) {
+        activeTask = this.schedule(void 0, targetTime - now2);
         subscriber.add(activeTask);
         return;
       }
@@ -5330,23 +4751,23 @@ var NgZone = class _NgZone {
       throw new RuntimeError(908, ngDevMode && `In this configuration Angular requires Zone.js`);
     }
     Zone.assertZonePatched();
-    const self2 = this;
-    self2._nesting = 0;
-    self2._outer = self2._inner = Zone.current;
+    const self = this;
+    self._nesting = 0;
+    self._outer = self._inner = Zone.current;
     if (ngDevMode) {
-      self2._inner = self2._inner.fork(new AsyncStackTaggingZoneSpec("Angular"));
+      self._inner = self._inner.fork(new AsyncStackTaggingZoneSpec("Angular"));
     }
     if (Zone["TaskTrackingZoneSpec"]) {
-      self2._inner = self2._inner.fork(new Zone["TaskTrackingZoneSpec"]());
+      self._inner = self._inner.fork(new Zone["TaskTrackingZoneSpec"]());
     }
     if (enableLongStackTrace && Zone["longStackTraceZoneSpec"]) {
-      self2._inner = self2._inner.fork(Zone["longStackTraceZoneSpec"]);
+      self._inner = self._inner.fork(Zone["longStackTraceZoneSpec"]);
     }
-    self2.shouldCoalesceEventChangeDetection = !shouldCoalesceRunChangeDetection && shouldCoalesceEventChangeDetection;
-    self2.shouldCoalesceRunChangeDetection = shouldCoalesceRunChangeDetection;
-    self2.callbackScheduled = false;
-    self2.scheduleInRootZone = scheduleInRootZone;
-    forkInnerZoneWithAngularBehavior(self2);
+    self.shouldCoalesceEventChangeDetection = !shouldCoalesceRunChangeDetection && shouldCoalesceEventChangeDetection;
+    self.shouldCoalesceRunChangeDetection = shouldCoalesceRunChangeDetection;
+    self.callbackScheduled = false;
+    self.scheduleInRootZone = scheduleInRootZone;
+    forkInnerZoneWithAngularBehavior(self);
   }
   static isInAngularZone() {
     return typeof Zone !== "undefined" && Zone.current.get(isAngularZoneProperty) === true;
@@ -5610,11 +5031,11 @@ var globalErrorListeners = new InjectionToken(typeof ngDevMode !== "undefined" &
   }
 });
 function signal(initialValue, options) {
-  const [get, set, update] = createSignal(initialValue, options?.equal);
+  const [get, set, update2] = createSignal(initialValue, options?.equal);
   const signalFn = get;
   const node = signalFn[SIGNAL];
   signalFn.set = set;
-  signalFn.update = update;
+  signalFn.update = update2;
   signalFn.asReadonly = signalAsReadonlyFn.bind(signalFn);
   if (typeof ngDevMode !== "undefined" && ngDevMode) {
     const debugName = options?.debugName;
@@ -14944,11 +14365,11 @@ var TimerScheduler = class _TimerScheduler {
       this.clearTimeout();
       this.executingCallbacks = true;
       const current = [...this.current];
-      const now = Date.now();
+      const now2 = Date.now();
       for (let i = 0; i < current.length; i += 2) {
         const invokeAt = current[i];
         const callback2 = current[i + 1];
-        if (invokeAt <= now) {
+        if (invokeAt <= now2) {
           callback2();
         } else {
           break;
@@ -14957,7 +14378,7 @@ var TimerScheduler = class _TimerScheduler {
       let lastCallbackIndex = -1;
       for (let i = 0; i < this.current.length; i += 2) {
         const invokeAt = this.current[i];
-        if (invokeAt <= now) {
+        if (invokeAt <= now2) {
           lastCallbackIndex = i + 1;
         } else {
           break;
@@ -14979,11 +14400,11 @@ var TimerScheduler = class _TimerScheduler {
     };
     const FRAME_DURATION_MS = 16;
     if (this.current.length > 0) {
-      const now = Date.now();
+      const now2 = Date.now();
       const invokeAt = this.current[0];
       if (this.timeoutId === null || this.invokeTimerAt && this.invokeTimerAt - invokeAt > FRAME_DURATION_MS) {
         this.clearTimeout();
-        const timeout = Math.max(invokeAt - now, FRAME_DURATION_MS);
+        const timeout = Math.max(invokeAt - now2, FRAME_DURATION_MS);
         this.invokeTimerAt = invokeAt;
         this.timeoutId = ngZone.runOutsideAngular(() => {
           return setTimeout(() => ngZone.run(callback), timeout);
@@ -15128,10 +14549,10 @@ function applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView) 
   profiler(ProfilerEvent.DeferBlockStateEnd);
 }
 function applyDeferBlockStateWithScheduling(newState, lDetails, lContainer, tNode, hostLView) {
-  const now = Date.now();
+  const now2 = Date.now();
   const hostTView = hostLView[TVIEW];
   const tDetails = getTDeferBlockDetails(hostTView, tNode);
-  if (lDetails[STATE_IS_FROZEN_UNTIL] === null || lDetails[STATE_IS_FROZEN_UNTIL] <= now) {
+  if (lDetails[STATE_IS_FROZEN_UNTIL] === null || lDetails[STATE_IS_FROZEN_UNTIL] <= now2) {
     lDetails[STATE_IS_FROZEN_UNTIL] = null;
     const loadingAfter = getLoadingBlockAfter(tDetails);
     const inLoadingAfterPhase = lDetails[LOADING_AFTER_CLEANUP_FN] !== null;
@@ -15148,7 +14569,7 @@ function applyDeferBlockStateWithScheduling(newState, lDetails, lContainer, tNod
       applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView);
       const duration = getMinimumDurationForState(tDetails, newState);
       if (duration !== null) {
-        lDetails[STATE_IS_FROZEN_UNTIL] = now + duration;
+        lDetails[STATE_IS_FROZEN_UNTIL] = now2 + duration;
         scheduleDeferBlockUpdate(duration, lDetails, tNode, lContainer, hostLView);
       }
     }
@@ -19271,28 +18692,28 @@ function i18nParseTextIntoPartsAndICU(pattern) {
 }
 function parseIcuCase(ast, tView, tIcu, lView, updateOpCodes, parentIdx, caseName, unsafeCaseHtml, nestedIcus) {
   const create = [];
-  const remove2 = [];
-  const update = [];
+  const remove3 = [];
+  const update2 = [];
   if (ngDevMode) {
     attachDebugGetter(create, icuCreateOpCodesToString);
-    attachDebugGetter(remove2, i18nRemoveOpCodesToString);
-    attachDebugGetter(update, i18nUpdateOpCodesToString);
+    attachDebugGetter(remove3, i18nRemoveOpCodesToString);
+    attachDebugGetter(update2, i18nUpdateOpCodesToString);
   }
   tIcu.cases.push(caseName);
   tIcu.create.push(create);
-  tIcu.remove.push(remove2);
-  tIcu.update.push(update);
+  tIcu.remove.push(remove3);
+  tIcu.update.push(update2);
   const inertBodyHelper2 = getInertBodyHelper(getDocument());
   const inertBodyElement = inertBodyHelper2.getInertBodyElement(unsafeCaseHtml);
   ngDevMode && assertDefined(inertBodyElement, "Unable to generate inert body element");
   const inertRootNode = getTemplateContent(inertBodyElement) || inertBodyElement;
   if (inertRootNode) {
-    return walkIcuTree(ast, tView, tIcu, lView, updateOpCodes, create, remove2, update, inertRootNode, parentIdx, nestedIcus, 0);
+    return walkIcuTree(ast, tView, tIcu, lView, updateOpCodes, create, remove3, update2, inertRootNode, parentIdx, nestedIcus, 0);
   } else {
     return 0;
   }
 }
-function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remove2, update, parentNode, parentIdx, nestedIcus, depth) {
+function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remove3, update2, parentNode, parentIdx, nestedIcus, depth) {
   let bindingMask = 0;
   let currentNode = parentNode.firstChild;
   while (currentNode) {
@@ -19311,7 +18732,7 @@ function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remov
             const hasBinding2 = !!attr.value.match(BINDING_REGEXP);
             if (hasBinding2) {
               if (VALID_ATTRS.hasOwnProperty(lowerAttrName)) {
-                generateBindingUpdateOpCodes(update, attr.value, newIndex, attr.name, 0, SENSITIVE_ATTRS[lowerAttrName] ? _sanitizeUrl : null);
+                generateBindingUpdateOpCodes(update2, attr.value, newIndex, attr.name, 0, SENSITIVE_ATTRS[lowerAttrName] ? _sanitizeUrl : null);
               } else {
                 ngDevMode && console.warn(`WARNING: ignoring unsafe attribute value ${lowerAttrName} on element ${tagName} (see ${XSS_SECURITY_URL})`);
               }
@@ -19336,17 +18757,17 @@ function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remov
             children: []
           };
           ast.push(elementNode);
-          bindingMask = walkIcuTree(elementNode.children, tView, tIcu, lView, sharedUpdateOpCodes, create, remove2, update, currentNode, newIndex, nestedIcus, depth + 1) | bindingMask;
-          addRemoveNode(remove2, newIndex, depth);
+          bindingMask = walkIcuTree(elementNode.children, tView, tIcu, lView, sharedUpdateOpCodes, create, remove3, update2, currentNode, newIndex, nestedIcus, depth + 1) | bindingMask;
+          addRemoveNode(remove3, newIndex, depth);
         }
         break;
       case Node.TEXT_NODE:
         const value = currentNode.textContent || "";
         const hasBinding = value.match(BINDING_REGEXP);
         addCreateNodeAndAppend(create, null, hasBinding ? "" : value, parentIdx, newIndex);
-        addRemoveNode(remove2, newIndex, depth);
+        addRemoveNode(remove3, newIndex, depth);
         if (hasBinding) {
-          bindingMask = generateBindingUpdateOpCodes(update, value, newIndex, null, 0, null) | bindingMask;
+          bindingMask = generateBindingUpdateOpCodes(update2, value, newIndex, null, 0, null) | bindingMask;
         }
         ast.push({
           kind: 0,
@@ -19360,7 +18781,7 @@ function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remov
           const icuExpression = nestedIcus[nestedIcuIndex];
           addCreateNodeAndAppend(create, ICU_MARKER, ngDevMode ? `nested ICU ${nestedIcuIndex}` : "", parentIdx, newIndex);
           icuStart(ast, tView, lView, sharedUpdateOpCodes, parentIdx, icuExpression, newIndex);
-          addRemoveNestedIcu(remove2, newIndex, depth);
+          addRemoveNestedIcu(remove3, newIndex, depth);
         }
         break;
     }
@@ -19368,22 +18789,22 @@ function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remov
   }
   return bindingMask;
 }
-function addRemoveNode(remove2, index, depth) {
+function addRemoveNode(remove3, index, depth) {
   if (depth === 0) {
-    remove2.push(index);
+    remove3.push(index);
   }
 }
-function addRemoveNestedIcu(remove2, index, depth) {
+function addRemoveNestedIcu(remove3, index, depth) {
   if (depth === 0) {
-    remove2.push(~index);
-    remove2.push(index);
+    remove3.push(~index);
+    remove3.push(index);
   }
 }
-function addUpdateIcuSwitch(update, icuExpression, index) {
-  update.push(toMaskBit(icuExpression.mainBinding), 2, -1 - icuExpression.mainBinding, index << 2 | 2);
+function addUpdateIcuSwitch(update2, icuExpression, index) {
+  update2.push(toMaskBit(icuExpression.mainBinding), 2, -1 - icuExpression.mainBinding, index << 2 | 2);
 }
-function addUpdateIcuUpdate(update, bindingMask, index) {
-  update.push(bindingMask, 1, index << 2 | 3);
+function addUpdateIcuUpdate(update2, bindingMask, index) {
+  update2.push(bindingMask, 1, index << 2 | 3);
 }
 function addCreateNodeAndAppend(create, marker, text, appendToParentIdx, createAtIdx) {
   if (marker !== null) {
@@ -29874,7 +29295,7 @@ var HttpHeaders = class _HttpHeaders {
       }
       this.lazyInit = null;
       if (!!this.lazyUpdate) {
-        this.lazyUpdate.forEach((update) => this.applyUpdate(update));
+        this.lazyUpdate.forEach((update2) => this.applyUpdate(update2));
         this.lazyUpdate = null;
       }
     }
@@ -29886,31 +29307,31 @@ var HttpHeaders = class _HttpHeaders {
       this.normalizedNames.set(key, other.normalizedNames.get(key));
     });
   }
-  clone(update) {
+  clone(update2) {
     const clone = new _HttpHeaders();
     clone.lazyInit = !!this.lazyInit && this.lazyInit instanceof _HttpHeaders ? this.lazyInit : this;
-    clone.lazyUpdate = (this.lazyUpdate || []).concat([update]);
+    clone.lazyUpdate = (this.lazyUpdate || []).concat([update2]);
     return clone;
   }
-  applyUpdate(update) {
-    const key = update.name.toLowerCase();
-    switch (update.op) {
+  applyUpdate(update2) {
+    const key = update2.name.toLowerCase();
+    switch (update2.op) {
       case "a":
       case "s":
-        let value = update.value;
+        let value = update2.value;
         if (typeof value === "string") {
           value = [value];
         }
         if (value.length === 0) {
           return;
         }
-        this.maybeSetNormalizedName(update.name, key);
-        const base = (update.op === "a" ? this.headers.get(key) : void 0) || [];
+        this.maybeSetNormalizedName(update2.name, key);
+        const base = (update2.op === "a" ? this.headers.get(key) : void 0) || [];
         base.push(...value);
         this.headers.set(key, base);
         break;
       case "d":
-        const toDelete = update.value;
+        const toDelete = update2.value;
         if (!toDelete) {
           this.headers.delete(key);
           this.normalizedNames.delete(key);
@@ -30115,12 +29536,12 @@ var HttpParams = class _HttpParams {
       return this.map.get(key).map((value) => eKey + "=" + this.encoder.encodeValue(value)).join("&");
     }).filter((param) => param !== "").join("&");
   }
-  clone(update) {
+  clone(update2) {
     const clone = new _HttpParams({
       encoder: this.encoder
     });
     clone.cloneFrom = this.cloneFrom || this;
-    clone.updates = (this.updates || []).concat(update);
+    clone.updates = (this.updates || []).concat(update2);
     return clone;
   }
   init() {
@@ -30130,28 +29551,28 @@ var HttpParams = class _HttpParams {
     if (this.cloneFrom !== null) {
       this.cloneFrom.init();
       this.cloneFrom.keys().forEach((key) => this.map.set(key, this.cloneFrom.map.get(key)));
-      this.updates.forEach((update) => {
-        switch (update.op) {
+      this.updates.forEach((update2) => {
+        switch (update2.op) {
           case "a":
           case "s":
-            const base = (update.op === "a" ? this.map.get(update.param) : void 0) || [];
-            base.push(valueToString(update.value));
-            this.map.set(update.param, base);
+            const base = (update2.op === "a" ? this.map.get(update2.param) : void 0) || [];
+            base.push(valueToString(update2.value));
+            this.map.set(update2.param, base);
             break;
           case "d":
-            if (update.value !== void 0) {
-              let base2 = this.map.get(update.param) || [];
-              const idx = base2.indexOf(valueToString(update.value));
+            if (update2.value !== void 0) {
+              let base2 = this.map.get(update2.param) || [];
+              const idx = base2.indexOf(valueToString(update2.value));
               if (idx !== -1) {
                 base2.splice(idx, 1);
               }
               if (base2.length > 0) {
-                this.map.set(update.param, base2);
+                this.map.set(update2.param, base2);
               } else {
-                this.map.delete(update.param);
+                this.map.delete(update2.param);
               }
             } else {
-              this.map.delete(update.param);
+              this.map.delete(update2.param);
               break;
             }
         }
@@ -30324,32 +29745,32 @@ var HttpRequest = class _HttpRequest {
     }
     return null;
   }
-  clone(update = {}) {
-    const method = update.method || this.method;
-    const url = update.url || this.url;
-    const responseType = update.responseType || this.responseType;
-    const keepalive = update.keepalive ?? this.keepalive;
-    const priority = update.priority || this.priority;
-    const cache = update.cache || this.cache;
-    const mode = update.mode || this.mode;
-    const redirect = update.redirect || this.redirect;
-    const credentials = update.credentials || this.credentials;
-    const referrer = update.referrer || this.referrer;
-    const integrity = update.integrity || this.integrity;
-    const referrerPolicy = update.referrerPolicy || this.referrerPolicy;
-    const transferCache = update.transferCache ?? this.transferCache;
-    const timeout = update.timeout ?? this.timeout;
-    const body = update.body !== void 0 ? update.body : this.body;
-    const withCredentials = update.withCredentials ?? this.withCredentials;
-    const reportProgress = update.reportProgress ?? this.reportProgress;
-    let headers = update.headers || this.headers;
-    let params = update.params || this.params;
-    const context2 = update.context ?? this.context;
-    if (update.setHeaders !== void 0) {
-      headers = Object.keys(update.setHeaders).reduce((headers2, name) => headers2.set(name, update.setHeaders[name]), headers);
+  clone(update2 = {}) {
+    const method = update2.method || this.method;
+    const url = update2.url || this.url;
+    const responseType = update2.responseType || this.responseType;
+    const keepalive = update2.keepalive ?? this.keepalive;
+    const priority = update2.priority || this.priority;
+    const cache = update2.cache || this.cache;
+    const mode = update2.mode || this.mode;
+    const redirect = update2.redirect || this.redirect;
+    const credentials = update2.credentials || this.credentials;
+    const referrer = update2.referrer || this.referrer;
+    const integrity = update2.integrity || this.integrity;
+    const referrerPolicy = update2.referrerPolicy || this.referrerPolicy;
+    const transferCache = update2.transferCache ?? this.transferCache;
+    const timeout = update2.timeout ?? this.timeout;
+    const body = update2.body !== void 0 ? update2.body : this.body;
+    const withCredentials = update2.withCredentials ?? this.withCredentials;
+    const reportProgress = update2.reportProgress ?? this.reportProgress;
+    let headers = update2.headers || this.headers;
+    let params = update2.params || this.params;
+    const context2 = update2.context ?? this.context;
+    if (update2.setHeaders !== void 0) {
+      headers = Object.keys(update2.setHeaders).reduce((headers2, name) => headers2.set(name, update2.setHeaders[name]), headers);
     }
-    if (update.setParams) {
-      params = Object.keys(update.setParams).reduce((params2, param) => params2.set(param, update.setParams[param]), params);
+    if (update2.setParams) {
+      params = Object.keys(update2.setParams).reduce((params2, param) => params2.set(param, update2.setParams[param]), params);
     }
     return new _HttpRequest(method, url, body, {
       params,
@@ -30405,12 +29826,12 @@ var HttpHeaderResponse = class _HttpHeaderResponse extends HttpResponseBase {
     super(init);
   }
   type = HttpEventType.ResponseHeader;
-  clone(update = {}) {
+  clone(update2 = {}) {
     return new _HttpHeaderResponse({
-      headers: update.headers || this.headers,
-      status: update.status !== void 0 ? update.status : this.status,
-      statusText: update.statusText || this.statusText,
-      url: update.url || this.url || void 0
+      headers: update2.headers || this.headers,
+      status: update2.status !== void 0 ? update2.status : this.status,
+      statusText: update2.statusText || this.statusText,
+      url: update2.url || this.url || void 0
     });
   }
 };
@@ -30421,15 +29842,15 @@ var HttpResponse = class _HttpResponse extends HttpResponseBase {
     this.body = init.body !== void 0 ? init.body : null;
   }
   type = HttpEventType.Response;
-  clone(update = {}) {
+  clone(update2 = {}) {
     return new _HttpResponse({
-      body: update.body !== void 0 ? update.body : this.body,
-      headers: update.headers || this.headers,
-      status: update.status !== void 0 ? update.status : this.status,
-      statusText: update.statusText || this.statusText,
-      url: update.url || this.url || void 0,
-      redirected: update.redirected ?? this.redirected,
-      responseType: update.responseType ?? this.responseType
+      body: update2.body !== void 0 ? update2.body : this.body,
+      headers: update2.headers || this.headers,
+      status: update2.status !== void 0 ? update2.status : this.status,
+      statusText: update2.statusText || this.statusText,
+      url: update2.url || this.url || void 0,
+      redirected: update2.redirected ?? this.redirected,
+      responseType: update2.responseType ?? this.responseType
     });
   }
 };
@@ -37211,8 +36632,839 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
   }], null, null);
 })();
 
+// ../../node_modules/@tweenjs/tween.js/dist/tween.esm.js
+var Easing = Object.freeze({
+  Linear: Object.freeze({
+    None: function(amount) {
+      return amount;
+    },
+    In: function(amount) {
+      return amount;
+    },
+    Out: function(amount) {
+      return amount;
+    },
+    InOut: function(amount) {
+      return amount;
+    }
+  }),
+  Quadratic: Object.freeze({
+    In: function(amount) {
+      return amount * amount;
+    },
+    Out: function(amount) {
+      return amount * (2 - amount);
+    },
+    InOut: function(amount) {
+      if ((amount *= 2) < 1) {
+        return 0.5 * amount * amount;
+      }
+      return -0.5 * (--amount * (amount - 2) - 1);
+    }
+  }),
+  Cubic: Object.freeze({
+    In: function(amount) {
+      return amount * amount * amount;
+    },
+    Out: function(amount) {
+      return --amount * amount * amount + 1;
+    },
+    InOut: function(amount) {
+      if ((amount *= 2) < 1) {
+        return 0.5 * amount * amount * amount;
+      }
+      return 0.5 * ((amount -= 2) * amount * amount + 2);
+    }
+  }),
+  Quartic: Object.freeze({
+    In: function(amount) {
+      return amount * amount * amount * amount;
+    },
+    Out: function(amount) {
+      return 1 - --amount * amount * amount * amount;
+    },
+    InOut: function(amount) {
+      if ((amount *= 2) < 1) {
+        return 0.5 * amount * amount * amount * amount;
+      }
+      return -0.5 * ((amount -= 2) * amount * amount * amount - 2);
+    }
+  }),
+  Quintic: Object.freeze({
+    In: function(amount) {
+      return amount * amount * amount * amount * amount;
+    },
+    Out: function(amount) {
+      return --amount * amount * amount * amount * amount + 1;
+    },
+    InOut: function(amount) {
+      if ((amount *= 2) < 1) {
+        return 0.5 * amount * amount * amount * amount * amount;
+      }
+      return 0.5 * ((amount -= 2) * amount * amount * amount * amount + 2);
+    }
+  }),
+  Sinusoidal: Object.freeze({
+    In: function(amount) {
+      return 1 - Math.sin((1 - amount) * Math.PI / 2);
+    },
+    Out: function(amount) {
+      return Math.sin(amount * Math.PI / 2);
+    },
+    InOut: function(amount) {
+      return 0.5 * (1 - Math.sin(Math.PI * (0.5 - amount)));
+    }
+  }),
+  Exponential: Object.freeze({
+    In: function(amount) {
+      return amount === 0 ? 0 : Math.pow(1024, amount - 1);
+    },
+    Out: function(amount) {
+      return amount === 1 ? 1 : 1 - Math.pow(2, -10 * amount);
+    },
+    InOut: function(amount) {
+      if (amount === 0) {
+        return 0;
+      }
+      if (amount === 1) {
+        return 1;
+      }
+      if ((amount *= 2) < 1) {
+        return 0.5 * Math.pow(1024, amount - 1);
+      }
+      return 0.5 * (-Math.pow(2, -10 * (amount - 1)) + 2);
+    }
+  }),
+  Circular: Object.freeze({
+    In: function(amount) {
+      return 1 - Math.sqrt(1 - amount * amount);
+    },
+    Out: function(amount) {
+      return Math.sqrt(1 - --amount * amount);
+    },
+    InOut: function(amount) {
+      if ((amount *= 2) < 1) {
+        return -0.5 * (Math.sqrt(1 - amount * amount) - 1);
+      }
+      return 0.5 * (Math.sqrt(1 - (amount -= 2) * amount) + 1);
+    }
+  }),
+  Elastic: Object.freeze({
+    In: function(amount) {
+      if (amount === 0) {
+        return 0;
+      }
+      if (amount === 1) {
+        return 1;
+      }
+      return -Math.pow(2, 10 * (amount - 1)) * Math.sin((amount - 1.1) * 5 * Math.PI);
+    },
+    Out: function(amount) {
+      if (amount === 0) {
+        return 0;
+      }
+      if (amount === 1) {
+        return 1;
+      }
+      return Math.pow(2, -10 * amount) * Math.sin((amount - 0.1) * 5 * Math.PI) + 1;
+    },
+    InOut: function(amount) {
+      if (amount === 0) {
+        return 0;
+      }
+      if (amount === 1) {
+        return 1;
+      }
+      amount *= 2;
+      if (amount < 1) {
+        return -0.5 * Math.pow(2, 10 * (amount - 1)) * Math.sin((amount - 1.1) * 5 * Math.PI);
+      }
+      return 0.5 * Math.pow(2, -10 * (amount - 1)) * Math.sin((amount - 1.1) * 5 * Math.PI) + 1;
+    }
+  }),
+  Back: Object.freeze({
+    In: function(amount) {
+      var s = 1.70158;
+      return amount === 1 ? 1 : amount * amount * ((s + 1) * amount - s);
+    },
+    Out: function(amount) {
+      var s = 1.70158;
+      return amount === 0 ? 0 : --amount * amount * ((s + 1) * amount + s) + 1;
+    },
+    InOut: function(amount) {
+      var s = 1.70158 * 1.525;
+      if ((amount *= 2) < 1) {
+        return 0.5 * (amount * amount * ((s + 1) * amount - s));
+      }
+      return 0.5 * ((amount -= 2) * amount * ((s + 1) * amount + s) + 2);
+    }
+  }),
+  Bounce: Object.freeze({
+    In: function(amount) {
+      return 1 - Easing.Bounce.Out(1 - amount);
+    },
+    Out: function(amount) {
+      if (amount < 1 / 2.75) {
+        return 7.5625 * amount * amount;
+      } else if (amount < 2 / 2.75) {
+        return 7.5625 * (amount -= 1.5 / 2.75) * amount + 0.75;
+      } else if (amount < 2.5 / 2.75) {
+        return 7.5625 * (amount -= 2.25 / 2.75) * amount + 0.9375;
+      } else {
+        return 7.5625 * (amount -= 2.625 / 2.75) * amount + 0.984375;
+      }
+    },
+    InOut: function(amount) {
+      if (amount < 0.5) {
+        return Easing.Bounce.In(amount * 2) * 0.5;
+      }
+      return Easing.Bounce.Out(amount * 2 - 1) * 0.5 + 0.5;
+    }
+  }),
+  generatePow: function(power) {
+    if (power === void 0) {
+      power = 4;
+    }
+    power = power < Number.EPSILON ? Number.EPSILON : power;
+    power = power > 1e4 ? 1e4 : power;
+    return {
+      In: function(amount) {
+        return Math.pow(amount, power);
+      },
+      Out: function(amount) {
+        return 1 - Math.pow(1 - amount, power);
+      },
+      InOut: function(amount) {
+        if (amount < 0.5) {
+          return Math.pow(amount * 2, power) / 2;
+        }
+        return (1 - Math.pow(2 - amount * 2, power)) / 2 + 0.5;
+      }
+    };
+  }
+});
+var now = function() {
+  return performance.now();
+};
+var Group = (
+  /** @class */
+  (function() {
+    function Group2() {
+      var tweens = [];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        tweens[_i] = arguments[_i];
+      }
+      this._tweens = {};
+      this._tweensAddedDuringUpdate = {};
+      this.add.apply(this, tweens);
+    }
+    Group2.prototype.getAll = function() {
+      var _this = this;
+      return Object.keys(this._tweens).map(function(tweenId) {
+        return _this._tweens[tweenId];
+      });
+    };
+    Group2.prototype.removeAll = function() {
+      this._tweens = {};
+    };
+    Group2.prototype.add = function() {
+      var _a;
+      var tweens = [];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        tweens[_i] = arguments[_i];
+      }
+      for (var _b = 0, tweens_1 = tweens; _b < tweens_1.length; _b++) {
+        var tween = tweens_1[_b];
+        (_a = tween._group) === null || _a === void 0 ? void 0 : _a.remove(tween);
+        tween._group = this;
+        this._tweens[tween.getId()] = tween;
+        this._tweensAddedDuringUpdate[tween.getId()] = tween;
+      }
+    };
+    Group2.prototype.remove = function() {
+      var tweens = [];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        tweens[_i] = arguments[_i];
+      }
+      for (var _a = 0, tweens_2 = tweens; _a < tweens_2.length; _a++) {
+        var tween = tweens_2[_a];
+        tween._group = void 0;
+        delete this._tweens[tween.getId()];
+        delete this._tweensAddedDuringUpdate[tween.getId()];
+      }
+    };
+    Group2.prototype.allStopped = function() {
+      return this.getAll().every(function(tween) {
+        return !tween.isPlaying();
+      });
+    };
+    Group2.prototype.update = function(time, preserve) {
+      if (time === void 0) {
+        time = now();
+      }
+      if (preserve === void 0) {
+        preserve = true;
+      }
+      var tweenIds = Object.keys(this._tweens);
+      if (tweenIds.length === 0)
+        return;
+      while (tweenIds.length > 0) {
+        this._tweensAddedDuringUpdate = {};
+        for (var i = 0; i < tweenIds.length; i++) {
+          var tween = this._tweens[tweenIds[i]];
+          var autoStart = !preserve;
+          if (tween && tween.update(time, autoStart) === false && !preserve)
+            this.remove(tween);
+        }
+        tweenIds = Object.keys(this._tweensAddedDuringUpdate);
+      }
+    };
+    return Group2;
+  })()
+);
+var Interpolation = {
+  Linear: function(v, k) {
+    var m = v.length - 1;
+    var f = m * k;
+    var i = Math.floor(f);
+    var fn = Interpolation.Utils.Linear;
+    if (k < 0) {
+      return fn(v[0], v[1], f);
+    }
+    if (k > 1) {
+      return fn(v[m], v[m - 1], m - f);
+    }
+    return fn(v[i], v[i + 1 > m ? m : i + 1], f - i);
+  },
+  Bezier: function(v, k) {
+    var b = 0;
+    var n = v.length - 1;
+    var pw = Math.pow;
+    var bn = Interpolation.Utils.Bernstein;
+    for (var i = 0; i <= n; i++) {
+      b += pw(1 - k, n - i) * pw(k, i) * v[i] * bn(n, i);
+    }
+    return b;
+  },
+  CatmullRom: function(v, k) {
+    var m = v.length - 1;
+    var f = m * k;
+    var i = Math.floor(f);
+    var fn = Interpolation.Utils.CatmullRom;
+    if (v[0] === v[m]) {
+      if (k < 0) {
+        i = Math.floor(f = m * (1 + k));
+      }
+      return fn(v[(i - 1 + m) % m], v[i], v[(i + 1) % m], v[(i + 2) % m], f - i);
+    } else {
+      if (k < 0) {
+        return v[0] - (fn(v[0], v[0], v[1], v[1], -f) - v[0]);
+      }
+      if (k > 1) {
+        return v[m] - (fn(v[m], v[m], v[m - 1], v[m - 1], f - m) - v[m]);
+      }
+      return fn(v[i ? i - 1 : 0], v[i], v[m < i + 1 ? m : i + 1], v[m < i + 2 ? m : i + 2], f - i);
+    }
+  },
+  Utils: {
+    Linear: function(p0, p1, t) {
+      return (p1 - p0) * t + p0;
+    },
+    Bernstein: function(n, i) {
+      var fc = Interpolation.Utils.Factorial;
+      return fc(n) / fc(i) / fc(n - i);
+    },
+    Factorial: /* @__PURE__ */ (function() {
+      var a = [1];
+      return function(n) {
+        var s = 1;
+        if (a[n]) {
+          return a[n];
+        }
+        for (var i = n; i > 1; i--) {
+          s *= i;
+        }
+        a[n] = s;
+        return s;
+      };
+    })(),
+    CatmullRom: function(p0, p1, p2, p3, t) {
+      var v0 = (p2 - p0) * 0.5;
+      var v1 = (p3 - p1) * 0.5;
+      var t2 = t * t;
+      var t3 = t * t2;
+      return (2 * p1 - 2 * p2 + v0 + v1) * t3 + (-3 * p1 + 3 * p2 - 2 * v0 - v1) * t2 + v0 * t + p1;
+    }
+  }
+};
+var Sequence = (
+  /** @class */
+  (function() {
+    function Sequence2() {
+    }
+    Sequence2.nextId = function() {
+      return Sequence2._nextId++;
+    };
+    Sequence2._nextId = 0;
+    return Sequence2;
+  })()
+);
+var mainGroup = new Group();
+var Tween = (
+  /** @class */
+  (function() {
+    function Tween2(object, group) {
+      this._isPaused = false;
+      this._pauseStart = 0;
+      this._valuesStart = {};
+      this._valuesEnd = {};
+      this._valuesStartRepeat = {};
+      this._duration = 1e3;
+      this._isDynamic = false;
+      this._initialRepeat = 0;
+      this._repeat = 0;
+      this._yoyo = false;
+      this._isPlaying = false;
+      this._reversed = false;
+      this._delayTime = 0;
+      this._startTime = 0;
+      this._easingFunction = Easing.Linear.None;
+      this._interpolationFunction = Interpolation.Linear;
+      this._chainedTweens = [];
+      this._onStartCallbackFired = false;
+      this._onEveryStartCallbackFired = false;
+      this._id = Sequence.nextId();
+      this._isChainStopped = false;
+      this._propertiesAreSetUp = false;
+      this._goToEnd = false;
+      this._object = object;
+      if (typeof group === "object") {
+        this._group = group;
+        group.add(this);
+      } else if (group === true) {
+        this._group = mainGroup;
+        mainGroup.add(this);
+      }
+    }
+    Tween2.prototype.getId = function() {
+      return this._id;
+    };
+    Tween2.prototype.isPlaying = function() {
+      return this._isPlaying;
+    };
+    Tween2.prototype.isPaused = function() {
+      return this._isPaused;
+    };
+    Tween2.prototype.getDuration = function() {
+      return this._duration;
+    };
+    Tween2.prototype.to = function(target, duration) {
+      if (duration === void 0) {
+        duration = 1e3;
+      }
+      if (this._isPlaying)
+        throw new Error("Can not call Tween.to() while Tween is already started or paused. Stop the Tween first.");
+      this._valuesEnd = target;
+      this._propertiesAreSetUp = false;
+      this._duration = duration < 0 ? 0 : duration;
+      return this;
+    };
+    Tween2.prototype.duration = function(duration) {
+      if (duration === void 0) {
+        duration = 1e3;
+      }
+      this._duration = duration < 0 ? 0 : duration;
+      return this;
+    };
+    Tween2.prototype.dynamic = function(dynamic) {
+      if (dynamic === void 0) {
+        dynamic = false;
+      }
+      this._isDynamic = dynamic;
+      return this;
+    };
+    Tween2.prototype.start = function(time, overrideStartingValues) {
+      if (time === void 0) {
+        time = now();
+      }
+      if (overrideStartingValues === void 0) {
+        overrideStartingValues = false;
+      }
+      if (this._isPlaying) {
+        return this;
+      }
+      this._repeat = this._initialRepeat;
+      if (this._reversed) {
+        this._reversed = false;
+        for (var property in this._valuesStartRepeat) {
+          this._swapEndStartRepeatValues(property);
+          this._valuesStart[property] = this._valuesStartRepeat[property];
+        }
+      }
+      this._isPlaying = true;
+      this._isPaused = false;
+      this._onStartCallbackFired = false;
+      this._onEveryStartCallbackFired = false;
+      this._isChainStopped = false;
+      this._startTime = time;
+      this._startTime += this._delayTime;
+      if (!this._propertiesAreSetUp || overrideStartingValues) {
+        this._propertiesAreSetUp = true;
+        if (!this._isDynamic) {
+          var tmp = {};
+          for (var prop in this._valuesEnd)
+            tmp[prop] = this._valuesEnd[prop];
+          this._valuesEnd = tmp;
+        }
+        this._setupProperties(this._object, this._valuesStart, this._valuesEnd, this._valuesStartRepeat, overrideStartingValues);
+      }
+      return this;
+    };
+    Tween2.prototype.startFromCurrentValues = function(time) {
+      return this.start(time, true);
+    };
+    Tween2.prototype._setupProperties = function(_object, _valuesStart, _valuesEnd, _valuesStartRepeat, overrideStartingValues) {
+      for (var property in _valuesEnd) {
+        var startValue = _object[property];
+        var startValueIsArray = Array.isArray(startValue);
+        var propType = startValueIsArray ? "array" : typeof startValue;
+        var isInterpolationList = !startValueIsArray && Array.isArray(_valuesEnd[property]);
+        if (propType === "undefined" || propType === "function") {
+          continue;
+        }
+        if (isInterpolationList) {
+          var endValues = _valuesEnd[property];
+          if (endValues.length === 0) {
+            continue;
+          }
+          var temp = [startValue];
+          for (var i = 0, l = endValues.length; i < l; i += 1) {
+            var value = this._handleRelativeValue(startValue, endValues[i]);
+            if (isNaN(value)) {
+              isInterpolationList = false;
+              console.warn("Found invalid interpolation list. Skipping.");
+              break;
+            }
+            temp.push(value);
+          }
+          if (isInterpolationList) {
+            _valuesEnd[property] = temp;
+          }
+        }
+        if ((propType === "object" || startValueIsArray) && startValue && !isInterpolationList) {
+          _valuesStart[property] = startValueIsArray ? [] : {};
+          var nestedObject = startValue;
+          for (var prop in nestedObject) {
+            _valuesStart[property][prop] = nestedObject[prop];
+          }
+          _valuesStartRepeat[property] = startValueIsArray ? [] : {};
+          var endValues = _valuesEnd[property];
+          if (!this._isDynamic) {
+            var tmp = {};
+            for (var prop in endValues)
+              tmp[prop] = endValues[prop];
+            _valuesEnd[property] = endValues = tmp;
+          }
+          this._setupProperties(nestedObject, _valuesStart[property], endValues, _valuesStartRepeat[property], overrideStartingValues);
+        } else {
+          if (typeof _valuesStart[property] === "undefined" || overrideStartingValues) {
+            _valuesStart[property] = startValue;
+          }
+          if (!startValueIsArray) {
+            _valuesStart[property] *= 1;
+          }
+          if (isInterpolationList) {
+            _valuesStartRepeat[property] = _valuesEnd[property].slice().reverse();
+          } else {
+            _valuesStartRepeat[property] = _valuesStart[property] || 0;
+          }
+        }
+      }
+    };
+    Tween2.prototype.stop = function() {
+      if (!this._isChainStopped) {
+        this._isChainStopped = true;
+        this.stopChainedTweens();
+      }
+      if (!this._isPlaying) {
+        return this;
+      }
+      this._isPlaying = false;
+      this._isPaused = false;
+      if (this._onStopCallback) {
+        this._onStopCallback(this._object);
+      }
+      return this;
+    };
+    Tween2.prototype.end = function() {
+      this._goToEnd = true;
+      this.update(this._startTime + this._duration);
+      return this;
+    };
+    Tween2.prototype.pause = function(time) {
+      if (time === void 0) {
+        time = now();
+      }
+      if (this._isPaused || !this._isPlaying) {
+        return this;
+      }
+      this._isPaused = true;
+      this._pauseStart = time;
+      return this;
+    };
+    Tween2.prototype.resume = function(time) {
+      if (time === void 0) {
+        time = now();
+      }
+      if (!this._isPaused || !this._isPlaying) {
+        return this;
+      }
+      this._isPaused = false;
+      this._startTime += time - this._pauseStart;
+      this._pauseStart = 0;
+      return this;
+    };
+    Tween2.prototype.stopChainedTweens = function() {
+      for (var i = 0, numChainedTweens = this._chainedTweens.length; i < numChainedTweens; i++) {
+        this._chainedTweens[i].stop();
+      }
+      return this;
+    };
+    Tween2.prototype.group = function(group) {
+      if (!group) {
+        console.warn("tween.group() without args has been removed, use group.add(tween) instead.");
+        return this;
+      }
+      group.add(this);
+      return this;
+    };
+    Tween2.prototype.remove = function() {
+      var _a;
+      (_a = this._group) === null || _a === void 0 ? void 0 : _a.remove(this);
+      return this;
+    };
+    Tween2.prototype.delay = function(amount) {
+      if (amount === void 0) {
+        amount = 0;
+      }
+      this._delayTime = amount;
+      return this;
+    };
+    Tween2.prototype.repeat = function(times) {
+      if (times === void 0) {
+        times = 0;
+      }
+      this._initialRepeat = times;
+      this._repeat = times;
+      return this;
+    };
+    Tween2.prototype.repeatDelay = function(amount) {
+      this._repeatDelayTime = amount;
+      return this;
+    };
+    Tween2.prototype.yoyo = function(yoyo) {
+      if (yoyo === void 0) {
+        yoyo = false;
+      }
+      this._yoyo = yoyo;
+      return this;
+    };
+    Tween2.prototype.easing = function(easingFunction) {
+      if (easingFunction === void 0) {
+        easingFunction = Easing.Linear.None;
+      }
+      this._easingFunction = easingFunction;
+      return this;
+    };
+    Tween2.prototype.interpolation = function(interpolationFunction) {
+      if (interpolationFunction === void 0) {
+        interpolationFunction = Interpolation.Linear;
+      }
+      this._interpolationFunction = interpolationFunction;
+      return this;
+    };
+    Tween2.prototype.chain = function() {
+      var tweens = [];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        tweens[_i] = arguments[_i];
+      }
+      this._chainedTweens = tweens;
+      return this;
+    };
+    Tween2.prototype.onStart = function(callback) {
+      this._onStartCallback = callback;
+      return this;
+    };
+    Tween2.prototype.onEveryStart = function(callback) {
+      this._onEveryStartCallback = callback;
+      return this;
+    };
+    Tween2.prototype.onUpdate = function(callback) {
+      this._onUpdateCallback = callback;
+      return this;
+    };
+    Tween2.prototype.onRepeat = function(callback) {
+      this._onRepeatCallback = callback;
+      return this;
+    };
+    Tween2.prototype.onComplete = function(callback) {
+      this._onCompleteCallback = callback;
+      return this;
+    };
+    Tween2.prototype.onStop = function(callback) {
+      this._onStopCallback = callback;
+      return this;
+    };
+    Tween2.prototype.update = function(time, autoStart) {
+      var _this = this;
+      var _a;
+      if (time === void 0) {
+        time = now();
+      }
+      if (autoStart === void 0) {
+        autoStart = Tween2.autoStartOnUpdate;
+      }
+      if (this._isPaused)
+        return true;
+      var property;
+      if (!this._goToEnd && !this._isPlaying) {
+        if (autoStart)
+          this.start(time, true);
+        else
+          return false;
+      }
+      this._goToEnd = false;
+      if (time < this._startTime) {
+        return true;
+      }
+      if (this._onStartCallbackFired === false) {
+        if (this._onStartCallback) {
+          this._onStartCallback(this._object);
+        }
+        this._onStartCallbackFired = true;
+      }
+      if (this._onEveryStartCallbackFired === false) {
+        if (this._onEveryStartCallback) {
+          this._onEveryStartCallback(this._object);
+        }
+        this._onEveryStartCallbackFired = true;
+      }
+      var elapsedTime = time - this._startTime;
+      var durationAndDelay = this._duration + ((_a = this._repeatDelayTime) !== null && _a !== void 0 ? _a : this._delayTime);
+      var totalTime = this._duration + this._repeat * durationAndDelay;
+      var calculateElapsedPortion = function() {
+        if (_this._duration === 0)
+          return 1;
+        if (elapsedTime > totalTime) {
+          return 1;
+        }
+        var timesRepeated = Math.trunc(elapsedTime / durationAndDelay);
+        var timeIntoCurrentRepeat = elapsedTime - timesRepeated * durationAndDelay;
+        var portion = Math.min(timeIntoCurrentRepeat / _this._duration, 1);
+        if (portion === 0 && elapsedTime === _this._duration) {
+          return 1;
+        }
+        return portion;
+      };
+      var elapsed = calculateElapsedPortion();
+      var value = this._easingFunction(elapsed);
+      this._updateProperties(this._object, this._valuesStart, this._valuesEnd, value);
+      if (this._onUpdateCallback) {
+        this._onUpdateCallback(this._object, elapsed);
+      }
+      if (this._duration === 0 || elapsedTime >= this._duration) {
+        if (this._repeat > 0) {
+          var completeCount = Math.min(Math.trunc((elapsedTime - this._duration) / durationAndDelay) + 1, this._repeat);
+          if (isFinite(this._repeat)) {
+            this._repeat -= completeCount;
+          }
+          for (property in this._valuesStartRepeat) {
+            if (!this._yoyo && typeof this._valuesEnd[property] === "string") {
+              this._valuesStartRepeat[property] = // eslint-disable-next-line
+              // @ts-ignore FIXME?
+              this._valuesStartRepeat[property] + parseFloat(this._valuesEnd[property]);
+            }
+            if (this._yoyo) {
+              this._swapEndStartRepeatValues(property);
+            }
+            this._valuesStart[property] = this._valuesStartRepeat[property];
+          }
+          if (this._yoyo) {
+            this._reversed = !this._reversed;
+          }
+          this._startTime += durationAndDelay * completeCount;
+          if (this._onRepeatCallback) {
+            this._onRepeatCallback(this._object);
+          }
+          this._onEveryStartCallbackFired = false;
+          return true;
+        } else {
+          if (this._onCompleteCallback) {
+            this._onCompleteCallback(this._object);
+          }
+          for (var i = 0, numChainedTweens = this._chainedTweens.length; i < numChainedTweens; i++) {
+            this._chainedTweens[i].start(this._startTime + this._duration, false);
+          }
+          this._isPlaying = false;
+          return false;
+        }
+      }
+      return true;
+    };
+    Tween2.prototype._updateProperties = function(_object, _valuesStart, _valuesEnd, value) {
+      for (var property in _valuesEnd) {
+        if (_valuesStart[property] === void 0) {
+          continue;
+        }
+        var start = _valuesStart[property] || 0;
+        var end = _valuesEnd[property];
+        var startIsArray = Array.isArray(_object[property]);
+        var endIsArray = Array.isArray(end);
+        var isInterpolationList = !startIsArray && endIsArray;
+        if (isInterpolationList) {
+          _object[property] = this._interpolationFunction(end, value);
+        } else if (typeof end === "object" && end) {
+          this._updateProperties(_object[property], start, end, value);
+        } else {
+          end = this._handleRelativeValue(start, end);
+          if (typeof end === "number") {
+            _object[property] = start + (end - start) * value;
+          }
+        }
+      }
+    };
+    Tween2.prototype._handleRelativeValue = function(start, end) {
+      if (typeof end !== "string") {
+        return end;
+      }
+      if (end.charAt(0) === "+" || end.charAt(0) === "-") {
+        return start + parseFloat(end);
+      }
+      return parseFloat(end);
+    };
+    Tween2.prototype._swapEndStartRepeatValues = function(property) {
+      var tmp = this._valuesStartRepeat[property];
+      var endValue = this._valuesEnd[property];
+      if (typeof endValue === "string") {
+        this._valuesStartRepeat[property] = this._valuesStartRepeat[property] + parseFloat(endValue);
+      } else {
+        this._valuesStartRepeat[property] = this._valuesEnd[property];
+      }
+      this._valuesEnd[property] = tmp;
+    };
+    Tween2.autoStartOnUpdate = false;
+    return Tween2;
+  })()
+);
+var nextId = Sequence.nextId;
+var TWEEN = mainGroup;
+var getAll = TWEEN.getAll.bind(TWEEN);
+var removeAll = TWEEN.removeAll.bind(TWEEN);
+var add = TWEEN.add.bind(TWEEN);
+var remove2 = TWEEN.remove.bind(TWEEN);
+var update = TWEEN.update.bind(TWEEN);
+
 // node_modules/@stackline/angular-multiselect-dropdown/fesm2022/stackline-angular-multiselect-dropdown.mjs
-var tween = __toESM(require_Tween(), 1);
 function CIcon__svg_svg_0_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275namespaceSVG();
@@ -39384,9 +39636,9 @@ var VirtualScrollerComponent = class _VirtualScrollerComponent {
     const tweenConfigObj = {
       scrollPosition: scrollElement[this._scrollType]
     };
-    let newTween = new tween.Tween(tweenConfigObj).to({
+    let newTween = new Tween(tweenConfigObj).to({
       scrollPosition
-    }, animationMilliseconds).easing(tween.Easing.Quadratic.Out).onUpdate((data) => {
+    }, animationMilliseconds).easing(Easing.Quadratic.Out).onUpdate((data) => {
       if (isNaN(data.scrollPosition)) {
         return;
       }
@@ -47815,7 +48067,7 @@ var AppComponent = class _AppComponent {
         \u0275\u0275advance(7);
         \u0275\u0275property("ngForOf", ctx.apiCards);
       }
-    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ["\n[_nghost-%COMP%] {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell[_ngcontent-%COMP%] {\n  padding: 24px;\n}\n.topbar[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark[_ngcontent-%COMP%] {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow[_ngcontent-%COMP%], \n.setup-label[_ngcontent-%COMP%], \n.rail-label[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%] {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card[_ngcontent-%COMP%], \n.hero-card[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%] {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card[_ngcontent-%COMP%] {\n  padding: 18px;\n}\n.rail-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link[_ngcontent-%COMP%]    + .rail-link[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item[_ngcontent-%COMP%]    + .release-item[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 24px;\n}\n.hero-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%] {\n  padding: 28px;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.compat-card[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row[_ngcontent-%COMP%], \n.compat-grid[_ngcontent-%COMP%], \n.setup-grid[_ngcontent-%COMP%], \n.api-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 16px;\n}\n.pill-row[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card[_ngcontent-%COMP%] {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.setup-head[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre[_ngcontent-%COMP%] {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.preview-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas[_ngcontent-%COMP%] {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas[_ngcontent-%COMP%]   angular-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n.api-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode[_ngcontent-%COMP%] {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout[_ngcontent-%COMP%], \n   .setup-grid[_ngcontent-%COMP%], \n   .compat-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .rail[_ngcontent-%COMP%] {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .hero-card[_ngcontent-%COMP%], \n   .preview-card[_ngcontent-%COMP%], \n   .setup-card[_ngcontent-%COMP%], \n   .api-card[_ngcontent-%COMP%], \n   .rail-card[_ngcontent-%COMP%] {\n    border-radius: 22px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .setup-head[_ngcontent-%COMP%], \n   .preview-head[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .topbar[_ngcontent-%COMP%] {\n    padding: 18px;\n  }\n  .preview-canvas[_ngcontent-%COMP%] {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */"] });
+    }, dependencies: [NgForOf, RouterOutlet, RouterLink, RouterLinkActive], styles: ["\n[_nghost-%COMP%] {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell[_ngcontent-%COMP%] {\n  padding: 24px;\n}\n.topbar[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark[_ngcontent-%COMP%] {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow[_ngcontent-%COMP%], \n.setup-label[_ngcontent-%COMP%], \n.rail-label[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill[_ngcontent-%COMP%], \n.feature-pill[_ngcontent-%COMP%], \n.status-pill[_ngcontent-%COMP%] {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail[_ngcontent-%COMP%] {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card[_ngcontent-%COMP%], \n.hero-card[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%] {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card[_ngcontent-%COMP%] {\n  padding: 18px;\n}\n.rail-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link[_ngcontent-%COMP%]    + .rail-link[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link[_ngcontent-%COMP%] {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link[_ngcontent-%COMP%]:hover, \n.example-link.active[_ngcontent-%COMP%] {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item[_ngcontent-%COMP%]    + .release-item[_ngcontent-%COMP%] {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 24px;\n}\n.hero-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%] {\n  padding: 28px;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.setup-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], \n.compat-card[_ngcontent-%COMP%] {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row[_ngcontent-%COMP%], \n.compat-grid[_ngcontent-%COMP%], \n.setup-grid[_ngcontent-%COMP%], \n.api-grid[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 16px;\n}\n.pill-row[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card[_ngcontent-%COMP%] {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card[_ngcontent-%COMP%]   strong[_ngcontent-%COMP%] {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.setup-head[_ngcontent-%COMP%], \n.preview-head[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button[_ngcontent-%COMP%]:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre[_ngcontent-%COMP%] {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n.preview-head[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas[_ngcontent-%COMP%] {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas[_ngcontent-%COMP%]   angular-multiselect[_ngcontent-%COMP%] {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas[_ngcontent-%COMP%]   form[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .table[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .modal-content[_ngcontent-%COMP%], \n.preview-canvas[_ngcontent-%COMP%]   .alert[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n.api-grid[_ngcontent-%COMP%] {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card[_ngcontent-%COMP%] {\n  padding: 22px;\n}\n.api-card[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode[_ngcontent-%COMP%] {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout[_ngcontent-%COMP%], \n   .setup-grid[_ngcontent-%COMP%], \n   .compat-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .rail[_ngcontent-%COMP%] {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell[_ngcontent-%COMP%] {\n    padding: 16px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .hero-card[_ngcontent-%COMP%], \n   .preview-card[_ngcontent-%COMP%], \n   .setup-card[_ngcontent-%COMP%], \n   .api-card[_ngcontent-%COMP%], \n   .rail-card[_ngcontent-%COMP%] {\n    border-radius: 22px;\n  }\n  .topbar[_ngcontent-%COMP%], \n   .setup-head[_ngcontent-%COMP%], \n   .preview-head[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .topbar[_ngcontent-%COMP%] {\n    padding: 18px;\n  }\n  .preview-canvas[_ngcontent-%COMP%] {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n@media (max-width: 980px) {\n  .docs-layout[_ngcontent-%COMP%], \n   .compat-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .topbar-meta[_ngcontent-%COMP%] {\n    justify-content: flex-start;\n  }\n}\n@media (max-width: 760px) {\n  .topbar-meta[_ngcontent-%COMP%], \n   .pill-row[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .meta-pill[_ngcontent-%COMP%], \n   .feature-pill[_ngcontent-%COMP%], \n   .status-pill[_ngcontent-%COMP%], \n   .copy-button[_ngcontent-%COMP%], \n   .rail-link[_ngcontent-%COMP%], \n   .example-link[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  .compat-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%], \n   .setup-grid[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n  .brand[_ngcontent-%COMP%] {\n    align-items: flex-start;\n  }\n  .preview-canvas[_ngcontent-%COMP%] {\n    min-height: 360px;\n  }\n}\n.hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.docs-hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \narticle[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]:first-child {\n  max-width: 100%;\n  overflow-wrap: anywhere;\n  word-break: break-word;\n  line-height: 1.02;\n}\n.hero-card[_ngcontent-%COMP%], \n.panel[_ngcontent-%COMP%], \n.sidebar-card[_ngcontent-%COMP%], \n.demo-card[_ngcontent-%COMP%], \n.preview-frame[_ngcontent-%COMP%], \n.surface-card[_ngcontent-%COMP%], \n.table-shell[_ngcontent-%COMP%], \n.install-card[_ngcontent-%COMP%], \n.copy-card[_ngcontent-%COMP%], \n.card-shell[_ngcontent-%COMP%], \n.showcase-card[_ngcontent-%COMP%], \n.docs-card[_ngcontent-%COMP%], \n.docs-panel[_ngcontent-%COMP%] {\n  min-width: 0;\n}\n.badge[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%], \n.version-pill[_ngcontent-%COMP%], \n.release-pill[_ngcontent-%COMP%] {\n  max-width: 100%;\n  white-space: normal;\n  overflow-wrap: anywhere;\n}\n@media (max-width: 640px) {\n  .hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .docs-hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   article[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]:first-child {\n    font-size: clamp(2rem, 11vw, 3.15rem);\n  }\n}\n@media (max-width: 640px) {\n  .hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .docs-hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   article[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]:first-child {\n    font-size: clamp(1.7rem, 8vw, 2.65rem) !important;\n    line-height: 0.98 !important;\n    letter-spacing: -0.035em !important;\n    word-break: break-all;\n  }\n}\n.hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.hero-main[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.hero-card[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.page-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n.docs-hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n.docs-hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \narticle[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]:first-child, \narticle[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%]:first-child {\n  max-width: 100%;\n  overflow-wrap: anywhere;\n  word-break: break-word;\n}\n.layout[_ngcontent-%COMP%], \n.docs-layout[_ngcontent-%COMP%], \n.hero[_ngcontent-%COMP%], \n.hero-grid[_ngcontent-%COMP%], \n.content-grid[_ngcontent-%COMP%], \n.playground-shell[_ngcontent-%COMP%], \n.playground__grid[_ngcontent-%COMP%], \n.example-shell[_ngcontent-%COMP%], \n.example-explorer[_ngcontent-%COMP%], \n.quickstart-grid[_ngcontent-%COMP%], \n.workbench-grid[_ngcontent-%COMP%], \n.release-links[_ngcontent-%COMP%], \n.cta-row[_ngcontent-%COMP%], \n.controls[_ngcontent-%COMP%], \n.hero-actions[_ngcontent-%COMP%], \n.inline-actions[_ngcontent-%COMP%], \n.playground-actions[_ngcontent-%COMP%], \n.playground-preview-tabs[_ngcontent-%COMP%], \n.field[_ngcontent-%COMP%], \n.field.two-up[_ngcontent-%COMP%], \n.sidebar[_ngcontent-%COMP%], \n.sidebar-card[_ngcontent-%COMP%], \n.panel[_ngcontent-%COMP%], \n.demo-card[_ngcontent-%COMP%], \n.playground-card[_ngcontent-%COMP%], \n.playground-controls[_ngcontent-%COMP%], \n.playground-preview[_ngcontent-%COMP%], \n.result-card[_ngcontent-%COMP%], \n.controls-card[_ngcontent-%COMP%], \n.release-card[_ngcontent-%COMP%], \n.api-card[_ngcontent-%COMP%], \n.preview-card[_ngcontent-%COMP%], \n.example-stage[_ngcontent-%COMP%], \n.demo-stage[_ngcontent-%COMP%], \n.docs-panel[_ngcontent-%COMP%], \n.docs-card[_ngcontent-%COMP%], \n.table-shell[_ngcontent-%COMP%], \n.surface-card[_ngcontent-%COMP%], \n.copy-card[_ngcontent-%COMP%], \n.install-card[_ngcontent-%COMP%], \n.card-shell[_ngcontent-%COMP%], \n.hero-copy[_ngcontent-%COMP%], \n.hero-setup[_ngcontent-%COMP%] {\n  min-width: 0;\n}\n.badge[_ngcontent-%COMP%], \n.hero-badge[_ngcontent-%COMP%], \n.version-pill[_ngcontent-%COMP%], \n.release-pill[_ngcontent-%COMP%], \n.meta-pill[_ngcontent-%COMP%], \n.release-link[_ngcontent-%COMP%] {\n  max-width: 100%;\n  white-space: normal;\n  overflow-wrap: anywhere;\n}\npre[_ngcontent-%COMP%], \n.code[_ngcontent-%COMP%], \n.code-block[_ngcontent-%COMP%], \n.code-preview[_ngcontent-%COMP%], \n.snippet[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%], \n.code-card[_ngcontent-%COMP%]   pre[_ngcontent-%COMP%] {\n  max-width: 100%;\n}\n@media (max-width: 760px) {\n  .release-links[_ngcontent-%COMP%], \n   .cta-row[_ngcontent-%COMP%], \n   .controls[_ngcontent-%COMP%], \n   .hero-actions[_ngcontent-%COMP%], \n   .inline-actions[_ngcontent-%COMP%], \n   .playground-actions[_ngcontent-%COMP%], \n   .toolbar[_ngcontent-%COMP%], \n   .example-stage-header[_ngcontent-%COMP%], \n   .playground-preview-tabs[_ngcontent-%COMP%] {\n    display: grid !important;\n    grid-template-columns: 1fr !important;\n    align-items: stretch;\n  }\n  .release-link[_ngcontent-%COMP%], \n   .btn[_ngcontent-%COMP%], \n   .button[_ngcontent-%COMP%], \n   .ghost-button[_ngcontent-%COMP%], \n   button[_ngcontent-%COMP%], \n   .copy-button[_ngcontent-%COMP%], \n   .clear-btn[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .playground-shell[_ngcontent-%COMP%], \n   .playground__grid[_ngcontent-%COMP%], \n   .example-shell[_ngcontent-%COMP%], \n   .example-explorer[_ngcontent-%COMP%], \n   .quickstart-grid[_ngcontent-%COMP%], \n   .workbench-grid[_ngcontent-%COMP%], \n   .demo-grid[_ngcontent-%COMP%], \n   .api-grid[_ngcontent-%COMP%], \n   .feature-grid[_ngcontent-%COMP%], \n   .results-grid[_ngcontent-%COMP%], \n   .control-grid[_ngcontent-%COMP%], \n   .toggle-grid[_ngcontent-%COMP%], \n   .meta-grid[_ngcontent-%COMP%], \n   .page-grid[_ngcontent-%COMP%], \n   .surface-card-grid[_ngcontent-%COMP%], \n   .hero-grid[_ngcontent-%COMP%], \n   .content-grid[_ngcontent-%COMP%], \n   .layout[_ngcontent-%COMP%], \n   .docs-layout[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr !important;\n  }\n  .field.two-up[_ngcontent-%COMP%], \n   .playground-table-head[_ngcontent-%COMP%], \n   .playground-table-row[_ngcontent-%COMP%], \n   .table-head[_ngcontent-%COMP%], \n   .table-row[_ngcontent-%COMP%] {\n    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n  }\n}\n@media (max-width: 640px) {\n  .hero-main[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .hero-main[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n   .hero-card[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .hero-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n   .page-header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .page-header[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n   .docs-hero[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], \n   .docs-hero[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%], \n   article[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]:first-child, \n   article[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%]:first-child {\n    font-size: clamp(1.55rem, 7vw, 2.35rem) !important;\n    line-height: 1.03 !important;\n    letter-spacing: -0.03em !important;\n  }\n  .app-shell[_ngcontent-%COMP%], \n   .shell[_ngcontent-%COMP%], \n   .docs-page[_ngcontent-%COMP%], \n   .page-shell[_ngcontent-%COMP%], \n   #app[_ngcontent-%COMP%], \n   .docs-shell[_ngcontent-%COMP%] {\n    padding-left: 14px !important;\n    padding-right: 14px !important;\n  }\n  .hero-card[_ngcontent-%COMP%], \n   .panel[_ngcontent-%COMP%], \n   .log-panel[_ngcontent-%COMP%], \n   .sidebar-card[_ngcontent-%COMP%], \n   .demo-card[_ngcontent-%COMP%], \n   .ref-card[_ngcontent-%COMP%], \n   .release-card[_ngcontent-%COMP%], \n   .demo-stage[_ngcontent-%COMP%], \n   .example-stage[_ngcontent-%COMP%], \n   .playground-controls[_ngcontent-%COMP%], \n   .playground-preview[_ngcontent-%COMP%], \n   .api-card[_ngcontent-%COMP%], \n   .preview-card[_ngcontent-%COMP%], \n   .surface-card[_ngcontent-%COMP%], \n   .table-shell[_ngcontent-%COMP%], \n   .docs-card[_ngcontent-%COMP%], \n   .docs-panel[_ngcontent-%COMP%] {\n    padding: 18px !important;\n    border-radius: 22px;\n  }\n  .badge[_ngcontent-%COMP%], \n   .hero-badge[_ngcontent-%COMP%], \n   .version-pill[_ngcontent-%COMP%], \n   .release-pill[_ngcontent-%COMP%], \n   .meta-pill[_ngcontent-%COMP%], \n   .release-link[_ngcontent-%COMP%] {\n    width: 100%;\n    justify-content: center;\n  }\n  pre[_ngcontent-%COMP%], \n   .code[_ngcontent-%COMP%], \n   .code-block[_ngcontent-%COMP%], \n   .code-preview[_ngcontent-%COMP%] {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */"] });
   }
 };
 (() => {
@@ -47974,7 +48226,7 @@ var AppComponent = class _AppComponent {
     </main>
   </div>
 </div>
-`, styles: ["/* src/app/app.component.scss */\n:host {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell {\n  padding: 24px;\n}\n.topbar {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow,\n.setup-label,\n.rail-label {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar h1 {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill,\n.hero-badge,\n.status-pill,\n.feature-pill {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill,\n.feature-pill,\n.status-pill {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary,\n.hero-badge {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card,\n.hero-card,\n.setup-card,\n.preview-card,\n.api-card {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card {\n  padding: 18px;\n}\n.rail-link {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link + .rail-link {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item + .release-item {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item strong {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main {\n  display: grid;\n  gap: 24px;\n}\n.hero-card,\n.preview-card {\n  padding: 28px;\n}\n.hero-card h2,\n.setup-card h3,\n.preview-card h3,\n.api-card h3 {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card h2 {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy,\n.preview-head p,\n.api-card p,\n.compat-card {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row,\n.compat-grid,\n.setup-grid,\n.api-grid {\n  display: grid;\n  gap: 16px;\n}\n.pill-row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card strong {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card {\n  padding: 22px;\n}\n.setup-head,\n.preview-head {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head h3 {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head {\n  margin-bottom: 20px;\n}\n.preview-head h3 {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas angular-multiselect {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas form,\n.preview-canvas .table,\n.preview-canvas .modal-content,\n.preview-canvas .alert {\n  margin-top: 20px;\n}\n.api-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card {\n  padding: 22px;\n}\n.api-card h3 {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout,\n  .setup-grid,\n  .compat-grid,\n  .api-grid {\n    grid-template-columns: 1fr;\n  }\n  .rail {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell {\n    padding: 16px;\n  }\n  .topbar,\n  .hero-card,\n  .preview-card,\n  .setup-card,\n  .api-card,\n  .rail-card {\n    border-radius: 22px;\n  }\n  .topbar,\n  .setup-head,\n  .preview-head {\n    flex-direction: column;\n  }\n  .topbar {\n    padding: 18px;\n  }\n  .preview-canvas {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
+`, styles: ["/* src/app/app.component.scss */\n:host {\n  display: block;\n  color: var(--mat-docs-text);\n}\n.docs-shell {\n  padding: 24px;\n}\n.topbar {\n  position: sticky;\n  top: 0;\n  z-index: 30;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 16px;\n  padding: 18px 22px;\n  margin: 0 auto 24px;\n  max-width: 1480px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  border-radius: 28px;\n  background: rgba(255, 255, 255, 0.82);\n  -webkit-backdrop-filter: blur(16px);\n  backdrop-filter: blur(16px);\n  box-shadow: var(--mat-docs-shadow);\n}\n.brand {\n  display: flex;\n  align-items: center;\n  gap: 16px;\n  min-width: 0;\n}\n.brand-mark {\n  display: inline-grid;\n  place-items: center;\n  width: 56px;\n  height: 56px;\n  border-radius: 20px;\n  background:\n    linear-gradient(\n      135deg,\n      var(--mat-docs-primary),\n      #5c6bc0);\n  color: #ffffff;\n  font-size: 24px;\n  font-weight: 800;\n  box-shadow: 0 16px 32px rgba(63, 81, 181, 0.28);\n}\n.topbar-eyebrow,\n.setup-label,\n.rail-label {\n  color: var(--mat-docs-text-muted);\n  font-size: 12px;\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n}\n.topbar h1 {\n  margin: 4px 0 0;\n  font-size: clamp(1.4rem, 3vw, 2.15rem);\n  letter-spacing: -0.03em;\n}\n.topbar-meta {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 10px;\n}\n.meta-pill,\n.hero-badge,\n.status-pill,\n.feature-pill {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 999px;\n  padding: 8px 14px;\n  font-size: 12px;\n  font-weight: 700;\n}\n.meta-pill,\n.feature-pill,\n.status-pill {\n  background: var(--mat-docs-surface-3);\n  color: var(--mat-docs-text-muted);\n  border: 1px solid var(--mat-docs-outline);\n}\n.meta-pill.primary,\n.hero-badge {\n  background: var(--mat-docs-primary-soft);\n  color: var(--mat-docs-primary);\n  border: 1px solid rgba(63, 81, 181, 0.24);\n}\n.docs-layout {\n  display: grid;\n  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);\n  gap: 24px;\n  align-items: start;\n  margin: 0 auto;\n  max-width: 1480px;\n}\n.rail {\n  position: sticky;\n  top: 112px;\n  display: grid;\n  gap: 16px;\n}\n.rail-card,\n.hero-card,\n.setup-card,\n.preview-card,\n.api-card {\n  border-radius: 28px;\n  border: 1px solid rgba(63, 81, 181, 0.14);\n  background: rgba(255, 255, 255, 0.9);\n  box-shadow: var(--mat-docs-shadow);\n}\n.rail-card {\n  padding: 18px;\n}\n.rail-link {\n  display: block;\n  padding: 10px 0;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n}\n.rail-link + .rail-link {\n  border-top: 1px solid rgba(103, 80, 164, 0.1);\n}\n.example-nav {\n  display: grid;\n  gap: 8px;\n  margin-top: 12px;\n}\n.example-link {\n  display: block;\n  padding: 12px 14px;\n  border-radius: 16px;\n  color: var(--mat-docs-text-muted);\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition:\n    background-color 0.2s ease,\n    border-color 0.2s ease,\n    color 0.2s ease,\n    transform 0.2s ease;\n}\n.example-link:hover,\n.example-link.active {\n  background: var(--mat-docs-primary-soft);\n  border-color: rgba(63, 81, 181, 0.18);\n  color: var(--mat-docs-primary);\n  transform: translateY(-1px);\n}\n.release-item {\n  display: flex;\n  justify-content: space-between;\n  gap: 12px;\n  color: var(--mat-docs-text-muted);\n  padding: 10px 0;\n}\n.release-item + .release-item {\n  border-top: 1px solid rgba(63, 81, 181, 0.1);\n}\n.release-item strong {\n  color: var(--mat-docs-text);\n  font-weight: 600;\n}\n.docs-main {\n  display: grid;\n  gap: 24px;\n}\n.hero-card,\n.preview-card {\n  padding: 28px;\n}\n.hero-card h2,\n.setup-card h3,\n.preview-card h3,\n.api-card h3 {\n  margin: 0;\n  letter-spacing: -0.03em;\n}\n.hero-card h2 {\n  margin-top: 16px;\n  font-size: clamp(1.8rem, 3vw, 3rem);\n  line-height: 1.04;\n}\n.hero-copy,\n.preview-head p,\n.api-card p,\n.compat-card {\n  color: var(--mat-docs-text-muted);\n  line-height: 1.7;\n}\n.pill-row,\n.compat-grid,\n.setup-grid,\n.api-grid {\n  display: grid;\n  gap: 16px;\n}\n.pill-row {\n  display: flex;\n  flex-wrap: wrap;\n  margin-top: 20px;\n}\n.compat-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  margin-top: 22px;\n}\n.compat-card {\n  padding: 18px;\n  border-radius: 22px;\n  background: var(--mat-docs-surface-2);\n  border: 1px solid rgba(63, 81, 181, 0.1);\n}\n.compat-card strong {\n  display: block;\n  margin-bottom: 8px;\n  color: var(--mat-docs-text);\n}\n.setup-grid {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.setup-card {\n  padding: 22px;\n}\n.setup-head,\n.preview-head {\n  display: flex;\n  align-items: start;\n  justify-content: space-between;\n  gap: 16px;\n}\n.setup-head h3 {\n  margin-top: 6px;\n  font-size: 1.1rem;\n}\n.copy-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 88px;\n  padding: 10px 14px;\n  border-radius: 999px;\n  border: 1px solid rgba(63, 81, 181, 0.18);\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      var(--mat-docs-primary-soft));\n  color: var(--mat-docs-primary-strong);\n  cursor: pointer;\n  font: inherit;\n  font-size: 13px;\n  font-weight: 700;\n}\n.copy-button:hover {\n  background:\n    linear-gradient(\n      180deg,\n      #ffffff,\n      #d9def7);\n}\npre {\n  overflow: auto;\n  margin: 18px 0 0;\n  padding: 18px;\n  border-radius: 22px;\n  background: #1f2438;\n  color: #eef3ff;\n  line-height: 1.65;\n  font-size: 13px;\n}\n.preview-head {\n  margin-bottom: 20px;\n}\n.preview-head h3 {\n  margin-top: 8px;\n  font-size: 1.45rem;\n}\n.preview-canvas {\n  min-height: 540px;\n  padding: 22px;\n  border-radius: 24px;\n  border: 1px solid rgba(63, 81, 181, 0.12);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(250, 251, 255, 0.96),\n      rgba(243, 246, 252, 0.92));\n  overflow: visible;\n}\n.preview-canvas angular-multiselect {\n  display: block;\n  max-width: 100%;\n}\n.preview-canvas form,\n.preview-canvas .table,\n.preview-canvas .modal-content,\n.preview-canvas .alert {\n  margin-top: 20px;\n}\n.api-grid {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n}\n.api-card {\n  padding: 22px;\n}\n.api-card h3 {\n  margin-top: 8px;\n  font-size: 1.12rem;\n}\ncode {\n  padding: 0.15rem 0.38rem;\n  border-radius: 8px;\n  background: rgba(63, 81, 181, 0.08);\n  color: var(--mat-docs-primary);\n}\n@media (max-width: 1180px) {\n  .docs-layout,\n  .setup-grid,\n  .compat-grid,\n  .api-grid {\n    grid-template-columns: 1fr;\n  }\n  .rail {\n    position: static;\n    order: 2;\n  }\n}\n@media (max-width: 780px) {\n  .docs-shell {\n    padding: 16px;\n  }\n  .topbar,\n  .hero-card,\n  .preview-card,\n  .setup-card,\n  .api-card,\n  .rail-card {\n    border-radius: 22px;\n  }\n  .topbar,\n  .setup-head,\n  .preview-head {\n    flex-direction: column;\n  }\n  .topbar {\n    padding: 18px;\n  }\n  .preview-canvas {\n    min-height: 420px;\n    padding: 16px;\n  }\n}\n@media (max-width: 980px) {\n  .docs-layout,\n  .compat-grid,\n  .api-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .topbar-meta {\n    justify-content: flex-start;\n  }\n}\n@media (max-width: 760px) {\n  .topbar-meta,\n  .pill-row {\n    width: 100%;\n  }\n  .meta-pill,\n  .feature-pill,\n  .status-pill,\n  .copy-button,\n  .rail-link,\n  .example-link {\n    width: 100%;\n    justify-content: center;\n  }\n  .compat-grid,\n  .api-grid,\n  .setup-grid {\n    grid-template-columns: 1fr;\n  }\n  .brand {\n    align-items: flex-start;\n  }\n  .preview-canvas {\n    min-height: 360px;\n  }\n}\n.hero-main h1,\n.hero h1,\n.page-header h1,\n.docs-hero h1,\narticle h1:first-child {\n  max-width: 100%;\n  overflow-wrap: anywhere;\n  word-break: break-word;\n  line-height: 1.02;\n}\n.hero-card,\n.panel,\n.sidebar-card,\n.demo-card,\n.preview-frame,\n.surface-card,\n.table-shell,\n.install-card,\n.copy-card,\n.card-shell,\n.showcase-card,\n.docs-card,\n.docs-panel {\n  min-width: 0;\n}\n.badge,\n.hero-badge,\n.version-pill,\n.release-pill {\n  max-width: 100%;\n  white-space: normal;\n  overflow-wrap: anywhere;\n}\n@media (max-width: 640px) {\n  .hero-main h1,\n  .hero h1,\n  .page-header h1,\n  .docs-hero h1,\n  article h1:first-child {\n    font-size: clamp(2rem, 11vw, 3.15rem);\n  }\n}\n@media (max-width: 640px) {\n  .hero-main h1,\n  .hero h1,\n  .page-header h1,\n  .docs-hero h1,\n  article h1:first-child {\n    font-size: clamp(1.7rem, 8vw, 2.65rem) !important;\n    line-height: 0.98 !important;\n    letter-spacing: -0.035em !important;\n    word-break: break-all;\n  }\n}\n.hero-main h1,\n.hero-main h2,\n.hero-card h1,\n.hero-card h2,\n.hero h1,\n.hero h2,\n.page-header h1,\n.page-header h2,\n.docs-hero h1,\n.docs-hero h2,\narticle h1:first-child,\narticle h2:first-child {\n  max-width: 100%;\n  overflow-wrap: anywhere;\n  word-break: break-word;\n}\n.layout,\n.docs-layout,\n.hero,\n.hero-grid,\n.content-grid,\n.playground-shell,\n.playground__grid,\n.example-shell,\n.example-explorer,\n.quickstart-grid,\n.workbench-grid,\n.release-links,\n.cta-row,\n.controls,\n.hero-actions,\n.inline-actions,\n.playground-actions,\n.playground-preview-tabs,\n.field,\n.field.two-up,\n.sidebar,\n.sidebar-card,\n.panel,\n.demo-card,\n.playground-card,\n.playground-controls,\n.playground-preview,\n.result-card,\n.controls-card,\n.release-card,\n.api-card,\n.preview-card,\n.example-stage,\n.demo-stage,\n.docs-panel,\n.docs-card,\n.table-shell,\n.surface-card,\n.copy-card,\n.install-card,\n.card-shell,\n.hero-copy,\n.hero-setup {\n  min-width: 0;\n}\n.badge,\n.hero-badge,\n.version-pill,\n.release-pill,\n.meta-pill,\n.release-link {\n  max-width: 100%;\n  white-space: normal;\n  overflow-wrap: anywhere;\n}\npre,\n.code,\n.code-block,\n.code-preview,\n.snippet pre,\n.code-card pre {\n  max-width: 100%;\n}\n@media (max-width: 760px) {\n  .release-links,\n  .cta-row,\n  .controls,\n  .hero-actions,\n  .inline-actions,\n  .playground-actions,\n  .toolbar,\n  .example-stage-header,\n  .playground-preview-tabs {\n    display: grid !important;\n    grid-template-columns: 1fr !important;\n    align-items: stretch;\n  }\n  .release-link,\n  .btn,\n  .button,\n  .ghost-button,\n  button,\n  .copy-button,\n  .clear-btn {\n    width: 100%;\n  }\n  .playground-shell,\n  .playground__grid,\n  .example-shell,\n  .example-explorer,\n  .quickstart-grid,\n  .workbench-grid,\n  .demo-grid,\n  .api-grid,\n  .feature-grid,\n  .results-grid,\n  .control-grid,\n  .toggle-grid,\n  .meta-grid,\n  .page-grid,\n  .surface-card-grid,\n  .hero-grid,\n  .content-grid,\n  .layout,\n  .docs-layout,\n  .hero {\n    grid-template-columns: 1fr !important;\n  }\n  .field.two-up,\n  .playground-table-head,\n  .playground-table-row,\n  .table-head,\n  .table-row {\n    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n  }\n}\n@media (max-width: 640px) {\n  .hero-main h1,\n  .hero-main h2,\n  .hero-card h1,\n  .hero-card h2,\n  .hero h1,\n  .hero h2,\n  .page-header h1,\n  .page-header h2,\n  .docs-hero h1,\n  .docs-hero h2,\n  article h1:first-child,\n  article h2:first-child {\n    font-size: clamp(1.55rem, 7vw, 2.35rem) !important;\n    line-height: 1.03 !important;\n    letter-spacing: -0.03em !important;\n  }\n  .app-shell,\n  .shell,\n  .docs-page,\n  .page-shell,\n  #app,\n  .docs-shell {\n    padding-left: 14px !important;\n    padding-right: 14px !important;\n  }\n  .hero-card,\n  .panel,\n  .log-panel,\n  .sidebar-card,\n  .demo-card,\n  .ref-card,\n  .release-card,\n  .demo-stage,\n  .example-stage,\n  .playground-controls,\n  .playground-preview,\n  .api-card,\n  .preview-card,\n  .surface-card,\n  .table-shell,\n  .docs-card,\n  .docs-panel {\n    padding: 18px !important;\n    border-radius: 22px;\n  }\n  .badge,\n  .hero-badge,\n  .version-pill,\n  .release-pill,\n  .meta-pill,\n  .release-link {\n    width: 100%;\n    justify-content: center;\n  }\n  pre,\n  .code,\n  .code-block,\n  .code-preview {\n    font-size: 12px;\n  }\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
   }], () => [{ type: Router }, { type: ActivatedRoute }], null);
 })();
 (() => {
@@ -52046,3 +52298,4 @@ if (environment.production) {
   enableProdMode();
 }
 platformBrowser().bootstrapModule(AppModule).catch((err) => console.error(err));
+//# sourceMappingURL=main.js.map

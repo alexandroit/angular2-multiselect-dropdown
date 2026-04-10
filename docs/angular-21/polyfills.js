@@ -44,3 +44,4 @@ function stripBlock(messagePart, rawMessagePart) {
  * License: MIT
  */
 globalThis.$localize = $localize;
+//# sourceMappingURL=polyfills.js.map
